@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -73,15 +74,10 @@
         </AnchorPane>
       </children>
     </VBox>
-    <Pane prefHeight="594.0" prefWidth="825.0">
+    <Pane prefHeight="594.0" prefWidth="863.0">
       <children>
         <Pane layoutY="14.0" prefHeight="53.0" prefWidth="825.0">
           <children>
-            <TextField fx:id="txt_search" layoutX="68.0" layoutY="14.0" prefHeight="24.0" prefWidth="303.0" promptText="Search :">
-              <font>
-                <Font name="Century Gothic" size="12.0" />
-              </font>
-            </TextField>
             <JFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="659.0" layoutY="6.0" prefHeight="42.0" prefWidth="54.0" />
             <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="675.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
               <image>
@@ -94,31 +90,92 @@
               </image>
             </ImageView>
             <JFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="717.0" layoutY="7.0" prefHeight="42.0" prefWidth="54.0" text="Button" />
-            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="35.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
-              <image>
-                <Image url="@../../../img/—Pngtree—magnifying glass icon_5464846.png" />
-              </image>
-            </ImageView>
           </children>
         </Pane>
-        <AnchorPane fx:id="pane_java" layoutY="67.0" prefHeight="527.0" prefWidth="825.0" visible="false">
-          <children>
-            <Label layoutX="43.0" layoutY="47.0" text="Halooo Java">
-              <font>
-                <Font size="40.0" />
-              </font>
-            </Label>
-          </children>
-        </AnchorPane>
-        <AnchorPane fx:id="pane_gus" layoutY="67.0" prefHeight="527.0" prefWidth="825.0">
-          <children>
-            <Label layoutX="109.0" layoutY="54.0" text="Hello Gus!">
-              <font>
-                <Font size="46.0" />
-              </font>
-            </Label>
-          </children>
-        </AnchorPane>
+            <AnchorPane fx:id="dictionary" layoutY="67.0" prefHeight="527.0" prefWidth="825.0">
+               <children>
+                  <AnchorPane prefHeight="527.0" prefWidth="452.0">
+                     <children>
+                        <AnchorPane fx:id="intro_diction" layoutX="13.0" layoutY="14.0" prefHeight="217.0" prefWidth="419.0" styleClass="intro_diction" stylesheets="@Style.css">
+                           <children>
+                              <Label layoutX="14.0" layoutY="14.0" prefHeight="20.0" prefWidth="251.0" text="Welcome to our English Dictionary !" textFill="WHITE">
+                                 <font>
+                                    <Font name="Century Gothic Bold Italic" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="47.0" prefHeight="20.0" prefWidth="251.0" text="where you can find definitions, examples, and" textFill="WHITE">
+                                 <font>
+                                    <Font name="Century Gothic Bold Italic" size="11.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="79.0" prefHeight="20.0" prefWidth="290.0" text="other helpful information for millions of English words. " textFill="WHITE">
+                                 <font>
+                                    <Font name="Century Gothic Bold Italic" size="11.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="101.0" fitWidth="118.0" layoutX="14.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/Pasted-20240320-214020_preview_rev_1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="123.0" fitWidth="126.0" layoutX="282.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/Pasted-20240320-214934_preview_rev_1.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <Label layoutX="14.0" layoutY="248.0" text="Choose Language :" textFill="#c05ab1">
+                           <font>
+                              <Font name="Century Gothic Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                        <JFXComboBox focusColor="#a84086" layoutX="139.0" layoutY="235.0" prefHeight="25.0" prefWidth="70.0" promptText="choose" unFocusColor="#2b2f06" />
+                        <TextField layoutX="84.0" layoutY="367.0" prefHeight="25.0" prefWidth="283.0" promptText="Search : ....">
+                           <font>
+                              <Font name="Century Gothic Bold Italic" size="11.0" />
+                           </font></TextField>
+                        <ImageView fitHeight="53.0" fitWidth="54.0" layoutX="18.0" layoutY="353.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/Pasted-20240320-222118_preview_rev_1.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="53.0" layoutY="301.0" text="What word are you yearning to discover?" textFill="#7a617b">
+                           <font>
+                              <Font name="Century Gothic Bold Italic" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="169.0" layoutY="331.0" text="Enter it here !" textFill="#7a617b">
+                           <font>
+                              <Font name="Century Gothic Bold Italic" size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="diction_means" layoutX="452.0" layoutY="16.0" prefHeight="495.0" prefWidth="341.0" styleClass="diction_means" stylesheets="@Style.css">
+                     <children>
+                        <AnchorPane prefHeight="195.0" prefWidth="359.0" styleClass="diction_means2" stylesheets="@Style.css">
+                           <children>
+                              <Label layoutX="69.0" layoutY="24.0" text="Behold, the word you have">
+                                 <font>
+                                    <Font name="Century Gothic Bold Italic" size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="104.0" layoutY="56.0" text="been yearning for !">
+                                 <font>
+                                    <Font name="Century Gothic Bold Italic" size="17.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="115.0" fitWidth="132.0" layoutX="114.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/Remove-bg.ai_1710951065578.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children></AnchorPane>
       </children>
     </Pane>
   </children>

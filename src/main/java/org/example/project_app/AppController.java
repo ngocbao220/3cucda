@@ -45,5 +45,4 @@ public class AppController {
     @FXML
     private TextField txt_search;
 
-
 }

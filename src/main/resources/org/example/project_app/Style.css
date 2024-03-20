@@ -38,6 +38,30 @@
     -fx-border-radius: 20px;
     -fx-background-radis: 20px;
 }
+.intro_diction {
+    -fx-background-color: #DCD0FF;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #DCD0FF;
+}
+.diction_means {
+
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #FFDAB9;
+}
+.diction_means2 {
+    -fx-background-color: #FFDAB9;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #FFDAB9;
+}
 
 
 
