@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="594.0" prefWidth="1038.0" styleClass="root" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <VBox prefHeight="594.0" prefWidth="213.0">
+      <children>
+        <AnchorPane fx:id="side_anPane" prefHeight="594.0" prefWidth="208.0" styleClass="side_anPane" stylesheets="@Style.css">
+          <children>
+            <Pane fx:id="inner_pane" layoutX="14.0" layoutY="24.0" prefHeight="53.0" prefWidth="186.0" styleClass="inner_pane" stylesheets="@Style.css">
+              <children>
+                <Pane fx:id="menu_inner_pane" layoutX="145.0" prefHeight="53.0" prefWidth="27.0" styleClass="menu_inner_pane" stylesheets="@Style.css">
+                  <children>
+                    <ImageView fitHeight="35.0" fitWidth="33.0" layoutX="-3.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@../../../img/kisspng-two-dots-computer-icons-symbol-circle-dots-5b23ab175bfd93.5242573215290642153768.png" />
+                      </image>
+                    </ImageView>
+                  </children>
+                </Pane>
+                <ImageView fx:id="catcute" fitHeight="42.0" fitWidth="42.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="@../../../img/Pasted-20240320-002513_preview_rev_1.png" />
+                  </image></ImageView>
+              </children>
+            </Pane>
+            <JFXButton fx:id="but_home" alignment="CENTER" layoutX="18.0" layoutY="103.0" prefHeight="42.0" prefWidth="179.0" styleClass="but_home" stylesheets="@Style.css" text="Home" textFill="#fbfbfb">
+              <font>
+                <Font name="Century Gothic Bold" size="13.0" />
+              </font>
+            </JFXButton>
+            <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="55.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../img/Remove-bg.ai_1710862034752.png" />
+              </image>
+            </ImageView>
+            <JFXButton fx:id="but_game" alignment="CENTER" layoutX="19.0" layoutY="162.0" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@Style.css" text="Game" textFill="#b5a6a6">
+              <font>
+                <Font name="Century Gothic Bold" size="13.0" />
+              </font>
+            </JFXButton>
+            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="48.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../img/console-controller-icon-2048x2048-pmmusn7m_preview_rev_2.png" />
+              </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="26.0" layoutY="448.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../img/Pasted-20240320-002513_preview_rev_1.png" />
+              </image>
+            </ImageView>
+            <JFXButton fx:id="but_diction" alignment="CENTER" layoutX="19.0" layoutY="221.0" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@Style.css" text="Dictionary" textFill="#b5a6a6">
+              <font>
+                <Font name="Century Gothic Bold" size="13.0" />
+              </font>
+            </JFXButton>
+            <ImageView fitHeight="33.0" fitWidth="42.0" layoutX="42.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../img/Pasted-20240320-004826_preview_rev_1.png" />
+              </image>
+            </ImageView>
+          </children>
+        </AnchorPane>
+      </children>
+    </VBox>
+    <Pane prefHeight="594.0" prefWidth="825.0">
+      <children>
+        <Pane layoutY="14.0" prefHeight="53.0" prefWidth="825.0">
+          <children>
+            <TextField fx:id="txt_search" layoutX="68.0" layoutY="14.0" prefHeight="24.0" prefWidth="303.0" promptText="Search :">
+              <font>
+                <Font name="Century Gothic" size="12.0" />
+              </font>
+            </TextField>
+            <JFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="659.0" layoutY="6.0" prefHeight="42.0" prefWidth="54.0" />
+            <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="675.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../img/settings.245x256.png" />
+              </image>
+            </ImageView>
+            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="727.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../img/Pasted-20240320-002513_preview_rev_1.png" />
+              </image>
+            </ImageView>
+            <JFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="717.0" layoutY="7.0" prefHeight="42.0" prefWidth="54.0" text="Button" />
+            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="35.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../../../img/—Pngtree—magnifying glass icon_5464846.png" />
+              </image>
+            </ImageView>
+          </children>
+        </Pane>
+        <AnchorPane fx:id="pane_java" layoutY="67.0" prefHeight="527.0" prefWidth="825.0" visible="false">
+          <children>
+            <Label layoutX="43.0" layoutY="47.0" text="Halooo Java">
+              <font>
+                <Font size="40.0" />
+              </font>
+            </Label>
+          </children>
+        </AnchorPane>
+        <AnchorPane fx:id="pane_gus" layoutY="67.0" prefHeight="527.0" prefWidth="825.0">
+          <children>
+            <Label layoutX="109.0" layoutY="54.0" text="Hello Gus!">
+              <font>
+                <Font size="46.0" />
+              </font>
+            </Label>
+          </children>
+        </AnchorPane>
+      </children>
+    </Pane>
+  </children>
+</HBox>

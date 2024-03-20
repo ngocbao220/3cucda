@@ -10,6 +10,7 @@ module org.example.project_app {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires com.jfoenix;
 
     opens org.example.project_app to javafx.fxml;
     exports org.example.project_app;
