@@ -11,6 +11,9 @@ module org.example.project_app {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
     requires com.jfoenix;
+/*
+    requires jfxrt;
+*/
 
     opens org.example.project_app to javafx.fxml;
     exports org.example.project_app;

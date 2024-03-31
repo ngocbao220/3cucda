@@ -26,17 +26,20 @@
     -fx-border-color: #748CF1;
 }
 .but_home {
-    -fx-background-color: #141313;
+    -fx-background-color: #333333;
     -fx-border-width: 2px 2px 2px 2px;
     -fx-border-radius: 50px;
     -fx-background-radius: 50px;
     -fx-border-style: solid;
-    -fx-border-color: #141313;
+    -fx-border-color: #333333;
 }
 .but_home1 {
-    -fx-border-width: 2px 2px 2px 2px;
+    -fx-background-color: #353A56;
+    -fx-border-width: 1px 1px 1px 1px;
     -fx-border-radius: 20px;
-    -fx-background-radis: 20px;
+    -fx-border-style: solid;
+    -fx-background-radius: 20px;
+    -fx-border-color: #353A46;
 }
 .intro_diction {
     -fx-background-color: #DCD0FF;
@@ -62,6 +65,66 @@
     -fx-border-style: solid;
     -fx-border-color: #FFDAB9;
 }
-
+.Welcome_board {
+    -fx-background-color: #FF8C00;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #FF8C00;
+}
+.move_game {
+    -fx-background-color: #667788;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #667788;
+}
+.but_move_game {
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #667788;
+}
+.move_diction {
+    -fx-background-color: #FFC0CB;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #FFC0CB;
+}
+.but_move_dic {
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #FFC0CB;
+}
+.search {
+    -fx-border-width: 1px 1px 1px 1px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #667788;
+}
+.but_trans {
+    -fx-background-color: #D8BFD8;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+    -fx-border-style: solid;
+    -fx-border-color: #D8BFD8;
+}
+.trans {
+    -fx-background-color: #ADD8E6;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+    -fx-border-style: solid;
+    -fx-border-color: #ADD8E6;
+}
 
 
