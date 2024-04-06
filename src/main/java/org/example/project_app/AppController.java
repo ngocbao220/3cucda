@@ -70,12 +70,17 @@ public class AppController {
     private Pane translate;
 
     @FXML
+    private JFXButton but_ENG_VIE;
+
+    @FXML
     private Label lb_tran1;
 
     @FXML
-    private Label lb_tran;
+    private Label lb_tran2;
 
-
+    @FXML
+    private JFXButton bonus;
+    int c = 2;
     @FXML
    public void switchfom(ActionEvent event) {
         if (event.getSource() == but_diction) {
@@ -98,6 +103,23 @@ public class AppController {
             dictionary.setVisible(false);
             game.setVisible(false);
             translate.setVisible(true);
+        }
+    }
+
+    public void Eng_Vie (ActionEvent event) {
+        if (event.getSource() == but_ENG_VIE && (c == 2)) {
+            lb_tran1.setText("VIE");
+            lb_tran1.setStyle("-fx-text-align: center;");
+            lb_tran2.setText("ENG");
+            lb_tran2.setStyle("-fx-text-align: center;");
+
+            c = 1;
+        } else {
+            lb_tran1.setText("ENG");
+            lb_tran1.setStyle("-fx-text-align: center;");
+            lb_tran2.setText("VIE");
+            lb_tran2.setStyle("-fx-text-align: center;");
+            c = 2;
         }
     }
 
