@@ -11,10 +11,13 @@ module org.example.project_app {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
     requires com.jfoenix;
+    requires com.google.gson;
 /*
     requires jfxrt;
 */
 
-    opens org.example.project_app to javafx.fxml;
-    exports org.example.project_app;
+    opens Models to javafx.fxml;
+    exports Models;
+    exports Controller;
+    opens Controller to javafx.fxml;
 }

@@ -1,7 +1,6 @@
-package org.example.project_app;
+package Controller;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXRadioButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -10,7 +9,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 
-public class AppController {
+public class MenuController {
 
     @FXML
     private JFXButton but_diction;
@@ -105,22 +104,4 @@ public class AppController {
             translate.setVisible(true);
         }
     }
-
-    public void Eng_Vie (ActionEvent event) {
-        if (event.getSource() == but_ENG_VIE && (c == 2)) {
-            lb_tran1.setText("VIE");
-            lb_tran1.setStyle("-fx-text-align: center;");
-            lb_tran2.setText("ENG");
-            lb_tran2.setStyle("-fx-text-align: center;");
-
-            c = 1;
-        } else {
-            lb_tran1.setText("ENG");
-            lb_tran1.setStyle("-fx-text-align: center;");
-            lb_tran2.setText("VIE");
-            lb_tran2.setStyle("-fx-text-align: center;");
-            c = 2;
-        }
-    }
-
 }
