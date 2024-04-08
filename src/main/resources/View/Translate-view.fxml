@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
+
+<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="612.0" prefWidth="1041.0" styleClass="root" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TranslateTextController">
+    <children>
+        <VBox prefHeight="594.0" prefWidth="213.0">
+            <children>
+                <AnchorPane fx:id="side_anPane" prefHeight="617.0" prefWidth="204.0" styleClass="side_anPane" stylesheets="@Style.css">
+                    <children>
+                        <Pane fx:id="inner_pane" layoutX="14.0" layoutY="24.0" prefHeight="53.0" prefWidth="186.0" styleClass="inner_pane" stylesheets="@Style.css">
+                            <children>
+                                <Pane fx:id="menu_inner_pane" layoutX="145.0" prefHeight="53.0" prefWidth="27.0" styleClass="menu_inner_pane" stylesheets="@Style.css" />
+                                <ImageView fx:id="catcute" fitHeight="42.0" fitWidth="42.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../img/Pasted-20240325-234901_preview_rev_1.png" />
+                                    </image></ImageView>
+                            </children>
+                        </Pane>
+                        <JFXButton fx:id="but_home" alignment="CENTER" layoutX="12.0" layoutY="98.0" prefHeight="42.0" prefWidth="179.0" styleClass="but_home" stylesheets="@Style.css" text="Home" textFill="#fbfbfb">
+                            <font>
+                                <Font name="Century Gothic Bold" size="13.0" />
+                            </font>
+                        </JFXButton>
+                        <ImageView fitHeight="28.0" fitWidth="27.0" layoutX="35.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/Pasted-20240330-221821_preview_rev_1.png" />
+                            </image>
+                        </ImageView>
+                        <JFXButton fx:id="but_game" alignment="CENTER" layoutX="12.0" layoutY="170.0" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@Style.css" text="Game" textFill="#b5a6a6">
+                            <font>
+                                <Font name="Century Gothic Bold" size="13.0" />
+                            </font>
+                        </JFXButton>
+                        <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="33.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/console-controller-icon-2048x2048-pmmusn7m_preview_rev_2.png" />
+                            </image>
+                        </ImageView>
+                        <JFXButton fx:id="but_diction" alignment="CENTER" layoutX="12.0" layoutY="244.0" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@Style.css" text="Dictionary" textFill="#b5a6a6">
+                            <font>
+                                <Font name="Century Gothic Bold" size="13.0" />
+                            </font>
+                        </JFXButton>
+                        <ImageView fitHeight="33.0" fitWidth="42.0" layoutX="36.0" layoutY="249.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/Pasted-20240320-004826_preview_rev_1.png" />
+                            </image>
+                        </ImageView>
+                        <JFXButton fx:id="but_trans" alignment="CENTER" layoutX="12.0" layoutY="321.0" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@Style.css" text="Translate" textFill="#b5a6a6">
+                            <font>
+                                <Font name="Century Gothic Bold" size="13.0" />
+                            </font>
+                        </JFXButton>
+                        <ImageView fitHeight="39.0" fitWidth="42.0" layoutX="29.0" layoutY="323.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/Pasted-20240330-202411_preview_rev_1.png" />
+                            </image>
+                        </ImageView>
+                        <JFXButton fx:id="but_trans1" alignment="CENTER" layoutX="12.0" layoutY="393.0" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@Style.css" text="Settings" textFill="#b5a6a6">
+                            <font>
+                                <Font name="Century Gothic Bold" size="13.0" />
+                            </font>
+                        </JFXButton>
+                        <ImageView fitHeight="62.0" fitWidth="42.0" layoutX="28.0" layoutY="393.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/settings.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </AnchorPane>
+            </children>
+        </VBox>
+        <Pane prefHeight="594.0" prefWidth="863.0">
+            <children>
+                <Pane layoutX="8.0" layoutY="14.0" prefHeight="53.0" prefWidth="813.0" styleClass="search" stylesheets="@Style.css">
+                    <children>
+                        <ImageView fitHeight="42.0" fitWidth="53.0" layoutX="662.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/Pasted-20240326-001344_preview_rev_1.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="39.0" fitWidth="42.0" layoutX="718.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/Pasted-20240320-002513_preview_rev_1.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="62.0" fitWidth="62.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/Pasted-20240328-165855_preview_rev_1.png" />
+                            </image>
+                        </ImageView>
+                        <Label layoutX="62.0" layoutY="15.0" prefHeight="24.0" prefWidth="90.0" text="EngliNova">
+                            <font>
+                                <Font name="Century Gothic Bold Italic" size="14.0" />
+                            </font>
+                        </Label>
+                        <TextField layoutX="269.0" layoutY="13.0" prefHeight="25.0" prefWidth="332.0" styleClass="search" stylesheets="@Style.css" />
+                        <ImageView fitHeight="28.0" fitWidth="33.0" layoutX="241.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/Pngtreemagnifying glass icon_5464846.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </Pane>
+                <Pane fx:id="translate" layoutX="-5.0" layoutY="60.0" prefHeight="550.0" prefWidth="834.0">
+                    <children>
+                        <Pane layoutX="38.0" layoutY="26.0" prefHeight="475.0" prefWidth="317.0" styleClass="trans" stylesheets="@Style.css">
+                            <children>
+                                <WebView layoutX="20.0" layoutY="92.0" prefHeight="348.0" prefWidth="277.0" />
+                                <ImageView fitHeight="129.0" fitWidth="115.0" layoutX="101.0" layoutY="-17.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../img/Pasted-20240401-203355_preview_rev_1.png" />
+                                    </image>
+                                </ImageView>
+                                <Label fx:id="lb_tran1" alignment="CENTER" contentDisplay="CENTER" layoutX="124.0" layoutY="14.0" prefHeight="53.0" prefWidth="70.0" text="ENG" textFill="#d428cf">
+                                    <font>
+                                        <Font name="Century Gothic Bold Italic" size="25.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </Pane>
+                        <Pane layoutX="459.0" layoutY="26.0" prefHeight="475.0" prefWidth="317.0" styleClass="trans" stylesheets="@Style.css">
+                            <children>
+                                <WebView layoutX="20.0" layoutY="92.0" prefHeight="348.0" prefWidth="277.0" />
+                                <ImageView fitHeight="129.0" fitWidth="115.0" layoutX="101.0" layoutY="-16.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../img/Pasted-20240401-203355_preview_rev_1.png" />
+                                    </image>
+                                </ImageView>
+                                <Label fx:id="lb_tran2" alignment="CENTER" contentDisplay="CENTER" layoutX="128.0" layoutY="15.0" prefHeight="53.0" prefWidth="62.0" text="VIE" textFill="#d428cf">
+                                    <font>
+                                        <Font name="Century Gothic Bold Italic" size="25.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </Pane>
+                        <ImageView fitHeight="94.0" fitWidth="90.0" layoutX="363.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/Pasted-20240330-224051_preview_rev_1.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="33.0" fitWidth="80.0" layoutX="368.0" layoutY="295.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/Pasted-20240330-224709_preview_rev_1.png" />
+                            </image>
+                        </ImageView>
+                        <Pane layoutX="373.0" layoutY="51.0" prefHeight="53.0" prefWidth="70.0" styleClass="Welcome_board" stylesheets="@Style.css">
+                            <children>
+                                <ImageView fitHeight="50.0" fitWidth="80.0" layoutX="2.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../img/Pasted-20240330-224455_preview_rev_1.png" />
+                                    </image></ImageView>
+                            </children>
+                        </Pane>
+                    </children></Pane>
+            </children>
+        </Pane>
+    </children>
+</HBox>
