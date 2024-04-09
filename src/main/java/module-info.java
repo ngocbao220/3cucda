@@ -1,4 +1,4 @@
-module org.example.project_app {
+module project_app {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.web;
@@ -12,12 +12,9 @@ module org.example.project_app {
     requires com.almasb.fxgl.all;
     requires com.jfoenix;
     requires com.google.gson;
-/*
-    requires jfxrt;
-*/
 
-    opens Models to javafx.fxml;
-    exports Models;
-    exports Controller;
-    opens Controller to javafx.fxml;
+    exports OurPackage;
+    exports OurPackage.Controller;
+    opens OurPackage to javafx.fxml;
+    opens OurPackage.Controller to javafx.fxml;
 }
