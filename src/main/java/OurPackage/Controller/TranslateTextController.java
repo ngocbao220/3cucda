@@ -49,9 +49,11 @@ public class TranslateTextController implements Initializable {
     @FXML
     void swapLang(ActionEvent event) {
         if (count %2 != 0 ) {
+            TextIn.setText(TextOut.getText());
             Language = "vi";
             count++;
         } else {
+            TextIn.setText(TextOut.getText());
             Language = "en";
             count++;
         }
