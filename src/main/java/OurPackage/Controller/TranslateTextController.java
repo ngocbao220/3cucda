@@ -105,10 +105,12 @@ public class TranslateTextController implements Initializable {
         if (count %2 != 0 ) {
             TextIn.setText(TextOut.getText());
             Language = "vi";
+            timer.play();
             count++;
         } else {
             TextIn.setText(TextOut.getText());
             Language = "en";
+            timer.play();
             count++;
         }
     }

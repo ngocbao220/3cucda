@@ -9,7 +9,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 
-public class GameController {
+public class Game1Controller {
 
     @FXML
     private JFXButton but_diction;
