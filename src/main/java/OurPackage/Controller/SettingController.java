@@ -45,6 +45,9 @@ public class SettingController {
     private HBox root;
 
     @FXML
+    private JFXButton but_set;
+
+    @FXML
     private AnchorPane side_anPane;
 
     @FXML

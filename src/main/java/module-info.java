@@ -12,6 +12,7 @@ module project_app {
     requires com.almasb.fxgl.all;
     requires com.jfoenix;
     requires com.google.gson;
+    requires javafx.media;
 
     exports OurPackage;
     exports OurPackage.Controller;

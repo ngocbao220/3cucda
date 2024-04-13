@@ -15,6 +15,9 @@ public class DictionaryController {
     private JFXButton but_diction;
 
     @FXML
+    private JFXButton but_set;
+
+    @FXML
     private JFXButton but_game;
 
     @FXML

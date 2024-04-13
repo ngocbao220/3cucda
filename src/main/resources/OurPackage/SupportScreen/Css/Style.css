@@ -2,6 +2,21 @@
     -fx-background-color: #EAEEF4;
 }
 
+.styleLableLang {
+    -fx-background-color: #00AFB9;
+    -fx-border-color: #353A46;
+    -fx-border-style: solid;
+}
+
+.styleLableTran {
+    -fx-background-color: #E1B79F;
+    -fx-border-color: #353A46;
+    -fx-border-style: solid;
+}
+
+.stylePaneTran {
+    -fx-background-color: #A0736E;
+}
 .side_anPane {
     -fx-background-color: #353A56;
     -fx-border-width: 2px 2px 2px 2px;

@@ -1,23 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.media.MediaView?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="Back" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OurPackage.Controller.TranslateTextController">
+<Pane fx:id="Back" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OurPackage.Controller.SettingController">
     <children>
         <HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="612.0" prefWidth="1041.0" styleClass="root" stylesheets="@../SupportScreen/Css/Style.css">
             <children>
@@ -127,51 +121,6 @@
                                 </ImageView>
                             </children>
                         </Pane>
-
-
-                <Pane fx:id="MainPane" layoutX="1.0" layoutY="77.0" prefHeight="522.0" prefWidth="837.0" stylesheets="@../SupportScreen/Css/Style.css">
-               <children>
-                  <MediaView fx:id="mediaview" fitHeight="531.0" fitWidth="837.0" layoutY="-14.0" />
-                  <TextArea fx:id="TextIn" layoutX="26.0" layoutY="104.0" onKeyPressed="#translate" prefHeight="380.0" prefWidth="326.0" promptText="Nhập văn bản ..." wrapText="true">
-                     <font>
-                        <Font size="18.0" />
-                     </font></TextArea>
-                  <TextArea fx:id="TextOut" layoutX="439.0" layoutY="104.0" prefHeight="380.0" prefWidth="326.0" promptText="Bản dịch ..." wrapText="true">
-                     <font>
-                        <Font size="18.0" />
-                     </font></TextArea>
-                  <Button fx:id="swapLang" layoutX="365.0" layoutY="258.0" mnemonicParsing="false" onAction="#swapLang" onMouseEntered="#MouseEn" onMouseExited="#MouseEx" prefHeight="42.0" prefWidth="58.0" />
-                  <Button layoutX="352.0" layoutY="104.0" mnemonicParsing="false" prefHeight="13.0" prefWidth="25.0" text="p" />
-                  <Button layoutX="765.0" layoutY="104.0" mnemonicParsing="false" prefHeight="13.0" prefWidth="25.0" text="p" />
-                  <StackPane fx:id="Sl" layoutX="89.0" layoutY="25.0" prefHeight="64.0" prefWidth="200.0" styleClass="styleLableLang" stylesheets="@../SupportScreen/Css/Style.css">
-                     <children>
-                        <Label fx:id="LangIn" alignment="CENTER" prefHeight="48.0" prefWidth="123.0" stylesheets="@../SupportScreen/Css/Style.css" text="Tiếng Anh">
-                           <font>
-                              <Font size="17.0" />
-                           </font>
-                           <StackPane.margin>
-                              <Insets />
-                           </StackPane.margin>
-                        </Label>
-                     </children>
-                  </StackPane>
-                  <StackPane fx:id="Sr" layoutX="502.0" layoutY="25.0" prefHeight="64.0" prefWidth="200.0" styleClass="styleLableLang" stylesheets="@../SupportScreen/Css/Style.css">
-                     <children>
-                        <Label fx:id="LangOut" alignment="CENTER" prefHeight="42.0" prefWidth="102.0" text="Tiếng Việt">
-                           <font>
-                              <Font size="17.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </StackPane>
-                  <CheckBox fx:id="TurnOnMedia" layoutX="730.0" layoutY="500.0" mnemonicParsing="false" onAction="#TurnOnMedia" selected="true" text="TurnOnMedia" />
-                        <ImageView fitHeight="48.0" fitWidth="58.0" layoutX="365.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../SupportScreen/img/Pasted-20240330-224455_preview_rev_1.png" />
-                           </image>
-                        </ImageView>
-               </children>
-                </Pane>
                     </children>
                 </Pane>
             </children>

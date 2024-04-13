@@ -39,6 +39,9 @@ public class HomeController {
     private AnchorPane intro_diction;
 
     @FXML
+    private JFXButton but_set;
+
+    @FXML
     private Pane menu_inner_pane;
 
     @FXML

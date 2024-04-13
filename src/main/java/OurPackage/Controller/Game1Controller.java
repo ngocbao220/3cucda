@@ -72,6 +72,9 @@ public class Game1Controller {
     private JFXButton but_ENG_VIE;
 
     @FXML
+    private JFXButton but_set;
+
+    @FXML
     private Label lb_tran1;
 
     @FXML

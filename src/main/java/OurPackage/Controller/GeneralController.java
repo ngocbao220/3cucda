@@ -3,14 +3,21 @@ package OurPackage.Controller;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 
-public class MenuController {
+import java.net.URL;
+import java.util.ResourceBundle;
 
+public class GeneralController implements Initializable {
+
+    public Pane BackEnd;
+
+    private final String Screen_Path = "src/main/resources/OurPackage/Screen/";
     @FXML
     private JFXButton but_diction;
 
@@ -63,6 +70,9 @@ public class MenuController {
     private JFXButton but_trans;
 
     @FXML
+    private JFXButton but_set;
+
+    @FXML
     private Pane game;
 
     @FXML
@@ -79,29 +89,13 @@ public class MenuController {
 
     @FXML
     private JFXButton bonus;
-    int c = 2;
-    @FXML
-   public void switchfom(ActionEvent event) {
-        if (event.getSource() == but_diction) {
-            home.setVisible(false);
-            dictionary.setVisible(true);
-            game.setVisible(false);
-            translate.setVisible(false);
-        } else if (event.getSource() == but_home) {
-            home.setVisible(true);
-            dictionary.setVisible(false);
-            game.setVisible(false);
-            translate.setVisible(false);
-        } else if (event.getSource() == but_game) {
-            home.setVisible(false);
-            dictionary.setVisible(false);
-            game.setVisible(true);
-            translate.setVisible(false);
-        } else if (event.getSource() == but_trans) {
-            home.setVisible(false);
-            dictionary.setVisible(false);
-            game.setVisible(false);
-            translate.setVisible(true);
-        }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        but_home.setOnAction(e ->FXMLLoaderUtil.loadFXMLToPane(Screen_Path + "Home-view", BackEnd));
+        but_trans.setOnAction(e ->FXMLLoaderUtil.loadFXMLToPane(Screen_Path + "Translate-view", BackEnd));
+        but_diction.setOnAction(e ->FXMLLoaderUtil.loadFXMLToPane(Screen_Path + "Dictionary-view", BackEnd));
+        but_game.setOnAction(e ->FXMLLoaderUtil.loadFXMLToPane(Screen_Path + "Game-view", BackEnd));
+        but_home.setOnAction(e ->FXMLLoaderUtil.loadFXMLToPane(Screen_Path + "Home-view", BackEnd));
     }
 }
