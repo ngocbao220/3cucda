@@ -98,6 +98,8 @@ public class GeneralController {
     private Scene scene;
     private Parent parent;
 
+
+
     public void switchtoHome(ActionEvent event) throws IOException {
         parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/OurPackage/Screen/Home-view.fxml")));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
