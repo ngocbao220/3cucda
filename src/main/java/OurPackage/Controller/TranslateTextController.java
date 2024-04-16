@@ -121,16 +121,10 @@ public class TranslateTextController extends GeneralController implements Initia
     @FXML
     private Pane translate;
 
-    private final String Media_Path = "src/main/resources/OurPackage/SupportScreen/media/trăng.mp4";
-
-    Media media = new Media(new File(Media_Path).toURI().toString());
-
-    MediaPlayer mediaPlayer = new MediaPlayer(media);
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        timer = new Timeline(new KeyFrame(Duration.millis(10),
+        timer = new Timeline(new KeyFrame(Duration.millis(100),
                 event -> {
                     String inputText = TextIn.getText();
                     if (inputText.isBlank()) {
@@ -140,15 +134,6 @@ public class TranslateTextController extends GeneralController implements Initia
                     TextOut.setText(TranslateText.translate(inputText, Language));
                 }));
         timer.setCycleCount(1);
-
-       /* mediaview.fitWidthProperty().bind(MainPane.widthProperty());
-        mediaview.fitHeightProperty().bind(MainPane.heightProperty());
-
-        mediaview.setMediaPlayer(mediaPlayer);
-
-        mediaPlayer.setOnEndOfMedia(() -> mediaPlayer.seek(javafx.util.Duration.ZERO));
-
-        mediaview.getMediaPlayer().play();*/
     }
 
     // Phương thức để hoán đổi vị trí giữa hai StackPane
@@ -190,14 +175,14 @@ public class TranslateTextController extends GeneralController implements Initia
 
     @FXML
     void MouseEn(MouseEvent event) {
-        /*swapLang.setScaleX(1.1);
-        swapLang.setScaleY(1.1);*/
+        swapLang.setScaleX(1.1);
+        swapLang.setScaleY(1.1);
     }
 
     @FXML
     void MouseEx(MouseEvent event) {
-        /*swapLang.setScaleX(1.0);
-        swapLang.setScaleY(1.0);*/
+        swapLang.setScaleX(1.0);
+        swapLang.setScaleY(1.0);
     }
     // tu dong dich khi nhap van ban
     @FXML
@@ -225,20 +210,4 @@ public class TranslateTextController extends GeneralController implements Initia
         super.switchtoSet(event);
     }
 
-
-    /*void openMedia(boolean a) {
-        if(a) {
-            mediaview.setVisible(true);
-            mediaview.getMediaPlayer().play();
-        }
-        else mediaview.setVisible(false);
-    }
-
-    @FXML
-    void TurnOnMedia(ActionEvent event) {
-        if (TurnOnMedia.isSelected()) {
-            openMedia(true);
-        }
-        else openMedia(false);
-    }*/
 }
