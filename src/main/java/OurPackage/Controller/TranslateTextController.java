@@ -25,11 +25,12 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.Stack;
 
-public class TranslateTextController implements Initializable {
+public class TranslateTextController extends GeneralController implements Initializable {
     private String Language = "vi";
 
     private int count = 0;
@@ -128,6 +129,7 @@ public class TranslateTextController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         timer = new Timeline(new KeyFrame(Duration.millis(10),
                 event -> {
                     String inputText = TextIn.getText();
@@ -139,20 +141,20 @@ public class TranslateTextController implements Initializable {
                 }));
         timer.setCycleCount(1);
 
-        mediaview.fitWidthProperty().bind(MainPane.widthProperty());
+       /* mediaview.fitWidthProperty().bind(MainPane.widthProperty());
         mediaview.fitHeightProperty().bind(MainPane.heightProperty());
 
         mediaview.setMediaPlayer(mediaPlayer);
 
         mediaPlayer.setOnEndOfMedia(() -> mediaPlayer.seek(javafx.util.Duration.ZERO));
 
-        mediaview.getMediaPlayer().play();
+        mediaview.getMediaPlayer().play();*/
     }
 
     // Phương thức để hoán đổi vị trí giữa hai StackPane
     private void swapStackPanes(StackPane stackPane1, StackPane stackPane2) {
-        double a = 413.0;
-        double b = -413.0;
+        double a = 525.0 - 81.0;
+        double b = -a;
 
         TranslateTransition transition1 = createTransition(stackPane1, a, 0);
         TranslateTransition transition2 = createTransition(stackPane2, b, 0);
@@ -168,7 +170,7 @@ public class TranslateTextController implements Initializable {
         transition.setByY(deltaY);
         return transition;
     }
-
+    // Sự kiện ấn nút đổi
     @FXML
     void swapLang(ActionEvent event) {
         if (count %2 != 0 ) {
@@ -188,22 +190,43 @@ public class TranslateTextController implements Initializable {
 
     @FXML
     void MouseEn(MouseEvent event) {
-        swapLang.setScaleX(1.1);
-        swapLang.setScaleY(1.1);
+        /*swapLang.setScaleX(1.1);
+        swapLang.setScaleY(1.1);*/
     }
 
     @FXML
     void MouseEx(MouseEvent event) {
-        swapLang.setScaleX(1.0);
-        swapLang.setScaleY(1.0);
+        /*swapLang.setScaleX(1.0);
+        swapLang.setScaleY(1.0);*/
     }
-
+    // tu dong dich khi nhap van ban
     @FXML
     void translate(KeyEvent event) {
         timer.play();
     }
 
-    void openMedia(boolean a) {
+    public void switchtoHome(ActionEvent event) throws IOException {
+        super.switchtoHome(event);
+    }
+
+    public void switchtoGame(ActionEvent event) throws IOException {
+        super.switchtoGame(event);
+    }
+
+    public void switchtoDic(ActionEvent event) throws IOException {
+        super.switchtoDic(event);
+    }
+
+    public void switchtoTran(ActionEvent event) throws IOException {
+        super.switchtoTran(event);
+    }
+
+    public void switchtoSet(ActionEvent event) throws IOException {
+        super.switchtoSet(event);
+    }
+
+
+    /*void openMedia(boolean a) {
         if(a) {
             mediaview.setVisible(true);
             mediaview.getMediaPlayer().play();
@@ -217,31 +240,5 @@ public class TranslateTextController implements Initializable {
             openMedia(true);
         }
         else openMedia(false);
-    }
-
-    @FXML
-    public void switchfom(ActionEvent event) {
-        if (event.getSource() == but_diction) {
-            home.setVisible(false);
-            dictionary.setVisible(true);
-            game.setVisible(false);
-            translate.setVisible(false);
-        } else if (event.getSource() == but_home) {
-            home.setVisible(true);
-            dictionary.setVisible(false);
-            game.setVisible(false);
-            translate.setVisible(false);
-        } else if (event.getSource() == but_game) {
-            home.setVisible(false);
-            dictionary.setVisible(false);
-            game.setVisible(true);
-            translate.setVisible(false);
-        } else if (event.getSource() == but_trans) {
-            home.setVisible(false);
-            dictionary.setVisible(false);
-            game.setVisible(false);
-            translate.setVisible(true);
-        }
-    }
-
+    }*/
 }

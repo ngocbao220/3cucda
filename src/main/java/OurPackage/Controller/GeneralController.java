@@ -3,21 +3,25 @@ package OurPackage.Controller;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class GeneralController implements Initializable {
+public class GeneralController {
 
-    public Pane BackEnd;
-
-    private final String Screen_Path = "src/main/resources/OurPackage/Screen/";
     @FXML
     private JFXButton but_diction;
 
@@ -90,12 +94,48 @@ public class GeneralController implements Initializable {
     @FXML
     private JFXButton bonus;
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        but_home.setOnAction(e ->FXMLLoaderUtil.loadFXMLToPane(Screen_Path + "Home-view", BackEnd));
-        but_trans.setOnAction(e ->FXMLLoaderUtil.loadFXMLToPane(Screen_Path + "Translate-view", BackEnd));
-        but_diction.setOnAction(e ->FXMLLoaderUtil.loadFXMLToPane(Screen_Path + "Dictionary-view", BackEnd));
-        but_game.setOnAction(e ->FXMLLoaderUtil.loadFXMLToPane(Screen_Path + "Game-view", BackEnd));
-        but_home.setOnAction(e ->FXMLLoaderUtil.loadFXMLToPane(Screen_Path + "Home-view", BackEnd));
+    private Stage stage;
+    private Scene scene;
+    private Parent parent;
+
+    public void switchtoHome(ActionEvent event) throws IOException {
+        parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/OurPackage/Screen/Home-view.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.show();
     }
+
+    public void switchtoGame(ActionEvent event) throws IOException {
+        parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/OurPackage/Screen/Game-view.fxml")));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchtoDic(ActionEvent event) throws IOException {
+        parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/OurPackage/Screen/Dictionary-view.fxml")));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchtoTran(ActionEvent event) throws IOException {
+        parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/OurPackage/Screen/Translate-view.fxml")));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchtoSet(ActionEvent event) throws IOException {
+        parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/OurPackage/Screen/Setting-view.fxml")));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.show();
+    }
+
 }
