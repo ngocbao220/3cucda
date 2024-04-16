@@ -121,6 +121,27 @@
                                 </ImageView>
                             </children>
                         </Pane>
+                  <ImageView fitHeight="529.0" fitWidth="837.0" layoutX="19.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../SupportScreen/img/Dictionaryyyy.png" />
+                     </image>
+                  </ImageView>
+                  <TextField layoutX="118.0" layoutY="222.0" prefHeight="25.0" prefWidth="263.0" styleClass="search" stylesheets="@../SupportScreen/Css/Style.css" />
+                  <ImageView fitHeight="150.0" fitWidth="39.0" layoutX="75.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../SupportScreen/img/Pasted-20240320-222118_preview_rev_1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="106.0" fitWidth="100.0" layoutX="367.0" layoutY="514.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../SupportScreen/img/Pasted-20240414-232925_preview_rev_1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="112.0" fitWidth="107.0" layoutX="22.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../SupportScreen/img/Pasted-20240414-233914_preview_rev_1.png" />
+                     </image>
+                  </ImageView>
                     </children>
                 </Pane>
             </children>

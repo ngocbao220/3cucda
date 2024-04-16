@@ -1,6 +1,7 @@
 package OurPackage.Controller;
 
 import com.jfoenix.controls.JFXButton;
+import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -8,6 +9,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.util.Duration;
 
 public class HomeController {
 
@@ -106,5 +108,21 @@ public class HomeController {
             game.setVisible(false);
             translate.setVisible(true);
         }
+    }
+
+    @FXML
+    public void onMouseEntered() {
+        TranslateTransition trans = new TranslateTransition();
+        trans.setNode(move_game);
+        trans.setToY(-7);
+        trans.setDuration(Duration.seconds(.2));
+        trans.play();
+    }
+    public void onMouseExt() {
+        TranslateTransition trans = new TranslateTransition();
+        trans.setNode(move_game);
+        trans.setToY(0);
+        trans.setDuration(Duration.seconds(.2));
+        trans.play();
     }
 }
