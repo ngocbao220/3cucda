@@ -1,7 +1,6 @@
 package OurPackage.Controller;
 
 import com.jfoenix.controls.JFXButton;
-import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -9,9 +8,12 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
-import javafx.util.Duration;
 
-public class HomeController {
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class HomeController extends GeneralController {
 
     @FXML
     private JFXButton but_diction;
@@ -84,45 +86,25 @@ public class HomeController {
 
     @FXML
     private JFXButton bonus;
-    int c = 2;
-    @FXML
-    public void switchfom(ActionEvent event) {
-        if (event.getSource() == but_diction) {
-            home.setVisible(false);
-            dictionary.setVisible(true);
-            game.setVisible(false);
-            translate.setVisible(false);
-        } else if (event.getSource() == but_home) {
-            home.setVisible(true);
-            dictionary.setVisible(false);
-            game.setVisible(false);
-            translate.setVisible(false);
-        } else if (event.getSource() == but_game) {
-            home.setVisible(false);
-            dictionary.setVisible(false);
-            game.setVisible(true);
-            translate.setVisible(false);
-        } else if (event.getSource() == but_trans) {
-            home.setVisible(false);
-            dictionary.setVisible(false);
-            game.setVisible(false);
-            translate.setVisible(true);
-        }
+
+    public void switchtoHome(ActionEvent event) throws IOException {
+        super.switchtoHome(event);
     }
 
-    @FXML
-    public void onMouseEntered() {
-        TranslateTransition trans = new TranslateTransition();
-        trans.setNode(move_game);
-        trans.setToY(-7);
-        trans.setDuration(Duration.seconds(.2));
-        trans.play();
+    public void switchtoGame(ActionEvent event) throws IOException {
+        super.switchtoGame(event);
     }
-    public void onMouseExt() {
-        TranslateTransition trans = new TranslateTransition();
-        trans.setNode(move_game);
-        trans.setToY(0);
-        trans.setDuration(Duration.seconds(.2));
-        trans.play();
+
+    public void switchtoDic(ActionEvent event) throws IOException {
+        super.switchtoDic(event);
     }
+
+    public void switchtoTran(ActionEvent event) throws IOException {
+        super.switchtoTran(event);
+    }
+
+    public void switchtoSet(ActionEvent event) throws IOException {
+        super.switchtoSet(event);
+    }
+
 }

@@ -9,7 +9,11 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 
-public class Game1Controller {
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class Game1Controller extends GeneralController {
 
     @FXML
     private JFXButton but_diction;
@@ -82,28 +86,24 @@ public class Game1Controller {
 
     @FXML
     private JFXButton bonus;
-    @FXML
-    public void switchfom(ActionEvent event) {
-        if (event.getSource() == but_diction) {
-            home.setVisible(false);
-            dictionary.setVisible(true);
-            game.setVisible(false);
-            translate.setVisible(false);
-        } else if (event.getSource() == but_home) {
-            home.setVisible(true);
-            dictionary.setVisible(false);
-            game.setVisible(false);
-            translate.setVisible(false);
-        } else if (event.getSource() == but_game) {
-            home.setVisible(false);
-            dictionary.setVisible(false);
-            game.setVisible(true);
-            translate.setVisible(false);
-        } else if (event.getSource() == but_trans) {
-            home.setVisible(false);
-            dictionary.setVisible(false);
-            game.setVisible(false);
-            translate.setVisible(true);
-        }
+    public void switchtoHome(ActionEvent event) throws IOException {
+        super.switchtoHome(event);
     }
+
+    public void switchtoGame(ActionEvent event) throws IOException {
+        super.switchtoGame(event);
+    }
+
+    public void switchtoDic(ActionEvent event) throws IOException {
+        super.switchtoDic(event);
+    }
+
+    public void switchtoTran(ActionEvent event) throws IOException {
+        super.switchtoTran(event);
+    }
+
+    public void switchtoSet(ActionEvent event) throws IOException {
+        super.switchtoSet(event);
+    }
+
 }
