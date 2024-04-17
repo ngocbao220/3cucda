@@ -115,7 +115,7 @@ public class GeneralController implements Initializable{
 
     public void LoadScene(String s) {
         FadeTransition fadeTransition = new FadeTransition();
-        fadeTransition.setDuration(Duration.millis(400));
+        fadeTransition.setDuration(Duration.millis(200));
         fadeTransition.setNode(DisplayContent);
         fadeTransition.setFromValue(1.0);
         fadeTransition.setToValue(0.0);
