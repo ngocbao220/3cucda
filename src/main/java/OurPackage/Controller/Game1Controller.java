@@ -9,6 +9,10 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 
+import javax.imageio.stream.FileCacheImageOutputStream;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -86,9 +90,6 @@ public class Game1Controller extends GeneralController {
 
     @FXML
     private JFXButton bonus;
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        super.initialize(url, resourceBundle);
-    }
+
 
 }

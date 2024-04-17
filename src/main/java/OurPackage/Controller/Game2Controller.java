@@ -12,7 +12,7 @@ import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class QuizController extends GeneralController implements Initializable {
+public class Game2Controller extends GeneralController implements Initializable {
 
     @FXML
     private Button Play;

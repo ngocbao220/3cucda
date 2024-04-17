@@ -101,6 +101,12 @@ public class GeneralController implements Initializable{
     @FXML
     private JFXButton bonus;
 
+    @FXML
+    private JFXButton but_to_game1;
+
+    @FXML
+    private JFXButton but_to_game2;
+
     private Stage stage;
     private Scene scene;
 
@@ -137,5 +143,7 @@ public class GeneralController implements Initializable{
         but_game.setOnAction(e -> LoadScene("Game-view.fxml"));
         but_diction.setOnAction(e -> LoadScene("Dictionary-view.fxml"));
         but_set.setOnAction(e -> LoadScene("Setting-view.fxml"));
+        but_to_game1.setOnAction(e -> LoadScene("Game1-view.fxml"));
+        but_to_game2.setOnAction(e -> LoadScene("Game2-view.fxml"));
     }
 }

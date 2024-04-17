@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<Pane fx:id="Back" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OurPackage.Controller.HomeController">
+<Pane fx:id="Back" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OurPackage.Controller.HomeController">
    <children>
       <HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="612.0" prefWidth="1041.0" styleClass="root" stylesheets="@../SupportScreen/Css/Style.css">
           <children>
@@ -117,7 +122,7 @@
                           </children>
                       </Pane>
 
-                        <AnchorPane fx:id="Home" layoutX="10.0" layoutY="67.0" prefHeight="483.0" prefWidth="644.0">
+                        <AnchorPane fx:id="Home" layoutX="1.0" layoutY="67.0" prefHeight="543.0" prefWidth="831.0">
                             <children>
                                 <ImageView fitHeight="252.0" fitWidth="452.0" layoutX="-6.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
