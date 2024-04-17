@@ -124,7 +124,7 @@
 
                         <AnchorPane fx:id="Home" layoutX="1.0" layoutY="67.0" prefHeight="543.0" prefWidth="831.0">
                             <children>
-                                <ImageView fitHeight="252.0" fitWidth="452.0" layoutX="-6.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                <ImageView fitHeight="252.0" fitWidth="452.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
                                         <Image url="@../SupportScreen/img/ELISH.png" />
                                     </image>

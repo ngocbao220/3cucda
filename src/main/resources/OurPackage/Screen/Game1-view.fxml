@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 
-
-<AnchorPane prefHeight="612.0" prefWidth="1041.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OurPackage.Controller.Game1Controller">
-
+<AnchorPane fx:id="PaneGame1" prefHeight="612.0" prefWidth="1041.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OurPackage.Controller.Game1Controller">
+   <children>
+      <Pane layoutX="918.0" layoutY="-90.0" prefHeight="129.0" prefWidth="123.0">
+         <children>
+            <JFXButton fx:id="but_set" layoutX="72.0" layoutY="92.0" text="Đóng" />
+            <JFXButton fx:id="but_trans" layoutX="72.0" layoutY="92.0" text="Đóng" />
+            <JFXButton fx:id="but_diction" layoutX="72.0" layoutY="92.0" text="Đóng" />
+            <JFXButton fx:id="but_game" layoutX="72.0" layoutY="92.0" text="Đóng" />
+            <JFXButton fx:id="but_home" layoutX="72.0" layoutY="92.0" text="Đóng" />
+         </children>
+      </Pane>
+   </children>
 </AnchorPane>
