@@ -3,23 +3,89 @@ package OurPackage.Controller;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 
-import java.io.IOException;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 
-public class DictionaryController extends GeneralController {
+public class DictionaryController extends GeneralController{
+
+    @FXML
+    private Pane Back;
+
+    @FXML
+    private Button CloseNonHis;
+
+    @FXML
+    private Label CloseHistoryWord;
+
+    @FXML
+    private Pane DisplayContent;
+
+    @FXML
+    private ListView<String> DisplayHistoryWord;
+
+    @FXML
+    private Label Example;
+
+    @FXML
+    private Button HistoryWord;
+
+    @FXML
+    private ListView<String> ListWord;
+
+    @FXML
+    private Label LoveWord;
+
+    @FXML
+    private Button MarkWord;
+
+    @FXML
+    private Label Mean;
+
+    @FXML
+    private AnchorPane Menu;
+
+    @FXML
+    private VBox Menutab;
+
+    @FXML
+    private Pane PaneHistory;
+
+    @FXML
+    private Label Pronounce;
+
+    @FXML
+    private Pane SayNothing;
+
+    @FXML
+    private Button SayWord;
+
+    @FXML
+    private TextField Search;
+
+    @FXML
+    private Pane SearchTab;
+
+    @FXML
+    private Label Type;
+
+    @FXML
+    private Label Word;
 
     @FXML
     private JFXButton but_diction;
-
-    @FXML
-    private JFXButton but_set;
 
     @FXML
     private JFXButton but_game;
@@ -28,22 +94,16 @@ public class DictionaryController extends GeneralController {
     private JFXButton but_home;
 
     @FXML
+    private JFXButton but_set;
+
+    @FXML
+    private JFXButton but_trans;
+
+    @FXML
     private ImageView catcute;
 
     @FXML
-    private AnchorPane diction_means;
-
-    @FXML
-    private AnchorPane dictionary;
-
-    @FXML
-    private AnchorPane home;
-
-    @FXML
     private Pane inner_pane;
-
-    @FXML
-    private AnchorPane intro_diction;
 
     @FXML
     private Pane menu_inner_pane;
@@ -51,60 +111,46 @@ public class DictionaryController extends GeneralController {
     @FXML
     private HBox root;
 
-    @FXML
-    private AnchorPane side_anPane;
+    public Map<String, String> HisWord = new HashMap<>();
 
-    @FXML
-    private JFXButton but_move_game;
-
-    @FXML
-    private JFXButton but_move_diction;
-
-    @FXML
-    private AnchorPane move_diction;
-
-    @FXML
-    private AnchorPane move_game;
-
-    @FXML
-    private JFXButton but_trans;
-
-    @FXML
-    private Pane game;
-
-    @FXML
-    private Pane translate;
-
-    @FXML
-    private JFXButton but_ENG_VIE;
-
-    @FXML
-    private Label lb_tran1;
-
-    @FXML
-    private Label lb_tran2;
-
-    @FXML
-    private JFXButton bonus;
-    public void switchtoHome(ActionEvent event) throws IOException {
-        super.switchtoHome(event);
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        super.initialize(url, resourceBundle);
     }
 
-    public void switchtoGame(ActionEvent event) throws IOException {
-        super.switchtoGame(event);
+    @FXML
+    void CLoseNonLoveWord(MouseEvent event) {
+        LoveWord.setVisible(false);
     }
 
-    public void switchtoDic(ActionEvent event) throws IOException {
-        super.switchtoDic(event);
+    @FXML
+    void Mark(ActionEvent event) {
+        HomeController homeController = new HomeController();
+        homeController.MarkedWord.put("hello","xin chào");
+        System.out.println("Dathem");
     }
 
-    public void switchtoTran(ActionEvent event) throws IOException {
-        super.switchtoTran(event);
+    @FXML
+    void Say(ActionEvent event) {
+        System.out.println("I'llSpeak");
     }
 
-    public void switchtoSet(ActionEvent event) throws IOException {
-        super.switchtoSet(event);
+    @FXML
+    void CloseNonHis(ActionEvent event) {
+        PaneHistory.setVisible(false);
     }
 
+    @FXML
+    void ShowNonLoveWord(MouseEvent event) {
+        LoveWord.setVisible(true);
+    }
 
+    @FXML
+    void Showhistroyword(ActionEvent event) {
+        PaneHistory.setVisible(true);
+        if (HisWord.isEmpty()) {
+            SayNothing.setVisible(true);
+        }
+
+    }
 }

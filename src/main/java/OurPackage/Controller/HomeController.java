@@ -11,6 +11,8 @@ import javafx.scene.layout.Pane;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 public class HomeController extends GeneralController {
@@ -87,24 +89,13 @@ public class HomeController extends GeneralController {
     @FXML
     private JFXButton bonus;
 
-    public void switchtoHome(ActionEvent event) throws IOException {
-        super.switchtoHome(event);
+    protected Map<String, String> MarkedWord = new HashMap<>();
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        super.initialize(url, resourceBundle);
     }
 
-    public void switchtoGame(ActionEvent event) throws IOException {
-        super.switchtoGame(event);
-    }
 
-    public void switchtoDic(ActionEvent event) throws IOException {
-        super.switchtoDic(event);
-    }
-
-    public void switchtoTran(ActionEvent event) throws IOException {
-        super.switchtoTran(event);
-    }
-
-    public void switchtoSet(ActionEvent event) throws IOException {
-        super.switchtoSet(event);
-    }
 
 }

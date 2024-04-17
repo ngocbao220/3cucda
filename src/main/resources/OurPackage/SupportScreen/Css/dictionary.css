@@ -1,0 +1,19 @@
+.styleLabel {
+    -fx-background-color : white ;
+}
+
+.buttonSay {
+    -fx-background-image: url('../img/iconLoa.jpg');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-radius : 40px;
+}
+
+.buttonMark {
+    -fx-background-image: url('../img/iconSao.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-radius : 20px;
+}

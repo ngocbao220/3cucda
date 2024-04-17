@@ -86,24 +86,9 @@ public class Game1Controller extends GeneralController {
 
     @FXML
     private JFXButton bonus;
-    public void switchtoHome(ActionEvent event) throws IOException {
-        super.switchtoHome(event);
-    }
-
-    public void switchtoGame(ActionEvent event) throws IOException {
-        super.switchtoGame(event);
-    }
-
-    public void switchtoDic(ActionEvent event) throws IOException {
-        super.switchtoDic(event);
-    }
-
-    public void switchtoTran(ActionEvent event) throws IOException {
-        super.switchtoTran(event);
-    }
-
-    public void switchtoSet(ActionEvent event) throws IOException {
-        super.switchtoSet(event);
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        super.initialize(url, resourceBundle);
     }
 
 }

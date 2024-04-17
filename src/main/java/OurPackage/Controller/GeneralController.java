@@ -1,6 +1,7 @@
 package OurPackage.Controller;
 
 import com.jfoenix.controls.JFXButton;
+import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,13 +15,19 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class GeneralController {
+public class GeneralController implements Initializable{
+
+    private final String Screen_Path = "/OurPackage/Screen/";
+
+    @FXML
+    private Pane DisplayContent;
 
     @FXML
     private JFXButton but_diction;
@@ -96,48 +103,39 @@ public class GeneralController {
 
     private Stage stage;
     private Scene scene;
-    private Parent parent;
 
-
-
-    public void switchtoHome(ActionEvent event) throws IOException {
-        parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/OurPackage/Screen/Home-view.fxml")));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    public void Load(String s, Pane container) throws IOException {
+        Pane parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(s)));
+        stage = (Stage) container.getScene().getWindow();
         scene = new Scene(parent);
         stage.setScene(scene);
         stage.show();
     }
 
-    public void switchtoGame(ActionEvent event) throws IOException {
-        parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/OurPackage/Screen/Game-view.fxml")));
-        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.show();
+
+    public void LoadScene(String s) {
+        FadeTransition fadeTransition = new FadeTransition();
+        fadeTransition.setDuration(Duration.millis(400));
+        fadeTransition.setNode(DisplayContent);
+        fadeTransition.setFromValue(1.0);
+        fadeTransition.setToValue(0.0);
+        fadeTransition.setOnFinished(e -> {
+            try {
+                Load(Screen_Path + s, DisplayContent);
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+        fadeTransition.play();
     }
 
-    public void switchtoDic(ActionEvent event) throws IOException {
-        parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/OurPackage/Screen/Dictionary-view.fxml")));
-        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.show();
-    }
 
-    public void switchtoTran(ActionEvent event) throws IOException {
-        parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/OurPackage/Screen/Translate-view.fxml")));
-        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.show();
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        but_home.setOnAction(e -> LoadScene("Home-view.fxml"));
+        but_trans.setOnAction(e -> LoadScene("Translate-view.fxml"));
+        but_game.setOnAction(e -> LoadScene("Game-view.fxml"));
+        but_diction.setOnAction(e -> LoadScene("Dictionary-view.fxml"));
+        but_set.setOnAction(e -> LoadScene("Setting-view.fxml"));
     }
-
-    public void switchtoSet(ActionEvent event) throws IOException {
-        parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/OurPackage/Screen/Setting-view.fxml")));
-        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.show();
-    }
-
 }

@@ -6,6 +6,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -35,7 +36,7 @@ public class TranslateTextController extends GeneralController implements Initia
 
     private int count = 0;
 
-    private Timeline timer;
+    private Timeline timer, timeline;
 
     @FXML
     private CheckBox TurnOnMedia;
@@ -107,6 +108,9 @@ public class TranslateTextController extends GeneralController implements Initia
     private JFXButton but_set;
 
     @FXML
+    private Pane PaneOverSwap;
+
+    @FXML
     private Pane menu_inner_pane;
 
     @FXML
@@ -121,10 +125,14 @@ public class TranslateTextController extends GeneralController implements Initia
     @FXML
     private Pane translate;
 
+    private int time = 100;
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        timer = new Timeline(new KeyFrame(Duration.millis(100),
+        super.initialize(url, resourceBundle);
+        timer = new Timeline(new KeyFrame(Duration.millis(time),
                 event -> {
                     String inputText = TextIn.getText();
                     if (inputText.isBlank()) {
@@ -134,11 +142,38 @@ public class TranslateTextController extends GeneralController implements Initia
                     TextOut.setText(TranslateText.translate(inputText, Language));
                 }));
         timer.setCycleCount(1);
+
+        timeline = new Timeline(new KeyFrame(Duration.millis(time + 500), new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                swapLang.setDisable(false); // Kích hoạt lại nút sau khi đợi 3 giây
+            }
+        }));
+        timeline.setCycleCount(1);
+        swapLang.setOnAction(e -> {
+            if (count %2 != 0 ) {
+                swapLang.setDisable(true);
+                swapStackPanes(Sr, Sl);
+                TextIn.setText(TextOut.getText());
+                Language = "vi";
+                timer.play();
+                count++;
+                timeline.play();
+            } else {
+                swapLang.setDisable(true);
+                swapStackPanes(Sl, Sr);
+                TextIn.setText(TextOut.getText());
+                Language = "en";
+                timer.play();
+                count++;
+                timeline.play();
+            }
+        });
     }
 
     // Phương thức để hoán đổi vị trí giữa hai StackPane
     private void swapStackPanes(StackPane stackPane1, StackPane stackPane2) {
-        double a = 525.0 - 81.0;
+        double a = Math.abs(stackPane2.getLayoutX() - stackPane1.getLayoutX());
         double b = -a;
 
         TranslateTransition transition1 = createTransition(stackPane1, a, 0);
@@ -157,57 +192,31 @@ public class TranslateTextController extends GeneralController implements Initia
     }
     // Sự kiện ấn nút đổi
     @FXML
-    void swapLang(ActionEvent event) {
+    void DoSwapLang(ActionEvent event) {
+
         if (count %2 != 0 ) {
+            swapLang.setDisable(true);
             swapStackPanes(Sr, Sl);
             TextIn.setText(TextOut.getText());
             Language = "vi";
             timer.play();
             count++;
+            timeline.play();
+            swapLang.setDisable(false);
         } else {
+            swapLang.setDisable(true);
             swapStackPanes(Sl, Sr);
             TextIn.setText(TextOut.getText());
             Language = "en";
             timer.play();
             count++;
+            timeline.play();
+            swapLang.setDisable(false);
         }
-    }
-
-    @FXML
-    void MouseEn(MouseEvent event) {
-        swapLang.setScaleX(1.1);
-        swapLang.setScaleY(1.1);
-    }
-
-    @FXML
-    void MouseEx(MouseEvent event) {
-        swapLang.setScaleX(1.0);
-        swapLang.setScaleY(1.0);
     }
     // tu dong dich khi nhap van ban
     @FXML
     void translate(KeyEvent event) {
         timer.play();
     }
-
-    public void switchtoHome(ActionEvent event) throws IOException {
-        super.switchtoHome(event);
-    }
-
-    public void switchtoGame(ActionEvent event) throws IOException {
-        super.switchtoGame(event);
-    }
-
-    public void switchtoDic(ActionEvent event) throws IOException {
-        super.switchtoDic(event);
-    }
-
-    public void switchtoTran(ActionEvent event) throws IOException {
-        super.switchtoTran(event);
-    }
-
-    public void switchtoSet(ActionEvent event) throws IOException {
-        super.switchtoSet(event);
-    }
-
 }

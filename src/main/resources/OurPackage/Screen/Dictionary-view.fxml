@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -29,7 +31,7 @@
                                         </ImageView>
                                     </children>
                                 </Pane>
-                                <JFXButton fx:id="but_home" alignment="CENTER" layoutX="12.0" layoutY="98.0" onAction="#switchtoHome" prefHeight="42.0" prefWidth="179.0" styleClass="but_home" stylesheets="@../SupportScreen/Css/Style.css" text="Home" textFill="#fbfbfb">
+                                <JFXButton fx:id="but_home" alignment="CENTER" layoutX="12.0" layoutY="98.0" prefHeight="42.0" prefWidth="179.0" styleClass="but_home" stylesheets="@../SupportScreen/Css/Style.css" text="Home" textFill="#fbfbfb">
                                     <font>
                                         <Font name="Century Gothic Bold" size="13.0" />
                                     </font>
@@ -39,7 +41,7 @@
                                         <Image url="@../SupportScreen/img/Pasted-20240330-221821_preview_rev_1.png" />
                                     </image>
                                 </ImageView>
-                                <JFXButton fx:id="but_game" alignment="CENTER" layoutX="12.0" layoutY="170.0" onAction="#switchtoGame" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@../SupportScreen/Css/Style.css" text="Game" textFill="#b5a6a6">
+                                <JFXButton fx:id="but_game" alignment="CENTER" layoutX="12.0" layoutY="170.0" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@../SupportScreen/Css/Style.css" text="Game" textFill="#b5a6a6">
                                     <font>
                                         <Font name="Century Gothic Bold" size="13.0" />
                                     </font>
@@ -49,7 +51,7 @@
                                         <Image url="@../SupportScreen/img/console-controller-icon-2048x2048-pmmusn7m_preview_rev_2.png" />
                                     </image>
                                 </ImageView>
-                                <JFXButton fx:id="but_diction" alignment="CENTER" layoutX="12.0" layoutY="244.0" onAction="#switchtoDic" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@../SupportScreen/Css/Style.css" text="Dictionary" textFill="#b5a6a6">
+                                <JFXButton fx:id="but_diction" alignment="CENTER" layoutX="12.0" layoutY="244.0" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@../SupportScreen/Css/Style.css" text="Dictionary" textFill="#b5a6a6">
                                     <font>
                                         <Font name="Century Gothic Bold" size="13.0" />
                                     </font>
@@ -61,7 +63,7 @@
                                     </image>
                                 </ImageView>
 
-                                <JFXButton fx:id="but_trans" alignment="CENTER" layoutX="12.0" layoutY="321.0" onAction="#switchtoTran" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@../SupportScreen/Css/Style.css" text="Translate" textFill="#b5a6a6">
+                                <JFXButton fx:id="but_trans" alignment="CENTER" layoutX="12.0" layoutY="321.0" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@../SupportScreen/Css/Style.css" text="Translate" textFill="#b5a6a6">
                                     <font>
                                         <Font name="Century Gothic Bold" size="13.0" />
                                     </font>
@@ -72,7 +74,7 @@
                                         <Image url="@../SupportScreen/img/Pasted-20240330-202411_preview_rev_1.png" />
                                     </image>
                                 </ImageView>
-                                <JFXButton fx:id="but_set" alignment="CENTER" layoutX="12.0" layoutY="393.0" onAction="#switchtoSet" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@../SupportScreen/Css/Style.css" text="Settings" textFill="#b5a6a6">
+                                <JFXButton fx:id="but_set" alignment="CENTER" layoutX="12.0" layoutY="393.0" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@../SupportScreen/Css/Style.css" text="Settings" textFill="#b5a6a6">
                                     <font>
                                         <Font name="Century Gothic Bold" size="13.0" />
                                     </font>
@@ -126,7 +128,10 @@
                         <Image url="@../SupportScreen/img/Dictionaryyyy.png" />
                      </image>
                   </ImageView>
-                  <TextField layoutX="118.0" layoutY="222.0" prefHeight="25.0" prefWidth="263.0" styleClass="search" stylesheets="@../SupportScreen/Css/Style.css" />
+                  <TextField fx:id="Search" layoutX="118.0" layoutY="222.0" prefHeight="25.0" prefWidth="263.0" promptText="Nhập từ ...." styleClass="search" stylesheets="@../SupportScreen/Css/Style.css">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font></TextField>
                   <ImageView fitHeight="150.0" fitWidth="39.0" layoutX="75.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../SupportScreen/img/Pasted-20240320-222118_preview_rev_1.png" />
@@ -142,6 +147,75 @@
                         <Image url="@../SupportScreen/img/Pasted-20240414-233914_preview_rev_1.png" />
                      </image>
                   </ImageView>
+                  <ListView fx:id="ListWord" layoutX="97.0" layoutY="299.0" prefHeight="276.0" prefWidth="276.0" />
+                  <Label fx:id="Word" layoutX="470.0" layoutY="125.0" prefHeight="68.0" prefWidth="263.0" text="Wellcome">
+                     <font>
+                        <Font name="Microsoft New Tai Lue" size="27.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="456.0" layoutY="225.0" prefHeight="33.0" prefWidth="62.0" text="Nghĩa :">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Mean" alignment="TOP_LEFT" layoutX="515.0" layoutY="228.0" prefHeight="53.0" prefWidth="240.0" text="Xin mời">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="455.0" layoutY="283.0" prefHeight="33.0" prefWidth="74.0" text="Từ loại :">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="456.0" layoutY="341.0" prefHeight="33.0" prefWidth="164.0" text="Cách dùng (ví dụ) :">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Type" alignment="TOP_LEFT" layoutX="519.0" layoutY="287.0" prefHeight="53.0" prefWidth="240.0" text="Danh từ">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Example" alignment="TOP_LEFT" layoutX="457.0" layoutY="383.0" prefHeight="195.0" prefWidth="304.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Pronounce" layoutX="472.0" layoutY="180.0" prefHeight="27.0" prefWidth="276.0" text="/ˈwɛlkəm/">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="MarkWord" layoutX="744.0" layoutY="109.0" mnemonicParsing="false" onAction="#Mark" onMouseEntered="#ShowNonLoveWord" onMouseExited="#CLoseNonLoveWord" prefHeight="21.0" prefWidth="25.0" styleClass="buttonMark" stylesheets="@../SupportScreen/Css/dictionary.css" text="." />
+                  <Button fx:id="SayWord" layoutX="714.0" layoutY="138.0" mnemonicParsing="false" onAction="#Say" prefHeight="53.0" prefWidth="50.0" styleClass="buttonSay" stylesheets="@../SupportScreen/Css/dictionary.css" text="." />
+                  <Button fx:id="HistoryWord" layoutX="19.0" layoutY="221.0" mnemonicParsing="false" onAction="#Showhistroyword" prefHeight="25.0" prefWidth="33.0" text="." />
+                  <Pane fx:id="PaneHistory" layoutX="61.0" layoutY="143.0" prefHeight="298.0" prefWidth="332.0" visible="false">
+                     <children>
+                        <ListView fx:id="DisplayHistoryWord" layoutX="3.0" layoutY="88.0" prefHeight="211.0" prefWidth="325.0" />
+                        <Pane fx:id="SayNothing" layoutX="28.0" layoutY="163.0" prefHeight="62.0" prefWidth="276.0">
+                           <children>
+                              <Label alignment="CENTER" layoutX="-3.0" layoutY="2.0" prefHeight="42.0" prefWidth="276.0" text="Không có lịch sử tìm kiếm !">
+                                 <font>
+                                    <Font name="System Italic" size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="CloseHistoryWord" alignment="CENTER" layoutX="14.0" layoutY="34.0" prefHeight="21.0" prefWidth="228.0" text="Hãy tra cứu thêm nhé!">
+                                 <font>
+                                    <Font name="System Italic" size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Button fx:id="CloseNonHis" layoutX="281.0" layoutY="63.0" mnemonicParsing="false" onAction="#CloseNonHis" text="Đóng" />
+                     </children>
+                  </Pane>
+                  <Label fx:id="LoveWord" layoutX="660.0" layoutY="154.0" prefHeight="53.0" prefWidth="113.0" styleClass="styleLabel" stylesheets="@../SupportScreen/Css/dictionary.css" text="Thêm từ vào danh sách yêu thích ! " textFill="#1d1d1e" visible="false" wrapText="true">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
                     </children>
                 </Pane>
             </children>

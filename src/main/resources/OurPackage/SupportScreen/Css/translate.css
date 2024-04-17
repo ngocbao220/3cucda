@@ -5,9 +5,9 @@
 
 .myPane {
     -fx-background-image: url('../img/background_nui1.jpg'); /* Thay thế bằng đường dẫn đến file hình ảnh của bạn */
-         -fx-background-size: cover; /* Tùy chỉnh kích thước background */
-         -fx-background-repeat: no-repeat; /* Tùy chỉnh cách lặp lại background */
-         -fx-background-position: center; /* Tùy chỉnh vị trí background */
+    -fx-background-size: cover; /* Tùy chỉnh kích thước background */
+    -fx-background-repeat: no-repeat; /* Tùy chỉnh cách lặp lại background */
+    -fx-background-position: center; /* Tùy chỉnh vị trí background */
 }
 
 .button {

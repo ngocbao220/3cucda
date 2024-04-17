@@ -29,7 +29,7 @@
                                         </ImageView>
                                     </children>
                                 </Pane>
-                                <JFXButton fx:id="but_home" alignment="CENTER" layoutX="12.0" layoutY="98.0" onAction="#switchtoHome" prefHeight="42.0" prefWidth="179.0" styleClass="but_home" stylesheets="@../SupportScreen/Css/Style.css" text="Home" textFill="#fbfbfb">
+                                <JFXButton fx:id="but_home" alignment="CENTER" layoutX="12.0" layoutY="98.0" prefHeight="42.0" prefWidth="179.0" styleClass="but_home" stylesheets="@../SupportScreen/Css/Style.css" text="Home" textFill="#fbfbfb">
                                     <font>
                                         <Font name="Century Gothic Bold" size="13.0" />
                                     </font>
@@ -39,7 +39,7 @@
                                         <Image url="@../SupportScreen/img/Pasted-20240330-221821_preview_rev_1.png" />
                                     </image>
                                 </ImageView>
-                                <JFXButton fx:id="but_game" alignment="CENTER" layoutX="12.0" layoutY="170.0" onAction="#switchtoGame" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@../SupportScreen/Css/Style.css" text="Game" textFill="#b5a6a6">
+                                <JFXButton fx:id="but_game" alignment="CENTER" layoutX="12.0" layoutY="170.0" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@../SupportScreen/Css/Style.css" text="Game" textFill="#b5a6a6">
                                     <font>
                                         <Font name="Century Gothic Bold" size="13.0" />
                                     </font>
@@ -49,7 +49,7 @@
                                         <Image url="@../SupportScreen/img/console-controller-icon-2048x2048-pmmusn7m_preview_rev_2.png" />
                                     </image>
                                 </ImageView>
-                                <JFXButton fx:id="but_diction" alignment="CENTER" layoutX="12.0" layoutY="244.0" onAction="#switchtoDic" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@../SupportScreen/Css/Style.css" text="Dictionary" textFill="#b5a6a6">
+                                <JFXButton fx:id="but_diction" alignment="CENTER" layoutX="12.0" layoutY="244.0" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@../SupportScreen/Css/Style.css" text="Dictionary" textFill="#b5a6a6">
                                     <font>
                                         <Font name="Century Gothic Bold" size="13.0" />
                                     </font>
@@ -61,7 +61,7 @@
                                     </image>
                                 </ImageView>
 
-                                <JFXButton fx:id="but_trans" alignment="CENTER" layoutX="12.0" layoutY="321.0" onAction="#switchtoTran" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@../SupportScreen/Css/Style.css" text="Translate" textFill="#b5a6a6">
+                                <JFXButton fx:id="but_trans" alignment="CENTER" layoutX="12.0" layoutY="321.0" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@../SupportScreen/Css/Style.css" text="Translate" textFill="#b5a6a6">
                                     <font>
                                         <Font name="Century Gothic Bold" size="13.0" />
                                     </font>
@@ -72,7 +72,7 @@
                                         <Image url="@../SupportScreen/img/Pasted-20240330-202411_preview_rev_1.png" />
                                     </image>
                                 </ImageView>
-                                <JFXButton fx:id="but_set" alignment="CENTER" layoutX="12.0" layoutY="393.0" onAction="#switchtoSet" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@../SupportScreen/Css/Style.css" text="Settings" textFill="#b5a6a6">
+                                <JFXButton fx:id="but_set" alignment="CENTER" layoutX="12.0" layoutY="393.0" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@../SupportScreen/Css/Style.css" text="Settings" textFill="#b5a6a6">
                                     <font>
                                         <Font name="Century Gothic Bold" size="13.0" />
                                     </font>

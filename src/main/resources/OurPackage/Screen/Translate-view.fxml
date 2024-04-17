@@ -33,7 +33,7 @@
                                         </ImageView>
                                     </children>
                                 </Pane>
-                                <JFXButton fx:id="but_home" alignment="CENTER" layoutX="12.0" layoutY="98.0" onAction="#switchtoHome" prefHeight="42.0" prefWidth="179.0" styleClass="but_home" stylesheets="@../SupportScreen/Css/Style.css" text="Home" textFill="#fbfbfb">
+                                <JFXButton fx:id="but_home" alignment="CENTER" layoutX="12.0" layoutY="98.0" prefHeight="42.0" prefWidth="179.0" styleClass="but_home" stylesheets="@../SupportScreen/Css/Style.css" text="Home" textFill="#fbfbfb">
                                     <font>
                                         <Font name="Century Gothic Bold" size="13.0" />
                                     </font>
@@ -43,7 +43,7 @@
                                         <Image url="@../SupportScreen/img/Pasted-20240330-221821_preview_rev_1.png" />
                                     </image>
                                 </ImageView>
-                                <JFXButton fx:id="but_game" alignment="CENTER" layoutX="12.0" layoutY="170.0" onAction="#switchtoGame" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@../SupportScreen/Css/Style.css" text="Game" textFill="#b5a6a6">
+                                <JFXButton fx:id="but_game" alignment="CENTER" layoutX="12.0" layoutY="170.0" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@../SupportScreen/Css/Style.css" text="Game" textFill="#b5a6a6">
                                     <font>
                                         <Font name="Century Gothic Bold" size="13.0" />
                                     </font>
@@ -53,7 +53,7 @@
                                         <Image url="@../SupportScreen/img/console-controller-icon-2048x2048-pmmusn7m_preview_rev_2.png" />
                                     </image>
                                 </ImageView>
-                                <JFXButton fx:id="but_diction" alignment="CENTER" layoutX="12.0" layoutY="244.0" onAction="#switchtoDic" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@../SupportScreen/Css/Style.css" text="Dictionary" textFill="#b5a6a6">
+                                <JFXButton fx:id="but_diction" alignment="CENTER" layoutX="12.0" layoutY="244.0" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@../SupportScreen/Css/Style.css" text="Dictionary" textFill="#b5a6a6">
                                     <font>
                                         <Font name="Century Gothic Bold" size="13.0" />
                                     </font>
@@ -65,7 +65,7 @@
                                     </image>
                                 </ImageView>
 
-                                <JFXButton fx:id="but_trans" alignment="CENTER" layoutX="12.0" layoutY="321.0" onAction="#switchtoTran" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@../SupportScreen/Css/Style.css" text="Translate" textFill="#b5a6a6">
+                                <JFXButton fx:id="but_trans" alignment="CENTER" layoutX="12.0" layoutY="321.0" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@../SupportScreen/Css/Style.css" text="Translate" textFill="#b5a6a6">
                                     <font>
                                         <Font name="Century Gothic Bold" size="13.0" />
                                     </font>
@@ -76,7 +76,7 @@
                                         <Image url="@../SupportScreen/img/Pasted-20240330-202411_preview_rev_1.png" />
                                     </image>
                                 </ImageView>
-                                <JFXButton fx:id="but_set" alignment="CENTER" layoutX="12.0" layoutY="393.0" onAction="#switchtoSet" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@../SupportScreen/Css/Style.css" text="Settings" textFill="#b5a6a6">
+                                <JFXButton fx:id="but_set" alignment="CENTER" layoutX="12.0" layoutY="393.0" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@../SupportScreen/Css/Style.css" text="Settings" textFill="#b5a6a6">
                                     <font>
                                         <Font name="Century Gothic Bold" size="13.0" />
                                     </font>
@@ -126,9 +126,9 @@
                             </children>
                         </Pane>
 
-                      <Pane fx:id="MainPane" layoutX="-2.0" layoutY="-2.0" prefHeight="612.0" prefWidth="843.0" stylesheets="@../SupportScreen/Css/translateview.css">
+                      <Pane fx:id="MainPane" layoutX="-2.0" layoutY="-2.0" prefHeight="612.0" prefWidth="843.0" stylesheets="@../SupportScreen/Css/translate.css">
                <children>
-                  <TextArea fx:id="TextIn" layoutX="26.0" layoutY="209.0" onKeyPressed="#translate" prefHeight="380.0" prefWidth="326.0" promptText="Nhập văn bản ..." stylesheets="@../SupportScreen/Css/translateview.css" wrapText="true">
+                  <TextArea fx:id="TextIn" layoutX="26.0" layoutY="209.0" onKeyPressed="#translate" prefHeight="380.0" prefWidth="326.0" promptText="Nhập văn bản ..." stylesheets="@../SupportScreen/Css/translate.css" wrapText="true">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -138,7 +138,7 @@
                         <Font size="18.0" />
                      </font>
                         </TextArea>
-                  <StackPane fx:id="Sl" layoutX="81.0" layoutY="126.0" prefHeight="64.0" prefWidth="200.0" styleClass="myStackPane" stylesheets="@../SupportScreen/Css/translateview.css">
+                  <StackPane fx:id="Sl" layoutX="81.0" layoutY="126.0" prefHeight="64.0" prefWidth="200.0" styleClass="myStackPane" stylesheets="@../SupportScreen/Css/translate.css">
                      <children>
                         <Label fx:id="LangIn" alignment="CENTER" prefHeight="48.0" prefWidth="123.0" stylesheets="@../SupportScreen/Css/Style.css" text="Tiếng Anh" textFill="WHITE">
                            <font>
@@ -150,7 +150,7 @@
                         </Label>
                      </children>
                   </StackPane>
-                  <StackPane fx:id="Sr" layoutX="525.0" layoutY="126.0" prefHeight="64.0" prefWidth="200.0" styleClass="myStackPane" stylesheets="@../SupportScreen/Css/translateview.css">
+                  <StackPane fx:id="Sr" layoutX="525.0" layoutY="126.0" prefHeight="64.0" prefWidth="200.0" styleClass="myStackPane" stylesheets="@../SupportScreen/Css/translate.css">
                      <children>
                         <Label fx:id="LangOut" alignment="CENTER" prefHeight="42.0" prefWidth="113.0" text="Tiếng Việt" textFill="WHITE">
                            <font>
@@ -159,12 +159,12 @@
                         </Label>
                      </children>
                   </StackPane>
-                  <Button fx:id="swapLang" contentDisplay="CENTER" layoutX="372.0" layoutY="333.0" mnemonicParsing="false" onAction="#swapLang" onMouseEntered="#MouseEn" onMouseExited="#MouseEx" prefHeight="49.0" prefWidth="70.0" stylesheets="@../SupportScreen/Css/translateview.css" />
                         <Label alignment="CENTER" contentDisplay="CENTER" layoutX="6.0" layoutY="14.0" prefHeight="62.0" prefWidth="820.0" styleClass="myStackPane" stylesheets="@../SupportScreen/Css/Style.css" text="Translate View">
                            <font>
                               <Font name="Calibri Bold Italic" size="47.0" />
                            </font>
                         </Label>
+                  <Button fx:id="swapLang" contentDisplay="CENTER" layoutX="371.0" layoutY="350.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="70.0" stylesheets="@../SupportScreen/Css/translate.css" />
                </children>
                 </Pane>
                     </children>

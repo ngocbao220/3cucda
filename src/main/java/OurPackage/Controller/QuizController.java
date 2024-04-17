@@ -12,7 +12,7 @@ import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class QuizController implements Initializable {
+public class QuizController extends GeneralController implements Initializable {
 
     @FXML
     private Button Play;
@@ -44,6 +44,6 @@ public class QuizController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        super.initialize(url, resourceBundle);
     }
 }
