@@ -128,9 +128,9 @@
                         <Image url="@../SupportScreen/img/Dictionaryyyy.png" />
                      </image>
                   </ImageView>
-                  <TextField fx:id="Search" layoutX="118.0" layoutY="222.0" prefHeight="25.0" prefWidth="263.0" promptText="Nhập từ ...." styleClass="search" stylesheets="@../SupportScreen/Css/Style.css">
+                  <TextField fx:id="Search" layoutX="118.0" layoutY="222.0" prefHeight="25.0" prefWidth="263.0" promptText="Nhập từ ...." styleClass="search" stylesheets="@../SupportScreen/Css/Style.css" text="Wellcome">
                      <font>
-                        <Font name="System Italic" size="12.0" />
+                        <Font name="Microsoft YaHei UI" size="13.0" />
                      </font></TextField>
                   <ImageView fitHeight="150.0" fitWidth="39.0" layoutX="75.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -189,7 +189,7 @@
                      </font>
                   </Label>
                   <Button fx:id="MarkWord" layoutX="744.0" layoutY="109.0" mnemonicParsing="false" onAction="#Mark" onMouseEntered="#ShowNonLoveWord" onMouseExited="#CLoseNonLoveWord" prefHeight="21.0" prefWidth="25.0" styleClass="buttonMark" stylesheets="@../SupportScreen/Css/dictionary.css" text="." />
-                  <Button fx:id="SayWord" layoutX="714.0" layoutY="138.0" mnemonicParsing="false" onAction="#Say" prefHeight="53.0" prefWidth="50.0" styleClass="buttonSay" stylesheets="@../SupportScreen/Css/dictionary.css" text="." />
+                  <Button fx:id="SayWord" layoutX="714.0" layoutY="138.0" mnemonicParsing="false" onAction="#Say" prefHeight="53.0" prefWidth="56.0" styleClass="buttonSay" stylesheets="@../SupportScreen/Css/dictionary.css" text="." />
                   <Button fx:id="HistoryWord" layoutX="19.0" layoutY="221.0" mnemonicParsing="false" onAction="#Showhistroyword" prefHeight="25.0" prefWidth="33.0" text="." />
                   <Pane fx:id="PaneHistory" layoutX="61.0" layoutY="143.0" prefHeight="298.0" prefWidth="332.0" visible="false">
                      <children>
