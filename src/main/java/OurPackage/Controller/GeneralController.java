@@ -87,6 +87,10 @@ public class GeneralController implements Initializable{
     private Pane game;
 
     @FXML
+    private Pane Back;
+
+
+    @FXML
     private Pane translate;
 
     @FXML
@@ -101,6 +105,12 @@ public class GeneralController implements Initializable{
     @FXML
     private JFXButton bonus;
 
+    @FXML
+    private JFXButton but_to_game1;
+
+    @FXML
+    private JFXButton but_to_game2;
+
     private Stage stage;
     private Scene scene;
 
@@ -113,15 +123,15 @@ public class GeneralController implements Initializable{
     }
 
 
-    public void LoadScene(String s) {
+    public void LoadScene(String s, Pane container) {
         FadeTransition fadeTransition = new FadeTransition();
-        fadeTransition.setDuration(Duration.millis(400));
-        fadeTransition.setNode(DisplayContent);
+        fadeTransition.setDuration(Duration.millis(200));
+        fadeTransition.setNode(container);
         fadeTransition.setFromValue(1.0);
         fadeTransition.setToValue(0.0);
         fadeTransition.setOnFinished(e -> {
             try {
-                Load(Screen_Path + s, DisplayContent);
+                Load(Screen_Path + s, container);
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }
@@ -132,10 +142,10 @@ public class GeneralController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        but_home.setOnAction(e -> LoadScene("Home-view.fxml"));
-        but_trans.setOnAction(e -> LoadScene("Translate-view.fxml"));
-        but_game.setOnAction(e -> LoadScene("Game-view.fxml"));
-        but_diction.setOnAction(e -> LoadScene("Dictionary-view.fxml"));
-        but_set.setOnAction(e -> LoadScene("Setting-view.fxml"));
+        but_home.setOnAction(e -> LoadScene("Home-view.fxml", DisplayContent));
+        but_trans.setOnAction(e -> LoadScene("Translate-view.fxml", DisplayContent));
+        but_game.setOnAction(e -> LoadScene("Game-view.fxml", DisplayContent));
+        but_diction.setOnAction(e -> LoadScene("Dictionary-view.fxml", DisplayContent));
+        but_set.setOnAction(e -> LoadScene("Setting-view.fxml", DisplayContent));
     }
 }

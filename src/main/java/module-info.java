@@ -13,6 +13,8 @@ module project_app {
     requires com.jfoenix;
     requires com.google.gson;
     requires javafx.media;
+    requires java.sql;
+    requires java.desktop;
 
     exports OurPackage;
     exports OurPackage.Controller;

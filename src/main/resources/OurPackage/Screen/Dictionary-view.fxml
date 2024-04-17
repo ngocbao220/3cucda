@@ -128,9 +128,9 @@
                         <Image url="@../SupportScreen/img/Dictionaryyyy.png" />
                      </image>
                   </ImageView>
-                  <TextField fx:id="Search" layoutX="118.0" layoutY="222.0" prefHeight="25.0" prefWidth="263.0" promptText="Nhập từ ...." styleClass="search" stylesheets="@../SupportScreen/Css/Style.css" text="Wellcome">
+                  <TextField fx:id="Search" layoutX="118.0" layoutY="222.0" prefHeight="25.0" prefWidth="263.0" promptText="Nhập từ ...." styleClass="search" stylesheets="@../SupportScreen/Css/Style.css">
                      <font>
-                        <Font name="Microsoft YaHei UI" size="13.0" />
+                        <Font name="Segoe UI Bold" size="13.0" />
                      </font></TextField>
                   <ImageView fitHeight="150.0" fitWidth="39.0" layoutX="75.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -188,9 +188,9 @@
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <Button fx:id="MarkWord" layoutX="744.0" layoutY="109.0" mnemonicParsing="false" onAction="#Mark" onMouseEntered="#ShowNonLoveWord" onMouseExited="#CLoseNonLoveWord" prefHeight="21.0" prefWidth="25.0" styleClass="buttonMark" stylesheets="@../SupportScreen/Css/dictionary.css" text="." />
-                  <Button fx:id="SayWord" layoutX="714.0" layoutY="138.0" mnemonicParsing="false" onAction="#Say" prefHeight="53.0" prefWidth="56.0" styleClass="buttonSay" stylesheets="@../SupportScreen/Css/dictionary.css" text="." />
-                  <Button fx:id="HistoryWord" layoutX="19.0" layoutY="221.0" mnemonicParsing="false" onAction="#Showhistroyword" prefHeight="25.0" prefWidth="33.0" text="." />
+                  <Button fx:id="ButtonMark" layoutX="782.0" layoutY="86.0" mnemonicParsing="false" onAction="#Mark" prefHeight="21.0" prefWidth="25.0" styleClass="buttonMark" stylesheets="@../SupportScreen/Css/dictionary.css" text="." />
+                  <Button fx:id="SayWord" layoutX="714.0" layoutY="138.0" mnemonicParsing="false" onAction="#Say" prefHeight="40.0" prefWidth="40.0" styleClass="buttonSay" stylesheets="@../SupportScreen/Css/dictionary.css" text="." />
+                  <Button fx:id="HistoryWord" layoutX="22.0" layoutY="218.0" mnemonicParsing="false" onAction="#Showhistroyword" prefHeight="37.0" prefWidth="37.0" styleClass="buttonHis" stylesheets="@../SupportScreen/Css/dictionary.css" text="." />
                   <Pane fx:id="PaneHistory" layoutX="61.0" layoutY="143.0" prefHeight="298.0" prefWidth="332.0" visible="false">
                      <children>
                         <ListView fx:id="DisplayHistoryWord" layoutX="3.0" layoutY="88.0" prefHeight="211.0" prefWidth="325.0" />
@@ -211,7 +211,7 @@
                         <Button fx:id="CloseNonHis" layoutX="281.0" layoutY="63.0" mnemonicParsing="false" onAction="#CloseNonHis" text="Đóng" />
                      </children>
                   </Pane>
-                  <Label fx:id="LoveWord" layoutX="660.0" layoutY="154.0" prefHeight="53.0" prefWidth="113.0" styleClass="styleLabel" stylesheets="@../SupportScreen/Css/dictionary.css" text="Thêm từ vào danh sách yêu thích ! " textFill="#1d1d1e" visible="false" wrapText="true">
+                  <Label fx:id="LoveWord" layoutX="669.0" layoutY="105.0" prefHeight="53.0" prefWidth="113.0" styleClass="styleLabel" stylesheets="@../SupportScreen/Css/dictionary.css" text="Thêm từ vào danh sách yêu thích ! " textFill="#1d1d1e" visible="false" wrapText="true">
                      <font>
                         <Font size="13.0" />
                      </font>

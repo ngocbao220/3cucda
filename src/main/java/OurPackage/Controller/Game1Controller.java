@@ -1,94 +1,32 @@
 package OurPackage.Controller;
 
 import com.jfoenix.controls.JFXButton;
-import javafx.event.ActionEvent;
+import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.image.ImageView;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class Game1Controller extends GeneralController {
+public class Game1Controller extends GeneralController implements Initializable {
+
 
     @FXML
-    private JFXButton but_diction;
-
-    @FXML
-    private JFXButton but_game;
-
+    private AnchorPane PaneGame1;
     @FXML
     private JFXButton but_home;
-
-    @FXML
-    private ImageView catcute;
-
-    @FXML
-    private AnchorPane diction_means;
-
-    @FXML
-    private AnchorPane dictionary;
-
-    @FXML
-    private AnchorPane home;
-
-    @FXML
-    private Pane inner_pane;
-
-    @FXML
-    private AnchorPane intro_diction;
-
-    @FXML
-    private Pane menu_inner_pane;
-
-    @FXML
-    private HBox root;
-
-    @FXML
-    private AnchorPane side_anPane;
-
-    @FXML
-    private JFXButton but_move_game;
-
-    @FXML
-    private JFXButton but_move_diction;
-
-    @FXML
-    private AnchorPane move_diction;
-
-    @FXML
-    private AnchorPane move_game;
-
-    @FXML
-    private JFXButton but_trans;
-
-    @FXML
-    private Pane game;
-
-    @FXML
-    private Pane translate;
-
-    @FXML
-    private JFXButton but_ENG_VIE;
-
-    @FXML
-    private JFXButton but_set;
-
-    @FXML
-    private Label lb_tran1;
-
-    @FXML
-    private Label lb_tran2;
-
-    @FXML
-    private JFXButton bonus;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        super.initialize(url, resourceBundle);
+        but_home.setOnAction(e -> LoadScene( "Game-view.fxml", PaneGame1));
     }
+
 
 }
