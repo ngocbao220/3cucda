@@ -1,6 +1,8 @@
 package OurPackage.Controller;
 
 import com.jfoenix.controls.JFXButton;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -13,6 +15,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.util.Duration;
 
 import java.net.URL;
 import java.util.HashMap;
@@ -111,11 +114,27 @@ public class DictionaryController extends GeneralController{
     @FXML
     private HBox root;
 
+    @FXML
+    private Button ButtonMark;
+
     public Map<String, String> HisWord = new HashMap<>();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         super.initialize(url, resourceBundle);
+
+        ButtonMark.setOnMouseEntered(event -> {
+            Timeline timeline = new Timeline(
+                    new KeyFrame(Duration.seconds(1), e -> {
+                        LoveWord.setVisible(true);
+                    })
+            );
+            timeline.play();
+        });
+
+        ButtonMark.setOnMouseExited(event -> {
+            LoveWord.setVisible(false);
+        });
     }
 
     @FXML
@@ -141,16 +160,10 @@ public class DictionaryController extends GeneralController{
     }
 
     @FXML
-    void ShowNonLoveWord(MouseEvent event) {
-        LoveWord.setVisible(true);
-    }
-
-    @FXML
     void Showhistroyword(ActionEvent event) {
         PaneHistory.setVisible(true);
         if (HisWord.isEmpty()) {
             SayNothing.setVisible(true);
         }
-
     }
 }

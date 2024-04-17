@@ -188,7 +188,7 @@
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <Button fx:id="MarkWord" layoutX="782.0" layoutY="86.0" mnemonicParsing="false" onAction="#Mark" onMouseEntered="#ShowNonLoveWord" onMouseExited="#CLoseNonLoveWord" prefHeight="21.0" prefWidth="25.0" styleClass="buttonMark" stylesheets="@../SupportScreen/Css/dictionary.css" text="." />
+                  <Button fx:id="ButtonMark" layoutX="782.0" layoutY="86.0" mnemonicParsing="false" onAction="#Mark" prefHeight="21.0" prefWidth="25.0" styleClass="buttonMark" stylesheets="@../SupportScreen/Css/dictionary.css" text="." />
                   <Button fx:id="SayWord" layoutX="714.0" layoutY="138.0" mnemonicParsing="false" onAction="#Say" prefHeight="40.0" prefWidth="40.0" styleClass="buttonSay" stylesheets="@../SupportScreen/Css/dictionary.css" text="." />
                   <Button fx:id="HistoryWord" layoutX="22.0" layoutY="218.0" mnemonicParsing="false" onAction="#Showhistroyword" prefHeight="37.0" prefWidth="37.0" styleClass="buttonHis" stylesheets="@../SupportScreen/Css/dictionary.css" text="." />
                   <Pane fx:id="PaneHistory" layoutX="61.0" layoutY="143.0" prefHeight="298.0" prefWidth="332.0" visible="false">
