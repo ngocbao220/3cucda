@@ -1,13 +1,16 @@
 package OurPackage.Controller;
 
 import com.jfoenix.controls.JFXButton;
+import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
@@ -69,6 +72,9 @@ public class HomeController extends GeneralController {
     private AnchorPane move_game;
 
     @FXML
+    private Pane move_game_2;
+
+    @FXML
     private JFXButton but_trans;
 
     @FXML
@@ -89,11 +95,49 @@ public class HomeController extends GeneralController {
     @FXML
     private JFXButton bonus;
 
+    @FXML
+    private Pane move_trans_home;
+
+    @FXML
+    private Pane move_dic_home;
+
+    @FXML
+    private Pane move_set_home;
+
+    @FXML
+    private Pane move_game_home;
+
     protected Map<String, String> MarkedWord = new HashMap<>();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         super.initialize(url, resourceBundle);
+        setupMouseEvents(move_dic_home);
+        setupMouseEvents(move_game_home);
+        setupMouseEvents(move_trans_home);
+        setupMouseEvents(move_set_home);
+        setupMouseEvents(move_game_2);
+    }
+    @FXML
+    public void onMouseEntered(Pane pane) {
+        TranslateTransition trans = new TranslateTransition();
+        trans.setNode(pane);
+        trans.setToY(-7);
+        trans.setDuration(Duration.seconds(.2));
+        trans.play();
+    }
+    @FXML
+    public void onMouseExt(Pane pane) {
+        TranslateTransition trans = new TranslateTransition();
+        trans.setNode(pane);
+        trans.setToY(0);
+        trans.setDuration(Duration.seconds(.2));
+        trans.play();
+    }
+
+    public void setupMouseEvents(Pane pane) {
+        pane.setOnMouseEntered(event -> onMouseEntered(pane));
+        pane.setOnMouseExited(event -> onMouseExt(pane));
     }
 
 
