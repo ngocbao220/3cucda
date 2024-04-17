@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -122,39 +123,73 @@
                           </children>
                       </Pane>
 
-                        <AnchorPane fx:id="Home" layoutX="1.0" layoutY="67.0" prefHeight="543.0" prefWidth="831.0">
+                        <AnchorPane fx:id="Home" layoutX="4.0" layoutY="67.0" prefHeight="539.0" prefWidth="820.0">
                             <children>
                                 <ImageView fitHeight="252.0" fitWidth="452.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
                                         <Image url="@../SupportScreen/img/ELISH.png" />
                                     </image>
                                 </ImageView>
-                                <ImageView fitHeight="115.0" fitWidth="163.0" layoutX="20.0" layoutY="286.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../SupportScreen/img/aaaaa.png" />
-                                    </image>
-                                </ImageView>
-                                <ImageView fitHeight="115.0" fitWidth="163.0" layoutX="20.0" layoutY="403.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../SupportScreen/img/bbbbb.png" />
-                                    </image>
-                                </ImageView>
-                                <ImageView fitHeight="107.0" fitWidth="163.0" layoutX="198.0" layoutY="404.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../SupportScreen/img/fffff.png" />
-                                    </image>
-                                </ImageView>
-                                <ImageView fitHeight="103.0" fitWidth="163.0" layoutX="198.0" layoutY="289.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../SupportScreen/img/gggggg.png" />
-                                    </image>
-                                </ImageView>
-                                <ImageView fitHeight="211.0" fitWidth="317.0" layoutX="493.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../SupportScreen/img/gameeeeeeee.png" />
-                                    </image>
-                                </ImageView>
-                                <JFXButton layoutX="493.0" layoutY="14.0" prefHeight="175.0" prefWidth="317.0" styleClass="but_move_game" stylesheets="@../SupportScreen/Css/Style.css" />
+                        <Pane fx:id="move_game_2" layoutX="481.0" layoutY="3.0" prefHeight="201.0" prefWidth="332.0">
+                           <children>
+                                      <ImageView fitHeight="211.0" fitWidth="317.0" layoutX="8.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                                          <image>
+                                              <Image url="@../SupportScreen/img/gameeeeeeee.png" />
+                                          </image>
+                                      </ImageView>
+                                      <JFXButton layoutX="8.0" layoutY="13.0" prefHeight="175.0" prefWidth="317.0" styleClass="but_move_game" stylesheets="@../SupportScreen/Css/Style.css" />
+                           </children></Pane>
+                        <ImageView fitHeight="351.0" fitWidth="339.0" layoutX="482.0" layoutY="198.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../SupportScreen/img/Remove-bg.ai_1713323606858.png" />
+                           </image>
+                        </ImageView>
+                        <ListView layoutX="535.0" layoutY="239.0" prefHeight="261.0" prefWidth="230.0" styleClass="fvrtWord" stylesheets="@../SupportScreen/Css/Style.css" />
+                        <ImageView fitHeight="70.0" fitWidth="90.0" layoutX="499.0" layoutY="204.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../SupportScreen/img/Remove-bg.ai_1713322722423.png" />
+                           </image>
+                        </ImageView>
+                        <Pane fx:id="move_dic_home" layoutX="10.0" layoutY="270.0" prefHeight="132.0" prefWidth="204.0">
+                           <children>
+                              <ImageView fitHeight="123.0" fitWidth="204.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../SupportScreen/img/diciconhome.png" />
+                                 </image>
+                              </ImageView>
+                              <JFXButton layoutX="7.0" layoutY="8.0" prefHeight="109.0" prefWidth="182.0" styleClass="but_move_game" stylesheets="@../SupportScreen/Css/Style.css" />
+                           </children>
+                        </Pane>
+                        <Pane fx:id="move_trans_home" layoutX="242.0" layoutY="259.0" prefHeight="140.0" prefWidth="230.0">
+                           <children>
+                              <ImageView fitHeight="131.0" fitWidth="192.0" layoutX="9.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../SupportScreen/img/transiconhome.png" />
+                                 </image>
+                              </ImageView>
+                              <JFXButton layoutX="14.0" layoutY="19.0" prefHeight="103.0" prefWidth="177.0" styleClass="but_move_game" stylesheets="@../SupportScreen/Css/Style.css" />
+                           </children>
+                        </Pane>
+                        <Pane fx:id="move_set_home" layoutY="397.0" prefHeight="140.0" prefWidth="213.0">
+                           <children>
+                              <ImageView fitHeight="131.0" fitWidth="192.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../SupportScreen/img/setiocnhome.png" />
+                                 </image>
+                              </ImageView>
+                              <JFXButton layoutX="19.0" layoutY="16.0" prefHeight="105.0" prefWidth="178.0" styleClass="but_move_game" stylesheets="@../SupportScreen/Css/Style.css" />
+                           </children>
+                        </Pane>
+                        <Pane fx:id="move_game_home" layoutX="242.0" layoutY="397.0" prefHeight="140.0" prefWidth="213.0">
+                           <children>
+                              <ImageView fitHeight="131.0" fitWidth="192.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../SupportScreen/img/icongamehome.png" />
+                                 </image>
+                              </ImageView>
+                              <JFXButton layoutX="19.0" layoutY="16.0" prefHeight="105.0" prefWidth="178.0" styleClass="but_move_game" stylesheets="@../SupportScreen/Css/Style.css" />
+                           </children>
+                        </Pane>
                             </children>
 
                         </AnchorPane>
