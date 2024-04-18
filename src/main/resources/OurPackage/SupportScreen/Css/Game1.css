@@ -1,0 +1,106 @@
+.buttonPlay {
+    -fx-background-image: url('../img/iconPlay.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-radius: 20px;
+}
+
+.buttonExit {
+    -fx-background-image: url('../img/iconExit.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+.buttonContinue {
+    -fx-background-image: url('../img/iconPause.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-radius: 20px;
+}
+
+.buttonOffVolume {
+    -fx-background-image: url('../img/iconOffVolume.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-radius: 20px;
+}
+
+.buttonOnVolume {
+    -fx-background-image: url('../img/iconOnVolume.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-radius: 20px;
+}
+
+.buttonPause {
+    -fx-background-image: url('../img/iconContinue.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-radius: 20px;
+}
+
+.buttonSetting {
+    -fx-background-image: url('../img/iconSetting.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-radius: 20px;
+}
+
+.buttonAnswerLeft {
+    -fx-background-image: url('../img/ButtonAnswer.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-text-fill: white; /* Màu văn bản của nút */
+    /*-fx-border-color: transparent;  Loại bỏ viền */
+    -fx-border-radius: 40px; /* Bo góc */
+    -fx-text-decoration: none; /* Loại bỏ gạch chân khi đưa chuột vào */
+    -fx-cursor: hand;
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.2) , 10,0,0,1 ); /* Đổ bóng */
+}
+
+.buttonAnswerLeft:hover {
+    -fx-background-color: #45a049; /* Màu nền thay đổi khi di chuột qua */
+}
+
+.BackgroundForIntroGame {
+    -fx-background-image: url('../img/BackgroundGame1.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+.BackGroundOnGame {
+    -fx-background-image: url('../img/ForGame1.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+.ButtonBack {
+    -fx-background-image: url('../img/iconBack.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+.PanePoint {
+    -fx-background-image: url('../img/iconChuoi.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+.PaneHeart {
+    -fx-background-image: url('../img/iconKhi.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}

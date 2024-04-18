@@ -1,6 +1,6 @@
-Abandon	bỏ, từ bỏ
-Abandoned	bị bỏ rơi, bị ruồng bỏ
-Ability	khả năng, năng lực
+Abandon bỏ, từ bỏ
+Abandoned   bị bỏ rơi, bị ruồng bỏ
+Ability khả năng, năng lực
 Able	có năng lực, có tài
 Unable	không có năng lực, không có tài
 About	khoảng, về
@@ -191,14 +191,14 @@ arrest 	 bắt giữ, sự bắt giữ
 arrival 	 sự đến, sự tới nơi
 arrive 	 đến, tới nơi
 arrow 	 tên, mũi tên
-art 	 nghệ thuật, mỹ thuật
-article 	 bài báo, đề mục
-artificial 	nhân tạo
-artificially 	nhân tạo
-artist 	 nghệ sĩ
-artistic 	thuộc nghệ thuật, thuộc mỹ thuật
-as 	 như 
-ashamed 	 ngượng, xấu hổ
+art nghệ thuật, mỹ thuật
+article bài báo, đề mục
+artificial  nhân tạo
+artificially    nhân tạo
+artist  nghệ sĩ
+artistic    thuộc nghệ thuật, thuộc mỹ thuật
+as  như
+ashamed ngượng, xấu hổ
 aside 	một bên, sang một bên
 aside from	ngoài ra, trừ ra
 apart from	... ra
