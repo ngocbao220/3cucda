@@ -170,7 +170,7 @@ public class Game1Controller extends GeneralController {
                 if(heart <= 5 && point % 10 == 0) {
                     heart ++;
                 }
-                if(k >= 3) k -= 2;
+                if(k >= 4) k -= 1;
                 comboTime();
             });
             // Chon Dap an sai
@@ -192,7 +192,7 @@ public class Game1Controller extends GeneralController {
                 if(heart <= 5 && point % 10 == 0) {
                     heart ++;
                 }
-                if(k >= 3) k -= 2;
+                if(k >= 4) k--;
                 comboTime();
             });
             //Chon dap an sai
