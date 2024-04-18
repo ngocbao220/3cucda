@@ -1,0 +1,15 @@
+.but_start {
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 30px;
+}
+.but_next {
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 15px;
+}
+.but_ans {
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 27px;
+}
