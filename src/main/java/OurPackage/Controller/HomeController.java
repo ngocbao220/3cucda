@@ -10,6 +10,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 
 import java.io.IOException;
@@ -21,6 +22,24 @@ import java.util.ResourceBundle;
 public class HomeController extends GeneralController {
 
     @FXML
+    private Pane Back;
+
+    @FXML
+    private Pane DisplayContent;
+
+    @FXML
+    private AnchorPane Home;
+
+    @FXML
+    private AnchorPane Menu;
+
+    @FXML
+    private VBox Menutab;
+
+    @FXML
+    private Pane SearchTab;
+
+    @FXML
     private JFXButton but_diction;
 
     @FXML
@@ -30,82 +49,52 @@ public class HomeController extends GeneralController {
     private JFXButton but_home;
 
     @FXML
-    private ImageView catcute;
-
-    @FXML
-    private AnchorPane diction_means;
-
-    @FXML
-    private AnchorPane dictionary;
-
-    @FXML
-    private AnchorPane home;
-
-    @FXML
-    private Pane inner_pane;
-
-    @FXML
-    private AnchorPane intro_diction;
-
-    @FXML
     private JFXButton but_set;
-
-    @FXML
-    private Pane menu_inner_pane;
-
-    @FXML
-    private HBox root;
-
-    @FXML
-    private AnchorPane side_anPane;
-
-    @FXML
-    private JFXButton but_move_game;
-
-    @FXML
-    private JFXButton but_move_diction;
-
-    @FXML
-    private AnchorPane move_diction;
-
-    @FXML
-    private AnchorPane move_game;
-
-    @FXML
-    private Pane move_game_2;
 
     @FXML
     private JFXButton but_trans;
 
     @FXML
-    private Pane game;
+    private ImageView catcute;
 
     @FXML
-    private Pane translate;
+    private Pane inner_pane;
 
     @FXML
-    private JFXButton but_ENG_VIE;
-
-    @FXML
-    private Label lb_tran1;
-
-    @FXML
-    private Label lb_tran2;
-
-    @FXML
-    private JFXButton bonus;
-
-    @FXML
-    private Pane move_trans_home;
+    private Pane menu_inner_pane;
 
     @FXML
     private Pane move_dic_home;
 
     @FXML
-    private Pane move_set_home;
+    private Pane move_game_2;
 
     @FXML
     private Pane move_game_home;
+
+    @FXML
+    private Pane move_set_home;
+
+    @FXML
+    private Pane move_trans_home;
+
+    @FXML
+    private JFXButton opendic;
+
+    @FXML
+    private JFXButton opengame;
+
+    @FXML
+    private JFXButton opengame2;
+
+    @FXML
+    private JFXButton openset;
+
+    @FXML
+    private JFXButton opentran;
+
+    @FXML
+    private HBox root;
 
     protected Map<String, String> MarkedWord = new HashMap<>();
 
@@ -117,6 +106,22 @@ public class HomeController extends GeneralController {
         setupMouseEvents(move_trans_home);
         setupMouseEvents(move_set_home);
         setupMouseEvents(move_game_2);
+        opendic.setOnAction(e -> {
+            but_diction.fire();
+        });
+        opengame.setOnAction(e -> {
+            but_game.fire();
+        });
+        opentran.setOnAction(e -> {
+            but_trans.fire();
+        });
+        openset.setOnAction(e -> {
+            but_set.fire();
+        });
+        opengame2.setOnAction(e -> {
+            LoadScene("Game2-view.fxml", Back);
+        });
+
     }
     @FXML
     public void onMouseEntered(Pane pane) {

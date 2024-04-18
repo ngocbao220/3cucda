@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.effect.BlendMode;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
@@ -58,6 +59,9 @@ public class Game1Controller extends GeneralController {
 
     @FXML
     private Pane PaneWhenPlayGame;
+
+    @FXML
+    private Pane PaneWhenPauseGame;
 
     @FXML
     private Label Point;
@@ -128,7 +132,6 @@ public class Game1Controller extends GeneralController {
             ButtonLeft.fire();
         });
 
-        RunTime();
         ShowQuestion();
     }
     // Đọc dữ liệu cung cấp cho game
@@ -170,7 +173,7 @@ public class Game1Controller extends GeneralController {
                 if(heart <= 5 && point % 10 == 0) {
                     heart ++;
                 }
-                if(k >= 4) k -= 1;
+                if(k >= 6) k -= 1;
                 comboTime();
             });
             // Chon Dap an sai
@@ -192,7 +195,7 @@ public class Game1Controller extends GeneralController {
                 if(heart <= 5 && point % 10 == 0) {
                     heart ++;
                 }
-                if(k >= 4) k--;
+                if(k >= 6) k--;
                 comboTime();
             });
             //Chon dap an sai
@@ -233,7 +236,7 @@ public class Game1Controller extends GeneralController {
 
     @FXML
     void Continue(ActionEvent event) {
-        Menu.setVisible(false);
+        PaneWhenPauseGame.setVisible(false);
         timeline.play();
     }
 
@@ -259,13 +262,19 @@ public class Game1Controller extends GeneralController {
 
     @FXML
     void back(ActionEvent event) {
+        PaneWhenPauseGame.setVisible(false);
         PaneWhenPlayGame.setVisible(false);
         timeline.stop();
+        point = 0;
+        heart = 3;
+        k = 10;
+        time = 0.05;
     }
 
     @FXML
     void PauseGame(ActionEvent event) {
-        Menu.setVisible(true);
+        PaneWhenPlayGame.setVisible(true);
+        PaneWhenPauseGame.setVisible(true);
         timeline.pause();
     }
 }

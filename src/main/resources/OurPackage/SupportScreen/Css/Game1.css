@@ -104,3 +104,14 @@
     -fx-background-repeat: no-repeat;
     -fx-background-position: center;
 }
+
+.PaneMenu {
+    -fx-background-image: url('../img/PaneMenu.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+.parent-pane {
+    -fx-background-color: rgba(0, 0, 0, 0.8);
+}
