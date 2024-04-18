@@ -31,6 +31,9 @@ public class Game1Controller extends GeneralController {
     private JFXButton ButtonLeft;
 
     @FXML
+    private JFXButton ButtonContinue;
+
+    @FXML
     private JFXButton ButtonOffMusic;
 
     @FXML
@@ -41,6 +44,12 @@ public class Game1Controller extends GeneralController {
 
     @FXML
     private JFXButton ButtonRight;
+
+    @FXML
+    private JFXButton Exit;
+
+    @FXML
+    private JFXButton Replay;
 
     @FXML
     private Label Heart;
@@ -124,6 +133,20 @@ public class Game1Controller extends GeneralController {
 
         myProgressBar.setStyle("-fx-accent: #FFFF00;");
 
+        Replay.setOnAction(e -> {
+            PaneWhenPauseGame.setVisible(false);
+            reset();
+            comboTime();
+        });
+
+        Exit.setOnAction(e -> {
+            timeline.stop();
+            reset();
+            PaneWhenPauseGame.setVisible(false);
+            PaneWhenPlayGame.setVisible(false);
+            but_home.fire();
+        });
+
         AnsRight.setOnMouseClicked(e -> {
             ButtonRight.fire();
         });
@@ -149,7 +172,7 @@ public class Game1Controller extends GeneralController {
             myMap.put(word, answer);
         }
     }
-    // Hiện câu hỏi
+    // Hiện câu hỏi và nhận diện đáp án
     void ShowQuestion() {
         String CorrectAnswer = myArray[random.nextInt(myArray.length)];
 
@@ -180,10 +203,13 @@ public class Game1Controller extends GeneralController {
             ButtonRight.setOnAction(e -> {
                 if(heart > 0) {
                     heart--;
+                    if (heart == 0) {
+                        ButtonPause.fire();
+                        ButtonContinue.setDisable(true);
+                    }
                     comboTime();
                 }
                 if(k <= 8) k+=2;
-                else if (heart <= 0) timeline.stop();
             });
         }
         else {
@@ -202,14 +228,17 @@ public class Game1Controller extends GeneralController {
             ButtonLeft.setOnAction(e -> {
                 if(heart > 0) {
                     heart--;
+                    if (heart == 0) {
+                        ButtonPause.fire();
+                        ButtonContinue.setDisable(true);
+                    }
                     comboTime();
                 }
                 if(k <= 8) k += 2;
-                else if (heart <= 0 ) timeline.stop();
             });
         }
     }
-    // Cập nhật điểm
+    // Cập nhật điểm và Mạng
     void UpdatePointAndHeart() {
         Heart.setText(String.valueOf(heart));
         Point.setText(String.valueOf(point));
@@ -221,7 +250,15 @@ public class Game1Controller extends GeneralController {
             double progress = myProgressBar.getProgress();
             if (progress > 0) {
                 myProgressBar.setProgress(progress - time);
-            } else timeline.stop();
+            } else if(progress <=0) {
+                timeline.stop();
+                heart--;
+                if (heart == 0) {
+                    ButtonPause.fire();
+                    ButtonContinue.setDisable(true);
+                }
+                comboTime();
+            }
         }));
         timeline.setCycleCount(999);
         timeline.play();
@@ -232,6 +269,14 @@ public class Game1Controller extends GeneralController {
         timeline.stop();
         RunTime();
         ShowQuestion();
+    }
+    // Hàm reset thuộc tính
+    void reset() {
+        point = 0;
+        heart = 3;
+        k = 10;
+        time = 0.05;
+        ButtonContinue.setDisable(false);
     }
 
     @FXML
@@ -265,11 +310,9 @@ public class Game1Controller extends GeneralController {
         PaneWhenPauseGame.setVisible(false);
         PaneWhenPlayGame.setVisible(false);
         timeline.stop();
-        point = 0;
-        heart = 3;
-        k = 10;
-        time = 0.05;
+        reset();
     }
+
 
     @FXML
     void PauseGame(ActionEvent event) {

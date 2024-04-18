@@ -93,7 +93,9 @@
                   <Pane fx:id="Menu" layoutX="223.0" layoutY="94.0" prefHeight="582.0" prefWidth="579.0" styleClass="PaneMenu" stylesheets="@../SupportScreen/Css/Game1.css">
                      <children>
                         <JFXButton layoutX="245.0" layoutY="331.0" onAction="#back" opacity="0.0" prefHeight="40.0" prefWidth="112.0" styleClass="ButtonBack" stylesheets="@../SupportScreen/Css/Game1.css" text="." />
-                        <JFXButton alignment="CENTER" layoutX="212.0" layoutY="414.0" onAction="#Continue" opacity="0.0" prefHeight="50.0" prefWidth="177.0" />
+                        <JFXButton fx:id="ButtonContinue" alignment="CENTER" layoutX="212.0" layoutY="414.0" onAction="#Continue" opacity="0.0" prefHeight="50.0" prefWidth="177.0" />
+                        <JFXButton fx:id="Replay" layoutX="181.0" layoutY="279.0" opacity="0.0" prefHeight="40.0" prefWidth="101.0" />
+                        <JFXButton fx:id="Exit" layoutX="321.0" layoutY="279.0" opacity="0.0" prefHeight="40.0" prefWidth="112.0" />
                      </children>
                   </Pane>
                </children>
