@@ -87,7 +87,7 @@ public class SomethingForGame {
     // Them tu moi
     public static void AddData(String word, String Mean) throws IOException {
         Map2.put(Mean, word);
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("C:\\java\\BTL_APP\\3cucda\\Data\\Data2ForGame.txt", true));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("../3cucda/Data/Data2ForGame.txt", true));
         bufferedWriter.write(word +"\t" + Mean + "\n");
         bufferedWriter.close();
         System.out.println("Ghi thanh cong");

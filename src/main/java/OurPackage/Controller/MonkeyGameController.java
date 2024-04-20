@@ -176,8 +176,8 @@ public class MonkeyGameController extends GeneralController {
 
     private int heart = 3;
 
-    private final String DATA1 = "C:\\java\\BTL_APP\\3cucda\\Data\\Data1ForGame.txt";
-    private final String DATA2 = "C:\\java\\BTL_APP\\3cucda\\Data\\Data2ForGame.txt";
+    private final String DATA1 = "../3cucda/Data/Data1ForGame.txt";
+    private final String DATA2 = "../3cucda/Data/Data2ForGame.txt";
 
     private final String Split = "\t";
 
