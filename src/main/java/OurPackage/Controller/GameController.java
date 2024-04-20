@@ -19,6 +19,9 @@ public class GameController extends GeneralController {
     private Pane DisplayContent;
 
     @FXML
+    private JFXButton Exit;
+
+    @FXML
     private AnchorPane Menu;
 
     @FXML
@@ -66,8 +69,11 @@ public class GameController extends GeneralController {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         super.initialize(url, resourceBundle);
-        but_to_game1.setOnAction(e -> LoadScene("Game1-view.fxml", DisplayContent));
-        but_to_game2.setOnAction(e -> LoadScene("Game2-view.fxml", DisplayContent));
+        but_to_game1.setOnAction(e -> LoadScene("Monkey.fxml", Back));
+        but_to_game2.setOnAction(e -> LoadScene("Game2-view.fxml", Back));
+        Exit.setOnAction(e -> {
+            but_home.fire();
+        });
     }
 
 }

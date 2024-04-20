@@ -280,7 +280,7 @@ battle 	 trận đánh, chiến thuật
 bay 	n. /bei/ gian (nhà),chuồng (ngựa)
 bays	vòng nguyệt quế
 beach 	bãi biển
-beak 		 mỏ chim
+beak	mỏ chim
 bear 	 mang, cầm
 beard 	 râu
 beat 	 tiếng đập; đánh đập
@@ -995,7 +995,7 @@ election 	 sự bầu cử, cuộc tuyển cử
 electric 	 (thuộc) điện, phát điện
 electrical 	 (thuộc) điện
 electricity 	 điện lực; điện lực học
-electronic 		(thuộc) điện tử
+electronic	(thuộc) điện tử
 elegant 	thanh lịch, tao nhã
 element 	 yếu tôd, nguyên tố
 elevator 	 máy nâng, thang máy
