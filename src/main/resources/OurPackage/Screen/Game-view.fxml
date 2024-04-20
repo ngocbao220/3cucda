@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="Back" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OurPackage.Controller.GameController">
+<Pane fx:id="Back" prefHeight="612.0" prefWidth="1119.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OurPackage.Controller.GameController">
     <children>
         <HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="612.0" prefWidth="1041.0" styleClass="root" stylesheets="@../SupportScreen/Css/Style.css">
             <children>
@@ -121,16 +121,21 @@
                                 </ImageView>
                             </children>
                         </Pane>
-                  <AnchorPane fx:id="PaneTabGame" layoutX="3.0" layoutY="77.0" prefHeight="531.0" prefWidth="830.0">
+                  <AnchorPane fx:id="PaneTabGame" layoutX="-208.0" layoutY="-4.0" prefHeight="620.0" prefWidth="1050.0" styleClass="PaneTabGame" stylesheets="@../SupportScreen/Css/Game.css">
                      <children>
-                        <JFXButton fx:id="but_to_game1" layoutX="161.0" layoutY="201.0" prefHeight="124.0" prefWidth="179.0" text="Game 1">
+                        <JFXButton fx:id="but_to_game1" layoutX="137.0" layoutY="191.0" prefHeight="223.0" prefWidth="837.0">
                            <font>
                               <Font size="33.0" />
                            </font>
                         </JFXButton>
-                        <JFXButton fx:id="but_to_game2" layoutX="585.0" layoutY="204.0" prefHeight="124.0" prefWidth="179.0" text="Game 2">
+                        <JFXButton fx:id="but_to_game2" layoutY="414.0" prefHeight="207.0" prefWidth="1123.0">
                            <font>
                               <Font size="31.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="Exit" layoutX="1049.0" layoutY="7.0" text="Thoát">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
                            </font>
                         </JFXButton>
                      </children>

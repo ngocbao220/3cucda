@@ -11,13 +11,13 @@ import java.io.IOException;
 public class Start extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Start.class.getResource("Screen/Game2-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Start.class.getResource("Screen/Home-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Our app");
         stage.setScene(scene);
         stage.show();
     }
-    public static void main(String[] args) {
+    public static void main(String[] args)   {
         launch();
     }
 }

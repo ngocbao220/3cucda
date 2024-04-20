@@ -14,11 +14,10 @@
 }
 
 .buttonContinue {
-    -fx-background-image: url('../img/iconPause.png');
+    -fx-background-image: url('../img/iconContinue.png');
     -fx-background-size: cover;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center;
-    -fx-background-radius: 20px;
 }
 
 .buttonOffVolume {
@@ -38,7 +37,7 @@
 }
 
 .buttonPause {
-    -fx-background-image: url('../img/iconContinue.png');
+    -fx-background-image: url('../img/iconPause.png');
     -fx-background-size: cover;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center;
@@ -58,16 +57,16 @@
     -fx-background-size: cover;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center;
-    -fx-text-fill: white; /* Màu văn bản của nút */
-    /*-fx-border-color: transparent;  Loại bỏ viền */
-    -fx-border-radius: 40px; /* Bo góc */
-    -fx-text-decoration: none; /* Loại bỏ gạch chân khi đưa chuột vào */
+    -fx-text-fill: white;
+    -fx-border-color: transparent;
+    -fx-border-radius: 40px;
+    -fx-text-decoration: none;
     -fx-cursor: hand;
-    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.2) , 10,0,0,1 ); /* Đổ bóng */
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.2) , 10,0,0,1 );
 }
 
 .buttonAnswerLeft:hover {
-    -fx-background-color: #45a049; /* Màu nền thay đổi khi di chuột qua */
+    -fx-background-color: #45a049;
 }
 
 .BackgroundForIntroGame {
@@ -104,3 +103,108 @@
     -fx-background-repeat: no-repeat;
     -fx-background-position: center;
 }
+
+.PaneMenu {
+    -fx-background-image: url('../img/PaneMenu.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+.PaneWhenWrongAns {
+    -fx-background-image: url('../img/NonAnswerWrong.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+.PaneChooseType {
+    -fx-background-image: url('../img/PaneChooseType.jpg');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+.parent-pane {
+    -fx-background-color: rgba(0, 0, 0, 0.8);
+}
+
+.transparent-button {
+    -fx-background-color: transparent;
+}
+
+.ForNon {
+    -fx-background-image: url('../img/BackgroundSetandAdd.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+
+}
+
+.BackgroundChuoi {
+    -fx-background-image: url('../img/BackgroundChuoi.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+.BackgroundAdd {
+    -fx-background-image: url('../img/daucong.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+.BackgroundRemove {
+    -fx-background-image: url('../img/dautru.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+.BackgroundAddAll {
+    -fx-background-image: url('../img/dautatca.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+.BackgroundPlay {
+    -fx-background-image: url('../img/LetPlay.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+.iconChuoi2 {
+    -fx-background-image: url('../img/iconChuoi2.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+.iconExit {
+    -fx-background-image: url('../img/buttonExit.png');
+        -fx-background-size: cover;
+        -fx-background-repeat: no-repeat;
+        -fx-background-position: center;
+}
+
+.buttonMenu {
+-fx-background-image: url('../img/iconMenu.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+.buttonReplay {
+-fx-background-image: url('../img/iconReplay.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+.buttonRemoveALl {
+-fx-background-image: url('../img/dauX.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+

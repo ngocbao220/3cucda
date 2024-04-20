@@ -1,283 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="PaneGame2" prefHeight="612.0" prefWidth="1041.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OurPackage.Controller.Game2Controller">
     <children>
-      <Pane layoutX="-1.0" layoutY="4.0" prefHeight="53.0" prefWidth="1045.0" styleClass="menu" stylesheets="@../SupportScreen/Css/QuizGame.css">
-         <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="7.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../SupportScreen/img/Remove-bg.ai_1713604390289.png" />
-               </image>
-            </ImageView>
-            <Pane fx:id="p1" layoutX="200.0" layoutY="4.0" prefHeight="41.0" prefWidth="66.0" styleClass="ques" stylesheets="@../SupportScreen/Css/QuizGame.css">
-               <children>
-                  <Label fx:id="l1" layoutX="27.0" layoutY="6.0" text="1" textFill="#e38453">
-                     <font>
-                        <Font name="Comic Sans MS Bold" size="20.0" />
-                     </font>
-                  </Label>
-                  <ImageView fx:id="i1" fitHeight="61.0" fitWidth="94.0" layoutX="3.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../SupportScreen/img/Remove-bg.ai_1713607763260.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </Pane>
-            <Pane fx:id="p2" layoutX="275.0" layoutY="4.0" prefHeight="41.0" prefWidth="66.0" styleClass="ques" stylesheets="@../SupportScreen/Css/QuizGame.css">
-               <children>
-                  <Label fx:id="l2" layoutX="27.0" layoutY="6.0" text="2" textFill="#e38453">
-                     <font>
-                        <Font name="Comic Sans MS Bold" size="20.0" />
-                     </font>
-                  </Label>
-                  <ImageView fx:id="i2" fitHeight="61.0" fitWidth="94.0" layoutX="3.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true" visible="false">
-                     <image>
-                        <Image url="@../SupportScreen/img/Remove-bg.ai_1713607763260.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </Pane>
-            <Pane fx:id="p3" layoutX="350.0" layoutY="4.0" prefHeight="41.0" prefWidth="66.0" styleClass="ques" stylesheets="@../SupportScreen/Css/QuizGame.css">
-               <children>
-                  <Label fx:id="l3" layoutX="27.0" layoutY="6.0" text="3" textFill="#e38453">
-                     <font>
-                        <Font name="Comic Sans MS Bold" size="20.0" />
-                     </font>
-                  </Label>
-                  <ImageView fx:id="i3" fitHeight="61.0" fitWidth="94.0" layoutX="3.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true" visible="false">
-                     <image>
-                        <Image url="@../SupportScreen/img/Remove-bg.ai_1713607763260.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </Pane>
-            <Pane fx:id="p4" layoutX="423.0" layoutY="4.0" prefHeight="41.0" prefWidth="66.0" styleClass="ques" stylesheets="@../SupportScreen/Css/QuizGame.css">
-               <children>
-                  <Label fx:id="l4" layoutX="27.0" layoutY="6.0" text="4" textFill="#e38453">
-                     <font>
-                        <Font name="Comic Sans MS Bold" size="20.0" />
-                     </font>
-                  </Label>
-                  <ImageView fx:id="i4" fitHeight="61.0" fitWidth="91.0" layoutX="3.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true" visible="false">
-                     <image>
-                        <Image url="@../SupportScreen/img/Remove-bg.ai_1713607763260.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </Pane>
-            <Pane fx:id="p5" layoutX="498.0" layoutY="4.0" prefHeight="41.0" prefWidth="66.0" styleClass="ques" stylesheets="@../SupportScreen/Css/QuizGame.css">
-               <children>
-                  <Label fx:id="l5" layoutX="27.0" layoutY="6.0" text="5" textFill="#e38453">
-                     <font>
-                        <Font name="Comic Sans MS Bold" size="20.0" />
-                     </font>
-                  </Label>
-                  <ImageView fx:id="i5" fitHeight="61.0" fitWidth="91.0" layoutX="3.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true" visible="false">
-                     <image>
-                        <Image url="@../SupportScreen/img/Remove-bg.ai_1713607763260.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </Pane>
-            <Pane fx:id="p6" layoutX="573.0" layoutY="4.0" prefHeight="41.0" prefWidth="66.0" styleClass="ques" stylesheets="@../SupportScreen/Css/QuizGame.css">
-               <children>
-                  <Label fx:id="l6" layoutX="27.0" layoutY="6.0" text="6" textFill="#e38453">
-                     <font>
-                        <Font name="Comic Sans MS Bold" size="20.0" />
-                     </font>
-                  </Label>
-                  <ImageView fx:id="i6" fitHeight="61.0" fitWidth="94.0" layoutX="3.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true" visible="false">
-                     <image>
-                        <Image url="@../SupportScreen/img/Remove-bg.ai_1713607763260.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </Pane>
-            <Pane fx:id="p7" layoutX="647.0" layoutY="4.0" prefHeight="41.0" prefWidth="66.0" styleClass="ques" stylesheets="@../SupportScreen/Css/QuizGame.css">
-               <children>
-                  <Label fx:id="l7" layoutX="27.0" layoutY="6.0" text="7" textFill="#e38453">
-                     <font>
-                        <Font name="Comic Sans MS Bold" size="20.0" />
-                     </font>
-                  </Label>
-                  <ImageView fx:id="i7" fitHeight="61.0" fitWidth="94.0" layoutX="3.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true" visible="false">
-                     <image>
-                        <Image url="@../SupportScreen/img/Remove-bg.ai_1713607763260.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </Pane>
-            <Pane fx:id="p8" layoutX="722.0" layoutY="4.0" prefHeight="41.0" prefWidth="66.0" styleClass="ques" stylesheets="@../SupportScreen/Css/QuizGame.css">
-               <children>
-                  <Label fx:id="l8" layoutX="27.0" layoutY="6.0" text="8" textFill="#e38453">
-                     <font>
-                        <Font name="Comic Sans MS Bold" size="20.0" />
-                     </font>
-                  </Label>
-                  <ImageView fx:id="i8" fitHeight="61.0" fitWidth="94.0" layoutX="3.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true" visible="false">
-                     <image>
-                        <Image url="@../SupportScreen/img/Remove-bg.ai_1713607763260.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </Pane>
-            <Pane fx:id="p9" layoutX="797.0" layoutY="4.0" prefHeight="41.0" prefWidth="66.0" styleClass="ques" stylesheets="@../SupportScreen/Css/QuizGame.css">
-               <children>
-                  <Label fx:id="l9" layoutX="27.0" layoutY="6.0" text="9" textFill="#e38453">
-                     <font>
-                        <Font name="Comic Sans MS Bold" size="20.0" />
-                     </font>
-                  </Label>
-                  <ImageView fx:id="i9" fitHeight="61.0" fitWidth="94.0" layoutX="3.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true" visible="false">
-                     <image>
-                        <Image url="@../SupportScreen/img/Remove-bg.ai_1713607763260.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </Pane>
-            <Pane fx:id="p10" layoutX="872.0" layoutY="4.0" prefHeight="41.0" prefWidth="66.0" styleClass="ques" stylesheets="@../SupportScreen/Css/QuizGame.css">
-               <children>
-                  <Label fx:id="l10" layoutX="21.0" layoutY="7.0" text="10" textFill="#e38453">
-                     <font>
-                        <Font name="Comic Sans MS Bold" size="20.0" />
-                     </font>
-                  </Label>
-                  <ImageView fx:id="i10" fitHeight="61.0" fitWidth="94.0" layoutX="3.0" layoutY="-9.0" pickOnBounds="true" preserveRatio="true" visible="false">
-                     <image>
-                        <Image url="@../SupportScreen/img/Remove-bg.ai_1713607763260.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </Pane>
-         </children></Pane>
-      <Pane layoutX="919.0" layoutY="-34.0" prefHeight="129.0" prefWidth="123.0">
-         <children>
-              <JFXButton fx:id="but_set" layoutX="55.0" layoutY="52.0" text="Đóng" />
-              <JFXButton fx:id="but_trans" layoutX="55.0" layoutY="52.0" text="Đóng" />
-              <JFXButton fx:id="but_diction" layoutX="55.0" layoutY="52.0" text="Đóng" />
-              <JFXButton fx:id="but_game" layoutX="55.0" layoutY="52.0" text="Đóng" />
-              <JFXButton fx:id="but_home" layoutX="55.0" layoutY="52.0" text="Đóng" />
-         </children>
-      </Pane>
-      <Pane fx:id="start" layoutX="-1.0" layoutY="53.0" prefHeight="588.0" prefWidth="1045.0" visible="false">
-         <children>
-            <ImageView fitHeight="588.0" fitWidth="1045.0" layoutX="1.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../SupportScreen/img/stat.jpg" />
-               </image>
-            </ImageView>
-            <JFXButton fx:id="but_start" layoutX="393.0" layoutY="383.0" onAction="#stopBlinking" prefHeight="67.0" prefWidth="261.0" styleClass="but_start" stylesheets="@../SupportScreen/Css/QuizGame.css" />
-         </children>
-      </Pane>
-      <Pane fx:id="rule" layoutX="-1.0" layoutY="53.0" prefHeight="588.0" prefWidth="1045.0" visible="false">
-         <children>
-            <ImageView fitHeight="588.0" fitWidth="1045.0" layoutX="1.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../SupportScreen/img/rule.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="112.0" fitWidth="177.0" layoutX="435.0" layoutY="496.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../SupportScreen/img/Remove-bg.ai_1713426075675.png" />
-               </image>
-            </ImageView>
-            <JFXButton fx:id="rule_next" layoutX="441.0" layoutY="508.0" prefHeight="61.0" prefWidth="139.0" styleClass="but_next" stylesheets="@../SupportScreen/Css/QuizGame.css" />
-         </children>
-      </Pane>
-      <Pane fx:id="ready" layoutX="-1.0" layoutY="53.0" prefHeight="588.0" prefWidth="1045.0" visible="false">
-         <children>
-            <ImageView fitHeight="588.0" fitWidth="1045.0" layoutX="1.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../SupportScreen/img/854b9614681ec6409f0f.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="129.0" fitWidth="194.0" layoutX="330.0" layoutY="456.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../SupportScreen/img/Remove-bg.ai_1713428402030.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="137.0" fitWidth="221.0" layoutX="524.0" layoutY="450.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../SupportScreen/img/Remove-bg.ai_1713428531060.png" />
-               </image>
-            </ImageView>
-            <JFXButton fx:id="yes" layoutX="353.0" layoutY="484.0" opacity="0.0" prefHeight="64.0" prefWidth="148.0" styleClass="but_next" stylesheets="@../SupportScreen/Css/QuizGame.css" />
-            <JFXButton fx:id="no" layoutX="553.0" layoutY="483.0" opacity="0.0" prefHeight="64.0" prefWidth="148.0" styleClass="but_next" stylesheets="@../SupportScreen/Css/QuizGame.css" />
-         </children>
-      </Pane>
-      <Pane fx:id="mulchoice" layoutX="-1.0" layoutY="53.0" prefHeight="588.0" prefWidth="1045.0">
-         <children>
-            <ImageView fitHeight="588.0" fitWidth="1045.0" layoutX="1.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../SupportScreen/img/d57200f78fda218478cb.jpg" />
-               </image>
-            </ImageView>
-            <Label fx:id="question" alignment="CENTER" layoutX="283.0" layoutY="182.0" text="Every morning, I get up early to &#10;go _ _ _ _ _ _ the gym before work." textAlignment="CENTER" textFill="#e38453" wrapText="true">
-               <font>
-                  <Font name="Comic Sans MS Bold" size="26.0" />
-               </font>
-            </Label>
-            <Pane fx:id="pane_opt1" layoutX="314.0" layoutY="256.0" prefHeight="96.0" prefWidth="200.0">
-               <children>
-                  <JFXButton fx:id="but_opt1" contentDisplay="CENTER" layoutX="20.0" layoutY="15.0" onAction="#op1clicked" prefHeight="67.0" prefWidth="161.0" styleClass="but_ans" stylesheets="@../SupportScreen/Css/QuizGame.css">
-                     <graphic>
-                        <Label fx:id="opt1" alignment="CENTER" text="a. to" textAlignment="CENTER" textFill="#e38453" wrapText="true">
-                           <font>
-                              <Font name="Comic Sans MS Bold" size="22.0" />
-                           </font>
-                        </Label>
-                     </graphic>
-                  </JFXButton>
-               </children>
-            </Pane>
-            <Pane fx:id="pane_opt2" layoutX="501.0" layoutY="256.0" prefHeight="96.0" prefWidth="200.0">
-               <children>
-                  <JFXButton fx:id="but_opt2" contentDisplay="CENTER" layoutX="25.0" layoutY="15.0" onAction="#op2clicked" prefHeight="67.0" prefWidth="161.0" styleClass="but_ans" stylesheets="@../SupportScreen/Css/QuizGame.css">
-                     <graphic>
-                        <Label fx:id="opt2" alignment="CENTER" text="b. at" textAlignment="CENTER" textFill="#e38453" wrapText="true">
-                           <font>
-                              <Font name="Comic Sans MS Bold" size="22.0" />
-                           </font>
-                        </Label>
-                     </graphic>
-                  </JFXButton>
-               </children>
-            </Pane>
-            <Pane fx:id="pane_opt3" layoutX="314.0" layoutY="359.0" prefHeight="96.0" prefWidth="200.0">
-               <children>
-                  <JFXButton fx:id="but_opt3" contentDisplay="CENTER" layoutX="20.0" layoutY="15.0" onAction="#op3clicked" prefHeight="67.0" prefWidth="161.0" styleClass="but_ans" stylesheets="@../SupportScreen/Css/QuizGame.css">
-                     <graphic>
-                        <Label fx:id="opt3" alignment="CENTER" text="c. in" textAlignment="CENTER" textFill="#e38453" wrapText="true">
-                           <font>
-                              <Font name="Comic Sans MS Bold" size="22.0" />
-                           </font>
-                        </Label>
-                     </graphic>
-                  </JFXButton>
-               </children>
-            </Pane>
-            <Pane fx:id="pane_opt4" layoutX="501.0" layoutY="359.0" prefHeight="96.0" prefWidth="200.0">
-               <children>
-                  <JFXButton fx:id="but_opt4" contentDisplay="CENTER" layoutX="25.0" layoutY="15.0" onAction="#op3clicked" prefHeight="67.0" prefWidth="161.0" styleClass="but_ans" stylesheets="@../SupportScreen/Css/QuizGame.css">
-                     <graphic>
-                        <Label fx:id="opt4" alignment="CENTER" text="d. on" textAlignment="CENTER" textFill="#e38453" wrapText="true">
-                           <font>
-                              <Font name="Comic Sans MS Bold" size="22.0" />
-                           </font>
-                        </Label>
-                     </graphic>
-                  </JFXButton>
-               </children>
-            </Pane>
-         </children>
-      </Pane>
+        <Pane layoutX="-1.0" layoutY="-4.0" prefHeight="61.0" prefWidth="1034.0" />
+        <Pane layoutX="918.0" layoutY="-90.0" prefHeight="129.0" prefWidth="123.0">
+            <children>
+                <JFXButton fx:id="but_set" layoutX="72.0" layoutY="92.0" text="Đóng" />
+                <JFXButton fx:id="but_trans" layoutX="72.0" layoutY="92.0" text="Đóng" />
+                <JFXButton fx:id="but_diction" layoutX="72.0" layoutY="92.0" text="Đóng" />
+                <JFXButton fx:id="but_game" layoutX="72.0" layoutY="92.0" text="Đóng" />
+                <JFXButton fx:id="but_home" layoutX="72.0" layoutY="92.0" text="Đóng" />
+            </children>
+        </Pane>
+        <Pane fx:id="start" layoutX="-1.0" layoutY="53.0" prefHeight="588.0" prefWidth="1045.0">
+            <children>
+                <ImageView fitHeight="588.0" fitWidth="1045.0" layoutX="1.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../SupportScreen/img/stat.jpg" />
+                    </image>
+                </ImageView>
+                <JFXButton fx:id="but_start" layoutX="393.0" layoutY="383.0" onAction="#stopBlinking" prefHeight="67.0" prefWidth="261.0" styleClass="but_start" stylesheets="@../SupportScreen/Css/QuizGame.css" />
+            </children>
+        </Pane>
+        <Pane fx:id="rule" layoutX="-1.0" layoutY="53.0" prefHeight="588.0" prefWidth="1045.0" visible="false">
+            <children>
+                <ImageView fitHeight="588.0" fitWidth="1045.0" layoutX="1.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../SupportScreen/img/rule.jpg" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="112.0" fitWidth="177.0" layoutX="435.0" layoutY="496.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../SupportScreen/img/Remove-bg.ai_1713426075675.png" />
+                    </image>
+                </ImageView>
+                <JFXButton fx:id="rule_next" layoutX="441.0" layoutY="508.0" prefHeight="61.0" prefWidth="139.0" styleClass="but_next" stylesheets="@../SupportScreen/Css/QuizGame.css" />
+            </children>
+        </Pane>
+        <Pane fx:id="ready" layoutX="-1.0" layoutY="53.0" prefHeight="588.0" prefWidth="1045.0" visible="false">
+            <children>
+                <ImageView fitHeight="588.0" fitWidth="1045.0" layoutX="1.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../SupportScreen/img/854b9614681ec6409f0f.jpg" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="129.0" fitWidth="194.0" layoutX="330.0" layoutY="456.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../SupportScreen/img/Remove-bg.ai_1713428402030.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="137.0" fitWidth="221.0" layoutX="524.0" layoutY="450.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../SupportScreen/img/Remove-bg.ai_1713428531060.png" />
+                    </image>
+                </ImageView>
+                <JFXButton fx:id="yes" layoutX="353.0" layoutY="484.0" prefHeight="64.0" prefWidth="148.0" styleClass="but_next" stylesheets="@../SupportScreen/Css/QuizGame.css" />
+                <JFXButton fx:id="no" layoutX="553.0" layoutY="483.0" prefHeight="64.0" prefWidth="148.0" styleClass="but_next" stylesheets="@../SupportScreen/Css/QuizGame.css" />
+            </children>
+        </Pane>
+        <Pane fx:id="ques1" layoutX="-1.0" layoutY="53.0" prefHeight="588.0" prefWidth="1045.0" visible="false">
+            <children>
+                <ImageView fitHeight="588.0" fitWidth="1045.0" layoutX="1.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../SupportScreen/img/088fe664166eb830e17f.jpg" />
+                    </image>
+                </ImageView>
+                <JFXButton fx:id="ques1_an1" layoutX="332.0" layoutY="287.0" prefHeight="70.0" prefWidth="180.0" styleClass="but_ans" stylesheets="@../SupportScreen/Css/QuizGame.css" />
+                <JFXButton fx:id="ques1_an2" layoutX="537.0" layoutY="287.0" prefHeight="70.0" prefWidth="180.0" styleClass="but_ans" stylesheets="@../SupportScreen/Css/QuizGame.css" />
+                <JFXButton fx:id="ques1_an3" layoutX="332.0" layoutY="384.0" prefHeight="70.0" prefWidth="180.0" styleClass="but_ans" stylesheets="@../SupportScreen/Css/QuizGame.css" />
+                <JFXButton fx:id="ques1_an4" layoutX="537.0" layoutY="384.0" prefHeight="70.0" prefWidth="180.0" styleClass="but_ans" stylesheets="@../SupportScreen/Css/QuizGame.css" />
+            </children>
+        </Pane>
+        <Pane fx:id="pane_corect1" layoutX="-1.0" layoutY="53.0" prefHeight="588.0" prefWidth="1045.0" visible="false">
+            <children>
+                <ImageView fitHeight="588.0" fitWidth="1045.0" layoutX="1.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../SupportScreen/img/9ff79366646cca32937d.jpg" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="112.0" fitWidth="180.0" layoutX="460.0" layoutY="491.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../SupportScreen/img/Remove-bg.ai_1713426075675.png" />
+                    </image>
+                </ImageView>
+                <JFXButton fx:id="corect1_next" layoutX="466.0" layoutY="503.0" prefHeight="61.0" prefWidth="139.0" styleClass="but_next" stylesheets="@../SupportScreen/Css/QuizGame.css" />
+                <JFXButton fx:id="ans_corect1" layoutX="332.0" layoutY="287.0" prefHeight="70.0" prefWidth="180.0" styleClass="but_ans" stylesheets="@../SupportScreen/Css/QuizGame.css" />
+                <JFXButton layoutX="536.0" layoutY="287.0" prefHeight="70.0" prefWidth="180.0" styleClass="but_ans" stylesheets="@../SupportScreen/Css/QuizGame.css" />
+                <JFXButton layoutX="332.0" layoutY="384.0" prefHeight="70.0" prefWidth="180.0" styleClass="but_ans" stylesheets="@../SupportScreen/Css/QuizGame.css" />
+                <JFXButton layoutX="536.0" layoutY="384.0" prefHeight="70.0" prefWidth="180.0" styleClass="but_ans" stylesheets="@../SupportScreen/Css/QuizGame.css" />
+            </children>
+        </Pane>
     </children>
 </AnchorPane>
