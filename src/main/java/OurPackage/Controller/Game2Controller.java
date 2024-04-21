@@ -393,8 +393,6 @@ public class Game2Controller extends GeneralController implements Initializable 
             i10.setVisible(true);
         }
     }
-
-
 }
 
 

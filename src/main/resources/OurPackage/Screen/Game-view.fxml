@@ -123,7 +123,7 @@
                         </Pane>
                   <AnchorPane fx:id="PaneTabGame" layoutX="-208.0" layoutY="-4.0" prefHeight="620.0" prefWidth="1050.0" styleClass="PaneTabGame" stylesheets="@../SupportScreen/Css/Game.css">
                      <children>
-                        <JFXButton fx:id="but_to_game1" layoutX="137.0" layoutY="191.0" prefHeight="223.0" prefWidth="837.0">
+                        <JFXButton fx:id="but_to_game1" layoutX="286.0" layoutY="191.0" prefHeight="223.0" prefWidth="567.0">
                            <font>
                               <Font size="33.0" />
                            </font>
@@ -140,6 +140,16 @@
                         </JFXButton>
                         <JFXButton layoutX="7.0" onAction="#onMusic" prefHeight="42.0" prefWidth="42.0" styleClass="buttonOnVolume" stylesheets="@../SupportScreen/Css/Game1.css" />
                         <JFXButton layoutX="2.0" layoutY="52.0" onAction="#offMusic" prefHeight="42.0" prefWidth="50.0" styleClass="buttonOffVolume" stylesheets="@../SupportScreen/Css/Game1.css" />
+                        <ImageView fitHeight="140.0" fitWidth="100.0" layoutX="325.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true" rotate="42.3">
+                           <image>
+                              <Image url="@../SupportScreen/img/muiten.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="iconMonkey" fitHeight="127.0" fitWidth="130.0" layoutX="260.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../SupportScreen/img/khi.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
                     </children>

@@ -16,6 +16,7 @@ import javafx.util.Duration;
 
 import java.awt.*;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.*;
 
@@ -185,6 +186,8 @@ public class MonkeyGameController extends GeneralController {
     public static Map<String, String> Map1 = new HashMap<>();
     public static Map<String, String> Map2 = new HashMap<>();
 
+    private Map<String, String> MyMap = new HashMap<>();
+
     Set<String> mySet;
 
     String[] myArray;
@@ -196,10 +199,13 @@ public class MonkeyGameController extends GeneralController {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        PlayMusic("tiengHaiAu.mp3");
+        PlayMusic("tiengHaiAu.mp3", -1);
         Play();
 
-        but_home.setOnAction(e -> LoadScene( "Game-view.fxml", PaneGame1));
+        but_home.setOnAction(e -> {
+            LoadScene( "Game-view.fxml", PaneGame1);
+            StopMusic();
+        });
         // cho Data2 rong
         try {
             EmptyFile(DATA2);
@@ -243,9 +249,11 @@ public class MonkeyGameController extends GeneralController {
                 timeline.stop();
                 heart--;
                 if (heart == 0) {
+                    PlayMusic("tiengThuaGame.mp3",1);
+                    Play();
                     PaneWhenLoss.setVisible(true);
                 }
-                comboTime(Map2);
+                comboTime(MyMap);
             }
         }));
         timeline.setCycleCount(9999);
@@ -274,8 +282,10 @@ public class MonkeyGameController extends GeneralController {
             // Chon Dap an dung
             ButtonLeft.setOnAction(e -> {
                 point++;
-                PlayMusic("tiengDapandung.mp3");
+
+                PlayMusic("tiengDapandung.mp3",1);
                 Play();
+
                 if(heart <= 5 && point % 10 == 0) {
                     heart ++;
                 }
@@ -286,11 +296,15 @@ public class MonkeyGameController extends GeneralController {
             ButtonRight.setOnAction(e -> {
                 if(heart > 0) {
                     heart--;
-                    PlayMusic("tiengDapansai.mp3");
+
+                    PlayMusic("tiengDapansai.mp3",1);
                     Play();
+
                     if (heart == 0) {
-                        PlayMusic("tiengThuaGame.mp3");
+
+                        PlayMusic("tiengThuaGame.mp3",1);
                         Play();
+
                         PaneWhenLoss.setVisible(true);
                     }
                     else {
@@ -311,8 +325,10 @@ public class MonkeyGameController extends GeneralController {
             //Chon dap an dung
             ButtonRight.setOnAction(e -> {
                 point++;
-                PlayMusic("tiengDapandung.mp3");
+
+                PlayMusic("tiengDapandung.mp3",1);
                 Play();
+
                 if(heart <= 5 && point % 10 == 0) {
                     heart ++;
                 }
@@ -323,11 +339,15 @@ public class MonkeyGameController extends GeneralController {
             ButtonLeft.setOnAction(e -> {
                 if(heart > 0) {
                     heart--;
-                    PlayMusic("tiengDapansai.mp3");
+
+                    PlayMusic("tiengDapansai.mp3",1);
                     Play();
+
                     if (heart == 0) {
-                        PlayMusic("tiengThuaGame.mp3");
+
+                        PlayMusic("tiengThuaGame.mp3",1);
                         Play();
+
                         PaneWhenLoss.setVisible(true);
                     }
                     //hien dap an dung cho nguoi choi
@@ -413,15 +433,14 @@ public class MonkeyGameController extends GeneralController {
     }
 
     @FXML
-    void TurnOffMusic(ActionEvent event) {
-        PlayMusic("tiengHaiAu.mp3");
+    void TurnOffMusic(ActionEvent event) throws URISyntaxException {
         PauseMusic();
         ButtonOnMusic.setVisible(true);
         ButtonOffMusic.setVisible(false);
     }
     @FXML
-    void TurnOnMusic(ActionEvent event) {
-        PlayMusic("tiengHaiAu.mp3");
+    void TurnOnMusic(ActionEvent event) throws URISyntaxException {
+        PlayMusic("tiengHaiAu.mp3",-1);
         Play();
         ButtonOffMusic.setVisible(true);
         ButtonOnMusic.setVisible(false);
@@ -474,6 +493,8 @@ public class MonkeyGameController extends GeneralController {
             throw new RuntimeException(e);
         }
 
+        MyMap = Map1;
+
         mySet = Map1.keySet();
 
         myArray = mySet.toArray(new String[0]);
@@ -509,6 +530,8 @@ public class MonkeyGameController extends GeneralController {
 
         MenuChosseTheWord.setVisible(false);
         PaneChosseTypeGame.setVisible(false);
+
+        MyMap = Map2;
 
         mySet = Map2.keySet();
 

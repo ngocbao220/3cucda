@@ -34,13 +34,30 @@ public class SomethingForGame {
 
 
     public static MediaPlayer mediaPlayer;
-    static String PathMusic = "file:/C:/java/BTL_APP/3cucda/src/main/resources/OurPackage/SupportScreen/sound/";
+    static String basePath = "src/main/resources/OurPackage/SupportScreen/sound/";
 
-    // Ham choi am thanh
-    public static void PlayMusic(String FileMusicPath) {
-        Media media = new Media(PathMusic + FileMusicPath);
-        mediaPlayer = new MediaPlayer(media);
-        mediaPlayer.setCycleCount(1);
+    // Hàm cho phát âm thanh
+    public static void PlayMusic(String NameFileMusic, int NumofReplay) {
+        String soundPath = getRelativePath(basePath + NameFileMusic);
+        if (soundPath != null) {
+            Media media = new Media(soundPath);
+            mediaPlayer = new MediaPlayer(media);
+            mediaPlayer.setCycleCount(NumofReplay);
+        } else {
+            System.out.println("Không thể tìm thấy file âm thanh.");
+        }
+    }
+
+    // Hàm để lấy đường dẫn tương đối của tệp
+    public static String getRelativePath(String fileName) {
+        String currentDirectory = System.getProperty("user.dir");
+        String path = currentDirectory + "/" + fileName;
+        File file = new File(path);
+        if (file.exists()) {
+            return file.toURI().toString();
+        } else {
+            return null;
+        }
     }
 
     public static void PauseMusic() {
