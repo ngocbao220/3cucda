@@ -11,6 +11,7 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Stop;
 import javafx.util.Duration;
 
 import java.awt.*;
@@ -176,8 +177,8 @@ public class MonkeyGameController extends GeneralController {
 
     private int heart = 3;
 
-    private final String DATA1 = "../3cucda/Data/Data1ForGame.txt";
-    private final String DATA2 = "../3cucda/Data/Data2ForGame.txt";
+    private static final String DATA1 = "../3cucda/Data/Data1ForGame.txt";
+    public static final String DATA2 = "../3cucda/Data/Data2ForGame.txt";
 
     private final String Split = "\t";
 
@@ -190,8 +191,13 @@ public class MonkeyGameController extends GeneralController {
 
     Random random = new Random();
 
+    // Chuan bi cho 1 luot choi
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        PlayMusic("tiengHaiAu.mp3");
+        Play();
 
         but_home.setOnAction(e -> LoadScene( "Game-view.fxml", PaneGame1));
         // cho Data2 rong
@@ -260,6 +266,7 @@ public class MonkeyGameController extends GeneralController {
 
         // Random chon dap an dung
         int numberOfCorrectAnswer = random.nextInt(2);
+
         // neu so dap an dung la 1 thi cho dap an dung vao ben trai
         if (numberOfCorrectAnswer == 1) {
             AnsLeft.setText(map.get(CorrectAnswer));
@@ -267,6 +274,8 @@ public class MonkeyGameController extends GeneralController {
             // Chon Dap an dung
             ButtonLeft.setOnAction(e -> {
                 point++;
+                PlayMusic("tiengDapandung.mp3");
+                Play();
                 if(heart <= 5 && point % 10 == 0) {
                     heart ++;
                 }
@@ -277,7 +286,11 @@ public class MonkeyGameController extends GeneralController {
             ButtonRight.setOnAction(e -> {
                 if(heart > 0) {
                     heart--;
+                    PlayMusic("tiengDapansai.mp3");
+                    Play();
                     if (heart == 0) {
+                        PlayMusic("tiengThuaGame.mp3");
+                        Play();
                         PaneWhenLoss.setVisible(true);
                     }
                     else {
@@ -298,6 +311,8 @@ public class MonkeyGameController extends GeneralController {
             //Chon dap an dung
             ButtonRight.setOnAction(e -> {
                 point++;
+                PlayMusic("tiengDapandung.mp3");
+                Play();
                 if(heart <= 5 && point % 10 == 0) {
                     heart ++;
                 }
@@ -308,7 +323,11 @@ public class MonkeyGameController extends GeneralController {
             ButtonLeft.setOnAction(e -> {
                 if(heart > 0) {
                     heart--;
+                    PlayMusic("tiengDapansai.mp3");
+                    Play();
                     if (heart == 0) {
+                        PlayMusic("tiengThuaGame.mp3");
+                        Play();
                         PaneWhenLoss.setVisible(true);
                     }
                     //hien dap an dung cho nguoi choi
@@ -368,7 +387,7 @@ public class MonkeyGameController extends GeneralController {
     }
 
 
-    // Ham xu li khi chon che do choi khac
+    // Xu li khi chon che do choi khac
     @FXML
     void ChooseOtherType(ActionEvent event) throws IOException {
         ChosseTypeForGame.setVisible(false);
@@ -395,11 +414,15 @@ public class MonkeyGameController extends GeneralController {
 
     @FXML
     void TurnOffMusic(ActionEvent event) {
+        PlayMusic("tiengHaiAu.mp3");
+        PauseMusic();
         ButtonOnMusic.setVisible(true);
         ButtonOffMusic.setVisible(false);
     }
     @FXML
     void TurnOnMusic(ActionEvent event) {
+        PlayMusic("tiengHaiAu.mp3");
+        Play();
         ButtonOffMusic.setVisible(true);
         ButtonOnMusic.setVisible(false);
     }
@@ -435,6 +458,7 @@ public class MonkeyGameController extends GeneralController {
         PaneChosseTypeGame.setVisible(false);
         PaneWhenPauseGame.setVisible(false);
         PaneWhenPlayGame.setVisible(false);
+        StopMusic();
         but_home.fire();
     }
 
@@ -475,7 +499,6 @@ public class MonkeyGameController extends GeneralController {
     // CHE DO CHOI CHON TU MONG MUON
 
 
-
     @FXML
     void PlayOtherTypeGame(ActionEvent event) {
         try {
@@ -504,6 +527,13 @@ public class MonkeyGameController extends GeneralController {
         RunTime();
     }
 
+    @FXML
+    void BackToPaneChooseWord(ActionEvent event) {
+        PaneAddOtherWord.setVisible(false);
+        PaneSetWord.setVisible(false);
+        PaneWhenChooseWhenAddOrSetTheWord.setVisible(false);
+    }
+
 
     // Sua tu cung la them tu
     @FXML
@@ -511,6 +541,7 @@ public class MonkeyGameController extends GeneralController {
         PaneWhenChooseWhenAddOrSetTheWord.setVisible(true);
         PaneSetWord.setVisible(true);
     }
+    // Thuc hien viec sua tu
     @FXML
     void DoSetWord(ActionEvent event) {
         //TO DO
@@ -522,8 +553,6 @@ public class MonkeyGameController extends GeneralController {
         }
         WordNeedSet.setText("");
         MeanOfThisWord.setText("");
-        PaneSetWord.setVisible(false);
-        PaneWhenChooseWhenAddOrSetTheWord.setVisible(false);
     }
 
 
@@ -533,6 +562,7 @@ public class MonkeyGameController extends GeneralController {
         PaneWhenChooseWhenAddOrSetTheWord.setVisible(true);
         PaneAddOtherWord.setVisible(true);
     }
+
     // Hanh dong them tu moi
     @FXML
     void DoAddWord(ActionEvent event) {
@@ -545,16 +575,14 @@ public class MonkeyGameController extends GeneralController {
         }
         newWord.setText("");
         MeanOfThisWord.setText("");
-        PaneAddOtherWord.setVisible(false);
-        PaneWhenChooseWhenAddOrSetTheWord.setVisible(false);
     }
+
 
     // Them tu tu ListView
     @FXML
     void Add(ActionEvent event) throws IOException {
         AddItemsOfListView(WordDefault);
         ForSearching(SearchOnRight, Map2, WordChoosing);
-        System.out.println(Map2.size());
     }
 
     // Them tat ca
@@ -563,23 +591,24 @@ public class MonkeyGameController extends GeneralController {
         AddAll(DATA1, DATA2);
         ReadData(DATA2, Split, Map2);
         ForSearching(SearchOnRight, Map2, WordChoosing);
-        System.out.println("themtatca");
     }
+
+    // Xoa tu muon xoa
 
     @FXML
     void Remove(ActionEvent event) throws IOException {
         String selectedItem = WordChoosing.getSelectionModel().getSelectedItem().toLowerCase();
-        remove(DATA2, selectedItem);
+        remove(DATA2, selectedItem, ".");
         ReadData(DATA2, Split, Map2);
         ForSearching(SearchOnRight, Map2, WordChoosing);
     }
 
+    // Xoa tat ca
     @FXML
     void RemoveAll(ActionEvent event) throws IOException {
         EmptyFile(DATA2);
         Map2.clear();
         ReadData(DATA2, Split, Map2);
         ForSearching(SearchOnRight, Map2, WordChoosing);
-        System.out.println("xoatatca");
     }
 }

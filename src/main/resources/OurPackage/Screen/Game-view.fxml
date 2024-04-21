@@ -138,6 +138,8 @@
                               <Font name="System Bold" size="18.0" />
                            </font>
                         </JFXButton>
+                        <JFXButton layoutX="7.0" onAction="#onMusic" prefHeight="42.0" prefWidth="42.0" styleClass="buttonOnVolume" stylesheets="@../SupportScreen/Css/Game1.css" />
+                        <JFXButton layoutX="2.0" layoutY="52.0" onAction="#offMusic" prefHeight="42.0" prefWidth="50.0" styleClass="buttonOffVolume" stylesheets="@../SupportScreen/Css/Game1.css" />
                      </children>
                   </AnchorPane>
                     </children>

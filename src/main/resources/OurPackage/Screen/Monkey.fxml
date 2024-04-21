@@ -25,7 +25,7 @@
             <JFXButton fx:id="but_home" layoutX="22.0" layoutY="92.0" prefHeight="50.0" prefWidth="101.0" styleClass="buttonExit" stylesheets="@../SupportScreen/Css/Game1.css" text="." />
          </children>
       </Pane>
-      <Pane fx:id="PaneWhenPlayGame" layoutX="-3.0" prefHeight="728.0" prefWidth="1048.0" styleClass="BackGroundOnGame" stylesheets="@../SupportScreen/Css/Game1.css" visible="false">
+      <Pane fx:id="PaneWhenPlayGame" layoutX="-3.0" prefHeight="728.0" prefWidth="1048.0" styleClass="BackGroundOnGame" stylesheets="@../SupportScreen/Css/Game1.css">
          <children>
             <Label fx:id="LabelDisplayWord" alignment="CENTER" layoutX="228.0" layoutY="245.0" prefHeight="79.0" prefWidth="579.0" text="Xin chào">
                <font>
@@ -151,7 +151,7 @@
             </Pane>
          </children>
       </Pane>
-      <Pane fx:id="PaneChosseTypeGame" layoutY="1.0" prefHeight="728.0" prefWidth="1045.0" styleClass="parent-pane" stylesheets="@../SupportScreen/Css/Game1.css">
+      <Pane fx:id="PaneChosseTypeGame" layoutY="1.0" prefHeight="728.0" prefWidth="1045.0" styleClass="parent-pane" stylesheets="@../SupportScreen/Css/Game1.css" visible="false">
          <children>
             <Pane fx:id="ChosseTypeForGame" layoutX="268.0" layoutY="115.0" prefHeight="498.0" prefWidth="513.0" styleClass="PaneChooseType" stylesheets="@../SupportScreen/Css/Game1.css" visible="false">
                <children>
@@ -168,23 +168,18 @@
                   <JFXButton fx:id="buttonOutToPaneGame" layoutX="219.0" layoutY="367.0" minWidth="53.0" onAction="#OutToPaneGame" opacity="0.0" prefHeight="59.0" prefWidth="62.0" text="Thoát" />
                </children>
             </Pane>
-            <Pane fx:id="MenuChosseTheWord" layoutX="69.0" layoutY="55.0" prefHeight="659.0" prefWidth="909.0" styleClass="BackgroundChuoi" stylesheets="@../SupportScreen/Css/Game1.css">
+            <Pane fx:id="MenuChosseTheWord" layoutX="70.0" layoutY="55.0" prefHeight="659.0" prefWidth="909.0" styleClass="BackgroundChuoi" stylesheets="@../SupportScreen/Css/Game1.css">
                <children>
-                  <JFXButton layoutX="838.0" layoutY="357.0" onAction="#RemoveAll" prefHeight="52.0" prefWidth="53.0" styleClass="buttonRemoveALl" stylesheets="@../SupportScreen/Css/Game1.css" text="." />
-                  <Pane layoutX="798.0" layoutY="23.0" prefHeight="66.0" prefWidth="101.0" styleClass="BackgroundPlay" stylesheets="@../SupportScreen/Css/Game1.css">
-                     <children>
-                        <JFXButton layoutX="3.0" layoutY="4.0" onAction="#PlayOtherTypeGame" opacity="0.0" prefHeight="59.0" prefWidth="101.0" text="Play">
-                           <font>
-                              <Font size="21.0" />
-                           </font>
-                        </JFXButton>
-                     </children>
-                  </Pane>
-                  <Pane layoutX="849.0" layoutY="222.0" prefHeight="40.0" prefWidth="42.0" styleClass="BackgroundRemove" stylesheets="@../SupportScreen/Css/Game1.css">
-                     <children>
-                        <JFXButton onAction="#Remove" opacity="0.0" prefHeight="52.0" prefWidth="53.0" text="Remove" />
-                     </children>
-                  </Pane>
+                  <JFXButton layoutX="802.0" layoutY="12.0" onAction="#PlayOtherTypeGame" prefHeight="66.0" prefWidth="101.0" styleClass="BackgroundPlay" stylesheets="@../SupportScreen/Css/Game1.css">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="839.0" layoutY="174.0" onAction="#Remove" prefHeight="52.0" prefWidth="53.0" styleClass="BackgroundRemove" stylesheets="@../SupportScreen/Css/Game1.css" />
+                  <JFXButton layoutX="357.0" layoutY="174.0" minWidth="53.0" onAction="#Add" prefHeight="52.0" prefWidth="53.0" styleClass="BackgroundAdd" stylesheets="@../SupportScreen/Css/Game1.css" />
+                  <JFXButton layoutX="394.0" layoutY="370.0" minWidth="53.0" onAction="#addAll" prefHeight="45.0" prefWidth="83.0" styleClass="BackgroundAddAll" stylesheets="@../SupportScreen/Css/Game1.css" />
+                  <JFXButton layoutX="1.0" layoutY="2.0" onAction="#back" prefHeight="40.0" prefWidth="123.0" styleClass="buttonMenu" stylesheets="@../SupportScreen/Css/Game1.css" />
+                  <JFXButton layoutX="839.0" layoutY="258.0" onAction="#RemoveAll" prefHeight="52.0" prefWidth="53.0" styleClass="buttonRemoveALl" stylesheets="@../SupportScreen/Css/Game1.css" text="." />
                   <Pane layoutX="516.0" layoutY="550.0" prefHeight="66.0" prefWidth="132.0" rotate="180.0" styleClass="iconChuoi2" stylesheets="@../SupportScreen/Css/Game1.css">
                      <children>
                         <JFXButton layoutX="1.0" layoutY="12.0" onAction="#SetTheWord" prefHeight="66.0" prefWidth="132.0" rotate="180.0" text="Edit Word" />
@@ -193,11 +188,6 @@
                   <Pane layoutX="710.0" layoutY="550.0" prefHeight="66.0" prefWidth="132.0" rotate="180.0" styleClass="iconChuoi2" stylesheets="@../SupportScreen/Css/Game1.css">
                      <children>
                         <JFXButton layoutY="13.0" onAction="#AddOtherWord" prefHeight="66.0" prefWidth="132.0" rotate="180.0" text="Other Word" />
-                     </children>
-                  </Pane>
-                  <Pane layoutX="376.0" layoutY="365.0" prefHeight="42.0" prefWidth="80.0" styleClass="BackgroundAddAll" stylesheets="@../SupportScreen/Css/Game1.css">
-                     <children>
-                        <JFXButton layoutY="-1.0" minWidth="53.0" onAction="#addAll" opacity="0.0" prefHeight="42.0" prefWidth="83.0" text="Add All" />
                      </children>
                   </Pane>
                   <Pane layoutX="542.0" layoutY="45.0" prefHeight="129.0" prefWidth="260.0" styleClass="iconChuoi2" stylesheets="@../SupportScreen/Css/Game1.css">
@@ -218,11 +208,6 @@
                         </Label>
                      </children>
                   </Pane>
-                  <Pane layoutX="362.0" layoutY="222.0" prefHeight="40.0" prefWidth="42.0" styleClass="BackgroundAdd" stylesheets="@../SupportScreen/Css/Game1.css">
-                     <children>
-                        <JFXButton layoutX="6.0" layoutY="4.0" minWidth="53.0" onAction="#Add" opacity="0.0" prefHeight="52.0" prefWidth="53.0" text="Add" />
-                     </children>
-                  </Pane>
                   <JFXListView fx:id="WordChoosing" layoutX="516.0" layoutY="221.0" opacity="0.75" prefHeight="329.0" prefWidth="326.0" />
                   <JFXListView fx:id="WordDefault" layoutX="27.0" layoutY="221.0" opacity="0.75" prefHeight="329.0" prefWidth="336.0" />
                   <TextField fx:id="SearchOnLeft" alignment="CENTER" layoutX="60.0" layoutY="180.0" maxHeight="40.0" maxWidth="249.0" minHeight="40.0" minWidth="249.0" prefHeight="40.0" prefWidth="249.0" promptText="Search" stylesheets="@../SupportScreen/Css/Game1.css">
@@ -239,28 +224,41 @@
                      <children>
                         <Pane fx:id="PaneAddOtherWord" layoutX="190.0" layoutY="130.0" prefHeight="372.0" prefWidth="426.0" styleClass="ForNon" stylesheets="@../SupportScreen/Css/Game1.css" visible="false">
                            <children>
-                              <TextField fx:id="MeanOfThisWord" layoutX="99.0" layoutY="106.0" prefHeight="59.0" prefWidth="229.0" promptText="vietnamese" styleClass="input-text-field" stylesheets="@../SupportScreen/Css/Game1.css" />
-                              <TextField fx:id="newWord" layoutX="99.0" layoutY="186.0" prefHeight="59.0" prefWidth="229.0" promptText="english" styleClass="input-text-field" stylesheets="@../SupportScreen/Css/Game1.css" />
+                              <TextField fx:id="MeanOfThisWord" layoutX="99.0" layoutY="106.0" prefHeight="59.0" prefWidth="229.0" promptText="vietnamese" styleClass="input-text-field" stylesheets="@../SupportScreen/Css/Game1.css">
+                                 <font>
+                                    <Font size="27.0" />
+                                 </font></TextField>
+                              <TextField fx:id="newWord" layoutX="99.0" layoutY="186.0" prefHeight="59.0" prefWidth="229.0" promptText="english" styleClass="input-text-field" stylesheets="@../SupportScreen/Css/Game1.css">
+                                 <font>
+                                    <Font size="27.0" />
+                                 </font></TextField>
                               <JFXButton fx:id="ButtonAddOtherWord" layoutX="177.0" layoutY="254.0" onAction="#DoAddWord" prefHeight="92.0" prefWidth="73.0" styleClass="iconChuoi2" stylesheets="@../SupportScreen/Css/Game1.css" text="Add">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font></JFXButton>
+                              <JFXButton layoutX="-8.0" layoutY="-5.0" onAction="#BackToPaneChooseWord" prefHeight="59.0" prefWidth="123.0" styleClass="buttonExit" stylesheets="@../SupportScreen/Css/Game1.css" />
                            </children>
                         </Pane>
-                        <Pane fx:id="PaneSetWord" layoutX="190.0" layoutY="128.0" prefHeight="372.0" prefWidth="426.0" styleClass="ForNon" stylesheets="@../SupportScreen/Css/Game1.css" visible="false">
+                        <Pane fx:id="PaneSetWord" layoutX="190.0" layoutY="128.0" prefHeight="372.0" prefWidth="426.0" styleClass="ForNon" stylesheets="@../SupportScreen/Css/Game1.css">
                            <children>
-                              <TextField fx:id="MeanThisWord" layoutX="102.0" layoutY="98.0" prefHeight="52.0" prefWidth="229.0" promptText="vietnamese" />
-                              <TextField fx:id="WordNeedSet" layoutX="103.0" layoutY="189.0" prefHeight="50.0" prefWidth="229.0" promptText="english" />
+                              <TextField fx:id="MeanThisWord" layoutX="102.0" layoutY="98.0" prefHeight="52.0" prefWidth="229.0" promptText="vietnamese">
+                                 <font>
+                                    <Font size="27.0" />
+                                 </font></TextField>
+                              <TextField fx:id="WordNeedSet" layoutX="103.0" layoutY="189.0" prefHeight="50.0" prefWidth="229.0" promptText="english">
+                                 <font>
+                                    <Font size="27.0" />
+                                 </font></TextField>
                               <JFXButton fx:id="ButtonSet" layoutX="177.0" layoutY="253.0" onAction="#DoSetWord" prefHeight="92.0" prefWidth="73.0" styleClass="iconChuoi2" stylesheets="@../SupportScreen/Css/Game1.css" text="Set">
                                  <font>
-                                    <Font size="15.0" />
+                                    <Font name="System Bold" size="15.0" />
                                  </font>
                               </JFXButton>
+                              <JFXButton layoutX="-5.0" layoutY="-5.0" onAction="#BackToPaneChooseWord" prefHeight="59.0" prefWidth="123.0" styleClass="buttonExit" stylesheets="@../SupportScreen/Css/Game1.css" />
                            </children>
                         </Pane>
                      </children>
                   </Pane>
-                  <JFXButton layoutX="1.0" layoutY="2.0" onAction="#back" prefHeight="40.0" prefWidth="123.0" styleClass="buttonMenu" stylesheets="@../SupportScreen/Css/Game1.css" />
                </children>
             </Pane>
          </children>
