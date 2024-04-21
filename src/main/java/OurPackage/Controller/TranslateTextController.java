@@ -60,7 +60,7 @@ public class TranslateTextController extends GeneralController implements Initia
     private StackPane Sr;
 
     @FXML
-    private TextArea TextIn;
+    public TextArea TextIn;
 
     @FXML
     private TextArea TextOut;
@@ -125,6 +125,8 @@ public class TranslateTextController extends GeneralController implements Initia
     @FXML
     private Pane translate;
 
+    public static String strTemp1;
+
     private int time = 100;
 
 
@@ -142,6 +144,11 @@ public class TranslateTextController extends GeneralController implements Initia
                     TextOut.setText(TranslateText.translate(inputText, Language));
                 }));
         timer.setCycleCount(1);
+
+        if (!strTemp1.equals(".")) {
+            TextIn.setText(strTemp1);
+            timer.play();
+        }
 
         timeline = new Timeline(new KeyFrame(Duration.millis(time + 500), new EventHandler<ActionEvent>() {
             @Override

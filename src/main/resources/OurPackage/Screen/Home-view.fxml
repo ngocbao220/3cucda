@@ -83,6 +83,17 @@
                                       <Image url="@../SupportScreen/img/settings.png" />
                                   </image>
                               </ImageView>
+                        <Pane fx:id="nonSwitchDic" layoutX="53.0" layoutY="68.0" prefHeight="109.0" prefWidth="144.0" style="-fx-background-color: white;" visible="false">
+                           <children>
+                              <Label layoutX="5.0" prefHeight="53.0" prefWidth="134.0" text="Có vẻ như bạn đang tra cứu 1 từ nào đó!" textAlignment="CENTER" textFill="#171717" wrapText="true" />
+                              <Label layoutX="13.0" layoutY="51.0" prefWidth="117.0" text="Ấn Enter để chuyển hướng sang tra cứu Dictionanry" textAlignment="CENTER" wrapText="true" />
+                           </children></Pane>
+                        <Pane fx:id="nonSwitchTran" layoutX="53.0" layoutY="68.0" prefHeight="109.0" prefWidth="144.0" style="-fx-background-color: white;" visible="false">
+                           <children>
+                              <Label layoutX="5.0" prefHeight="53.0" prefWidth="134.0" text="Có vẻ như bạn đang tìm nghĩa của 1 câu " textAlignment="CENTER" textFill="#171717" wrapText="true" />
+                              <Label layoutX="23.0" layoutY="51.0" prefHeight="51.0" prefWidth="104.0" text="Ấn Enter để chuyển hướng sang Translate" textAlignment="CENTER" wrapText="true" />
+                           </children>
+                        </Pane>
                           </children>
                       </AnchorPane>
                   </children>
@@ -99,7 +110,7 @@
                                       <Image url="@../SupportScreen/img/Pasted-20240326-001344_preview_rev_1.png" />
                                   </image>
                               </ImageView>
-                              <ImageView fitHeight="39.0" fitWidth="42.0" layoutX="718.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="39.0" fitWidth="50.0" layoutX="718.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
                                   <image>
                                       <Image url="@../SupportScreen/img/Pasted-20240320-002513_preview_rev_1.png" />
                                   </image>
@@ -114,7 +125,7 @@
                                       <Font name="Century Gothic Bold Italic" size="14.0" />
                                   </font>
                               </Label>
-                              <TextField layoutX="269.0" layoutY="13.0" prefHeight="25.0" prefWidth="332.0" styleClass="search" stylesheets="@../SupportScreen/Css/Style.css" />
+                              <TextField fx:id="searchTab" layoutX="269.0" layoutY="13.0" prefHeight="25.0" prefWidth="332.0" styleClass="search" stylesheets="@../SupportScreen/Css/Style.css" />
                               <ImageView fitHeight="28.0" fitWidth="33.0" layoutX="241.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
                                   <image>
                                       <Image url="@../SupportScreen/img/Pngtreemagnifying glass icon_5464846.png" />

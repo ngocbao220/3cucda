@@ -1,12 +1,16 @@
 package OurPackage.Controller;
 
 import com.jfoenix.controls.JFXButton;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
@@ -15,9 +19,11 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Time;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
+
 
 public class HomeController extends GeneralController {
 
@@ -79,6 +85,12 @@ public class HomeController extends GeneralController {
     private Pane move_trans_home;
 
     @FXML
+    private Pane nonSwitchDic;
+
+    @FXML
+    private Pane nonSwitchTran;
+
+    @FXML
     private JFXButton opendic;
 
     @FXML
@@ -96,16 +108,24 @@ public class HomeController extends GeneralController {
     @FXML
     private HBox root;
 
+    @FXML
+    private TextField searchTab;
+
+    Timeline timeline;
+
     protected Map<String, String> MarkedWord = new HashMap<>();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         super.initialize(url, resourceBundle);
+
+        searchTab.setOnKeyPressed(e -> Non());
         setupMouseEvents(move_dic_home);
         setupMouseEvents(move_game_home);
         setupMouseEvents(move_trans_home);
         setupMouseEvents(move_set_home);
         setupMouseEvents(move_game_2);
+
         opendic.setOnAction(e -> {
             but_diction.fire();
         });
@@ -131,6 +151,8 @@ public class HomeController extends GeneralController {
         trans.setDuration(Duration.seconds(.2));
         trans.play();
     }
+
+
     @FXML
     public void onMouseExt(Pane pane) {
         TranslateTransition trans = new TranslateTransition();
@@ -145,5 +167,32 @@ public class HomeController extends GeneralController {
         pane.setOnMouseExited(event -> onMouseExt(pane));
     }
 
+    private void Non() {
+        String[] countWords = searchTab.getText().split(" ");
+        int numberOfWords = countWords.length;
 
+
+
+        if (numberOfWords > 1) {
+            nonSwitchDic.setVisible(false);
+            nonSwitchTran.setVisible(true);
+
+            searchTab.setOnAction(e -> {
+                nonSwitchTran.setVisible(false);
+                but_trans.fire();
+                TranslateTextController.strTemp1 = searchTab.getText();
+            });
+
+        } else if (numberOfWords == 1) {
+            nonSwitchDic.setVisible(true);
+            nonSwitchTran.setVisible(false);
+
+            searchTab.setOnAction(e -> {
+                nonSwitchDic.setVisible(false);
+                but_diction.fire();
+                DictionaryController.strTemp = searchTab.getText();
+            });
+
+        }
+    }
 }

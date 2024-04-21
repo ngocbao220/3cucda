@@ -117,12 +117,16 @@ public class DictionaryController extends GeneralController{
     @FXML
     private Button ButtonMark;
 
+    public static String strTemp;
+
     public Map<String, String> HisWord = new HashMap<>();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         super.initialize(url, resourceBundle);
-
+        if (!strTemp.equals(".")) {
+            Search.setText(strTemp);
+        }
         ButtonMark.setOnMouseEntered(event -> {
             Timeline timeline = new Timeline(
                     new KeyFrame(Duration.seconds(1), e -> {
