@@ -171,8 +171,6 @@ public class HomeController extends GeneralController {
         String[] countWords = searchTab.getText().split(" ");
         int numberOfWords = countWords.length;
 
-
-
         if (numberOfWords > 1) {
             nonSwitchDic.setVisible(false);
             nonSwitchTran.setVisible(true);

@@ -25,7 +25,7 @@
             <JFXButton fx:id="but_home" layoutX="22.0" layoutY="92.0" prefHeight="50.0" prefWidth="101.0" styleClass="buttonExit" stylesheets="@../SupportScreen/Css/Game1.css" text="." />
          </children>
       </Pane>
-      <Pane fx:id="PaneWhenPlayGame" layoutX="-3.0" prefHeight="728.0" prefWidth="1048.0" styleClass="BackGroundOnGame" stylesheets="@../SupportScreen/Css/Game1.css">
+      <Pane fx:id="PaneWhenPlayGame" layoutX="-3.0" prefHeight="728.0" prefWidth="1048.0" styleClass="BackGroundOnGame" stylesheets="@../SupportScreen/Css/Game1.css" visible="false">
          <children>
             <Label fx:id="LabelDisplayWord" alignment="CENTER" layoutX="228.0" layoutY="245.0" prefHeight="79.0" prefWidth="579.0" text="Xin chào">
                <font>
@@ -222,13 +222,13 @@
                   </TextField>
                   <Pane fx:id="PaneWhenChooseWhenAddOrSetTheWord" prefHeight="659.0" prefWidth="909.0" styleClass="parent-pane" stylesheets="@../SupportScreen/Css/Game1.css" visible="false">
                      <children>
-                        <Pane fx:id="PaneAddOtherWord" layoutX="190.0" layoutY="130.0" prefHeight="372.0" prefWidth="426.0" styleClass="ForNon" stylesheets="@../SupportScreen/Css/Game1.css" visible="false">
+                        <Pane fx:id="PaneAddOtherWord" layoutX="190.0" layoutY="128.0" prefHeight="372.0" prefWidth="426.0" styleClass="ForNon" stylesheets="@../SupportScreen/Css/Game1.css" visible="false">
                            <children>
-                              <TextField fx:id="MeanOfThisWord" layoutX="99.0" layoutY="106.0" prefHeight="59.0" prefWidth="229.0" promptText="vietnamese" styleClass="input-text-field" stylesheets="@../SupportScreen/Css/Game1.css">
+                              <TextField fx:id="MeanOfThisWord" layoutX="99.0" layoutY="186.0" prefHeight="59.0" prefWidth="229.0" promptText="vietnamese" styleClass="input-text-field" stylesheets="@../SupportScreen/Css/Game1.css">
                                  <font>
                                     <Font size="27.0" />
                                  </font></TextField>
-                              <TextField fx:id="newWord" layoutX="99.0" layoutY="186.0" prefHeight="59.0" prefWidth="229.0" promptText="english" styleClass="input-text-field" stylesheets="@../SupportScreen/Css/Game1.css">
+                              <TextField fx:id="newWord" layoutX="99.0" layoutY="103.0" prefHeight="59.0" prefWidth="229.0" promptText="english" styleClass="input-text-field" stylesheets="@../SupportScreen/Css/Game1.css">
                                  <font>
                                     <Font size="27.0" />
                                  </font></TextField>
@@ -239,13 +239,13 @@
                               <JFXButton layoutX="-8.0" layoutY="-5.0" onAction="#BackToPaneChooseWord" prefHeight="59.0" prefWidth="123.0" styleClass="buttonExit" stylesheets="@../SupportScreen/Css/Game1.css" />
                            </children>
                         </Pane>
-                        <Pane fx:id="PaneSetWord" layoutX="190.0" layoutY="128.0" prefHeight="372.0" prefWidth="426.0" styleClass="ForNon" stylesheets="@../SupportScreen/Css/Game1.css">
+                        <Pane fx:id="PaneSetWord" layoutX="190.0" layoutY="128.0" prefHeight="372.0" prefWidth="426.0" styleClass="ForNon" stylesheets="@../SupportScreen/Css/Game1.css" visible="false">
                            <children>
-                              <TextField fx:id="MeanThisWord" layoutX="102.0" layoutY="98.0" prefHeight="52.0" prefWidth="229.0" promptText="vietnamese">
+                              <TextField fx:id="MeanThisWord" layoutX="107.0" layoutY="186.0" prefHeight="52.0" prefWidth="229.0" promptText="vietnamese">
                                  <font>
                                     <Font size="27.0" />
                                  </font></TextField>
-                              <TextField fx:id="WordNeedSet" layoutX="103.0" layoutY="189.0" prefHeight="50.0" prefWidth="229.0" promptText="english">
+                              <TextField fx:id="WordNeedSet" layoutX="107.0" layoutY="97.0" prefHeight="50.0" prefWidth="229.0" promptText="english">
                                  <font>
                                     <Font size="27.0" />
                                  </font></TextField>

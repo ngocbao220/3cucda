@@ -21,6 +21,7 @@ import java.net.URL;
 import java.util.*;
 
 import static OurPackage.Module.SomethingForGame.*;
+import static OurPackage.Module.TranslateText.translate;
 
 public class MonkeyGameController extends GeneralController {
 
@@ -563,6 +564,13 @@ public class MonkeyGameController extends GeneralController {
     void SetTheWord(ActionEvent event) {
         PaneWhenChooseWhenAddOrSetTheWord.setVisible(true);
         PaneSetWord.setVisible(true);
+
+        WordNeedSet.setOnAction(e -> {
+            MeanThisWord.setText(translate(WordNeedSet.getText(), "vi"));
+        });
+        MeanThisWord.setOnAction(e -> {
+            ButtonSet.fire();
+        });
     }
     // Thuc hien viec sua tu
     @FXML
@@ -579,16 +587,24 @@ public class MonkeyGameController extends GeneralController {
     }
 
 
-    // Khi chon Them tu moi
+    // Khi chon Them tu moi + ấn enter de duoc goi y nghia co the them
     @FXML
     void AddOtherWord(ActionEvent event) {
         PaneWhenChooseWhenAddOrSetTheWord.setVisible(true);
         PaneAddOtherWord.setVisible(true);
+
+        newWord.setOnAction(e -> {
+            MeanOfThisWord.setText(translate(newWord.getText(), "vi"));
+        });
+        MeanOfThisWord.setOnAction(e -> {
+            ButtonAddOtherWord.fire();
+        });
     }
 
     // Hanh dong them tu moi
     @FXML
     void DoAddWord(ActionEvent event) {
+
         //TO DO
         try {
             AddData(newWord.getText(), MeanOfThisWord.getText());
