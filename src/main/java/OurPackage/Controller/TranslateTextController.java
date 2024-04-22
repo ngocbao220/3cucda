@@ -125,7 +125,7 @@ public class TranslateTextController extends GeneralController implements Initia
     @FXML
     private Pane translate;
 
-    public static String strTemp1;
+    public static String strTemp1 = "";
 
     private int time = 100;
 
