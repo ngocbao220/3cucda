@@ -1,5 +1,6 @@
 package OurPackage.Controller;
 
+import OurPackage.Module.*;
 import com.jfoenix.controls.JFXButton;
 import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
@@ -125,7 +126,7 @@ public class GeneralController implements Initializable{
 
     public void LoadScene(String s, Pane container) {
         FadeTransition fadeTransition = new FadeTransition();
-        fadeTransition.setDuration(Duration.millis(200));
+        fadeTransition.setDuration(Duration.millis(500));
         fadeTransition.setNode(container);
         fadeTransition.setFromValue(1.0);
         fadeTransition.setToValue(0.0);

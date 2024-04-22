@@ -1,8 +1,12 @@
 package OurPackage.Controller;
 
+import OurPackage.Module.*;
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXListView;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -15,12 +19,15 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.web.WebView;
 import javafx.util.Duration;
 
 import java.net.URL;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
+
 
 public class DictionaryController extends GeneralController{
 
@@ -46,7 +53,7 @@ public class DictionaryController extends GeneralController{
     private Button HistoryWord;
 
     @FXML
-    private ListView<String> ListWord;
+    private ListView<String> ListDic;
 
     @FXML
     private Label LoveWord;
@@ -117,16 +124,16 @@ public class DictionaryController extends GeneralController{
     @FXML
     private Button ButtonMark;
 
-    public static String strTemp;
-
     public Map<String, String> HisWord = new HashMap<>();
+
+    public static String strTemp;
+    @FXML
+    private WebView InfoOfWords;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         super.initialize(url, resourceBundle);
-        if (!strTemp.equals(".")) {
-            Search.setText(strTemp);
-        }
+
         ButtonMark.setOnMouseEntered(event -> {
             Timeline timeline = new Timeline(
                     new KeyFrame(Duration.seconds(1), e -> {
@@ -139,6 +146,8 @@ public class DictionaryController extends GeneralController{
         ButtonMark.setOnMouseExited(event -> {
             LoveWord.setVisible(false);
         });
+        DicWords();
+
     }
 
     @FXML
@@ -170,4 +179,58 @@ public class DictionaryController extends GeneralController{
             SayNothing.setVisible(true);
         }
     }
+    public Map<String, String> List = new LinkedHashMap<>();
+
+    public void DicWords() {
+        DatabaseManager.DictionaryWords();
+        List = DatabaseManager.list;
+        ForSearchingDicWord(Search, List, ListDic);
+
+        ListDic.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
+            if (newVal != null) {
+                List.forEach((key, value) -> {
+                    if (value.equals(newVal)) {
+                        InfoOfWords.getEngine().loadContent(key);
+                        HisWord.put(key, value);
+                    }
+                });
+            }
+        });
+    }
+
+    public static void displayDicWords(Map<String, String> dictionary, ListView<String> listView) {
+        ObservableList<String> items = FXCollections.observableArrayList();
+        for (Map.Entry<String, String> entry : dictionary.entrySet()) {
+                items.add(entry.getValue());
+        }
+        listView.setItems(items);
+    }
+
+    public static void searchDicWord(TextField inputTextField, Map<String, String> dictionary, ListView<String> listView) {
+        String input = inputTextField.getText().trim().toLowerCase();
+        if (input.isEmpty()) {
+            displayDicWords(dictionary, listView); // Hiển thị tất cả các từ khi không có input
+            return;
+        }
+        ObservableList<String> result = FXCollections.observableArrayList();
+        for (Map.Entry<String, String> entry : dictionary.entrySet()) {
+            if (entry.getValue().startsWith(input.toLowerCase())) {
+                result.add(entry.getValue());
+            }
+        }
+        listView.setItems(result);
+    }
+
+    public static void ForSearchingDicWord(TextField inputTextField, Map<String, String> dictionary, ListView<String> listView) {
+
+        displayDicWords(dictionary, listView);
+
+        // Đặt sự kiện khi nhập liệu vào TextField
+        inputTextField.setOnKeyReleased(event -> {
+            // Gọi hàm searchWord để tìm kiếm và hiển thị kết quả
+            searchDicWord(inputTextField, dictionary, listView);
+        });
+    }
+
 }
+
