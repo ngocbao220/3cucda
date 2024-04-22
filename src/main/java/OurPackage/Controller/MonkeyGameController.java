@@ -162,6 +162,9 @@ public class MonkeyGameController extends GeneralController {
     private JFXButton but_trans;
 
     @FXML
+    private JFXButton Play2;
+
+    @FXML
     private JFXButton buttonOutToPaneGame;
 
     @FXML
@@ -435,14 +438,13 @@ public class MonkeyGameController extends GeneralController {
 
     @FXML
     void TurnOffMusic(ActionEvent event) throws URISyntaxException {
-        PauseMusic();
+        Play();
         ButtonOnMusic.setVisible(true);
         ButtonOffMusic.setVisible(false);
     }
     @FXML
     void TurnOnMusic(ActionEvent event) throws URISyntaxException {
-        PlayMusic("tiengHaiAu.mp3",-1);
-        Play();
+        PauseMusic();
         ButtonOffMusic.setVisible(true);
         ButtonOnMusic.setVisible(false);
     }
@@ -455,6 +457,8 @@ public class MonkeyGameController extends GeneralController {
         PaneWhenPlayGame.setVisible(false);
         PaneWhenLoss.setVisible(false);
         MenuChosseTheWord.setVisible(false);
+        PlayMusic("tiengHaiAu.mp3", -1);
+        Play();
         EmptyFile(DATA2);
         ForSearching(SearchOnRight, Map2, WordChoosing);
         timeline.stop();
@@ -488,6 +492,7 @@ public class MonkeyGameController extends GeneralController {
 
     @FXML
     void PlayDefaultGame(ActionEvent event) {
+        PauseMusic();
         try {
             ReadData(DATA1, Split, Map1);
         } catch (IOException e) {
@@ -525,6 +530,10 @@ public class MonkeyGameController extends GeneralController {
     void PlayOtherTypeGame(ActionEvent event) {
         try {
             ReadData(DATA2, Split, Map2);
+            if (Map2.size() < 2) {
+                return;
+            }
+            PauseMusic();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -572,6 +581,8 @@ public class MonkeyGameController extends GeneralController {
             ButtonSet.fire();
         });
     }
+
+
     // Thuc hien viec sua tu
     @FXML
     void DoSetWord(ActionEvent event) {
@@ -619,7 +630,7 @@ public class MonkeyGameController extends GeneralController {
 
     // Them tu tu ListView
     @FXML
-    void Add(ActionEvent event) throws IOException {
+    void Add(ActionEvent event) {
         AddItemsOfListView(WordDefault);
         ForSearching(SearchOnRight, Map2, WordChoosing);
     }
