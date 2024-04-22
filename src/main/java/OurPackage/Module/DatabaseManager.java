@@ -1,10 +1,6 @@
 package OurPackage.Module;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-
 import java.sql.*;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -41,7 +37,7 @@ public class DatabaseManager {
             Statement stmt = connect.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
-                list.put(rs.getString("html"), rs.getString("word"));
+                list.put(rs.getString("word"), rs.getString("html"));
             }
 
         } catch (SQLException e) {
@@ -49,4 +45,11 @@ public class DatabaseManager {
         }
     }
 
+    /*public static void main(String[] args) {
+        DictionaryWords();
+        for(Map.Entry<String, String> i : list.entrySet()) {
+            System.out.println(i.getKey());
+        }
+    }
+     */
 }
