@@ -16,11 +16,14 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.web.WebView;
 import javafx.util.Duration;
 
+import java.io.File;
 import java.net.URL;
 import java.util.*;
 
@@ -134,6 +137,9 @@ public class DictionaryController extends GeneralController{
 
     public static String strTemp = "";
 
+    String musicFile = "Data/SpeechText.mp3";
+    Media sound = new Media(new File(musicFile).toURI().toString());
+    MediaPlayer mediaPlayer = new MediaPlayer(sound);
 
     @FXML
     private WebView InfoOfWords;
@@ -223,8 +229,9 @@ public class DictionaryController extends GeneralController{
 
     @FXML
     void Say(ActionEvent event) {
-        //TextToSpeech speakword = new TextToSpeech(wordToSpeed, "hl=en-us", "Mike", "50");
-        System.out.println("I'llSpeak");
+        TextToSpeech.speak(wordToSpeed);
+        mediaPlayer.play();
+        System.out.println("I'llSpeak: " + wordToSpeed);
     }
 
     @FXML
@@ -254,7 +261,7 @@ public class DictionaryController extends GeneralController{
         ForSearchingDicWord(Search, List, ListDic);
 
         // Hien info cua tu minh tim kiem
-        InfoOfWords.getEngine().loadContent("<h1>welcome</h1><h3><i>/'welk m/</i></h3><h2>tính từ</h2><ul><li>được tiếp đãi ân cần, được hoan nghênh<ul style=\"list-style-type:circle\"><li>a welcome guest:<i> một người khách được tiếp đãi ân cần</i></li><li>to make someone welcome:<i> đón tiếp ai ân cần; làm cho ai thấy mình là khách được hoan nghênh</i></li><li>to be welcome:<i> cứ tự nhiên, cứ việc dùng, được tự do</i></li><li>you are welcome to my bicycle:<i> anh cứ việc dùng xe đạp của tôi</i></li><li>you are welcome to go with them or to stay at home:<i> anh muốn đi với họ hay ở nhà cũng được, xin cứ tự nhiên</i><br/></li></ul></li><li>hay, dễ chịu, thú vị<ul style=\"list-style-type:circle\"><li>a welcome change:<i> sự thay đổi dễ chịu</i></li><li>welcome news:<i> tin hay, tin vui</i></li><li>to be most welcome:<i> đến đúng lúc</i></li></ul></li></ul><h2>thành ngữ</h2><ol><li>you are welcome<ul><li>(từ Mỹ,nghĩa Mỹ),  (thông tục) không dám, có gì đâu (nói để đáp lại lời cm n)</li></ul></li></ol><h2>thán từ</h2><ul><li>hoan nghênh!<ul style=\"list-style-type:circle\"><li>Welcome to Vietnam!:<i> hoanh nghênh các bạn đến thăm Việt nam!</i></li></ul></li></ul><h2>danh từ</h2><ul><li>sự được tiếp đ i ân cần, sự đón tiếp ân cần; sự hoan nghênh<ul style=\"list-style-type:circle\"><li>to receive a warm welcome:<i> được đón tiếp niềm nở</i></li><li>to meet with a cold welcome:<i> được đón tiếp một cách lạnh nhạt</i></li><li>to wear out (outstay) one's welcome:<i> ở chi lâu đến nỗi người ta không muốn tiếp nữa</i></li><li>to bid someone welcome:<i> chào mừng ai</i></li></ul></li></ul><h2>ngoại động từ</h2><ul><li>đón tiếp ân cần; hoan nghênh<ul style=\"list-style-type:circle\"><li>to welcome a friend home:<i> đón tiếp ân cần một người bạn ở nhà mình, hoan nghênh một người bạn đi xa mới</i>về nước<br/></li><li>to welcome a suggestion:<i> hoan nghênh một lời gợi ý</i></li></ul></li></ul>");
+        InfoOfWords.getEngine().loadContent("<h1>welcome</h1><h3><i>/'welkəm/</i></h3><h2>tính từ</h2><ul><li>được tiếp đãi ân cần, được hoan nghênh<ul style=\"list-style-type:circle\"><li>a welcome guest:<i> một người khách được tiếp đãi ân cần</i></li><li>to make someone welcome:<i> đón tiếp ai ân cần; làm cho ai thấy mình là khách được hoan nghênh</i></li><li>to be welcome:<i> cứ tự nhiên, cứ việc dùng, được tự do</i></li><li>you are welcome to my bicycle:<i> anh cứ việc dùng xe đạp của tôi</i></li><li>you are welcome to go with them or to stay at home:<i> anh muốn đi với họ hay ở nhà cũng được, xin cứ tự nhiên</i><br/></li></ul></li><li>hay, dễ chịu, thú vị<ul style=\"list-style-type:circle\"><li>a welcome change:<i> sự thay đổi dễ chịu</i></li><li>welcome news:<i> tin hay, tin vui</i></li><li>to be most welcome:<i> đến đúng lúc</i></li></ul></li></ul><h2>thành ngữ</h2><ol><li>you are welcome<ul><li>(từ Mỹ,nghĩa Mỹ),  (thông tục) không dám, có gì đâu (nói để đáp lại lời cm n)</li></ul></li></ol><h2>thán từ</h2><ul><li>hoan nghênh!<ul style=\"list-style-type:circle\"><li>Welcome to Vietnam!:<i> hoanh nghênh các bạn đến thăm Việt nam!</i></li></ul></li></ul><h2>danh từ</h2><ul><li>sự được tiếp đ i ân cần, sự đón tiếp ân cần; sự hoan nghênh<ul style=\"list-style-type:circle\"><li>to receive a warm welcome:<i> được đón tiếp niềm nở</i></li><li>to meet with a cold welcome:<i> được đón tiếp một cách lạnh nhạt</i></li><li>to wear out (outstay) one's welcome:<i> ở chi lâu đến nỗi người ta không muốn tiếp nữa</i></li><li>to bid someone welcome:<i> chào mừng ai</i></li></ul></li></ul><h2>ngoại động từ</h2><ul><li>đón tiếp ân cần; hoan nghênh<ul style=\"list-style-type:circle\"><li>to welcome a friend home:<i> đón tiếp ân cần một người bạn ở nhà mình, hoan nghênh một người bạn đi xa mới</i>về nước<br/></li><li>to welcome a suggestion:<i> hoan nghênh một lời gợi ý</i></li></ul></li></ul>");
         ListDic.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
             if (newVal != null) {
                 List.forEach((key, value) -> {
