@@ -201,7 +201,12 @@
                               <JFXButton fx:id="opengame" layoutX="19.0" layoutY="16.0" prefHeight="105.0" prefWidth="178.0" styleClass="but_move_game" stylesheets="@../SupportScreen/Css/Style.css" />
                            </children>
                         </Pane>
-                        <JFXButton fx:id="removeFromMakredWord" layoutX="759.0" layoutY="222.0" opacity="0.82" prefHeight="28.0" prefWidth="33.0" style="-fx-background-radius: 20;" text="go" />
+                        <ImageView fitHeight="24.0" fitWidth="25.0" layoutX="738.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../SupportScreen/img/trudau.png" />
+                           </image>
+                        </ImageView>
+                        <JFXButton fx:id="removeFromMarkedWord" layoutX="738.0" layoutY="243.0" opacity="0.38" prefHeight="0.0" prefWidth="0.0" style="-fx-background-radius: 50;" text="Button" />
                             </children>
 
                         </AnchorPane>

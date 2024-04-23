@@ -588,11 +588,11 @@ public class QuizController extends GeneralController implements Initializable {
         }
     }
     public void swicthPane(Pane firstPane, Pane secondPane) {
-        FadeTransition fadeOut = new FadeTransition(Duration.seconds(1.2), firstPane);
+        FadeTransition fadeOut = new FadeTransition(Duration.seconds(0.5), firstPane);
         fadeOut.setFromValue(1.0);
         fadeOut.setToValue(0.8);
 
-        FadeTransition fadeIn = new FadeTransition(Duration.seconds(1.2), secondPane);
+        FadeTransition fadeIn = new FadeTransition(Duration.seconds(0.5), secondPane);
         fadeIn.setFromValue(0.8);
         fadeIn.setToValue(1.0);
 

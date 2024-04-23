@@ -164,3 +164,9 @@
     -fx-border-style: solid;
     -fx-border-color: #4B494A;
 }
+.buttonTruDau {
+    -fx-background-image: url('../img/trudau.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
