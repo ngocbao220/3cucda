@@ -2,7 +2,6 @@ package OurPackage.Controller;
 
 import OurPackage.Module.*;
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXListView;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
@@ -24,6 +23,9 @@ import javafx.scene.web.WebView;
 import javafx.util.Duration;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
@@ -137,7 +139,7 @@ public class DictionaryController extends GeneralController{
 
     public static String strTemp = "";
 
-    String musicFile = "Data/SpeechText.mp3";
+    String musicFile = "src/main/resources/OurPackage/SupportScreen/sound/SpeechText.mp3";
     Media sound = new Media(new File(musicFile).toURI().toString());
     MediaPlayer mediaPlayer = new MediaPlayer(sound);
 
@@ -230,7 +232,7 @@ public class DictionaryController extends GeneralController{
     @FXML
     void Say(ActionEvent event) {
         TextToSpeech.speak(wordToSpeed);
-        mediaPlayer.play();
+
         System.out.println("I'llSpeak: " + wordToSpeed);
     }
 
