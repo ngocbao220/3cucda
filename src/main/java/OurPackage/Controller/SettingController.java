@@ -8,8 +8,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
-
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 

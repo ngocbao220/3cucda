@@ -228,7 +228,6 @@ public class DictionaryController extends GeneralController{
     @FXML
     void Say(ActionEvent event) {
         TextToSpeech.speak(wordToSpeed);
-
         System.out.println("I'llSpeak: " + wordToSpeed);
     }
 

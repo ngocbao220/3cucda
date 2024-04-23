@@ -11,10 +11,7 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Stop;
 import javafx.util.Duration;
-
-import java.awt.*;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;

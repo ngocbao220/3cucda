@@ -3,17 +3,13 @@ package OurPackage.Controller;
 import com.jfoenix.controls.JFXButton;
 import javafx.animation.RotateTransition;
 import javafx.fxml.FXML;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
-
-import java.io.File;
 import java.net.URL;
-import java.util.Objects;
 import java.util.ResourceBundle;
 
 import static OurPackage.Module.SomethingForGame.*;
