@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -44,6 +45,12 @@ public class HomeController extends GeneralController {
 
     @FXML
     private Pane SearchTab;
+
+    @FXML
+    private ListView<String> listMarkedWord;
+
+    @FXML
+    private JFXButton removeFromMarkedWord;
 
     @FXML
     private JFXButton but_diction;
@@ -111,13 +118,12 @@ public class HomeController extends GeneralController {
     @FXML
     private TextField searchTab;
 
-    Timeline timeline;
-
-    protected Map<String, String> MarkedWord = new HashMap<>();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         super.initialize(url, resourceBundle);
+
+
 
         searchTab.setOnKeyPressed(e -> Non());
         setupMouseEvents(move_dic_home);

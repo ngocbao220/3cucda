@@ -129,6 +129,10 @@ public class DictionaryController extends GeneralController{
 
     public static String wordToSpeed;
     public static String strTemp = "";
+
+    /*public static Map<String, String> MarkedWord = new LinkedHashMap<>();*/
+
+
     @FXML
     private WebView InfoOfWords;
 
@@ -208,7 +212,7 @@ public class DictionaryController extends GeneralController{
     @FXML
     void Mark(ActionEvent event) {
         HomeController homeController = new HomeController();
-        homeController.MarkedWord.put("hello","xin chào");
+        /*homeController.MarkedWord.put("hello","xin chào");*/
         System.out.println("Dathem");
     }
 

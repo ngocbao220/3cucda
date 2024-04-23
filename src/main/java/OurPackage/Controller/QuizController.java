@@ -58,6 +58,9 @@ public class QuizController extends GeneralController implements Initializable {
     private JFXButton but_opt3;
 
     @FXML
+    private JFXButton buttonTheEnd;
+
+    @FXML
     private JFXButton but_opt4;
 
     @FXML
@@ -216,6 +219,10 @@ public class QuizController extends GeneralController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         but_home.setOnAction(e -> LoadScene( "Game-view.fxml", PaneGame2));
+
+        buttonTheEnd.setOnAction(e -> {
+            but_home.fire();
+        });
         setupMouseEvents(pane_opt1);
         setupMouseEvents(pane_opt2);
         setupMouseEvents(pane_opt3);

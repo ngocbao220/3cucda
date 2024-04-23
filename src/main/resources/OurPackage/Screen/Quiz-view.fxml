@@ -293,7 +293,7 @@
                                         <Image url="@../SupportScreen/img/Remove-bg.ai_1713802331736.png" />
                                     </image>
                                 </ImageView>
-                                <JFXButton layoutX="14.0" layoutY="19.0" prefHeight="35.0" prefWidth="132.0" styleClass="but_next" stylesheets="@../SupportScreen/Css/QuizGame.css" />
+                                <JFXButton fx:id="buttonTheEnd" layoutX="14.0" layoutY="19.0" prefHeight="35.0" prefWidth="132.0" styleClass="but_next" stylesheets="@../SupportScreen/Css/QuizGame.css" />
                             </children>
                         </Pane>
                         <Pane layoutX="139.0" layoutY="188.0" prefHeight="129.0" prefWidth="200.0">
