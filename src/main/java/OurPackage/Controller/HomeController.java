@@ -139,7 +139,7 @@ public class HomeController extends GeneralController {
             but_set.fire();
         });
         opengame2.setOnAction(e -> {
-            LoadScene("Game2-view.fxml", Back);
+            LoadScene("Quiz-view.fxml", Back);
         });
 
     }

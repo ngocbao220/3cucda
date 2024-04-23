@@ -33,3 +33,29 @@
     -fx-background-repeat: no-repeat;
     -fx-background-position: center;
 }
+.start {
+    -fx-background-image: url('../img/stat.jpg');
+        -fx-background-size: cover;
+        -fx-background-repeat: no-repeat;
+        -fx-background-position: center;
+}
+.but_start {
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 32px;
+}
+.ready {
+    -fx-background-image: url('../img/854b9614681ec6409f0f.jpg');
+            -fx-background-size: cover;
+            -fx-background-repeat: no-repeat;
+            -fx-background-position: center;
+}
+.rule {
+    -fx-background-image: url('../img/rule.jpg');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+.blurred_background {
+    -fx-background-color: #80808080;
+}
