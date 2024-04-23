@@ -1,6 +1,7 @@
 package OurPackage.Controller;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXListView;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.animation.TranslateTransition;
@@ -22,8 +23,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.Time;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
+
+import static OurPackage.Module.SomethingForGame.displayAllWords;
 
 
 public class HomeController extends GeneralController {
@@ -47,10 +51,7 @@ public class HomeController extends GeneralController {
     private Pane SearchTab;
 
     @FXML
-    private ListView<String> listMarkedWord;
-
-    @FXML
-    private JFXButton removeFromMarkedWord;
+    private ListView<String> listMarkedWord = new JFXListView<>();
 
     @FXML
     private JFXButton but_diction;
@@ -118,12 +119,12 @@ public class HomeController extends GeneralController {
     @FXML
     private TextField searchTab;
 
+    public static Map<String, String> MarkedWord = new LinkedHashMap<>();
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         super.initialize(url, resourceBundle);
-
-
 
         searchTab.setOnKeyPressed(e -> Non());
         setupMouseEvents(move_dic_home);
@@ -131,6 +132,11 @@ public class HomeController extends GeneralController {
         setupMouseEvents(move_trans_home);
         setupMouseEvents(move_set_home);
         setupMouseEvents(move_game_2);
+
+        if (!MarkedWord.isEmpty()) {
+            displayAllWords(MarkedWord, (JFXListView<String>) listMarkedWord);
+            System.out.println("hienthimarkedword");
+        }
 
         opendic.setOnAction(e -> {
             but_diction.fire();

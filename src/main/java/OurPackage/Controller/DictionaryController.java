@@ -24,6 +24,9 @@ import javafx.util.Duration;
 import java.net.URL;
 import java.util.*;
 
+import static OurPackage.Controller.HomeController.MarkedWord;
+import static OurPackage.Module.TranslateText.translate;
+
 
 public class DictionaryController extends GeneralController{
 
@@ -128,9 +131,8 @@ public class DictionaryController extends GeneralController{
     public Map<String, String> List = new LinkedHashMap<>();
 
     public static String wordToSpeed;
-    public static String strTemp = "";
 
-    /*public static Map<String, String> MarkedWord = new LinkedHashMap<>();*/
+    public static String strTemp = "";
 
 
     @FXML
@@ -211,9 +213,12 @@ public class DictionaryController extends GeneralController{
 
     @FXML
     void Mark(ActionEvent event) {
-        HomeController homeController = new HomeController();
-        /*homeController.MarkedWord.put("hello","xin chào");*/
-        System.out.println("Dathem");
+        if (!ListDic.getSelectionModel().isEmpty()) {
+            String s = ListDic.getSelectionModel().getSelectedItem();
+            MarkedWord.put(s, translate(s, "vi"));
+            System.out.println("Dathem");
+        }
+        return ;
     }
 
     @FXML

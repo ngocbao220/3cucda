@@ -76,6 +76,9 @@ public class GameController extends GeneralController {
     @FXML
     private ImageView iconMonkey;
 
+    @FXML
+    private ImageView threeMonkey;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         PlayMusic("tiecbaibien.mp4", -1);
@@ -90,6 +93,14 @@ public class GameController extends GeneralController {
         but_to_game2.setOnAction(e -> {
             StopMusic();
             LoadScene("Quiz-view.fxml", Back);
+        });
+
+        iconMonkey.setOnMouseClicked(e -> {
+            but_to_game1.fire();
+        });
+
+        threeMonkey.setOnMouseClicked(e -> {
+            but_to_game1.fire();
         });
         Exit.setOnAction(e -> {
             StopMusic();

@@ -143,10 +143,70 @@ public class GeneralController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        but_home.setOnAction(e -> LoadScene("Home-view.fxml", DisplayContent));
-        but_trans.setOnAction(e -> LoadScene("Translate-view.fxml", DisplayContent));
-        but_game.setOnAction(e -> LoadScene("Game-view.fxml", DisplayContent));
-        but_diction.setOnAction(e -> LoadScene("Dictionary-view.fxml", DisplayContent));
-        but_set.setOnAction(e -> LoadScene("Setting-view.fxml", DisplayContent));
+        but_home.setOnAction(e -> {
+            but_set.setDisable(true);
+            but_diction.setDisable(true);
+            but_trans.setDisable(true);
+            but_game.setDisable(true);
+            but_home.setDisable(true);
+            LoadScene("Home-view.fxml", DisplayContent);
+            but_set.setDisable(false);
+            but_diction.setDisable(false);
+            but_trans.setDisable(false);
+            but_game.setDisable(false);
+            but_home.setDisable(false);
+        });
+        but_trans.setOnAction(e -> {
+            but_trans.setDisable(true);
+            but_set.setDisable(true);
+            but_diction.setDisable(true);
+            but_home.setDisable(true);
+            but_game.setDisable(true);
+            LoadScene("Translate-view.fxml", DisplayContent);
+            but_set.setDisable(false);
+            but_diction.setDisable(false);
+            but_home.setDisable(false);
+            but_game.setDisable(false);
+            but_trans.setDisable(false);
+        });
+        but_game.setOnAction(e -> {
+            but_game.setDisable(true);
+            but_set.setDisable(true);
+            but_diction.setDisable(true);
+            but_home.setDisable(true);
+            but_trans.setDisable(true);
+            LoadScene("Game-view.fxml", DisplayContent);
+            but_game.setDisable(false);
+            but_set.setDisable(false);
+            but_diction.setDisable(false);
+            but_home.setDisable(false);
+            but_trans.setDisable(false);
+        });
+        but_diction.setOnAction(e -> {
+            but_diction.setDisable(true);
+            but_set.setDisable(true);
+            but_game.setDisable(true);
+            but_home.setDisable(true);
+            but_trans.setDisable(true);
+            LoadScene("Dictionary-view.fxml", DisplayContent);
+            but_set.setDisable(false);
+            but_game.setDisable(false);
+            but_home.setDisable(false);
+            but_trans.setDisable(false);
+            but_diction.setDisable(false);
+        });
+        but_set.setOnAction(e -> {
+            but_diction.setDisable(true);
+            but_set.setDisable(true);
+            but_game.setDisable(true);
+            but_home.setDisable(true);
+            but_trans.setDisable(true);
+            LoadScene("Setting-view.fxml", DisplayContent);
+            but_game.setDisable(false);
+            but_diction.setDisable(false);
+            but_home.setDisable(false);
+            but_trans.setDisable(false);
+            but_set.setDisable(false);
+        });
     }
 }
