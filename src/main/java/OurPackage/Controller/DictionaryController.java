@@ -139,10 +139,6 @@ public class DictionaryController extends GeneralController{
 
     public static String strTemp = "";
 
-    String musicFile = "src/main/resources/OurPackage/SupportScreen/sound/SpeechText.mp3";
-    Media sound = new Media(new File(musicFile).toURI().toString());
-    MediaPlayer mediaPlayer = new MediaPlayer(sound);
-
     @FXML
     private WebView InfoOfWords;
 
