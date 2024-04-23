@@ -1,5 +1,6 @@
 package OurPackage.Controller;
 
+import OurPackage.Module.DatabaseManager;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import javafx.animation.KeyFrame;
@@ -132,7 +133,7 @@ public class HomeController extends GeneralController {
         setupMouseEvents(move_trans_home);
         setupMouseEvents(move_set_home);
         setupMouseEvents(move_game_2);
-
+        MarkedWord = DatabaseManager.listFavoriteWords;
         if (!MarkedWord.isEmpty()) {
             displayAllWords(MarkedWord, (JFXListView<String>) listMarkedWord);
             System.out.println("hienthimarkedword");
