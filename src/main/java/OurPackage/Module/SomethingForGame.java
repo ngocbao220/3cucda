@@ -141,6 +141,7 @@ public class SomethingForGame {
         }
     }
 
+
     // Them tat ca
     public static void AddAll(String pathData1, String pathData2) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(new File(pathData1)));
@@ -148,12 +149,10 @@ public class SomethingForGame {
 
         String line;
         while ((line = reader.readLine()) != null) {
-            // Áp dụng hàm toLowerCase() cho từng dòng và ghi vào file đích
             writer.write(line.toLowerCase());
             writer.newLine(); // Thêm dòng mới sau mỗi dòng
         }
 
-        // Đóng các luồng
         reader.close();
         writer.close();
     }
@@ -168,7 +167,7 @@ public class SomethingForGame {
     }
 
 
-    //Go tu
+    //Xoa tu
     public static void remove(String filePath, String searchString, String newContent) throws IOException {
         File file = new File(filePath);
         BufferedReader reader = new BufferedReader(new FileReader(file));

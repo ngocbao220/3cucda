@@ -210,6 +210,7 @@ public class MonkeyGameController extends GeneralController {
             LoadScene( "Game-view.fxml", PaneGame1);
             StopMusic();
         });
+
         // cho Data2 rong
         try {
             EmptyFile(DATA2);
@@ -220,6 +221,7 @@ public class MonkeyGameController extends GeneralController {
         time = 0.05;
         k = 10;
 
+        // Thiet lap Game
         PaneWhenWrongAnswer.setVisible(false);
         PaneWhenPauseGame.setVisible(false);
         PaneWhenPlayGame.setVisible(false);
@@ -568,7 +570,7 @@ public class MonkeyGameController extends GeneralController {
     }
 
 
-    // Sua tu cung la them tu
+    // Sua tu
     @FXML
     void SetTheWord(ActionEvent event) {
         PaneWhenChooseWhenAddOrSetTheWord.setVisible(true);
@@ -581,8 +583,6 @@ public class MonkeyGameController extends GeneralController {
             ButtonSet.fire();
         });
     }
-
-
     // Thuc hien viec sua tu
     @FXML
     void DoSetWord(ActionEvent event) {
@@ -611,7 +611,6 @@ public class MonkeyGameController extends GeneralController {
             ButtonAddOtherWord.fire();
         });
     }
-
     // Hanh dong them tu moi
     @FXML
     void DoAddWord(ActionEvent event) {
@@ -634,8 +633,7 @@ public class MonkeyGameController extends GeneralController {
         AddItemsOfListView(WordDefault);
         ForSearching(SearchOnRight, Map2, WordChoosing);
     }
-
-    // Them tat ca
+    // Them tat ca tu mac dinh
     @FXML
     void addAll(ActionEvent event) throws IOException {
         AddAll(DATA1, DATA2);
@@ -643,8 +641,8 @@ public class MonkeyGameController extends GeneralController {
         ForSearching(SearchOnRight, Map2, WordChoosing);
     }
 
-    // Xoa tu muon xoa
 
+    // Xoa tu muon xoa
     @FXML
     void Remove(ActionEvent event) throws IOException {
         String selectedItem = WordChoosing.getSelectionModel().getSelectedItem().toLowerCase();

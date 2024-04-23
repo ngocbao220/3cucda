@@ -9,24 +9,20 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.scene.web.WebView;
 import javafx.util.Duration;
 
 import java.net.URL;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.ResourceBundle;
+import java.util.*;
 
 
 public class DictionaryController extends GeneralController{
@@ -83,6 +79,9 @@ public class DictionaryController extends GeneralController{
     private Button SayWord;
 
     @FXML
+    private Button removeWordOnHisWord;
+
+    @FXML
     private TextField Search;
 
     @FXML
@@ -129,7 +128,7 @@ public class DictionaryController extends GeneralController{
     public Map<String, String> List = new LinkedHashMap<>();
 
     public static String wordToSpeed;
-    public static String strTemp;
+    public static String strTemp = "";
     @FXML
     private WebView InfoOfWords;
 
@@ -137,6 +136,11 @@ public class DictionaryController extends GeneralController{
     public void initialize(URL url, ResourceBundle resourceBundle) {
         super.initialize(url, resourceBundle);
 
+        if (!strTemp.equals(".")) {
+            Search.setText(strTemp);
+            ForSearchingDicWord(Search, List, ListDic);
+        }
+        // Dua chuot vao 1 giay sau hien goi y
         ButtonMark.setOnMouseEntered(event -> {
             Timeline timeline = new Timeline(
                     new KeyFrame(Duration.seconds(1), e -> {
@@ -149,7 +153,50 @@ public class DictionaryController extends GeneralController{
         ButtonMark.setOnMouseExited(event -> {
             LoveWord.setVisible(false);
         });
+
+
         DicWords();
+        // cai phong chu cho listDic
+        ListDic.setCellFactory(param -> new ListCell<String>() {
+            @Override
+            protected void updateItem(String item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == null) {
+                    setText(null);
+                } else {
+                    setText(item);
+                    // Thiết lập font chữ tùy chỉnh cho các mục trong ListView
+                    setFont(Font.font("Segoe UI", FontWeight.BOLD, 13));
+                }
+            }
+        });
+
+        // Phong chu cho HisWord
+        DisplayHistoryWord.setCellFactory(param -> new ListCell<String>() {
+            @Override
+            protected void updateItem(String item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == null) {
+                    setText(null);
+                } else {
+                    setText(item);
+                    // Thiết lập font chữ tùy chỉnh cho các mục trong ListView
+                    setFont(Font.font("Segoe UI", FontWeight.NORMAL, 13));
+                }
+            }
+        });
+
+        removeWordOnHisWord.setOnAction(e -> {
+            if (HisWord.isEmpty()) return;
+
+            if(DisplayHistoryWord.getSelectionModel().isEmpty()) {
+                DisplayHistoryWord.getSelectionModel().select(0);
+            }
+
+            String s = DisplayHistoryWord.getSelectionModel().getSelectedItem();
+            HisWord.remove(s);
+            displayDicWords(HisWord, DisplayHistoryWord);
+        });
 
     }
 
@@ -177,10 +224,17 @@ public class DictionaryController extends GeneralController{
     }
 
     @FXML
-    void Showhistroyword(ActionEvent event) {
+    void showHistoryWord(ActionEvent event) {
         PaneHistory.setVisible(true);
+        System.out.println(HisWord.isEmpty());
         if (HisWord.isEmpty()) {
             SayNothing.setVisible(true);
+            removeWordOnHisWord.setVisible(false);
+        } else {
+            SayNothing.setVisible(false);
+            displayDicWords(HisWord, DisplayHistoryWord);
+            DisplayHistoryWord.setVisible(true);
+            removeWordOnHisWord.setVisible(true);
         }
     }
 
@@ -199,6 +253,17 @@ public class DictionaryController extends GeneralController{
                         InfoOfWords.getEngine().loadContent(value);
                         wordToSpeed = key;
                         HisWord.put(key, value);
+                    }
+                });
+            }
+        });
+
+        DisplayHistoryWord.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
+            if (newVal != null) {
+                List.forEach((key, value) -> {
+                    if (key.equals(newVal)) {
+                        InfoOfWords.getEngine().loadContent(value);
+                        wordToSpeed = key;
                     }
                 });
             }
@@ -231,6 +296,10 @@ public class DictionaryController extends GeneralController{
     public static void ForSearchingDicWord(TextField inputTextField, Map<String, String> dictionary, ListView<String> listView) {
 
         displayDicWords(dictionary, listView);
+
+        if (!inputTextField.getText().isEmpty()) {
+            searchDicWord(inputTextField, dictionary, listView);
+        }
 
         // Đặt sự kiện khi nhập liệu vào TextField
         inputTextField.setOnKeyReleased(event -> {
