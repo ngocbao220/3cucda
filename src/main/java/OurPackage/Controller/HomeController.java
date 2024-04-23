@@ -133,7 +133,9 @@ public class HomeController extends GeneralController {
         setupMouseEvents(move_trans_home);
         setupMouseEvents(move_set_home);
         setupMouseEvents(move_game_2);
+
         MarkedWord = DatabaseManager.listFavoriteWords;
+
         if (!MarkedWord.isEmpty()) {
             displayAllWords(MarkedWord, (JFXListView<String>) listMarkedWord);
             System.out.println("hienthimarkedword");

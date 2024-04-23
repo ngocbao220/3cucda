@@ -52,8 +52,8 @@ public class DatabaseManager {
     /*public static void main(String[] args) {
         DictionaryWords();
         for(Map.Entry<String, String> i : listFavoriteWords.entrySet()) {
-            System.out.println(i.getKey());
-            //System.out.println(" ");
+            System.out.print(i.getKey());
+            System.out.print(" ");
             System.out.println(i.getValue());
         }
     }*/
