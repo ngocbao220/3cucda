@@ -219,6 +219,11 @@ public class DictionaryController extends GeneralController{
             String s = ListDic.getSelectionModel().getSelectedItem();
             MarkedWord.add(s);
         }
+        if (!DisplayHistoryWord.getSelectionModel().isEmpty()) {
+            paneMarkedWord.setVisible(true);
+            String s = DisplayHistoryWord.getSelectionModel().getSelectedItem();
+            MarkedWord.add(s);
+        }
         else return;
     }
 
@@ -271,6 +276,7 @@ public class DictionaryController extends GeneralController{
 
         DisplayHistoryWord.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
             if (newVal != null) {
+                paneMarkedWord.setVisible(MarkedWord.contains(newVal));
                 List.forEach((key, value) -> {
                     if (key.equals(newVal)) {
                         InfoOfWords.getEngine().loadContent(value);
