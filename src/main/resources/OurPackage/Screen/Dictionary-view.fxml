@@ -190,6 +190,7 @@
                         <Image url="@../SupportScreen/img/loadding.png" />
                      </image>
                   </ImageView>
+                  <Pane fx:id="paneMarkedWord" layoutX="781.0" layoutY="85.0" opacity="0.7" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: yellow; -fx-background-radius: 20;" visible="false" />
                     </children>
                 </Pane>
             </children>

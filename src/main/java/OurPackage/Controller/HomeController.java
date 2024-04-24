@@ -205,7 +205,6 @@ public class HomeController extends GeneralController {
 
                 timeline.play();
                 turnOffMean.setVisible(false);
-                checkOnScreen = false;
                 buttonShowInfor.setVisible(false);
             }
         });
