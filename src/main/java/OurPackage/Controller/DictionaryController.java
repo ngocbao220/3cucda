@@ -215,9 +215,9 @@ public class DictionaryController extends GeneralController{
     @FXML
     void Mark(ActionEvent event) {
         if (!ListDic.getSelectionModel().isEmpty()) {
+            paneMarkedWord.setVisible(true);
             String s = ListDic.getSelectionModel().getSelectedItem();
             MarkedWord.add(s);
-            System.out.println("Dathem");
         }
         else return;
     }
