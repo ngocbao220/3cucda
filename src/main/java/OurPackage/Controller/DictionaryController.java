@@ -30,6 +30,7 @@ import java.net.URL;
 import java.util.*;
 
 import static OurPackage.Controller.HomeController.MarkedWord;
+import static OurPackage.Module.Constructor.HisWord;
 import static OurPackage.Module.TranslateText.translate;
 
 
@@ -131,7 +132,6 @@ public class DictionaryController extends GeneralController{
     @FXML
     private Button ButtonMark;
 
-    public Map<String, String> HisWord = new HashMap<>();
 
     public Map<String, String> List = new LinkedHashMap<>();
 

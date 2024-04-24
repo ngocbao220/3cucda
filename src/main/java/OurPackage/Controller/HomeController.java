@@ -176,26 +176,32 @@ public class HomeController extends GeneralController {
         String[] countWords = searchTab.getText().split(" ");
         int numberOfWords = countWords.length;
 
-        if (numberOfWords > 1) {
+        if(searchTab.getText().isEmpty()) {
             nonSwitchDic.setVisible(false);
-            nonSwitchTran.setVisible(true);
-
-            searchTab.setOnAction(e -> {
-                nonSwitchTran.setVisible(false);
-                but_trans.fire();
-                TranslateTextController.strTemp1 = searchTab.getText();
-            });
-
-        } else if (numberOfWords == 1) {
-            nonSwitchDic.setVisible(true);
             nonSwitchTran.setVisible(false);
+        } else {
 
-            searchTab.setOnAction(e -> {
+            if (numberOfWords > 1) {
                 nonSwitchDic.setVisible(false);
-                but_diction.fire();
-                DictionaryController.strTemp = searchTab.getText();
-            });
+                nonSwitchTran.setVisible(true);
 
+                searchTab.setOnAction(e -> {
+                    nonSwitchTran.setVisible(false);
+                    but_trans.fire();
+                    TranslateTextController.strTemp1 = searchTab.getText();
+                });
+
+            } else if (numberOfWords == 1) {
+                nonSwitchDic.setVisible(true);
+                nonSwitchTran.setVisible(false);
+
+                searchTab.setOnAction(e -> {
+                    nonSwitchDic.setVisible(false);
+                    but_diction.fire();
+                    DictionaryController.strTemp = searchTab.getText();
+                });
+
+            }
         }
     }
 }
