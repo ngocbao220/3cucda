@@ -117,7 +117,7 @@
                         </Pane>
                   <StackPane fx:id="Sr" layoutX="18.0" layoutY="379.0" prefHeight="182.0" prefWidth="220.0">
                            <children>
-                              <ImageView fitHeight="162.0" fitWidth="155.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="phihanhgia2" fitHeight="162.0" fitWidth="155.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../SupportScreen/img/phihanhgia2.png" />
                                  </image>
@@ -126,7 +126,7 @@
                   </StackPane>
                   <StackPane fx:id="Sl" layoutX="14.0" layoutY="83.0" prefHeight="200.0" prefWidth="227.0">
                            <children>
-                              <ImageView fitHeight="161.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="phihanhgia1" fitHeight="161.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../SupportScreen/img/phihanhgia1.png" />
                                  </image>

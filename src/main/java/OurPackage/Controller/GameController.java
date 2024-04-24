@@ -119,8 +119,8 @@ public class GameController extends GeneralController {
 
         // Create RotateTransition
         RotateTransition transition = new RotateTransition(Duration.seconds(speech), imageView);
-        transition.setFromAngle(-20);
-        transition.setToAngle(20);
+        transition.setFromAngle(-15);
+        transition.setToAngle(15);
         transition.setCycleCount(-1);
         transition.setAutoReverse(true);
 

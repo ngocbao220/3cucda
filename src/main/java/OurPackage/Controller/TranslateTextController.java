@@ -3,6 +3,7 @@ package OurPackage.Controller;
 import OurPackage.Module.TranslateText;
 import com.jfoenix.controls.JFXButton;
 import javafx.animation.KeyFrame;
+import javafx.animation.RotateTransition;
 import javafx.animation.Timeline;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
@@ -23,6 +24,8 @@ import javafx.util.Duration;
 import javafx.scene.media.MediaView;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+
 
 public class TranslateTextController extends GeneralController implements Initializable {
     private String Language = "vi";
@@ -75,6 +78,12 @@ public class TranslateTextController extends GeneralController implements Initia
 
     @FXML
     private ImageView catcute;
+
+    @FXML
+    private ImageView phihanhgia1;
+
+    @FXML
+    private ImageView phihanhgia2;
 
     @FXML
     private AnchorPane dictionary;
@@ -169,6 +178,9 @@ public class TranslateTextController extends GeneralController implements Initia
                 timeline.play();
             }
         });
+
+        action(phihanhgia1, 1.5);
+        action(phihanhgia2, 1.5);
     }
 
     // Phương thức để hoán đổi vị trí giữa hai StackPane
@@ -213,6 +225,19 @@ public class TranslateTextController extends GeneralController implements Initia
             timeline.play();
             swapLang.setDisable(false);
         }
+    }
+
+    public void action(ImageView imageView, double speech) {
+
+        // Create RotateTransition
+        RotateTransition transition = new RotateTransition(Duration.seconds(speech), imageView);
+        transition.setFromAngle(-20);
+        transition.setToAngle(20);
+        transition.setCycleCount(-1);
+        transition.setAutoReverse(true);
+
+        // Start the animation
+        transition.play();
     }
     // tu dong dich khi nhap van ban
     @FXML
