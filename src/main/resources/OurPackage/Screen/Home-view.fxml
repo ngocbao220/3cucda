@@ -9,8 +9,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
 
 <Pane fx:id="Back" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OurPackage.Controller.HomeController">
    <children>
@@ -141,7 +143,7 @@
                                         <Image url="@../SupportScreen/img/ELISH.png" />
                                     </image>
                                 </ImageView>
-                        <Pane fx:id="move_game_2" layoutX="481.0" layoutY="3.0" prefHeight="201.0" prefWidth="332.0">
+                        <Pane fx:id="move_game_2" layoutX="492.0" layoutY="3.0" prefHeight="201.0" prefWidth="321.0">
                            <children>
                                       <ImageView fitHeight="211.0" fitWidth="317.0" layoutX="8.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
                                           <image>
@@ -155,7 +157,7 @@
                               <Image url="@../SupportScreen/img/Remove-bg.ai_1713323606858.png" />
                            </image>
                         </ImageView>
-                        <ListView layoutX="546.0" layoutY="262.0" prefHeight="222.0" prefWidth="204.0" styleClass="fvrtWord" stylesheets="@../SupportScreen/Css/Style.css" />
+                        <ListView fx:id="listMarkedWord" layoutX="546.0" layoutY="268.0" prefHeight="216.0" prefWidth="204.0" styleClass="fvrtWord" stylesheets="@../SupportScreen/Css/Style.css" />
                         <ImageView fitHeight="70.0" fitWidth="90.0" layoutX="499.0" layoutY="204.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../SupportScreen/img/Remove-bg.ai_1713322722423.png" />
@@ -207,6 +209,17 @@
                            </image>
                         </ImageView>
                         <JFXButton fx:id="removeFromMarkedWord" layoutX="738.0" layoutY="243.0" opacity="0.38" prefHeight="0.0" prefWidth="0.0" style="-fx-background-radius: 50;" text="Button" />
+                        <JFXButton fx:id="turnOffMean" layoutX="461.0" layoutY="117.0" prefHeight="46.0" prefWidth="42.0" text="&gt;" visible="false">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </JFXButton>
+                        <StackPane fx:id="stackPaneMeanWord" layoutX="6.0" layoutY="14.0" prefHeight="252.0" prefWidth="460.0">
+                           <children>
+                              <WebView fx:id="infoWord" prefHeight="126.0" prefWidth="302.0" />
+                           </children>
+                        </StackPane>
+                        <JFXButton fx:id="buttonShowInfor" layoutX="634.0" layoutY="243.0" prefHeight="25.0" prefWidth="28.0" text="+" visible="false" />
                             </children>
 
                         </AnchorPane>

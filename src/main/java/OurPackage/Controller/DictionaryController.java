@@ -29,9 +29,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
-import static OurPackage.Controller.HomeController.MarkedWord;
 import static OurPackage.Module.Constructor.HisWord;
-import static OurPackage.Module.TranslateText.translate;
+import static OurPackage.Module.Constructor.MarkedWord;
+
 
 
 public class DictionaryController extends GeneralController{
@@ -132,8 +132,7 @@ public class DictionaryController extends GeneralController{
     @FXML
     private Button ButtonMark;
 
-
-    public Map<String, String> List = new LinkedHashMap<>();
+    public static Map<String, String> List = new LinkedHashMap<>();
 
     public static String wordToSpeed;
 
@@ -150,20 +149,6 @@ public class DictionaryController extends GeneralController{
             Search.setText(strTemp);
             ForSearchingDicWord(Search, List, ListDic);
         }
-        // Dua chuot vao 1 giay sau hien goi y
-        ButtonMark.setOnMouseEntered(event -> {
-            Timeline timeline = new Timeline(
-                    new KeyFrame(Duration.seconds(1), e -> {
-                        LoveWord.setVisible(true);
-                    })
-            );
-            timeline.play();
-        });
-
-        ButtonMark.setOnMouseExited(event -> {
-            LoveWord.setVisible(false);
-        });
-
 
         DicWords();
         // cai phong chu cho listDic
@@ -219,10 +204,10 @@ public class DictionaryController extends GeneralController{
     void Mark(ActionEvent event) {
         if (!ListDic.getSelectionModel().isEmpty()) {
             String s = ListDic.getSelectionModel().getSelectedItem();
-            MarkedWord.put(s, translate(s, "vi"));
+            MarkedWord.add(s);
             System.out.println("Dathem");
         }
-        return ;
+        else return;
     }
 
     @FXML

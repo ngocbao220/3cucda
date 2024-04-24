@@ -3,22 +3,29 @@ package OurPackage.Controller;
 import OurPackage.Module.DatabaseManager;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.animation.TranslateTransition;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
+import javafx.scene.input.MouseButton;
+import javafx.scene.layout.*;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.web.WebView;
 import javafx.util.Duration;
 import java.net.URL;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
 
-import static OurPackage.Module.SomethingForGame.displayAllWords;
+import static OurPackage.Controller.DictionaryController.List;
+import static OurPackage.Module.Constructor.MarkedWord;
 
 
 public class HomeController extends GeneralController {
@@ -69,6 +76,9 @@ public class HomeController extends GeneralController {
     private Pane menu_inner_pane;
 
     @FXML
+    private StackPane stackPaneMeanWord;
+
+    @FXML
     private Pane move_dic_home;
 
     @FXML
@@ -96,7 +106,16 @@ public class HomeController extends GeneralController {
     private JFXButton opengame;
 
     @FXML
+    private JFXButton turnOffMean;
+
+    @FXML
+    private JFXButton removeFromMarkedWord;
+
+    @FXML
     private JFXButton opengame2;
+
+    @FXML
+    private JFXButton buttonShowInfor;
 
     @FXML
     private JFXButton openset;
@@ -110,12 +129,21 @@ public class HomeController extends GeneralController {
     @FXML
     private TextField searchTab;
 
-    public static Map<String, String> MarkedWord = new LinkedHashMap<>();
+    @FXML
+    private WebView infoWord;
 
+    private String wordToSpeed;
+
+    private boolean checkOnScreen = true;
+
+    ObservableList<String> items = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         super.initialize(url, resourceBundle);
+
+        TranslateTransition transition = createTransition(stackPaneMeanWord, 1300, 0.3);
+        transition.play();
 
         searchTab.setOnKeyPressed(e -> Non());
         setupMouseEvents(move_dic_home);
@@ -124,12 +152,88 @@ public class HomeController extends GeneralController {
         setupMouseEvents(move_set_home);
         setupMouseEvents(move_game_2);
 
-        MarkedWord = DatabaseManager.listFavoriteWords;
-
         if (!MarkedWord.isEmpty()) {
-            displayAllWords(MarkedWord, (JFXListView<String>) listMarkedWord);
-            System.out.println("hienthimarkedword");
+            items.addAll(MarkedWord);
+            listMarkedWord.setItems(items);
         }
+
+
+        buttonShowInfor.setOnAction(e -> {
+            if (checkOnScreen) {
+                System.out.println("daxamnhap");
+                // Hien bang thong tin va thong tin cua tu duoc an dup
+                TranslateTransition transition1 = createTransition(stackPaneMeanWord, -1300, 1);
+                transition1.play();
+
+                listMarkedWord.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
+                    if (newVal != null) {
+                        List.forEach((key, value) -> {
+                            if (key.equals(newVal)) {
+                                infoWord.getEngine().loadContent(value);
+                                wordToSpeed = key;
+                            }
+                        });
+                    }
+                });
+                buttonShowInfor.setVisible(false);
+                turnOffMean.setVisible(true);
+            }
+        });
+
+        listMarkedWord.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
+            if (newVal != null) {
+                List.forEach((key, value) -> {
+                    if (key.equals(newVal)) {
+                        infoWord.getEngine().loadContent(value);
+                        wordToSpeed = key;
+                    }
+                });
+                buttonShowInfor.setVisible(true);
+            }
+        });
+
+        // dong webview hien nghia
+        turnOffMean.setOnAction(e -> {
+            if (checkOnScreen) {
+                TranslateTransition transition1 = createTransition(stackPaneMeanWord, -20, 0.5);
+                transition1.play();
+
+                Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.5), event -> {
+                    TranslateTransition transition2 = createTransition(stackPaneMeanWord, 1320, 0.6);
+                    transition2.play();
+                }));
+
+                timeline.play();
+                turnOffMean.setVisible(false);
+                checkOnScreen = false;
+                buttonShowInfor.setVisible(false);
+            }
+        });
+
+        // Xoa
+        removeFromMarkedWord.setOnAction(e -> {
+            if (!listMarkedWord.getSelectionModel().isEmpty()) {
+                MarkedWord.remove(listMarkedWord.getSelectionModel().getSelectedItem());
+                items.remove(listMarkedWord.getSelectionModel().getSelectedItem());
+                listMarkedWord.setItems(items);
+            } else return;
+        });
+
+        listMarkedWord.setCellFactory(param -> new ListCell<String>() {
+            @Override
+            protected void updateItem(String item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == null) {
+                    setText(null);
+                } else {
+                    setText(item);
+                    // Thiết lập font chữ tùy chỉnh cho các mục trong ListView
+                    setFont(Font.font("Segoe UI", FontWeight.BOLD, 13));
+                }
+            }
+        });
+
+
 
         opendic.setOnAction(e -> {
             but_diction.fire();
@@ -146,8 +250,15 @@ public class HomeController extends GeneralController {
         opengame2.setOnAction(e -> {
             LoadScene("Quiz-view.fxml", Back);
         });
-
     }
+    // ham tao hieu ung chuyen dong
+    private TranslateTransition createTransition(StackPane stackPane, double deltaX, double speed) {
+        TranslateTransition transition = new TranslateTransition(Duration.seconds(speed), stackPane);
+        transition.setByX(deltaX);
+        return transition;
+    }
+
+
     @FXML
     public void onMouseEntered(Pane pane) {
         TranslateTransition trans = new TranslateTransition();
@@ -200,7 +311,6 @@ public class HomeController extends GeneralController {
                     but_diction.fire();
                     DictionaryController.strTemp = searchTab.getText();
                 });
-
             }
         }
     }
