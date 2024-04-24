@@ -185,6 +185,11 @@
                         <Font size="13.0" />
                      </font>
                   </Label>
+                  <ImageView fx:id="loading" fitHeight="28.0" fitWidth="25.0" layoutX="747.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../SupportScreen/img/loadding.png" />
+                     </image>
+                  </ImageView>
                     </children>
                 </Pane>
             </children>

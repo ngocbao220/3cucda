@@ -17,6 +17,7 @@ public class Start extends Application {
         stage.setTitle("Our App");
         stage.setScene(scene);
         stage.show();
+
     }
     public static void main(String[] args)   {
         launch();

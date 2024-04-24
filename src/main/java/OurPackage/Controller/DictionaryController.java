@@ -29,9 +29,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
-import static OurPackage.Module.Constructor.HisWord;
-import static OurPackage.Module.Constructor.MarkedWord;
-
+import static OurPackage.Module.Constructor.*;
 
 
 public class DictionaryController extends GeneralController{
@@ -119,6 +117,9 @@ public class DictionaryController extends GeneralController{
 
     @FXML
     private ImageView catcute;
+
+    @FXML
+    private ImageView loading;
 
     @FXML
     private Pane inner_pane;
@@ -212,7 +213,7 @@ public class DictionaryController extends GeneralController{
 
     @FXML
     void Say(ActionEvent event) {
-        TextToSpeech.speak(wordToSpeed);
+        TextToSpeech.speak(wordToSpeed, SayWord, loading);
         System.out.println("I'llSpeak: " + wordToSpeed);
     }
 
