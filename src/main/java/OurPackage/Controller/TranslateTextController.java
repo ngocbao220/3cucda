@@ -95,7 +95,7 @@ public class TranslateTextController extends GeneralController implements Initia
     private Label lb_tran2;
 
     @FXML
-    private Button swapLang;
+    private JFXButton swapLang;
 
     @FXML
     private JFXButton but_set;
@@ -173,11 +173,11 @@ public class TranslateTextController extends GeneralController implements Initia
 
     // Phương thức để hoán đổi vị trí giữa hai StackPane
     private void swapStackPanes(StackPane stackPane1, StackPane stackPane2) {
-        double a = Math.abs(stackPane2.getLayoutX() - stackPane1.getLayoutX());
+        double a = Math.abs(stackPane2.getLayoutY() - stackPane1.getLayoutY());
         double b = -a;
 
-        TranslateTransition transition1 = createTransition(stackPane1, a, 0);
-        TranslateTransition transition2 = createTransition(stackPane2, b, 0);
+        TranslateTransition transition1 = createTransition(stackPane1, 0, a);
+        TranslateTransition transition2 = createTransition(stackPane2, 0, b);
 
         transition1.play();
         transition2.play();
