@@ -132,12 +132,15 @@ public class SomethingForGame {
 
     // Them tu trong listView
     public static void AddItemsOfListView(JFXListView<String> listView) {
-        String selectedItem = listView.getSelectionModel().getSelectedItem().toLowerCase();
-        try {
-            AddData(selectedItem, getDef(selectedItem, Map1));
-            Map2.put(getDef(selectedItem, Map1), selectedItem);
-        } catch (IOException ex) {
-            throw new RuntimeException(ex);
+        String selectedItem = listView.getSelectionModel().getSelectedItem();
+        if (selectedItem != null) {
+            selectedItem = selectedItem.toLowerCase();
+            try {
+                AddData(selectedItem, getDef(selectedItem, Map1));
+                Map2.put(getDef(selectedItem, Map1), selectedItem);
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
         }
     }
 

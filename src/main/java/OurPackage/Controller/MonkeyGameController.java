@@ -635,10 +635,14 @@ public class MonkeyGameController extends GeneralController {
     // Xoa tu muon xoa
     @FXML
     void Remove(ActionEvent event) throws IOException {
-        String selectedItem = WordChoosing.getSelectionModel().getSelectedItem().toLowerCase();
-        remove(DATA2, selectedItem, ".");
-        ReadData(DATA2, Split, Map2);
-        ForSearching(SearchOnRight, Map2, WordChoosing);
+        String selectedItem = WordChoosing.getSelectionModel().getSelectedItem();
+        if (selectedItem != null) {
+            remove(DATA2, selectedItem.toLowerCase(), ".");
+            ReadData(DATA2, Split, Map2);
+            ForSearching(SearchOnRight, Map2, WordChoosing);
+        } else {
+            return;
+        }
     }
 
     // Xoa tat ca
