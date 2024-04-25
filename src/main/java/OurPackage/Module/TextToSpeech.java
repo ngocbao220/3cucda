@@ -14,12 +14,20 @@ import java.nio.charset.StandardCharsets;
 
 
 public class TextToSpeech {
-    public static void speak(String wordToSpeech, Button image, ImageView loading) {
+    public static void speak(String wordToSpeech, Button image, ImageView loading, boolean lgg) {
         try {
             String apiKey = "ec3d616154994f4a891ce5d297175493";  // khóa API của bạn
-            String text = wordToSpeech;  // Văn bản bạn muốn chuyển đổi
-            String language = "en-us";  // Ngôn ngữ giọng nói
-            String voice = "Mike"; // tên của giọng nói US: Linda, Amy, John, Mike, Mary
+            String text = wordToSpeech; // Văn bản bạn muốn chuyển đổi
+            String language ;
+            String voice ;
+            if (lgg) {
+                language = "en-us";  // Ngôn ngữ giọng nói
+                voice = "Mike";
+            } else {
+                language = "vi-vn";  // Ngôn ngữ giọng nói
+                voice = "Chi";
+            }
+
             String encodedText = URLEncoder.encode(text, StandardCharsets.UTF_8.toString());
 
             URL url = new URL("http://api.voicerss.org/?key=" + apiKey + "&hl=" + language + "&v=" + voice + "&src=" + encodedText);

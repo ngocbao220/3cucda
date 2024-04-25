@@ -1,5 +1,6 @@
 package OurPackage.Controller;
 
+import OurPackage.Module.TextToSpeech;
 import OurPackage.Module.TranslateText;
 import com.jfoenix.controls.JFXButton;
 import javafx.animation.KeyFrame;
@@ -86,6 +87,12 @@ public class TranslateTextController extends GeneralController implements Initia
     private ImageView phihanhgia2;
 
     @FXML
+    private ImageView loading1;
+
+    @FXML
+    private ImageView loading2;
+
+    @FXML
     private AnchorPane dictionary;
 
     @FXML
@@ -105,6 +112,12 @@ public class TranslateTextController extends GeneralController implements Initia
 
     @FXML
     private JFXButton swapLang;
+
+    @FXML
+    private JFXButton butSpeak1;
+
+    @FXML
+    private JFXButton butSpeak2;
 
     @FXML
     private JFXButton but_set;
@@ -136,6 +149,10 @@ public class TranslateTextController extends GeneralController implements Initia
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         super.initialize(url, resourceBundle);
+
+        TextIn.setStyle("-fx-font-family: 'Segue UI'; -fx-font-weight: bold; -fx-font-size: 20px;");
+        TextOut.setStyle("-fx-font-family: 'Segue UI'; -fx-font-weight: bold; -fx-font-size: 20px;");
+
         timer = new Timeline(new KeyFrame(Duration.millis(time),
                 event -> {
                     String inputText = TextIn.getText();
@@ -181,6 +198,10 @@ public class TranslateTextController extends GeneralController implements Initia
 
         action(phihanhgia1, 1.5);
         action(phihanhgia2, 1.5);
+
+        butSpeak1.setOnAction(e -> TextToSpeech.speak(TextIn.getText(), butSpeak1, loading1, count % 2 == 0));
+        butSpeak2.setOnAction(e -> TextToSpeech.speak(TextOut.getText(), butSpeak2, loading2, count % 2 != 0));
+
     }
 
     // Phương thức để hoán đổi vị trí giữa hai StackPane
@@ -205,7 +226,6 @@ public class TranslateTextController extends GeneralController implements Initia
     // Sự kiện ấn nút đổi
     @FXML
     void DoSwapLang(ActionEvent event) {
-
         if (count %2 != 0 ) {
             swapLang.setDisable(true);
             swapStackPanes(Sr, Sl);
@@ -228,15 +248,12 @@ public class TranslateTextController extends GeneralController implements Initia
     }
 
     public void action(ImageView imageView, double speech) {
-
-        // Create RotateTransition
         RotateTransition transition = new RotateTransition(Duration.seconds(speech), imageView);
         transition.setFromAngle(-20);
         transition.setToAngle(20);
         transition.setCycleCount(-1);
         transition.setAutoReverse(true);
 
-        // Start the animation
         transition.play();
     }
     // tu dong dich khi nhap van ban

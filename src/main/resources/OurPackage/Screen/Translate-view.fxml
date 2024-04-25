@@ -96,23 +96,21 @@
                         <Pane layoutX="221.0" layoutY="343.0" prefHeight="254.0" prefWidth="564.0">
                            <children>
                               <Pane layoutX="20.0" layoutY="28.0" opacity="0.13" prefHeight="211.0" prefWidth="539.0" styleClass="backgroundText" stylesheets="@../SupportScreen/Css/translate.css" />
-                        <TextArea fx:id="TextOut" layoutX="43.0" layoutY="46.0" prefHeight="175.0" prefWidth="492.0" promptText="Bản dịch ..." styleClass="textfiel" stylesheets="@../SupportScreen/Css/translate.css" wrapText="true">
+                        <TextArea fx:id="TextOut" layoutX="43.0" layoutY="46.0" opacity="0.8" prefHeight="175.0" prefWidth="492.0" promptText="Bản dịch ..." styleClass="textfiel" stylesheets="@../SupportScreen/Css/translate.css" wrapText="true">
                            <font>
                               <Font size="18.0" />
                            </font>
                               </TextArea>
-                              <JFXButton layoutX="423.0" layoutY="-1.0" prefHeight="39.0" prefWidth="42.0" styleClass="buttonn" stylesheets="@../SupportScreen/Css/translate.css" />
                            </children>
                         </Pane>
                         <Pane layoutX="213.0" layoutY="70.0" prefHeight="237.0" prefWidth="580.0">
                            <children>
                               <Pane layoutX="21.0" layoutY="14.0" opacity="0.13" prefHeight="211.0" prefWidth="539.0" styleClass="backgroundText" stylesheets="@../SupportScreen/Css/translate.css" />
-                        <TextArea fx:id="TextIn" layoutX="44.0" layoutY="33.0" onKeyPressed="#translate" prefHeight="175.0" prefWidth="492.0" promptText="Nhập văn bản ..." styleClass="textfiel" stylesheets="@../SupportScreen/Css/translate.css" wrapText="true">
+                        <TextArea fx:id="TextIn" layoutX="44.0" layoutY="33.0" onKeyPressed="#translate" opacity="0.8" prefHeight="175.0" prefWidth="492.0" promptText="Nhập văn bản ..." styleClass="textfiel" stylesheets="@../SupportScreen/Css/translate.css" wrapText="true">
                            <font>
                               <Font size="18.0" />
                            </font>
                               </TextArea>
-                              <JFXButton layoutX="421.0" layoutY="-19.0" prefHeight="39.0" prefWidth="42.0" styleClass="buttonn" stylesheets="@../SupportScreen/Css/translate.css" />
                            </children>
                         </Pane>
                   <StackPane fx:id="Sr" layoutX="18.0" layoutY="379.0" prefHeight="182.0" prefWidth="220.0">
@@ -148,6 +146,18 @@
                               <Image url="@../SupportScreen/img/Tran.png" />
                            </image>
                         </ImageView>
+                        <ImageView fx:id="loading2" fitHeight="39.0" fitWidth="33.0" layoutX="761.0" layoutY="338.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@../SupportScreen/img/loadding.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="loading1" fitHeight="39.0" fitWidth="33.0" layoutX="761.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@../SupportScreen/img/loadding.png" />
+                           </image>
+                        </ImageView>
+                        <JFXButton fx:id="butSpeak1" layoutX="724.0" layoutY="46.0" prefHeight="33.0" prefWidth="35.0" styleClass="buttonn" stylesheets="@../SupportScreen/Css/translate.css" text="." />
+                        <JFXButton fx:id="butSpeak2" layoutX="724.0" layoutY="335.0" prefHeight="33.0" prefWidth="35.0" styleClass="buttonn" stylesheets="@../SupportScreen/Css/translate.css" text="." />
                </children>
                 </Pane>
                     </children>

@@ -127,7 +127,4 @@ public class GameController extends GeneralController {
         // Start the animation
         transition.play();
     }
-
-
-
 }
