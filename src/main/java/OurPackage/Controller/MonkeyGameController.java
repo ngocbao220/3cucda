@@ -208,12 +208,6 @@ public class MonkeyGameController extends GeneralController {
             StopMusic();
         });
 
-        // cho Data2 rong
-        try {
-            EmptyFile(DATA2);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
 
         time = 0.05;
         k = 10;
@@ -477,7 +471,6 @@ public class MonkeyGameController extends GeneralController {
     void Exit(ActionEvent event) throws IOException {
         timeline.stop();
         reset();
-        EmptyFile(DATA2);
         PaneChosseTypeGame.setVisible(false);
         PaneWhenPauseGame.setVisible(false);
         PaneWhenPlayGame.setVisible(false);

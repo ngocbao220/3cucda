@@ -1,6 +1,7 @@
 package OurPackage.Controller;
 
 import OurPackage.Module.DatabaseManager;
+import OurPackage.Module.TextToSpeech;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import javafx.animation.KeyFrame;
@@ -9,6 +10,7 @@ import javafx.animation.TranslateTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -97,6 +99,12 @@ public class HomeController extends GeneralController {
     private Pane nonSwitchDic;
 
     @FXML
+    private ImageView loading;
+
+    @FXML
+    private Button butSay;
+
+    @FXML
     private Pane nonSwitchTran;
 
     @FXML
@@ -157,10 +165,10 @@ public class HomeController extends GeneralController {
             listMarkedWord.setItems(items);
         }
 
-
+        // Mo webview hien nghia
         buttonShowInfor.setOnAction(e -> {
             if (checkOnScreen) {
-                System.out.println("daxamnhap");
+                butSay.setVisible(true);
                 // Hien bang thong tin va thong tin cua tu duoc an dup
                 TranslateTransition transition1 = createTransition(stackPaneMeanWord, -1300, 1);
                 transition1.play();
@@ -195,6 +203,7 @@ public class HomeController extends GeneralController {
         // dong webview hien nghia
         turnOffMean.setOnAction(e -> {
             if (checkOnScreen) {
+                butSay.setVisible(false);
                 TranslateTransition transition1 = createTransition(stackPaneMeanWord, -20, 0.5);
                 transition1.play();
 
@@ -275,6 +284,13 @@ public class HomeController extends GeneralController {
         trans.setToY(0);
         trans.setDuration(Duration.seconds(.2));
         trans.play();
+    }
+
+    @FXML
+    private void SayWord() {
+        if (wordToSpeed != null) {
+            TextToSpeech.speak(wordToSpeed, butSay, loading, true);
+        } else return;
     }
 
     public void setupMouseEvents(Pane pane) {
