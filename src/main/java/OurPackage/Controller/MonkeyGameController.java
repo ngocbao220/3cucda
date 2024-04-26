@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
@@ -170,7 +171,14 @@ public class MonkeyGameController extends GeneralController {
     @FXML
     private TextField newWord;
 
+    @FXML
+    private ImageView happyMonkey;
+
+    @FXML
+    private ImageView sadMonkey;
+
     private Timeline timeline;
+    private Timeline timer;
 
     private double time;
     private double k;
@@ -238,19 +246,30 @@ public class MonkeyGameController extends GeneralController {
             Replay.fire();
         });
 
+        timer = new Timeline(new KeyFrame(Duration.millis(500), event -> {
+            sadMonkey.setVisible(false);
+        }));
+
+
         timeline = new Timeline(new KeyFrame(Duration.seconds(k*time), event -> {
             double progress = myProgressBar.getProgress();
             if (progress > 0) {
                 myProgressBar.setProgress(progress - time);
             } else if(progress <=0) {
+                sadMonkey.setVisible(true);
+                timer.play();
                 timeline.stop();
-                heart--;
+                if (heart >= 1) heart--;
+                PlayMusic("tiengDapansai.mp3",1);
+                Play();
                 if (heart == 0) {
                     PlayMusic("tiengThuaGame.mp3",1);
                     Play();
+                    timeline.stop();
                     PaneWhenLoss.setVisible(true);
+                } else {
+                    comboTime(MyMap);
                 }
-                comboTime(MyMap);
             }
         }));
         timeline.setCycleCount(9999);
@@ -286,7 +305,7 @@ public class MonkeyGameController extends GeneralController {
                 if(heart <= 5 && point % 10 == 0) {
                     heart ++;
                 }
-                if(k >= 6) k -= 1;
+                if(k >= 4) k -= 1;
                 comboTime(map);
             });
             // Chon Dap an sai
@@ -298,10 +317,9 @@ public class MonkeyGameController extends GeneralController {
                     Play();
 
                     if (heart == 0) {
-
                         PlayMusic("tiengThuaGame.mp3",1);
                         Play();
-
+                        Heart.setText("0");
                         PaneWhenLoss.setVisible(true);
                     }
                     else {
@@ -329,7 +347,7 @@ public class MonkeyGameController extends GeneralController {
                 if(heart <= 5 && point % 10 == 0) {
                     heart ++;
                 }
-                if(k >= 6) k--;
+                if(k >= 4) k--;
                 comboTime(map);
             });
             //Chon dap an sai
@@ -344,7 +362,7 @@ public class MonkeyGameController extends GeneralController {
 
                         PlayMusic("tiengThuaGame.mp3",1);
                         Play();
-
+                        Heart.setText("0");
                         PaneWhenLoss.setVisible(true);
                     }
                     //hien dap an dung cho nguoi choi

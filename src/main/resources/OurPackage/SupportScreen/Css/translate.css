@@ -25,8 +25,7 @@
         -fx-background-radius: 30px;
 }
 .backgroundText {
-
-    -fx-background-color: #72476B;
+        -fx-background-color: #72476B;
         -fx-border-width: 2px 2px 2px 2px;
         -fx-border-radius: 30px;
         -fx-background-radius: 30px;
@@ -35,5 +34,5 @@
         -fx-opacity: 0.13;
 }
 .textfiel {
-    -fx-text-fill: red;
+    -fx-text-fill: black;
 }
