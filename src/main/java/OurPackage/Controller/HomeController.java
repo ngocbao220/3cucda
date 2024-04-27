@@ -142,13 +142,14 @@ public class HomeController extends GeneralController {
 
     private String wordToSpeed;
 
-    private boolean checkOnScreen = true;
+    private boolean checkOnScreen = false;
 
     ObservableList<String> items = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         super.initialize(url, resourceBundle);
+        but_home.setStyle("-fx-background-color: #333333;");
 
         if (MarkedWord.isEmpty()) {
             listMarkedWord.setVisible(false);
@@ -177,36 +178,37 @@ public class HomeController extends GeneralController {
 
         // Mo webview hien nghia
         buttonShowInfor.setOnAction(e -> {
-            if (checkOnScreen) {
-                butSay.setVisible(true);
-                // Hien bang thong tin va thong tin cua tu duoc an dup
-                TranslateTransition transition1 = createTransition(stackPaneMeanWord, -1300, 1);
-                transition1.play();
+            checkOnScreen = true;
+            butSay.setVisible(true);
+            // Hien thi thong tin
+            TranslateTransition transition1 = createTransition(stackPaneMeanWord, -1300, 1);
+            transition1.play();
 
-                listMarkedWord.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
-                    if (newVal != null) {
-                        List.forEach((key, value) -> {
-                            if (key.equals(newVal)) {
-                                infoWord.getEngine().loadContent(value);
-                                wordToSpeed = key;
-                            }
-                        });
-                    }
-                });
-                buttonShowInfor.setVisible(false);
-                turnOffMean.setVisible(true);
-            }
+            listMarkedWord.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
+                if (newVal != null) {
+                    List.forEach((key, value) -> {
+                        if (key.equals(newVal)) {
+                            infoWord.getEngine().loadContent(value);
+                            wordToSpeed = key;
+                        }
+                    });
+                }
+            });
+            buttonShowInfor.setVisible(false);
+            turnOffMean.setVisible(true);
         });
 
         listMarkedWord.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
             if (newVal != null) {
+                if (!checkOnScreen) {
+                    buttonShowInfor.setVisible(true);
+                }
                 List.forEach((key, value) -> {
                     if (key.equals(newVal)) {
                         infoWord.getEngine().loadContent(value);
                         wordToSpeed = key;
                     }
                 });
-                buttonShowInfor.setVisible(true);
             }
         });
 
@@ -214,6 +216,7 @@ public class HomeController extends GeneralController {
         turnOffMean.setOnAction(e -> {
             if (checkOnScreen) {
                 butSay.setVisible(false);
+                listMarkedWord.getSelectionModel().clearSelection();
                 TranslateTransition transition1 = createTransition(stackPaneMeanWord, -20, 0.5);
                 transition1.play();
 
@@ -225,6 +228,7 @@ public class HomeController extends GeneralController {
                 timeline.play();
                 turnOffMean.setVisible(false);
                 buttonShowInfor.setVisible(false);
+                checkOnScreen = false;
             }
         });
 

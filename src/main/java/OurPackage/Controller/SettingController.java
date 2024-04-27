@@ -87,6 +87,7 @@ public class SettingController extends GeneralController {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         super.initialize(url, resourceBundle);
+        but_set.setStyle("-fx-background-color: #333333;");
     }
 
 }

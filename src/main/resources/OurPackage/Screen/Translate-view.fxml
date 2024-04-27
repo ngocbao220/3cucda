@@ -29,7 +29,7 @@
                                         </ImageView>
                                     </children>
                                 </Pane>
-                                <JFXButton fx:id="but_home" alignment="CENTER" layoutX="12.0" layoutY="98.0" prefHeight="42.0" prefWidth="179.0" styleClass="but_home" stylesheets="@../SupportScreen/Css/Style.css" text="Home" textFill="#fbfbfb">
+                                <JFXButton fx:id="but_home" alignment="CENTER" layoutX="12.0" layoutY="98.0" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@../SupportScreen/Css/Style.css" text="Home" textFill="#fbfbfb">
                                     <font>
                                         <Font name="Century Gothic Bold" size="13.0" />
                                     </font>

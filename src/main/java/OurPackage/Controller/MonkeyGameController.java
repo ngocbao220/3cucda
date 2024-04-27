@@ -264,7 +264,14 @@ public class MonkeyGameController extends GeneralController {
                 sadMonkey.setVisible(true);
                 timer.play();
                 timeline.stop();
-                if (heart >= 1) heart--;
+                if (heart >= 1) {
+                    heart--;
+                    if (k <= 8) {
+                        k += 2;
+                        K = k;
+                        updateSpeed();
+                    }
+                }
                 PlayMusic("tiengDapansai.mp3",1);
                 Play();
                 if (heart == 0) {

@@ -1,2 +1,8 @@
-cat	con mèo
+.
+equal	ngang, bằng; người ngang
+atom	nguyên tử
+.
 dog	chó
+cat	con mèo
+monkey	con khỉ
+bird	cò

@@ -148,7 +148,7 @@ public class DictionaryController extends GeneralController{
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         super.initialize(url, resourceBundle);
-
+        but_diction.setStyle("-fx-background-color: #333333;");
         if (!strTemp.equals(".")) {
             Search.setText(strTemp);
             ForSearchingDicWord(Search, List, ListDic);

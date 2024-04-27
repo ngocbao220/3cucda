@@ -77,6 +77,8 @@ public class GameController extends GeneralController {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        but_game.setStyle("-fx-background-color: #333333;");
+
         PlayMusic("tiecbaibien.mp4", -1);
         Play();
 

@@ -150,6 +150,8 @@ public class TranslateTextController extends GeneralController implements Initia
 
         super.initialize(url, resourceBundle);
 
+        but_trans.setStyle("-fx-background-color: #333333;");
+
         TextIn.setStyle("-fx-font-family: 'Segue UI'; -fx-font-weight: bold; -fx-font-size: 20px;");
         TextOut.setStyle("-fx-font-family: 'Segue UI'; -fx-font-weight: bold; -fx-font-size: 20px;");
 
