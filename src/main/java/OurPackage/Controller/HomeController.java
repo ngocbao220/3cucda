@@ -10,6 +10,7 @@ import javafx.animation.TranslateTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
@@ -237,6 +238,11 @@ public class HomeController extends GeneralController {
             if (!listMarkedWord.getSelectionModel().isEmpty()) {
                 MarkedWord.remove(listMarkedWord.getSelectionModel().getSelectedItem());
                 items.remove(listMarkedWord.getSelectionModel().getSelectedItem());
+                if (MarkedWord.isEmpty()) {
+                    listMarkedWord.setVisible(false);
+                    removeFromMarkedWord.setVisible(false);
+                    nonNothing.setVisible(true);
+                }
                 listMarkedWord.setItems(items);
             } else return;
         });
@@ -249,12 +255,11 @@ public class HomeController extends GeneralController {
                     setText(null);
                 } else {
                     setText(item);
-                    // Thiết lập font chữ tùy chỉnh cho các mục trong ListView
-                    setFont(Font.font("Segoe UI", FontWeight.BOLD, 13));
+                    setAlignment(Pos.CENTER);
+                    setFont(Font.font("Segoe UI", FontWeight.NORMAL, 13));
                 }
             }
         });
-
 
 
         opendic.setOnAction(e -> {

@@ -158,7 +158,7 @@
                               <Image url="@../SupportScreen/img/Remove-bg.ai_1713323606858.png" />
                            </image>
                         </ImageView>
-                        <ListView fx:id="listMarkedWord" layoutX="546.0" layoutY="268.0" prefHeight="216.0" prefWidth="204.0" styleClass="fvrtWord" stylesheets="@../SupportScreen/Css/Style.css" visible="false" />
+                        <ListView fx:id="listMarkedWord" layoutX="539.0" layoutY="268.0" prefHeight="215.0" prefWidth="222.0" styleClass="fvrtWord" stylesheets="@../SupportScreen/Css/Style.css" />
                         <ImageView fitHeight="70.0" fitWidth="90.0" layoutX="499.0" layoutY="204.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../SupportScreen/img/Remove-bg.ai_1713322722423.png" />

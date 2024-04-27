@@ -179,7 +179,6 @@ public class DictionaryController extends GeneralController{
                     setText(null);
                 } else {
                     setText(item);
-                    // Thiết lập font chữ tùy chỉnh cho các mục trong ListView
                     setFont(Font.font("Segoe UI", FontWeight.NORMAL, 13));
                 }
             }
