@@ -16,6 +16,8 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
@@ -111,6 +113,8 @@ public class GeneralController implements Initializable{
     private Stage stage;
     private Scene scene;
 
+    public List<JFXButton> listbut = new ArrayList<>();
+
     public void Load(String s, Pane container) throws IOException {
         Pane parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(s)));
         stage = (Stage) container.getScene().getWindow();
@@ -204,5 +208,27 @@ public class GeneralController implements Initializable{
             but_trans.setDisable(false);
             but_set.setDisable(false);
         });
+        listbut.add(but_game);
+        listbut.add(but_diction);
+        listbut.add(but_trans);
+        listbut.add(but_home);
+        listbut.add(but_set);
+        ChangeButton_color(but_diction);
+        ChangeButton_color(but_trans);
+        ChangeButton_color(but_game);
+        ChangeButton_color(but_set);
+        ChangeButton_color(but_home);
+    }
+    public void ChangeButton_color(JFXButton button) {
+            button.setOnMouseEntered(e -> button.setStyle("-fx-background-color: #333333;"));
+            button.setOnMouseExited(e -> button.setStyle("-fx-background-color: transparent;"));
+            button.setOnMouseClicked(event -> {button.setStyle("-fx-border-width: 2px;");
+                                        button.setStyle("-fx-border-color: #333333");});
+            for (int i = 0; i < 5; i++) {
+                if (!listbut.get(i).equals(button)) {
+                    listbut.get(i).setStyle("-fx-border-width: 1px;");
+                    listbut.get(i).setStyle("-fx-border-color: #353A46");
+                }
+            }
     }
 }
