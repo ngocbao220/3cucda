@@ -158,7 +158,7 @@
                               <Image url="@../SupportScreen/img/Remove-bg.ai_1713323606858.png" />
                            </image>
                         </ImageView>
-                        <ListView fx:id="listMarkedWord" layoutX="546.0" layoutY="268.0" prefHeight="216.0" prefWidth="204.0" styleClass="fvrtWord" stylesheets="@../SupportScreen/Css/Style.css" />
+                        <ListView fx:id="listMarkedWord" layoutX="546.0" layoutY="268.0" prefHeight="216.0" prefWidth="204.0" styleClass="fvrtWord" stylesheets="@../SupportScreen/Css/Style.css" visible="false" />
                         <ImageView fitHeight="70.0" fitWidth="90.0" layoutX="499.0" layoutY="204.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../SupportScreen/img/Remove-bg.ai_1713322722423.png" />
@@ -204,12 +204,12 @@
                               <JFXButton fx:id="opengame" layoutX="19.0" layoutY="16.0" prefHeight="105.0" prefWidth="178.0" styleClass="but_move_game" stylesheets="@../SupportScreen/Css/Style.css" />
                            </children>
                         </Pane>
-                        <ImageView fitHeight="24.0" fitWidth="25.0" layoutX="738.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="24.0" fitWidth="25.0" layoutX="738.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true" visible="false">
                            <image>
                               <Image url="@../SupportScreen/img/trudau.png" />
                            </image>
                         </ImageView>
-                        <JFXButton fx:id="removeFromMarkedWord" layoutX="738.0" layoutY="243.0" opacity="0.38" prefHeight="0.0" prefWidth="0.0" style="-fx-background-radius: 50;" text="Button" />
+                        <JFXButton fx:id="removeFromMarkedWord" layoutX="738.0" layoutY="243.0" prefHeight="0.0" prefWidth="0.0" style="-fx-background-radius: 50;" styleClass="buttonTruDau" stylesheets="@../SupportScreen/Css/Style.css" text="Button" />
                         <JFXButton fx:id="turnOffMean" layoutX="461.0" layoutY="117.0" prefHeight="46.0" prefWidth="42.0" text="&gt;" visible="false">
                            <font>
                               <Font size="20.0" />
@@ -227,6 +227,11 @@
                               <Image url="@../SupportScreen/img/loadding.png" />
                            </image>
                         </ImageView>
+                        <Label fx:id="nonNothing" alignment="CENTER" contentDisplay="CENTER" layoutX="548.0" layoutY="298.0" opacity="0.49" prefHeight="140.0" prefWidth="204.0" text="Ở đây hơi trống trải hãy thêm từ yêu thích từ Dictionary" textAlignment="CENTER" visible="false" wrapText="true">
+                           <font>
+                              <Font name="Segoe UI Italic" size="20.0" />
+                           </font>
+                        </Label>
                             </children>
 
                         </AnchorPane>

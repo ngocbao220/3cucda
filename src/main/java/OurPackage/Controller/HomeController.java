@@ -10,10 +10,7 @@ import javafx.animation.TranslateTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.*;
@@ -140,6 +137,9 @@ public class HomeController extends GeneralController {
     @FXML
     private WebView infoWord;
 
+    @FXML
+    private Label nonNothing;
+
     private String wordToSpeed;
 
     private boolean checkOnScreen = true;
@@ -149,6 +149,16 @@ public class HomeController extends GeneralController {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         super.initialize(url, resourceBundle);
+
+        if (MarkedWord.isEmpty()) {
+            listMarkedWord.setVisible(false);
+            removeFromMarkedWord.setVisible(false);
+            nonNothing.setVisible(true);
+        } else {
+            listMarkedWord.setVisible(true);
+            removeFromMarkedWord.setVisible(true);
+            nonNothing.setVisible(false);
+        }
 
         TranslateTransition transition = createTransition(stackPaneMeanWord, 1300, 0.3);
         transition.play();
