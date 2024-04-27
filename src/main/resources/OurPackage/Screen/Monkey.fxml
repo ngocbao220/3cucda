@@ -161,7 +161,7 @@
             </Pane>
          </children>
       </Pane>
-      <Pane fx:id="PaneChosseTypeGame" layoutY="1.0" prefHeight="728.0" prefWidth="1045.0" styleClass="parent-pane" stylesheets="@../SupportScreen/Css/Game1.css" visible="false">
+      <Pane fx:id="PaneChosseTypeGame" layoutY="1.0" prefHeight="728.0" prefWidth="1045.0" styleClass="parent-pane" stylesheets="@../SupportScreen/Css/Game1.css">
          <children>
             <Pane fx:id="ChosseTypeForGame" layoutX="268.0" layoutY="115.0" prefHeight="498.0" prefWidth="513.0" styleClass="PaneChooseType" stylesheets="@../SupportScreen/Css/Game1.css" visible="false">
                <children>
@@ -180,6 +180,11 @@
             </Pane>
             <Pane fx:id="MenuChosseTheWord" layoutX="70.0" layoutY="55.0" prefHeight="659.0" prefWidth="909.0" styleClass="BackgroundChuoi" stylesheets="@../SupportScreen/Css/Game1.css">
                <children>
+                  <Label layoutX="417.0" layoutY="415.0" prefHeight="17.0" prefWidth="62.0" text="(add all)">
+                     <font>
+                        <Font name="System Italic" size="12.0" />
+                     </font>
+                  </Label>
                   <JFXButton layoutX="802.0" layoutY="12.0" onAction="#PlayOtherTypeGame" prefHeight="66.0" prefWidth="101.0" styleClass="BackgroundPlay" stylesheets="@../SupportScreen/Css/Game1.css">
                      <font>
                         <Font size="21.0" />
@@ -269,11 +274,6 @@
                         </Pane>
                      </children>
                   </Pane>
-                  <Label layoutX="417.0" layoutY="415.0" prefHeight="17.0" prefWidth="62.0" text="(add all)">
-                     <font>
-                        <Font name="System Italic" size="12.0" />
-                     </font>
-                  </Label>
                </children>
             </Pane>
          </children>

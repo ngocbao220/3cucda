@@ -5,6 +5,7 @@ import com.jfoenix.controls.JFXListView;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
@@ -16,6 +17,7 @@ import javafx.util.Duration;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.sql.Time;
 import java.util.*;
 
 import static OurPackage.Module.SomethingForGame.*;
@@ -180,8 +182,9 @@ public class MonkeyGameController extends GeneralController {
     private Timeline timeline;
     private Timeline timer;
 
-    private double time;
-    private double k;
+    private final double time = 0.05;
+    private double k = 10;
+    private double K;
 
     private int point = 0;
 
@@ -196,6 +199,10 @@ public class MonkeyGameController extends GeneralController {
     public static Map<String, String> Map2 = new HashMap<>();
 
     private Map<String, String> MyMap = new HashMap<>();
+
+    EventHandler<ActionEvent> eventHandler;
+
+    KeyFrame keyFrame;
 
     Set<String> mySet;
 
@@ -217,8 +224,6 @@ public class MonkeyGameController extends GeneralController {
         });
 
 
-        time = 0.05;
-        k = 10;
 
         // Thiet lap Game
         PaneWhenWrongAnswer.setVisible(false);
@@ -246,12 +251,12 @@ public class MonkeyGameController extends GeneralController {
             Replay.fire();
         });
 
+
         timer = new Timeline(new KeyFrame(Duration.millis(500), event -> {
             sadMonkey.setVisible(false);
         }));
 
-
-        timeline = new Timeline(new KeyFrame(Duration.seconds(k*time), event -> {
+        eventHandler = event -> {
             double progress = myProgressBar.getProgress();
             if (progress > 0) {
                 myProgressBar.setProgress(progress - time);
@@ -271,7 +276,9 @@ public class MonkeyGameController extends GeneralController {
                     comboTime(MyMap);
                 }
             }
-        }));
+        };
+        keyFrame = new KeyFrame(Duration.seconds(0.5), eventHandler);
+        timeline = new Timeline(keyFrame);
         timeline.setCycleCount(9999);
     }
 
@@ -305,7 +312,11 @@ public class MonkeyGameController extends GeneralController {
                 if(heart <= 5 && point % 10 == 0) {
                     heart ++;
                 }
-                if(k >= 4) k -= 1;
+                if(k >= 4) {
+                    k -= 0.2;
+                    K = k;
+                    updateSpeed();
+                }
                 comboTime(map);
             });
             // Chon Dap an sai
@@ -331,7 +342,11 @@ public class MonkeyGameController extends GeneralController {
                         timeline.pause();
                     }
                 }
-                if(k <= 8) k+=2;
+                if(k <= 8) {
+                    k +=2;
+                    K = k;
+                    updateSpeed();
+                }
             });
         }
         else {
@@ -347,7 +362,11 @@ public class MonkeyGameController extends GeneralController {
                 if(heart <= 5 && point % 10 == 0) {
                     heart ++;
                 }
-                if(k >= 4) k--;
+                if(k >= 4) {
+                    k-= 0.4;
+                    K = k;
+                    updateSpeed();
+                }
                 comboTime(map);
             });
             //Chon dap an sai
@@ -359,7 +378,6 @@ public class MonkeyGameController extends GeneralController {
                     Play();
 
                     if (heart == 0) {
-
                         PlayMusic("tiengThuaGame.mp3",1);
                         Play();
                         Heart.setText("0");
@@ -374,11 +392,18 @@ public class MonkeyGameController extends GeneralController {
                         timeline.pause();
                     }
                 }
-                if(k <= 8) k += 2;
+                if(k <= 8) {
+                    k += 2;
+                    K = k;
+                    updateSpeed();
+                }
             });
         }
     }
 
+    void updateSpeed() {
+        keyFrame = new KeyFrame(Duration.seconds(K*time), eventHandler);
+    }
 
     // Cập nhật điểm và Mạng
     void UpdatePointAndHeart() {
@@ -396,6 +421,7 @@ public class MonkeyGameController extends GeneralController {
 
     // Cập nhật điểm + chạy thanh thời gian + hiện câu hỏi mới và dừng thanh thời gian cũ
     void comboTime(Map<String, String> map) {
+        timeline.getKeyFrames().setAll(keyFrame);
         UpdatePointAndHeart();
         timeline.stop();
         RunTime();
@@ -408,7 +434,7 @@ public class MonkeyGameController extends GeneralController {
         point = 0;
         heart = 3;
         k = 10;
-        time = 0.05;
+        keyFrame = new KeyFrame(Duration.seconds(0.5), eventHandler);
         UpdatePointAndHeart();
         ButtonContinue.setDisable(false);
     }
@@ -470,7 +496,6 @@ public class MonkeyGameController extends GeneralController {
         MenuChosseTheWord.setVisible(false);
         PlayMusic("tiengHaiAu.mp3", -1);
         Play();
-        EmptyFile(DATA2);
         ForSearching(SearchOnRight, Map2, WordChoosing);
         timeline.stop();
         reset();
@@ -503,6 +528,7 @@ public class MonkeyGameController extends GeneralController {
     @FXML
     void PlayDefaultGame(ActionEvent event) {
         PauseMusic();
+
         try {
             ReadData(DATA1, Split, Map1);
         } catch (IOException e) {
@@ -538,6 +564,10 @@ public class MonkeyGameController extends GeneralController {
 
     @FXML
     void PlayOtherTypeGame(ActionEvent event) {
+        PauseMusic();
+
+        PlayMusic("monkeyMusic.mp3", -1);
+        Play();
         try {
             ReadData(DATA2, Split, Map2);
             if (Map2.size() < 2) {

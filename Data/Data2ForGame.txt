@@ -1,0 +1,2 @@
+cat	con mèo
+dog	chó
