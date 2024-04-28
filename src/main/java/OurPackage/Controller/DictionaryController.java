@@ -17,6 +17,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.web.WebView;
@@ -145,6 +146,8 @@ public class DictionaryController extends GeneralController{
     @FXML
     private WebView InfoOfWords;
 
+    int count = 0;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         super.initialize(url, resourceBundle);
@@ -164,9 +167,19 @@ public class DictionaryController extends GeneralController{
                     setText(null);
                 } else {
                     setText(item);
-                    // Thiết lập font chữ tùy chỉnh cho các mục trong ListView
+                    if (MarkedWord.contains(item)) {
+                        setTextFillForMarkedWord();
+                    } else {
+                        setTextFillForNormalWord();
+                    }
                     setFont(Font.font("Segoe UI", FontWeight.BOLD, 13));
                 }
+            }
+            private void setTextFillForMarkedWord() {
+                setStyle("-fx-text-fill: #9ACD32;");
+            }
+            private void setTextFillForNormalWord() {
+                setStyle("-fx-text-fill: #000000;");
             }
         });
 

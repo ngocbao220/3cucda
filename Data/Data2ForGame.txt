@@ -1,8 +1,7 @@
-.
-equal	ngang, bằng; người ngang
+formerly	trước đây, thuở xưa
+doctor	bác sĩ y khoa, tiến sĩ
 atom	nguyên tử
-.
-dog	chó
-cat	con mèo
-monkey	con khỉ
-bird	cò
+about	khoảng, về
+evil	xấu xa; điều xấu
+melt	tan ra; làm tan chảy ra
+someone	người nào đó
