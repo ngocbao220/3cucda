@@ -618,8 +618,6 @@ public class MonkeyGameController extends GeneralController {
     // Sua tu
     @FXML
     void SetTheWord(ActionEvent event) {
-        System.out.println(Map2);
-
         WordNeedSet.setText(WordChoosing.getSelectionModel().getSelectedItem());
         MeanThisWord.setText(getDef(WordChoosing.getSelectionModel().getSelectedItem(), Map2));
 
