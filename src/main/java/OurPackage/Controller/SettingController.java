@@ -8,6 +8,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
+
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -84,10 +89,41 @@ public class SettingController extends GeneralController {
 
     @FXML
     private JFXButton bonus;
+
+    private final String Media_Path = "src/main/resources/OurPackage/SupportScreen/media/";
+
+    @FXML
+    private Media media;
+
+    @FXML
+    private MediaView mediaView;
+
+    @FXML
+    private Pane pane;
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         super.initialize(url, resourceBundle);
         but_set.setStyle("-fx-background-color: #333333;");
+        setupMedia("introApp.mp4", pane, mediaView, media, true);
     }
 
+    void setupMedia(String mediaName, Pane pane, MediaView mediaview, Media media, boolean status) {
+        media = new Media(new File(Media_Path + mediaName).toURI().toString());
+
+        MediaPlayer mediaPlayer = new MediaPlayer(media);
+
+        mediaview.fitWidthProperty().bind(pane.widthProperty());
+        mediaview.fitHeightProperty().bind(pane.heightProperty());
+        mediaview.setLayoutX(pane.getLayoutX());
+        mediaview.setLayoutY(pane.getLayoutY());
+
+        mediaview.setMediaPlayer(mediaPlayer);
+        // cho mediaPlayer chạy vô hạn
+        mediaPlayer.setOnEndOfMedia(() -> mediaPlayer.seek(javafx.util.Duration.ZERO));
+        if (status) {
+            mediaview.getMediaPlayer().play();
+        } else mediaview.getMediaPlayer().stop();
+    }
 }
