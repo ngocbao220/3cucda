@@ -126,7 +126,7 @@ public class GeneralController implements Initializable{
 
     public void LoadScene(String s, Pane container) {
         FadeTransition fadeTransition = new FadeTransition();
-        fadeTransition.setDuration(Duration.millis(500));
+        fadeTransition.setDuration(Duration.seconds(1));
         fadeTransition.setNode(container);
         fadeTransition.setFromValue(1.0);
         fadeTransition.setToValue(0.0);
@@ -220,9 +220,9 @@ public class GeneralController implements Initializable{
         ChangeButton_color(but_home);
     }
     public void ChangeButton_color(JFXButton button) {
-            button.setOnMouseClicked(event -> {
-                button.setStyle("-fx-border-width: 2px;");
-                button.setStyle("-fx-border-color: #333333;");
-            });
+        button.setOnMouseClicked(event -> {
+            button.setStyle("-fx-border-width: 2px;");
+            button.setStyle("-fx-border-color: #333333;");
+        });
     }
 }

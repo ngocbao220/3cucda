@@ -618,6 +618,11 @@ public class MonkeyGameController extends GeneralController {
     // Sua tu
     @FXML
     void SetTheWord(ActionEvent event) {
+        System.out.println(Map2);
+
+        WordNeedSet.setText(WordChoosing.getSelectionModel().getSelectedItem());
+        MeanThisWord.setText(getDef(WordChoosing.getSelectionModel().getSelectedItem(), Map2));
+
         PaneWhenChooseWhenAddOrSetTheWord.setVisible(true);
         PaneSetWord.setVisible(true);
 
@@ -633,13 +638,14 @@ public class MonkeyGameController extends GeneralController {
     void DoSetWord(ActionEvent event) {
         //TO DO
         try {
-            AddData(WordNeedSet.getText(), MeanThisWord.getText());
+            setWord(DATA2, WordNeedSet.getText(), WordNeedSet.getText() + "\t" + MeanThisWord.getText());
+            ReadData(DATA2, Split, Map2);
             ForSearching(SearchOnRight, Map2, WordChoosing);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
         WordNeedSet.setText("");
-        MeanOfThisWord.setText("");
+        MeanThisWord.setText("");
     }
 
 
@@ -659,7 +665,6 @@ public class MonkeyGameController extends GeneralController {
     // Hanh dong them tu moi
     @FXML
     void DoAddWord(ActionEvent event) {
-
         //TO DO
         try {
             AddData(newWord.getText(), MeanOfThisWord.getText());
@@ -692,7 +697,7 @@ public class MonkeyGameController extends GeneralController {
     void Remove(ActionEvent event) throws IOException {
         String selectedItem = WordChoosing.getSelectionModel().getSelectedItem();
         if (selectedItem != null) {
-            remove(DATA2, selectedItem.toLowerCase(), ".");
+            remove(DATA2, selectedItem.toLowerCase());
             ReadData(DATA2, Split, Map2);
             ForSearching(SearchOnRight, Map2, WordChoosing);
         } else {

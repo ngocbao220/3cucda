@@ -123,10 +123,14 @@ public class SomethingForGame {
 
     // Them tu moi
     public static void AddData(String word, String Mean) throws IOException {
-        Map2.put(Mean, word);
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(DATA2, true));
-        bufferedWriter.write(word + "\t" + Mean + "\n");
-        bufferedWriter.close();
+        if (Map2.containsKey(Mean)) {
+            setWord(DATA2, word,word + "\t" + Mean);
+        } else {
+            Map2.put(Mean, word);
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(DATA2, true));
+            bufferedWriter.write(word + "\t" + Mean + "\n");
+            bufferedWriter.close();
+        }
     }
 
 
@@ -170,8 +174,31 @@ public class SomethingForGame {
     }
 
 
-    //Xoa tu
-    public static void remove(String filePath, String searchString, String newContent) throws IOException {
+    //Xoa
+    public static void remove(String filePath, String searchString) throws IOException {
+        File file = new File(filePath);
+        BufferedReader reader = new BufferedReader(new FileReader(file));
+        StringBuilder stringBuilder = new StringBuilder();
+        String line;
+
+        // Đoc file va luu vao 1 stringbuilder
+        while ((line = reader.readLine()) != null) {
+            if (line.contains(searchString.trim().toLowerCase())) {
+                continue;
+            } else {
+                stringBuilder.append(line).append(System.lineSeparator());
+            }
+        }
+        reader.close();
+
+        BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+        writer.write(stringBuilder.toString());
+        writer.close();
+
+    }
+
+    //Sua
+    public static void setWord(String filePath, String searchString, String newContent) throws IOException {
         File file = new File(filePath);
         BufferedReader reader = new BufferedReader(new FileReader(file));
         StringBuilder stringBuilder = new StringBuilder();
