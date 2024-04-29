@@ -135,7 +135,7 @@ public class DictionaryController extends GeneralController{
     @FXML
     private WebView InfoOfWords;
 
-    private DatabaseBookmark databaseBookmark;
+
 
     int count = 0;
 
@@ -147,7 +147,9 @@ public class DictionaryController extends GeneralController{
             Search.setText(strTemp);
             ForSearchingDicWord(Search, List, ListDic);
         }
-        databaseBookmark = new DatabaseBookmark("av");
+
+
+
         DicWords();
         // cai phong chu cho listDic
         ListDic.setCellFactory(param -> new ListCell<String>() {

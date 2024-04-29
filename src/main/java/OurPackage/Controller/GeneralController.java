@@ -1,5 +1,6 @@
 package OurPackage.Controller;
 
+import OurPackage.Module.DatabaseBookmark;
 import com.jfoenix.controls.JFXButton;
 import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
@@ -114,6 +115,8 @@ public class GeneralController implements Initializable{
     private Scene scene;
 
     public List<JFXButton> listbut = new ArrayList<>();
+
+
 
     public void Load(String s, Pane container) throws IOException {
         Pane parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(s)));

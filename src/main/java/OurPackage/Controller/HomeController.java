@@ -1,5 +1,6 @@
 package OurPackage.Controller;
 
+import OurPackage.Module.DatabaseBookmark;
 import OurPackage.Module.DatabaseManager;
 import OurPackage.Module.TextToSpeech;
 import com.jfoenix.controls.JFXButton;
@@ -143,6 +144,7 @@ public class HomeController extends GeneralController {
     private boolean checkOnScreen = false;
 
     ObservableList<String> items = FXCollections.observableArrayList();
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
