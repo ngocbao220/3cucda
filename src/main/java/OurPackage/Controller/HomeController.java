@@ -13,15 +13,12 @@ import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseButton;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.web.WebView;
 import javafx.util.Duration;
 import java.net.URL;
-import java.util.LinkedHashMap;
-import java.util.Map;
 import java.util.ResourceBundle;
 
 import static OurPackage.Controller.DictionaryController.List;

@@ -1,5 +1,6 @@
 package OurPackage;
 
+import OurPackage.Module.DatabaseManager;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -18,7 +19,7 @@ public class Start extends Application {
         stage.setTitle("Our App");
         stage.setScene(scene);
         stage.show();
-
+        DatabaseManager.DictionaryWords();
     }
     public static void main(String[] args)   {
         launch();

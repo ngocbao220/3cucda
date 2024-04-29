@@ -2,8 +2,6 @@ package OurPackage.Controller;
 
 import OurPackage.Module.*;
 import com.jfoenix.controls.JFXButton;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -15,18 +13,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.web.WebView;
-import javafx.util.Duration;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
@@ -146,6 +135,8 @@ public class DictionaryController extends GeneralController{
     @FXML
     private WebView InfoOfWords;
 
+    private DatabaseBookmark databaseBookmark;
+
     int count = 0;
 
     @Override
@@ -156,7 +147,7 @@ public class DictionaryController extends GeneralController{
             Search.setText(strTemp);
             ForSearchingDicWord(Search, List, ListDic);
         }
-
+        databaseBookmark = new DatabaseBookmark("av");
         DicWords();
         // cai phong chu cho listDic
         ListDic.setCellFactory(param -> new ListCell<String>() {
@@ -213,7 +204,7 @@ public class DictionaryController extends GeneralController{
             paneMarkedWord.setVisible(false);
             if (!ListDic.getSelectionModel().isEmpty()) {
                 String s = ListDic.getSelectionModel().getSelectedItem();
-                MarkedWord.remove(s);
+                databaseBookmark.remove(s);
             }
         });
 
@@ -229,12 +220,12 @@ public class DictionaryController extends GeneralController{
         if (!ListDic.getSelectionModel().isEmpty()) {
             paneMarkedWord.setVisible(true);
             String s = ListDic.getSelectionModel().getSelectedItem();
-            MarkedWord.add(s);
+            databaseBookmark.updateBookmark(s);
         }
         if (!DisplayHistoryWord.getSelectionModel().isEmpty()) {
             paneMarkedWord.setVisible(true);
             String s = DisplayHistoryWord.getSelectionModel().getSelectedItem();
-            MarkedWord.add(s);
+            databaseBookmark.updateBookmark(s);
         }
         else return;
     }

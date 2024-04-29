@@ -7,15 +7,17 @@ import java.util.Map;
 public class DatabaseManager {
     private static Connection connection;
 
-    private static Connection connect;
+    protected static Connection connect;
 
     public static Map<String, String> list = new LinkedHashMap<>();
 
-    public static Map<String, String> listFavoriteWords = new LinkedHashMap<>();
+    //public static Map<String, String> listFavoriteWords = new LinkedHashMap<>();
 
 
     private final static String DATABASE_PATH = "./Data/";
+
     private final static String DATABASE_NAME = "dict_hh.db";
+
     public static void connectingToDatabase(String dbPath) {
         String url = new StringBuilder()
                 .append("jdbc:sqlite:")
@@ -41,7 +43,7 @@ public class DatabaseManager {
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
                 list.put(rs.getString("word"), rs.getString("html"));
-                listFavoriteWords.put(rs.getString("word"), rs.getString("description"));
+                //listFavoriteWords.put(rs.getString("word"), rs.getString("description"));
             }
 
         } catch (SQLException e) {
