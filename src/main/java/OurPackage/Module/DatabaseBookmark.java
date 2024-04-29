@@ -8,6 +8,7 @@ import static OurPackage.Module.Constructor.MarkedWord;
 import static OurPackage.Module.DatabaseManager.connect;
 
 public class DatabaseBookmark {
+
     protected String tableName;
 
     public DatabaseBookmark(String tableName) {
@@ -48,6 +49,7 @@ public class DatabaseBookmark {
 
         } catch (SQLException e) {
             e.printStackTrace();
+            System.out.println("Error: Couldn't set word into bookmark list!");
         }
     }
 

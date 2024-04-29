@@ -1,6 +1,7 @@
 package OurPackage.Controller;
 
 import OurPackage.Module.DatabaseBookmark;
+import OurPackage.Module.DatabaseManager;
 import com.jfoenix.controls.JFXButton;
 import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
@@ -116,7 +117,8 @@ public class GeneralController implements Initializable{
 
     public List<JFXButton> listbut = new ArrayList<>();
 
-
+    public DatabaseManager databaseManager = new DatabaseManager();
+    public DatabaseBookmark databaseBookmark ;
 
     public void Load(String s, Pane container) throws IOException {
         Pane parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(s)));
@@ -221,6 +223,9 @@ public class GeneralController implements Initializable{
         ChangeButton_color(but_game);
         ChangeButton_color(but_set);
         ChangeButton_color(but_home);
+
+        databaseManager.DictionaryWords();
+        databaseBookmark = new DatabaseBookmark("av");
     }
     public void ChangeButton_color(JFXButton button) {
         button.setOnMouseClicked(event -> {

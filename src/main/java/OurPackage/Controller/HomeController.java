@@ -235,7 +235,7 @@ public class HomeController extends GeneralController {
         // Xoa
         removeFromMarkedWord.setOnAction(e -> {
             if (!listMarkedWord.getSelectionModel().isEmpty()) {
-                MarkedWord.remove(listMarkedWord.getSelectionModel().getSelectedItem());
+                databaseBookmark.remove(listMarkedWord.getSelectionModel().getSelectedItem());
                 items.remove(listMarkedWord.getSelectionModel().getSelectedItem());
                 if (MarkedWord.isEmpty()) {
                     listMarkedWord.setVisible(false);

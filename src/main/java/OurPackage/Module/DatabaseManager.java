@@ -11,9 +11,6 @@ public class DatabaseManager {
 
     public static Map<String, String> list = new LinkedHashMap<>();
 
-    //public static Map<String, String> listFavoriteWords = new LinkedHashMap<>();
-
-
     private final static String DATABASE_PATH = "./Data/";
 
     private final static String DATABASE_NAME = "dict_hh.db";
@@ -35,7 +32,7 @@ public class DatabaseManager {
         return connection;
     }
     public static void DictionaryWords() {
-        String sql = "SELECT word, html, description FROM av";
+        String sql = "SELECT word, html FROM av";
 
         try {
             connect = getConnection(DATABASE_PATH + DATABASE_NAME);
@@ -43,7 +40,6 @@ public class DatabaseManager {
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
                 list.put(rs.getString("word"), rs.getString("html"));
-                //listFavoriteWords.put(rs.getString("word"), rs.getString("description"));
             }
 
         } catch (SQLException e) {

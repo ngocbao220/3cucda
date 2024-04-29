@@ -135,8 +135,6 @@ public class DictionaryController extends GeneralController{
     @FXML
     private WebView InfoOfWords;
 
-
-
     int count = 0;
 
     @Override
@@ -147,9 +145,7 @@ public class DictionaryController extends GeneralController{
             Search.setText(strTemp);
             ForSearchingDicWord(Search, List, ListDic);
         }
-
-
-
+        //databaseBookmark = new DatabaseBookmark("av");
         DicWords();
         // cai phong chu cho listDic
         ListDic.setCellFactory(param -> new ListCell<String>() {
@@ -260,7 +256,6 @@ public class DictionaryController extends GeneralController{
 
 
     public void DicWords() {
-        DatabaseManager.DictionaryWords();
         List = DatabaseManager.list;
         ForSearchingDicWord(Search, List, ListDic);
 
