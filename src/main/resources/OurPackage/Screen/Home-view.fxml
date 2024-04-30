@@ -212,14 +212,31 @@
                         <JFXButton fx:id="turnOffMean" layoutX="468.0" layoutY="126.0" prefHeight="28.0" prefWidth="27.0" styleClass="dauLon" stylesheets="@../SupportScreen/Css/home.css" visible="false" />
                         <JFXButton fx:id="buttonShowInfor" layoutX="634.0" layoutY="240.0" prefHeight="28.0" prefWidth="28.0" styleClass="dauCong" stylesheets="@../SupportScreen/Css/home.css" visible="false" />
                         <Button fx:id="butSay" layoutX="468.0" layoutY="14.0" mnemonicParsing="false" onAction="#SayWord" prefHeight="28.0" prefWidth="28.0" styleClass="buttonSay" stylesheets="@../SupportScreen/Css/dictionary.css" text="." visible="false" />
-                        <Pane fx:id="stackPaneMeanWord" layoutX="14.0" layoutY="14.0" prefHeight="252.0" prefWidth="452.0">
+                        <Pane fx:id="stackPaneMeanWord" layoutX="14.0" layoutY="13.0" prefHeight="253.0" prefWidth="452.0" style="-fx-background-color: #FFBC7D; -fx-background-radius: 10px;">
                            <children>
-                              <ImageView fitHeight="256.0" fitWidth="512.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../SupportScreen/img/note.png" />
-                                 </image>
-                              </ImageView>
-                              <WebView fx:id="infoWord" layoutX="33.0" layoutY="44.0" prefHeight="201.0" prefWidth="392.0" />
+                              <Pane layoutX="12.0" layoutY="8.0" prefHeight="239.0" prefWidth="431.0" style="-fx-background-color: #ffff; -fx-background-radius: 20px;">
+                                 <children>
+                                    <WebView fx:id="infoWord" layoutX="8.0" layoutY="32.0" prefHeight="201.0" prefWidth="405.0" />
+                                    <ImageView fitHeight="39.0" fitWidth="117.0" layoutX="174.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../SupportScreen/img/mean.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="80.0" fitWidth="101.0" layoutX="-13.0" layoutY="165.0" opacity="0.57" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../SupportScreen/img/bgr.png" />
+                                       </image></ImageView>
+                                    <ImageView fitHeight="51.0" fitWidth="62.0" layoutX="384.0" layoutY="188.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../SupportScreen/img/saolasoa.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="89.0" fitWidth="99.0" layoutX="360.0" layoutY="-5.0" opacity="0.57" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../SupportScreen/img/bgrr.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children></Pane>
                            </children>
                         </Pane>
                         <ImageView fx:id="loading" fitHeight="21.0" fitWidth="20.0" layoutX="472.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true" visible="false">
