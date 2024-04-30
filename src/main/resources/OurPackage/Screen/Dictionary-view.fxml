@@ -138,7 +138,6 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Button fx:id="ButtonMark" layoutX="782.0" layoutY="86.0" mnemonicParsing="false" onAction="#Mark" prefHeight="21.0" prefWidth="25.0" styleClass="buttonMark" stylesheets="@../SupportScreen/Css/dictionary.css" text="." />
                   <Button fx:id="HistoryWord" layoutX="22.0" layoutY="218.0" mnemonicParsing="false" onAction="#showHistoryWord" prefHeight="37.0" prefWidth="37.0" styleClass="buttonHis" stylesheets="@../SupportScreen/Css/dictionary.css" text="." />
                   <JFXListView fx:id="ListDic" layoutX="80.0" layoutY="298.0" prefHeight="275.0" prefWidth="298.0" />
                   <WebView fx:id="InfoOfWords" layoutX="459.0" layoutY="116.0" prefHeight="466.0" prefWidth="315.0" />
@@ -174,7 +173,8 @@
                         <Image url="@../SupportScreen/img/loadding.png" />
                      </image>
                   </ImageView>
-                  <Pane fx:id="paneMarkedWord" layoutX="781.0" layoutY="85.0" opacity="0.7" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: yellow; -fx-background-radius: 20;" visible="false" />
+                  <JFXButton fx:id="ButtonMark" layoutX="780.0" layoutY="84.0" onAction="#Mark" prefHeight="28.0" prefWidth="29.0" styleClass="buttonMark" stylesheets="@../SupportScreen/Css/dictionary.css" />
+                  <JFXButton fx:id="MakeWord" layoutX="780.0" layoutY="84.0" prefHeight="28.0" prefWidth="29.0" styleClass="buttonMark_2" stylesheets="@../SupportScreen/Css/dictionary.css" visible="false" />
                     </children>
                 </Pane>
             </children>
