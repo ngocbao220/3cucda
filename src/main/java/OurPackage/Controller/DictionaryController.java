@@ -145,9 +145,9 @@ public class DictionaryController extends GeneralController{
             Search.setText(strTemp);
             ForSearchingDicWord(Search, List, ListDic);
         }
-
+        System.out.println("1");
         DicWords();
-
+        System.out.println("2");
         // cai phong chu cho listDic
         ListDic.setCellFactory(param -> new ListCell<String>() {
             @Override
@@ -165,6 +165,7 @@ public class DictionaryController extends GeneralController{
                     setFont(Font.font("Segoe UI", FontWeight.BOLD, 13));
                 }
             }
+
             private void setTextFillForMarkedWord() {
                 setStyle("-fx-text-fill: #9ACD32;");
             }
@@ -257,7 +258,6 @@ public class DictionaryController extends GeneralController{
 
 
     public void DicWords() {
-        List = DatabaseManager.list;
         ForSearchingDicWord(Search, List, ListDic);
 
         // Hien info cua tu minh tim kiem
@@ -274,7 +274,7 @@ public class DictionaryController extends GeneralController{
                 });
             }
         });
-
+        // thong tin cua tu duoc tra truoc do
         DisplayHistoryWord.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
             if (newVal != null) {
                 MakeWord.setVisible(MarkedWord.contains(newVal));
