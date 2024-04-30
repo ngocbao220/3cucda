@@ -145,8 +145,9 @@ public class DictionaryController extends GeneralController{
             Search.setText(strTemp);
             ForSearchingDicWord(Search, List, ListDic);
         }
-        //databaseBookmark = new DatabaseBookmark("av");
+
         DicWords();
+
         // cai phong chu cho listDic
         ListDic.setCellFactory(param -> new ListCell<String>() {
             @Override

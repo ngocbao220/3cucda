@@ -20,6 +20,7 @@ public class DatabaseManager {
                 .append("jdbc:sqlite:")
                 .append(dbPath)
                 .toString();
+
         try {
             connection = DriverManager.getConnection(url);
         } catch (SQLException e) {
@@ -31,7 +32,7 @@ public class DatabaseManager {
         connectingToDatabase(dbPath);
         return connection;
     }
-    public static void DictionaryWords() {
+    public void DictionaryWords() {
         String sql = "SELECT word, html FROM av";
 
         try {
@@ -41,7 +42,6 @@ public class DatabaseManager {
             while (rs.next()) {
                 list.put(rs.getString("word"), rs.getString("html"));
             }
-
         } catch (SQLException e) {
             e.printStackTrace();
         }

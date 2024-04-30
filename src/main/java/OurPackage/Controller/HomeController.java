@@ -180,6 +180,7 @@ public class HomeController extends GeneralController {
         buttonShowInfor.setOnAction(e -> {
             checkOnScreen = true;
             butSay.setVisible(true);
+
             // Hien thi thong tin
             TranslateTransition transition1 = createTransition(stackPaneMeanWord, -1300, 1);
             transition1.play();
@@ -232,7 +233,7 @@ public class HomeController extends GeneralController {
             }
         });
 
-        // Xoa
+        // Xoa MarkWord
         removeFromMarkedWord.setOnAction(e -> {
             if (!listMarkedWord.getSelectionModel().isEmpty()) {
                 databaseBookmark.remove(listMarkedWord.getSelectionModel().getSelectedItem());

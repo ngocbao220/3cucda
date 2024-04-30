@@ -71,7 +71,25 @@ public class DatabaseBookmark {
     }
 
     public void clear() {
+        // Clear tu trong list mark
         MarkedWord.clear();
+
+        // Dat tat ca isBookmark trong database ve 0
+
+        String sql = "UPDATE " + tableName + " SET isBookmark = 0";
+
+        // Sử dụng try-with-resources để đảm bảo rằng tất cả tài nguyên JDBC được đóng gói gọn gàng
+        try {
+             PreparedStatement pstmt = connect.prepareStatement(sql);
+
+            // Thực thi câu lệnh
+            int affectedRows = pstmt.executeUpdate();
+            System.out.println("Updated " + affectedRows + " rows. All bookmarks are now reset to 0.");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Error: Couldn't set bookmark = 0 !");
+        }
     }
 
     public boolean isBookmarked(String word) {
