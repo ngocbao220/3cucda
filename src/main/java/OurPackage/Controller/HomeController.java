@@ -74,7 +74,7 @@ public class HomeController extends GeneralController {
     private Pane menu_inner_pane;
 
     @FXML
-    private StackPane stackPaneMeanWord;
+    private Pane stackPaneMeanWord;
 
     @FXML
     private Pane move_dic_home;
@@ -278,7 +278,7 @@ public class HomeController extends GeneralController {
         });
     }
     // ham tao hieu ung chuyen dong
-    private TranslateTransition createTransition(StackPane stackPane, double deltaX, double speed) {
+    private TranslateTransition createTransition(Pane stackPane, double deltaX, double speed) {
         TranslateTransition transition = new TranslateTransition(Duration.seconds(speed), stackPane);
         transition.setByX(deltaX);
         return transition;

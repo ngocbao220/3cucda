@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.web.WebView?>
@@ -210,18 +209,19 @@
                            </image>
                         </ImageView>
                         <JFXButton fx:id="removeFromMarkedWord" layoutX="738.0" layoutY="243.0" prefHeight="0.0" prefWidth="0.0" style="-fx-background-radius: 50;" styleClass="buttonTruDau" stylesheets="@../SupportScreen/Css/Style.css" text="Button" />
-                        <JFXButton fx:id="turnOffMean" layoutX="461.0" layoutY="117.0" prefHeight="46.0" prefWidth="42.0" text="&gt;" visible="false">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </JFXButton>
-                        <StackPane fx:id="stackPaneMeanWord" layoutX="6.0" layoutY="14.0" prefHeight="252.0" prefWidth="460.0">
-                           <children>
-                              <WebView fx:id="infoWord" prefHeight="126.0" prefWidth="302.0" />
-                           </children>
-                        </StackPane>
-                        <JFXButton fx:id="buttonShowInfor" layoutX="634.0" layoutY="243.0" prefHeight="25.0" prefWidth="28.0" text="+" visible="false" />
+                        <JFXButton fx:id="turnOffMean" layoutX="468.0" layoutY="126.0" prefHeight="28.0" prefWidth="27.0" styleClass="dauLon" stylesheets="@../SupportScreen/Css/home.css" visible="false" />
+                        <JFXButton fx:id="buttonShowInfor" layoutX="634.0" layoutY="240.0" prefHeight="28.0" prefWidth="28.0" styleClass="dauCong" stylesheets="@../SupportScreen/Css/home.css" visible="false" />
                         <Button fx:id="butSay" layoutX="468.0" layoutY="14.0" mnemonicParsing="false" onAction="#SayWord" prefHeight="28.0" prefWidth="28.0" styleClass="buttonSay" stylesheets="@../SupportScreen/Css/dictionary.css" text="." visible="false" />
+                        <Pane fx:id="stackPaneMeanWord" layoutX="14.0" layoutY="14.0" prefHeight="252.0" prefWidth="452.0">
+                           <children>
+                              <ImageView fitHeight="256.0" fitWidth="512.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../SupportScreen/img/note.png" />
+                                 </image>
+                              </ImageView>
+                              <WebView fx:id="infoWord" layoutX="33.0" layoutY="44.0" prefHeight="201.0" prefWidth="392.0" styleClass="infoList" stylesheets="@../SupportScreen/Css/home.css" />
+                           </children>
+                        </Pane>
                         <ImageView fx:id="loading" fitHeight="21.0" fitWidth="20.0" layoutX="472.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true" visible="false">
                            <image>
                               <Image url="@../SupportScreen/img/loadding.png" />
