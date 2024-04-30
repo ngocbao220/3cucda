@@ -150,7 +150,7 @@ public class HomeController extends GeneralController {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         super.initialize(url, resourceBundle);
         but_home.setStyle("-fx-background-color: #333333;");
-
+        List = DatabaseManager.list;
         if (MarkedWord.isEmpty()) {
             listMarkedWord.setVisible(false);
             removeFromMarkedWord.setVisible(false);
@@ -181,10 +181,10 @@ public class HomeController extends GeneralController {
             checkOnScreen = true;
             butSay.setVisible(true);
 
-            // Hien thi thong tin
+            // Hieu ung chuyen canh
             TranslateTransition transition1 = createTransition(stackPaneMeanWord, -1300, 1);
             transition1.play();
-
+            // Hien thi thong tin
             listMarkedWord.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
                 if (newVal != null) {
                     List.forEach((key, value) -> {
@@ -233,7 +233,7 @@ public class HomeController extends GeneralController {
             }
         });
 
-        // Xoa MarkWord
+        // Xoa MarkedWord
         removeFromMarkedWord.setOnAction(e -> {
             if (!listMarkedWord.getSelectionModel().isEmpty()) {
                 databaseBookmark.remove(listMarkedWord.getSelectionModel().getSelectedItem());
