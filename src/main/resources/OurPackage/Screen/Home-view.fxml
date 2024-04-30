@@ -219,7 +219,7 @@
                                     <Image url="@../SupportScreen/img/note.png" />
                                  </image>
                               </ImageView>
-                              <WebView fx:id="infoWord" layoutX="33.0" layoutY="44.0" prefHeight="201.0" prefWidth="392.0" styleClass="infoList" stylesheets="@../SupportScreen/Css/home.css" />
+                              <WebView fx:id="infoWord" layoutX="33.0" layoutY="44.0" prefHeight="201.0" prefWidth="392.0" />
                            </children>
                         </Pane>
                         <ImageView fx:id="loading" fitHeight="21.0" fitWidth="20.0" layoutX="472.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true" visible="false">
