@@ -94,7 +94,7 @@ public class DictionaryController extends GeneralController{
     private JFXButton but_diction;
 
     @FXML
-    private JFXButton MakeWord;
+    private JFXButton RemoveWord;
 
     @FXML
     private JFXButton but_game;
@@ -134,6 +134,8 @@ public class DictionaryController extends GeneralController{
 
     public static Map<String, String> List = new LinkedHashMap<>();
 
+    public List<String> ListLog = new ArrayList<>();
+
     public static String wordToSpeed;
 
     public static String strTemp = "";
@@ -141,7 +143,6 @@ public class DictionaryController extends GeneralController{
     @FXML
     private WebView InfoOfWords;
 
-    int count = 0;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -151,9 +152,7 @@ public class DictionaryController extends GeneralController{
             Search.setText(strTemp);
             ForSearchingDicWord(Search, List, ListDic);
         }
-        System.out.println("1");
         DicWords();
-        System.out.println("2");
         // cai phong chu cho listDic
         ListDic.setCellFactory(param -> new ListCell<String>() {
             @Override
@@ -206,11 +205,12 @@ public class DictionaryController extends GeneralController{
             displayDicWords(HisWord, DisplayHistoryWord);
         });
 
-        MakeWord.setOnMouseClicked(e -> {
-            MakeWord.setVisible(false);
+        RemoveWord.setOnMouseClicked(e -> {
+            RemoveWord.setVisible(false);
             if (!ListDic.getSelectionModel().isEmpty()) {
                 String s = ListDic.getSelectionModel().getSelectedItem();
                 databaseBookmark.remove(s);
+                ListLog.add("Đã gỡ:" + s);
             }
         });
 
@@ -224,14 +224,16 @@ public class DictionaryController extends GeneralController{
     @FXML
     void Mark(ActionEvent event) {
         if (!ListDic.getSelectionModel().isEmpty()) {
-            MakeWord.setVisible(true);
+            RemoveWord.setVisible(true);
             String s = ListDic.getSelectionModel().getSelectedItem();
             databaseBookmark.updateBookmark(s);
+            ListLog.add("Đã thêm:" + s);
         }
         if (!DisplayHistoryWord.getSelectionModel().isEmpty()) {
-            MakeWord.setVisible(true);
+            RemoveWord.setVisible(true);
             String s = DisplayHistoryWord.getSelectionModel().getSelectedItem();
             databaseBookmark.updateBookmark(s);
+            ListLog.add("Đã thêm:" + s);
         }
         else return;
     }
@@ -270,7 +272,7 @@ public class DictionaryController extends GeneralController{
         InfoOfWords.getEngine().loadContent("<h1>welcome</h1><h3><i>/'welkəm/</i></h3><h2>tính từ</h2><ul><li>được tiếp đãi ân cần, được hoan nghênh<ul style=\"list-style-type:circle\"><li>a welcome guest:<i> một người khách được tiếp đãi ân cần</i></li><li>to make someone welcome:<i> đón tiếp ai ân cần; làm cho ai thấy mình là khách được hoan nghênh</i></li><li>to be welcome:<i> cứ tự nhiên, cứ việc dùng, được tự do</i></li><li>you are welcome to my bicycle:<i> anh cứ việc dùng xe đạp của tôi</i></li><li>you are welcome to go with them or to stay at home:<i> anh muốn đi với họ hay ở nhà cũng được, xin cứ tự nhiên</i><br/></li></ul></li><li>hay, dễ chịu, thú vị<ul style=\"list-style-type:circle\"><li>a welcome change:<i> sự thay đổi dễ chịu</i></li><li>welcome news:<i> tin hay, tin vui</i></li><li>to be most welcome:<i> đến đúng lúc</i></li></ul></li></ul><h2>thành ngữ</h2><ol><li>you are welcome<ul><li>(từ Mỹ,nghĩa Mỹ),  (thông tục) không dám, có gì đâu (nói để đáp lại lời cm n)</li></ul></li></ol><h2>thán từ</h2><ul><li>hoan nghênh!<ul style=\"list-style-type:circle\"><li>Welcome to Vietnam!:<i> hoanh nghênh các bạn đến thăm Việt nam!</i></li></ul></li></ul><h2>danh từ</h2><ul><li>sự được tiếp đ i ân cần, sự đón tiếp ân cần; sự hoan nghênh<ul style=\"list-style-type:circle\"><li>to receive a warm welcome:<i> được đón tiếp niềm nở</i></li><li>to meet with a cold welcome:<i> được đón tiếp một cách lạnh nhạt</i></li><li>to wear out (outstay) one's welcome:<i> ở chi lâu đến nỗi người ta không muốn tiếp nữa</i></li><li>to bid someone welcome:<i> chào mừng ai</i></li></ul></li></ul><h2>ngoại động từ</h2><ul><li>đón tiếp ân cần; hoan nghênh<ul style=\"list-style-type:circle\"><li>to welcome a friend home:<i> đón tiếp ân cần một người bạn ở nhà mình, hoan nghênh một người bạn đi xa mới</i>về nước<br/></li><li>to welcome a suggestion:<i> hoan nghênh một lời gợi ý</i></li></ul></li></ul>");
         ListDic.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
             if (newVal != null) {
-                MakeWord.setVisible(MarkedWord.contains(newVal));
+                RemoveWord.setVisible(MarkedWord.contains(newVal));
                 List.forEach((key, value) -> {
                     if (key.equals(newVal)) {
                         InfoOfWords.getEngine().loadContent(value);
@@ -283,7 +285,7 @@ public class DictionaryController extends GeneralController{
         // thong tin cua tu duoc tra truoc do
         DisplayHistoryWord.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
             if (newVal != null) {
-                MakeWord.setVisible(MarkedWord.contains(newVal));
+                RemoveWord.setVisible(MarkedWord.contains(newVal));
                 List.forEach((key, value) -> {
                     if (key.equals(newVal)) {
                         InfoOfWords.getEngine().loadContent(value);

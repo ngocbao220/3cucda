@@ -184,7 +184,7 @@
                      </image>
                   </ImageView>
                   <JFXButton fx:id="ButtonMark" layoutX="780.0" layoutY="84.0" onAction="#Mark" prefHeight="28.0" prefWidth="29.0" styleClass="buttonMark" stylesheets="@../SupportScreen/Css/dictionary.css" />
-                  <JFXButton fx:id="MakeWord" layoutX="780.0" layoutY="84.0" prefHeight="28.0" prefWidth="29.0" styleClass="buttonMark_2" stylesheets="@../SupportScreen/Css/dictionary.css" visible="false" />
+                  <JFXButton fx:id="RemoveWord" layoutX="780.0" layoutY="84.0" prefHeight="28.0" prefWidth="29.0" styleClass="buttonMark_2" stylesheets="@../SupportScreen/Css/dictionary.css" visible="false" />
                     </children>
                 </Pane>
             </children>
