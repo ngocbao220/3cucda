@@ -1,5 +1,6 @@
 package OurPackage.Module;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.animation.RotateTransition;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
@@ -14,7 +15,7 @@ import java.nio.charset.StandardCharsets;
 
 
 public class TextToSpeech {
-    public static void speak(String wordToSpeech, Button image, ImageView loading, boolean lgg) {
+    public static void speak(String wordToSpeech, JFXButton image, ImageView loading, boolean lgg, ImageView stop, ImageView isay) {
         try {
             String apiKey = "ec3d616154994f4a891ce5d297175493";  // khóa API của bạn
             String text = wordToSpeech; // Văn bản bạn muốn chuyển đổi
@@ -40,10 +41,12 @@ public class TextToSpeech {
 
             mediaPlayer.setOnPlaying(() -> {
                 loading.setVisible(false);
-                image.setPrefSize(image.getWidth()*1.1, image.getHeight()*1.1);
+                isay.setVisible(false);
+                stop.setVisible(true);
             });
             mediaPlayer.setOnEndOfMedia(() -> {
-                image.setPrefSize(image.getWidth()/1.1, image.getHeight()/1.1);
+                isay.setVisible(true);
+                stop.setVisible(false);
             });
         } catch (Exception e) {
             e.printStackTrace();

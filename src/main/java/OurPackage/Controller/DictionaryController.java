@@ -73,7 +73,7 @@ public class DictionaryController extends GeneralController{
     private Pane SayNothing;
 
     @FXML
-    private Button SayWord;
+    private JFXButton SayWord;
 
     @FXML
     private Button removeWordOnHisWord;
@@ -110,6 +110,12 @@ public class DictionaryController extends GeneralController{
 
     @FXML
     private ImageView catcute;
+
+    @FXML
+    private ImageView iSay;
+
+    @FXML
+    private ImageView stop;
 
     @FXML
     private ImageView loading;
@@ -232,7 +238,7 @@ public class DictionaryController extends GeneralController{
 
     @FXML
     void Say(ActionEvent event) {
-        TextToSpeech.speak(wordToSpeed, SayWord, loading,true);
+        TextToSpeech.speak(wordToSpeed, SayWord, loading,true, stop, iSay);
         System.out.println("I'llSpeak: " + wordToSpeed);
     }
 

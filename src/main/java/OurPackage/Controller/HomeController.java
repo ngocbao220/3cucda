@@ -98,7 +98,7 @@ public class HomeController extends GeneralController {
     private ImageView loading;
 
     @FXML
-    private Button butSay;
+    private JFXButton butSay;
 
     @FXML
     private Pane nonSwitchTran;
@@ -131,6 +131,12 @@ public class HomeController extends GeneralController {
     private HBox root;
 
     @FXML
+    private ImageView iSay;
+
+    @FXML
+    private ImageView stop;
+
+    @FXML
     private TextField searchTab;
 
     @FXML
@@ -149,6 +155,7 @@ public class HomeController extends GeneralController {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         super.initialize(url, resourceBundle);
+        changeButton_color(butSay);
         but_home.setStyle("-fx-background-color: #333333;");
         List = DatabaseManager.list;
         if (MarkedWord.isEmpty()) {
@@ -180,7 +187,7 @@ public class HomeController extends GeneralController {
         buttonShowInfor.setOnAction(e -> {
             checkOnScreen = true;
             butSay.setVisible(true);
-
+            iSay.setVisible(true);
             // Hieu ung chuyen canh
             TranslateTransition transition1 = createTransition(stackPaneMeanWord, -1300, 1);
             transition1.play();
@@ -217,6 +224,8 @@ public class HomeController extends GeneralController {
         turnOffMean.setOnAction(e -> {
             if (checkOnScreen) {
                 butSay.setVisible(false);
+                iSay.setVisible(false);
+                stop.setVisible(false);
                 listMarkedWord.getSelectionModel().clearSelection();
                 TranslateTransition transition1 = createTransition(stackPaneMeanWord, -20, 0.5);
                 transition1.play();
@@ -308,7 +317,7 @@ public class HomeController extends GeneralController {
     @FXML
     private void SayWord() {
         if (wordToSpeed != null) {
-            TextToSpeech.speak(wordToSpeed, butSay, loading, true);
+            TextToSpeech.speak(wordToSpeed, butSay, loading, true, stop, iSay);
         } else return;
     }
 
@@ -347,5 +356,10 @@ public class HomeController extends GeneralController {
                 });
             }
         }
+    }
+
+    public void changeButton_color(JFXButton button) {
+        button.setOnMouseEntered(mouseEvent -> button.setStyle("-fx-background-color: rgba(128, 128, 128, 0.08);"));
+        button.setOnMouseExited(mouseEvent -> button.setStyle("-fx-background-color: transparent;"));
     }
 }

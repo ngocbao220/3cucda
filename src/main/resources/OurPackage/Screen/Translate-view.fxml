@@ -156,8 +156,28 @@
                               <Image url="@../SupportScreen/img/loadding.png" />
                            </image>
                         </ImageView>
-                        <JFXButton fx:id="butSpeak1" layoutX="724.0" layoutY="46.0" prefHeight="33.0" prefWidth="35.0" styleClass="buttonn" stylesheets="@../SupportScreen/Css/translate.css" text="." />
-                        <JFXButton fx:id="butSpeak2" layoutX="724.0" layoutY="335.0" prefHeight="33.0" prefWidth="35.0" styleClass="buttonn" stylesheets="@../SupportScreen/Css/translate.css" text="." />
+                        <ImageView fx:id="stop" fitHeight="25.0" fitWidth="24.0" layoutX="711.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@../SupportScreen/img/tamdung.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="iSay" fitHeight="25.0" fitWidth="25.0" layoutX="711.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../SupportScreen/img/cailoaa.png" />
+                           </image>
+                        </ImageView>
+                        <JFXButton fx:id="butSpeak1" layoutX="707.0" layoutY="50.0" prefHeight="32.0" prefWidth="32.0" styleClass="buttonSay" stylesheets="@../SupportScreen/Css/dictionary.css" />
+                        <ImageView fx:id="stop1" fitHeight="25.0" fitWidth="24.0" layoutX="707.0" layoutY="339.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@../SupportScreen/img/tamdung.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="iSay1" fitHeight="25.0" fitWidth="25.0" layoutX="707.0" layoutY="339.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../SupportScreen/img/cailoaa.png" />
+                           </image>
+                        </ImageView>
+                        <JFXButton fx:id="butSpeak2" layoutX="703.0" layoutY="334.0" prefHeight="32.0" prefWidth="32.0" styleClass="buttonSay" stylesheets="@../SupportScreen/Css/dictionary.css" />
                </children>
                 </Pane>
                     </children>

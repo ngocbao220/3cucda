@@ -93,6 +93,18 @@ public class TranslateTextController extends GeneralController implements Initia
     private ImageView loading2;
 
     @FXML
+    private ImageView stop1;
+
+    @FXML
+    private ImageView stop;
+
+    @FXML
+    private ImageView iSay;
+
+    @FXML
+    private ImageView iSay1;
+
+    @FXML
     private AnchorPane dictionary;
 
     @FXML
@@ -201,8 +213,8 @@ public class TranslateTextController extends GeneralController implements Initia
         action(phihanhgia1, 1.5);
         action(phihanhgia2, 1.5);
 
-        butSpeak1.setOnAction(e -> TextToSpeech.speak(TextIn.getText(), butSpeak1, loading1, count % 2 == 0));
-        butSpeak2.setOnAction(e -> TextToSpeech.speak(TextOut.getText(), butSpeak2, loading2, count % 2 != 0));
+        butSpeak1.setOnAction(e -> TextToSpeech.speak(TextIn.getText(), butSpeak1, loading1, count % 2 == 0, stop, iSay));
+        butSpeak2.setOnAction(e -> TextToSpeech.speak(TextOut.getText(), butSpeak2, loading2, count % 2 != 0, stop1, iSay1));
 
     }
 

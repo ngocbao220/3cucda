@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
@@ -211,7 +210,17 @@
                         <JFXButton fx:id="removeFromMarkedWord" layoutX="738.0" layoutY="243.0" prefHeight="0.0" prefWidth="0.0" style="-fx-background-radius: 50;" styleClass="buttonTruDau" stylesheets="@../SupportScreen/Css/Style.css" text="Button" />
                         <JFXButton fx:id="turnOffMean" layoutX="468.0" layoutY="126.0" prefHeight="28.0" prefWidth="27.0" styleClass="dauLon" stylesheets="@../SupportScreen/Css/home.css" visible="false" />
                         <JFXButton fx:id="buttonShowInfor" layoutX="634.0" layoutY="240.0" prefHeight="28.0" prefWidth="33.0" styleClass="dauCong" stylesheets="@../SupportScreen/Css/home.css" visible="false" />
-                        <Button fx:id="butSay" layoutX="468.0" layoutY="14.0" mnemonicParsing="false" onAction="#SayWord" prefHeight="28.0" prefWidth="28.0" styleClass="buttonSay" stylesheets="@../SupportScreen/Css/dictionary.css" text="." visible="false" />
+                        <ImageView fx:id="stop" fitHeight="24.0" fitWidth="24.0" layoutX="469.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@../SupportScreen/img/tamdung.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="iSay" fitHeight="22.0" fitWidth="22.0" layoutX="472.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@../SupportScreen/img/cailoaa.png" />
+                           </image>
+                        </ImageView>
+                        <JFXButton fx:id="butSay" layoutX="466.0" layoutY="17.0" onAction="#SayWord" prefHeight="32.0" prefWidth="32.0" styleClass="buttonSay" stylesheets="@../SupportScreen/Css/dictionary.css" visible="false" />
                         <Pane fx:id="stackPaneMeanWord" layoutX="14.0" layoutY="13.0" prefHeight="253.0" prefWidth="452.0" style="-fx-background-color: #FFBC7D; -fx-background-radius: 10px;">
                            <children>
                               <Pane layoutX="12.0" layoutY="8.0" prefHeight="239.0" prefWidth="431.0" style="-fx-background-color: #ffff; -fx-background-radius: 20px;">
