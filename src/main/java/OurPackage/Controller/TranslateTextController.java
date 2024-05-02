@@ -163,6 +163,8 @@ public class TranslateTextController extends GeneralController implements Initia
         super.initialize(url, resourceBundle);
 
         but_trans.setStyle("-fx-background-color: #333333;");
+        changeButton_color(butSpeak1);
+        changeButton_color(butSpeak2);
 
         TextIn.setStyle("-fx-font-family: 'Segue UI'; -fx-font-weight: bold; -fx-font-size: 20px;");
         TextOut.setStyle("-fx-font-family: 'Segue UI'; -fx-font-weight: bold; -fx-font-size: 20px;");
@@ -274,5 +276,10 @@ public class TranslateTextController extends GeneralController implements Initia
     @FXML
     void translate(KeyEvent event) {
         timer.play();
+    }
+
+    public void changeButton_color(JFXButton button) {
+        button.setOnMouseEntered(mouseEvent -> button.setStyle("-fx-background-color: rgba(128, 128, 128, 0.08);"));
+        button.setOnMouseExited(mouseEvent -> button.setStyle("-fx-background-color: transparent;"));
     }
 }
