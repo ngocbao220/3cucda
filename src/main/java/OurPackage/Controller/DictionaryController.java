@@ -146,6 +146,12 @@ public class DictionaryController extends GeneralController{
     private ImageView meoHa;
 
     @FXML
+    private ImageView bgr_Listshownon;
+
+    @FXML
+    private JFXButton but1, but2, but3;
+
+    @FXML
     private ImageView meoNgam;
 
     @FXML
@@ -266,15 +272,38 @@ public class DictionaryController extends GeneralController{
 
         butShowNon.setOnAction(e -> {
             if (count %2 == 0) {
+                but1.setVisible(true);
+                but2.setVisible(true);
+                but3.setVisible(true);
+                bgr_Listshownon.setVisible(true);
                 listShowNons.setVisible(true);
                 imageNewNon.setVisible(false);
             } else {
+                but1.setVisible(false);
+                but2.setVisible(false);
+                but3.setVisible(false);
+                bgr_Listshownon.setVisible(false);
                 listShowNons.setVisible(false);
                 imageNewNon.setVisible(false);
             }
             sizeOfTempList = ListLog.size();
             count++;
 
+        });
+
+        but1.setOnAction(event -> {
+            but1.setVisible(false);
+            but2.setVisible(false);
+            but3.setVisible(false);
+            bgr_Listshownon.setVisible(false);
+            listShowNons.setVisible(false);
+        });
+        but3.setOnAction(event -> {
+            but1.setVisible(false);
+            but2.setVisible(false);
+            but3.setVisible(false);
+            bgr_Listshownon.setVisible(false);
+            listShowNons.setVisible(false);
         });
     }
 
