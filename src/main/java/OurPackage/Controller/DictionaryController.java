@@ -53,7 +53,7 @@ public class DictionaryController extends GeneralController{
     private Label Example;
 
     @FXML
-    private Button HistoryWord;
+    private JFXButton HistoryWord;
 
     @FXML
     private ListView<String> ListDic;
@@ -125,6 +125,9 @@ public class DictionaryController extends GeneralController{
     private JFXButton but_trans;
 
     @FXML
+    private JFXButton but1, but2, but3;
+
+    @FXML
     private ImageView catcute;
 
     @FXML
@@ -149,6 +152,9 @@ public class DictionaryController extends GeneralController{
     private ImageView meoNgam;
 
     @FXML
+    private ImageView bgr_Listshownon;
+
+    @FXML
     private Pane inner_pane;
 
     @FXML
@@ -158,7 +164,7 @@ public class DictionaryController extends GeneralController{
     private HBox root;
 
     @FXML
-    private Button ButtonMark;
+    private JFXButton ButtonMark;
 
     int count = 0;
 
@@ -177,6 +183,8 @@ public class DictionaryController extends GeneralController{
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         super.initialize(url, resourceBundle);
+        changeButton_color(SayWord);
+        changeButton_color(ButtonMark);
         meoHa.setVisible(false);
         meoNgam.setVisible(true);
         but_diction.setStyle("-fx-background-color: #333333;");
@@ -253,14 +261,37 @@ public class DictionaryController extends GeneralController{
 
         butShowNon.setOnAction(e -> {
             if (count %2 == 0) {
+                but1.setVisible(true);
+                but2.setVisible(true);
+                but3.setVisible(true);
                 listShowNons.setVisible(true);
+                bgr_Listshownon.setVisible(true);
                 imageNewNon.setVisible(false);
             } else {
+                but1.setVisible(false);
+                but2.setVisible(false);
+                but3.setVisible(false);
                 listShowNons.setVisible(false);
                 imageNewNon.setVisible(false);
+                bgr_Listshownon.setVisible(false);
             }
             count++;
 
+        });
+
+        but1.setOnAction(event -> {
+            listShowNons.setVisible(false);
+            bgr_Listshownon.setVisible(false);
+            but1.setVisible(false);
+            but2.setVisible(false);
+            but3.setVisible(false);
+        });
+        but3.setOnAction(event -> {
+            but1.setVisible(false);
+            but2.setVisible(false);
+            but3.setVisible(false);
+            listShowNons.setVisible(false);
+            bgr_Listshownon.setVisible(false);
         });
     }
 
@@ -399,9 +430,8 @@ public class DictionaryController extends GeneralController{
             currentIndex++;
             label.setLayoutX(50);
             label.setLayoutY(label.getLayoutY() + 15);
-
+            label.setStyle("-fx-text-fill: black;");
             label.setVisible(true);
-
             labelList.add(label);
             SearchTab.getChildren().add(label);
             TranslateTransition transition = new TranslateTransition(Duration.seconds(3), label);
@@ -427,6 +457,11 @@ public class DictionaryController extends GeneralController{
         }));
         timeMeo.setCycleCount(1);
         timeMeo.play();
+    }
+
+    public void changeButton_color(JFXButton button) {
+        button.setOnMouseEntered(mouseEvent -> button.setStyle("-fx-background-color: rgba(128, 128, 128, 0.08);"));
+        button.setOnMouseExited(mouseEvent -> button.setStyle("-fx-background-color: transparent;"));
     }
 }
 

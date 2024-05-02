@@ -113,6 +113,11 @@
                               <Image url="@../SupportScreen/img/meoHamom.png" />
                            </image>
                         </ImageView>
+                        <ImageView fx:id="bgrlable" fitHeight="94.0" fitWidth="212.0" layoutX="20.0" layoutY="-17.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@../SupportScreen/img/bgrlabe.png" />
+                           </image>
+                        </ImageView>
                             </children>
                         </Pane>
                   <ImageView fitHeight="529.0" fitWidth="837.0" layoutX="19.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true">
@@ -144,8 +149,8 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Button fx:id="HistoryWord" layoutX="22.0" layoutY="218.0" mnemonicParsing="false" onAction="#showHistoryWord" prefHeight="37.0" prefWidth="37.0" styleClass="buttonHis" stylesheets="@../SupportScreen/Css/dictionary.css" text="." />
-                  <JFXListView fx:id="ListDic" layoutX="80.0" layoutY="298.0" prefHeight="275.0" prefWidth="298.0" />
+                  <JFXButton fx:id="HistoryWord" layoutX="21.0" layoutY="214.0" onAction="#showHistoryWord" opacity="0.51" prefHeight="39.0" prefWidth="39.0" styleClass="buttonHis" stylesheets="@../SupportScreen/Css/dictionary.css" />
+                  <JFXListView fx:id="ListDic" layoutX="80.0" layoutY="298.0" prefHeight="275.0" prefWidth="298.0" style="-fx-background-color: #ffff;" />
                   <WebView fx:id="InfoOfWords" layoutX="459.0" layoutY="116.0" prefHeight="466.0" prefWidth="315.0" />
                   <ImageView fx:id="stop" fitHeight="28.0" fitWidth="27.0" layoutX="708.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
@@ -191,7 +196,15 @@
                   </ImageView>
                   <JFXButton fx:id="ButtonMark" layoutX="780.0" layoutY="84.0" onAction="#Mark" prefHeight="28.0" prefWidth="29.0" styleClass="buttonMark" stylesheets="@../SupportScreen/Css/dictionary.css" />
                   <JFXButton fx:id="RemoveWord" layoutX="780.0" layoutY="84.0" prefHeight="28.0" prefWidth="29.0" styleClass="buttonMark_2" stylesheets="@../SupportScreen/Css/dictionary.css" visible="false" />
-                  <ListView fx:id="listShowNons" layoutX="459.0" layoutY="55.0" prefHeight="223.0" prefWidth="286.0" visible="false" />
+                  <ImageView fx:id="bgr_Listshownon" fitHeight="230.0" fitWidth="286.0" layoutX="493.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../SupportScreen/img/thongbaooo.png" />
+                     </image>
+                  </ImageView>
+                  <ListView fx:id="listShowNons" layoutX="513.0" layoutY="85.0" prefHeight="170.0" prefWidth="242.0" style="-fx-background-color: #FFF8F3;" visible="false" />
+                  <JFXButton fx:id="but3" layoutX="733.0" layoutY="61.0" minHeight="2.0" minWidth="2.0" opacity="0.48" prefHeight="15.0" prefWidth="15.0" visible="false" />
+                  <JFXButton fx:id="but2" layoutX="716.0" layoutY="61.0" minHeight="2.0" minWidth="2.0" opacity="0.48" prefHeight="15.0" prefWidth="15.0" visible="false" />
+                  <JFXButton fx:id="but1" layoutX="700.0" layoutY="61.0" minHeight="2.0" minWidth="2.0" opacity="0.48" prefHeight="15.0" prefWidth="15.0" visible="false" />
                     </children>
                 </Pane>
             </children>

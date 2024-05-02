@@ -106,11 +106,6 @@
       
                       <Pane fx:id="SearchTab" layoutX="8.0" layoutY="14.0" prefHeight="53.0" prefWidth="813.0" styleClass="search" stylesheets="@../SupportScreen/Css/Style.css">
                           <children>
-                              <ImageView fitHeight="42.0" fitWidth="53.0" layoutX="662.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
-                                  <image>
-                                      <Image url="@../SupportScreen/img/Pasted-20240326-001344_preview_rev_1.png" />
-                                  </image>
-                              </ImageView>
                               <ImageView fitHeight="39.0" fitWidth="50.0" layoutX="718.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
                                   <image>
                                       <Image url="@../SupportScreen/img/Pasted-20240320-002513_preview_rev_1.png" />
