@@ -162,6 +162,8 @@ public class DictionaryController extends GeneralController{
 
     int count = 0;
 
+    public static int sizeOfTempList;
+
     public static Map<String, String> List = new LinkedHashMap<>();
 
     public static String wordToSpeed;
@@ -173,12 +175,23 @@ public class DictionaryController extends GeneralController{
 
     private int currentIndex = 0;
 
+    public static ObservableList<String> ListLog = FXCollections.observableArrayList();
+
+    public static ObservableList<Label> labelList = FXCollections.observableArrayList();
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         super.initialize(url, resourceBundle);
+
         meoHa.setVisible(false);
         meoNgam.setVisible(true);
+        listShowNons.setItems(ListLog);
+
+        if (sizeOfTempList < ListLog.size()) {
+            imageNewNon.setVisible(true);
+        }
+
         but_diction.setStyle("-fx-background-color: #333333;");
         if (!strTemp.equals(".")) {
             Search.setText(strTemp);
@@ -259,6 +272,7 @@ public class DictionaryController extends GeneralController{
                 listShowNons.setVisible(false);
                 imageNewNon.setVisible(false);
             }
+            sizeOfTempList = ListLog.size();
             count++;
 
         });
@@ -414,7 +428,7 @@ public class DictionaryController extends GeneralController{
         }
     }
 
-    private String getTimeNow() {
+    public static String getTimeNow() {
         LocalDateTime currentTime = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm dd-MM-yyyy");
         return currentTime.format(formatter);

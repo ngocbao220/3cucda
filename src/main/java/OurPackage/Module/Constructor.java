@@ -12,7 +12,4 @@ public class Constructor {
 
     public static Set<String> MarkedWord = new HashSet<>();
 
-    public static ObservableList<String> ListLog = FXCollections.observableArrayList();
-
-    public static ObservableList<Label> labelList = FXCollections.observableArrayList();
 }

@@ -22,7 +22,7 @@ import javafx.util.Duration;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static OurPackage.Controller.DictionaryController.List;
+import static OurPackage.Controller.DictionaryController.*;
 import static OurPackage.Module.Constructor.MarkedWord;
 
 
@@ -54,6 +54,12 @@ public class HomeController extends GeneralController {
 
     @FXML
     private JFXButton but_game;
+
+    @FXML
+    private JFXButton showNons;
+
+    @FXML
+    private ListView<String> listNon;
 
     @FXML
     private JFXButton but_home;
@@ -137,6 +143,9 @@ public class HomeController extends GeneralController {
     private ImageView stop;
 
     @FXML
+    private ImageView imageNewNon;
+
+    @FXML
     private TextField searchTab;
 
     @FXML
@@ -149,15 +158,25 @@ public class HomeController extends GeneralController {
 
     private boolean checkOnScreen = false;
 
+     int count = 0;
+
     ObservableList<String> items = FXCollections.observableArrayList();
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         super.initialize(url, resourceBundle);
+
+        if (sizeOfTempList < ListLog.size()) {
+            imageNewNon.setVisible(true);
+        }
+
+        listNon.setItems(DictionaryController.ListLog);
+
         changeButton_color(butSay);
         but_home.setStyle("-fx-background-color: #333333;");
         List = DatabaseManager.list;
+
         if (MarkedWord.isEmpty()) {
             listMarkedWord.setVisible(false);
             removeFromMarkedWord.setVisible(false);
@@ -245,8 +264,11 @@ public class HomeController extends GeneralController {
         // Xoa MarkedWord
         removeFromMarkedWord.setOnAction(e -> {
             if (!listMarkedWord.getSelectionModel().isEmpty()) {
+                ListLog.add("Đã gỡ: " + listMarkedWord.getSelectionModel().getSelectedItem() + "    " + DictionaryController.getTimeNow());
                 databaseBookmark.remove(listMarkedWord.getSelectionModel().getSelectedItem());
                 items.remove(listMarkedWord.getSelectionModel().getSelectedItem());
+                imageNewNon.setVisible(true);
+
                 if (MarkedWord.isEmpty()) {
                     listMarkedWord.setVisible(false);
                     buttonShowInfor.setVisible(false);
@@ -255,6 +277,12 @@ public class HomeController extends GeneralController {
                 }
                 listMarkedWord.setItems(items);
             } else return;
+        });
+
+        showNons.setOnAction(e -> {
+            listNon.setVisible(count % 2 == 0);
+            count++;
+            imageNewNon.setVisible(false);
         });
 
         listMarkedWord.setCellFactory(param -> new ListCell<String>() {

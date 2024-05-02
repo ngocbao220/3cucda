@@ -106,12 +106,12 @@
       
                       <Pane fx:id="SearchTab" layoutX="8.0" layoutY="14.0" prefHeight="53.0" prefWidth="813.0" styleClass="search" stylesheets="@../SupportScreen/Css/Style.css">
                           <children>
-                              <ImageView fitHeight="42.0" fitWidth="53.0" layoutX="662.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="33.0" fitWidth="39.0" layoutX="686.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
                                   <image>
-                                      <Image url="@../SupportScreen/img/Pasted-20240326-001344_preview_rev_1.png" />
+                                      <Image url="@../SupportScreen/img/chuong.png" />
                                   </image>
                               </ImageView>
-                              <ImageView fitHeight="39.0" fitWidth="50.0" layoutX="718.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="51.0" fitWidth="86.0" layoutX="744.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
                                   <image>
                                       <Image url="@../SupportScreen/img/Pasted-20240320-002513_preview_rev_1.png" />
                                   </image>
@@ -132,6 +132,12 @@
                                       <Image url="@../SupportScreen/img/Pngtreemagnifying glass icon_5464846.png" />
                                   </image>
                               </ImageView>
+                        <JFXButton fx:id="showNons" layoutX="683.0" layoutY="6.0" prefHeight="39.0" prefWidth="39.0" />
+                        <ImageView fx:id="imageNewNon" fitHeight="20.0" fitWidth="20.0" layoutX="715.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@../SupportScreen/img/Remove-bg.ai_1713608539499.png" />
+                           </image>
+                        </ImageView>
                           </children>
                       </Pane>
 
@@ -258,6 +264,7 @@
                               <Font name="Segoe UI Italic" size="20.0" />
                            </font>
                         </Label>
+                        <ListView fx:id="listNon" layoutX="408.0" prefHeight="223.0" prefWidth="286.0" visible="false" />
                             </children>
 
                         </AnchorPane>
