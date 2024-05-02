@@ -3,6 +3,10 @@
 }
 
 .buttonSay {
+    -fx-background-image: url('../img/iconLoa.jpg');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
     -fx-background-radius : 40px;
 }
 
@@ -30,3 +34,17 @@
     -fx-background-position: center;
     -fx-background-radius : 20px;
 }
+
+.buttonNon1 {
+-fx-background-image: url('../img/chuong.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+.buttonNon2 {
+-fx-background-image: url('../img/chuongIng.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    }

@@ -95,18 +95,24 @@
                 <Pane fx:id="DisplayContent" prefHeight="594.0" prefWidth="863.0">
                     <children>
 
-                        <Pane fx:id="SearchTab" layoutX="8.0" layoutY="14.0" prefHeight="53.0" prefWidth="813.0" styleClass="search" stylesheets="@../SupportScreen/Css/Style.css">
+                              <Pane fx:id="SearchTab" layoutX="8.0" layoutY="14.0" prefHeight="53.0" prefWidth="813.0" styleClass="search" stylesheets="@../SupportScreen/Css/Style.css">
                             <children>
-                                <ImageView fitHeight="42.0" fitWidth="53.0" layoutX="725.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../SupportScreen/img/Pasted-20240326-001344_preview_rev_1.png" />
-                                    </image>
-                                </ImageView>
-                                <ImageView fitHeight="39.0" fitWidth="42.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../SupportScreen/img/Pasted-20240320-002513_preview_rev_1.png" />
-                                    </image>
-                                </ImageView>
+                        <JFXButton fx:id="butShowNon" layoutX="746.0" layoutY="10.0" prefHeight="33.0" prefWidth="33.0" styleClass="buttonNon1" stylesheets="@../SupportScreen/Css/dictionary.css" />
+                        <ImageView fx:id="imageNewNon" fitHeight="21.0" fitWidth="24.0" layoutX="779.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@../SupportScreen/img/Remove-bg.ai_1713608539499.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="meoNgam" fitHeight="53.0" fitWidth="61.0" layoutX="12.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../SupportScreen/img/meoNgammom.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="meoHa" fitHeight="74.0" fitWidth="84.0" layoutX="1.0" layoutY="-20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../SupportScreen/img/meoHamom.png" />
+                           </image>
+                        </ImageView>
                             </children>
                         </Pane>
                   <ImageView fitHeight="529.0" fitWidth="837.0" layoutX="19.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true">
@@ -185,6 +191,7 @@
                   </ImageView>
                   <JFXButton fx:id="ButtonMark" layoutX="780.0" layoutY="84.0" onAction="#Mark" prefHeight="28.0" prefWidth="29.0" styleClass="buttonMark" stylesheets="@../SupportScreen/Css/dictionary.css" />
                   <JFXButton fx:id="RemoveWord" layoutX="780.0" layoutY="84.0" prefHeight="28.0" prefWidth="29.0" styleClass="buttonMark_2" stylesheets="@../SupportScreen/Css/dictionary.css" visible="false" />
+                  <ListView fx:id="listShowNons" layoutX="459.0" layoutY="55.0" prefHeight="223.0" prefWidth="286.0" visible="false" />
                     </children>
                 </Pane>
             </children>

@@ -89,7 +89,7 @@ public class SettingController extends GeneralController {
     @FXML
     private JFXButton bonus;
 
-    private final String Media_Path = "src/main/resources/OurPackage/SupportScreen/media/";
+    private static final String Media_Path = "src/main/resources/OurPackage/SupportScreen/media/";
 
     @FXML
     private Media media;
@@ -108,7 +108,7 @@ public class SettingController extends GeneralController {
         setupMedia("introApp.mp4", pane, mediaView, media, true);
     }
 
-    void setupMedia(String mediaName, Pane pane, MediaView mediaview, Media media, boolean status) {
+    public static void setupMedia(String mediaName, Pane pane, MediaView mediaview, Media media, boolean status) {
         media = new Media(new File(Media_Path + mediaName).toURI().toString());
 
         MediaPlayer mediaPlayer = new MediaPlayer(media);

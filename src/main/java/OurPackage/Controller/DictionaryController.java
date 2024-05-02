@@ -2,6 +2,9 @@ package OurPackage.Controller;
 
 import OurPackage.Module.*;
 import com.jfoenix.controls.JFXButton;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.animation.TranslateTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -13,12 +16,19 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaView;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.web.WebView;
+import javafx.util.Duration;
+
 import java.net.URL;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
+import static OurPackage.Controller.SettingController.setupMedia;
 import static OurPackage.Module.Constructor.*;
 
 
@@ -97,10 +107,16 @@ public class DictionaryController extends GeneralController{
     private JFXButton RemoveWord;
 
     @FXML
+    private ListView<String> listShowNons;
+
+    @FXML
     private JFXButton but_game;
 
     @FXML
     private JFXButton but_home;
+
+    @FXML
+    private JFXButton butShowNon;
 
     @FXML
     private JFXButton but_set;
@@ -112,6 +128,12 @@ public class DictionaryController extends GeneralController{
     private ImageView catcute;
 
     @FXML
+    private ImageView imageNon;
+
+    @FXML
+    private ImageView imageNewNon;
+
+    @FXML
     private ImageView iSay;
 
     @FXML
@@ -119,6 +141,12 @@ public class DictionaryController extends GeneralController{
 
     @FXML
     private ImageView loading;
+
+    @FXML
+    private ImageView meoHa;
+
+    @FXML
+    private ImageView meoNgam;
 
     @FXML
     private Pane inner_pane;
@@ -132,9 +160,9 @@ public class DictionaryController extends GeneralController{
     @FXML
     private Button ButtonMark;
 
-    public static Map<String, String> List = new LinkedHashMap<>();
+    int count = 0;
 
-    public List<String> ListLog = new ArrayList<>();
+    public static Map<String, String> List = new LinkedHashMap<>();
 
     public static String wordToSpeed;
 
@@ -143,10 +171,14 @@ public class DictionaryController extends GeneralController{
     @FXML
     private WebView InfoOfWords;
 
+    private int currentIndex = 0;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         super.initialize(url, resourceBundle);
+        meoHa.setVisible(false);
+        meoNgam.setVisible(true);
         but_diction.setStyle("-fx-background-color: #333333;");
         if (!strTemp.equals(".")) {
             Search.setText(strTemp);
@@ -209,11 +241,27 @@ public class DictionaryController extends GeneralController{
             RemoveWord.setVisible(false);
             if (!ListDic.getSelectionModel().isEmpty()) {
                 String s = ListDic.getSelectionModel().getSelectedItem();
+
                 databaseBookmark.remove(s);
-                ListLog.add("Đã gỡ:" + s);
+
+                ListLog.add("Đã gỡ: " + s + "    " + getTimeNow());
+                runNonAddOrRemoveWord();
+                listShowNons.setItems(ListLog);
+                imageNewNon.setVisible(true);
             }
         });
 
+        butShowNon.setOnAction(e -> {
+            if (count %2 == 0) {
+                listShowNons.setVisible(true);
+                imageNewNon.setVisible(false);
+            } else {
+                listShowNons.setVisible(false);
+                imageNewNon.setVisible(false);
+            }
+            count++;
+
+        });
     }
 
     @FXML
@@ -226,14 +274,24 @@ public class DictionaryController extends GeneralController{
         if (!ListDic.getSelectionModel().isEmpty()) {
             RemoveWord.setVisible(true);
             String s = ListDic.getSelectionModel().getSelectedItem();
+
             databaseBookmark.updateBookmark(s);
-            ListLog.add("Đã thêm:" + s);
+
+            ListLog.add("Đã thêm: " + s + "    " + getTimeNow());
+            runNonAddOrRemoveWord();
+            listShowNons.setItems(ListLog);
+            imageNewNon.setVisible(true);
         }
         if (!DisplayHistoryWord.getSelectionModel().isEmpty()) {
             RemoveWord.setVisible(true);
             String s = DisplayHistoryWord.getSelectionModel().getSelectedItem();
+
             databaseBookmark.updateBookmark(s);
-            ListLog.add("Đã thêm:" + s);
+
+            ListLog.add("Đã thêm:" + s + "    " + getTimeNow());
+            runNonAddOrRemoveWord();
+            listShowNons.setItems(ListLog);
+            imageNewNon.setVisible(true);
         }
         else return;
     }
@@ -334,5 +392,41 @@ public class DictionaryController extends GeneralController{
         });
     }
 
+    private void runNonAddOrRemoveWord() {
+        if (currentIndex < ListLog.size()) {
+            Label label = new Label(ListLog.get(currentIndex).split("    ")[0]);
+            label.setStyle("-fx-front-size: 15px");
+            currentIndex++;
+            label.setLayoutX(50);
+            label.setLayoutY(label.getLayoutY() + 15);
+
+            label.setVisible(true);
+
+            labelList.add(label);
+            SearchTab.getChildren().add(label);
+            TranslateTransition transition = new TranslateTransition(Duration.seconds(3), label);
+            transition.setToX(670);
+            transition.setOnFinished(e -> {
+                label.setVisible(false);
+            });
+            MeoMeo();
+            transition.play();
+        }
+    }
+
+    private String getTimeNow() {
+        LocalDateTime currentTime = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm dd-MM-yyyy");
+        return currentTime.format(formatter);
+    }
+
+    private void MeoMeo() {
+        meoHa.setVisible(true);
+        Timeline timeMeo = new Timeline(new KeyFrame(Duration.millis(500), event -> {
+            meoHa.setVisible(false);
+        }));
+        timeMeo.setCycleCount(1);
+        timeMeo.play();
+    }
 }
 
