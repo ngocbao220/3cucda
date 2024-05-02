@@ -249,6 +249,7 @@ public class HomeController extends GeneralController {
                 items.remove(listMarkedWord.getSelectionModel().getSelectedItem());
                 if (MarkedWord.isEmpty()) {
                     listMarkedWord.setVisible(false);
+                    buttonShowInfor.setVisible(false);
                     removeFromMarkedWord.setVisible(false);
                     nonNothing.setVisible(true);
                 }
