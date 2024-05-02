@@ -113,11 +113,6 @@
                               <Image url="@../SupportScreen/img/meoHamom.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="bgrlable" fitHeight="94.0" fitWidth="212.0" layoutX="20.0" layoutY="-17.0" pickOnBounds="true" preserveRatio="true" visible="false">
-                           <image>
-                              <Image url="@../SupportScreen/img/bgrlabe.png" />
-                           </image>
-                        </ImageView>
                             </children>
                         </Pane>
                   <ImageView fitHeight="529.0" fitWidth="837.0" layoutX="19.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true">
