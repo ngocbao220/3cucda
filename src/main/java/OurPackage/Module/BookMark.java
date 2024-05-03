@@ -6,8 +6,8 @@ public interface BookMark {
 
     void updateBookmark(String word);
 
-    void remove(String word);
+    void removeBookmark(String word);
 
-    void clear();
+    void clearBookmark();
 
 }

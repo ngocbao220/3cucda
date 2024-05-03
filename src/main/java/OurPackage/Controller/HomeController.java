@@ -265,7 +265,7 @@ public class HomeController extends GeneralController {
         removeFromMarkedWord.setOnAction(e -> {
             if (!listMarkedWord.getSelectionModel().isEmpty()) {
                 ListLog.add("Đã gỡ: " + listMarkedWord.getSelectionModel().getSelectedItem() + "    " + DictionaryController.getTimeNow());
-                bookMark.remove(listMarkedWord.getSelectionModel().getSelectedItem());
+                bookMark.removeBookmark(listMarkedWord.getSelectionModel().getSelectedItem());
                 items.remove(listMarkedWord.getSelectionModel().getSelectedItem());
                 imageNewNon.setVisible(true);
 

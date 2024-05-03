@@ -16,6 +16,7 @@ public class DatabaseBookmark implements BookMark {
         importData();
     }
 
+    // Them cac tu duoc danh dau Bookmark vao List MarkWord
     public void importData() {
         String sql = "SELECT DISTINCT word FROM " + tableName + " WHERE isBookmarked = 1;";
         try {
@@ -31,18 +32,15 @@ public class DatabaseBookmark implements BookMark {
         }
     }
 
-
+    // Cap nhat Bookmark khi danh dau 1 tu
     public void updateBookmark(String word) {
-        // SQL statement để cập nhật bookmark
         String sql = "UPDATE " + tableName + " SET isBookmarked = 1 WHERE word = ?";
 
-        // Sử dụng try-with-resources để đảm bảo rằng tất cả tài nguyên JDBC được đóng gói gọn gàng
         try {
             PreparedStatement pstmt = connect.prepareStatement(sql);
             // Đặt các tham số cho PreparedStatement
             pstmt.setString(1, word);
 
-            // Thực thi câu lệnh
             int affectedRows = pstmt.executeUpdate();
             MarkedWord.add(word);
             System.out.println("Updated " + affectedRows + " rows.");
@@ -53,7 +51,9 @@ public class DatabaseBookmark implements BookMark {
         }
     }
 
-    public void remove(String word) {
+    // Xoa Bookmark cua 1 tu
+    public void removeBookmark(String word) {
+        // Neu tu muon xoa co trong Bookmark thi moi thuc thi lenh remove
         if (MarkedWord.contains(word)) {
             String sql = "UPDATE " + tableName + " SET isBookmarked = 0 WHERE word = ?;";
             try {
@@ -70,7 +70,8 @@ public class DatabaseBookmark implements BookMark {
         }
     }
 
-    public void clear() {
+    // Xoa tat ca tu trong Bookmark
+    public void clearBookmark() {
         // Clear tu trong list mark
         MarkedWord.clear();
 
@@ -78,11 +79,9 @@ public class DatabaseBookmark implements BookMark {
 
         String sql = "UPDATE " + tableName + " SET isBookmark = 0";
 
-        // Sử dụng try-with-resources để đảm bảo rằng tất cả tài nguyên JDBC được đóng gói gọn gàng
         try {
              PreparedStatement pstmt = connect.prepareStatement(sql);
 
-            // Thực thi câu lệnh
             int affectedRows = pstmt.executeUpdate();
             System.out.println("Updated " + affectedRows + " rows. All bookmarks are now reset to 0.");
 

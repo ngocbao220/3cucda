@@ -21,6 +21,7 @@ public class HistorySearch {
         this.historyPath = historyPath;
     }
 
+    // Doc cac tu duoc luu trong file history.txt vao historyList
     public void loadHistory() {
         String line;
 
@@ -35,12 +36,16 @@ public class HistorySearch {
                                                   .append(historyPath));
         }
     }
+
+    // Them tu vao file txt
     public void insertHistory(String word) {
         try {
+            // Neu tu do da co trong lich su thi se duoc cap nhat len tren
             if (historyList.contains(word)) {
                 historyList.removeIf(e -> e.equals(word));
             }
             historyList.add(0, word);
+            // Cap nhat file txt
             FileWriter fw = new FileWriter(historyPath);
             BufferedWriter bf = new BufferedWriter(fw);
             for (String target : historyList) {
@@ -57,6 +62,7 @@ public class HistorySearch {
         }
     }
 
+    // Xoa tu khoi file txt
     public void deleteHistory(String word) {
         if (historyList.contains(word)) {
             historyList.removeIf(e -> e.equals(word));
@@ -76,6 +82,26 @@ public class HistorySearch {
                         .append(historyPath));
             }
         }
+    }
 
+    // Xoa tat ca khoi history
+    public void clearHistory() {
+        historyList.clear();
+
+        try {
+            FileWriter fw = new FileWriter(historyPath);
+            BufferedWriter bf = new BufferedWriter(fw);
+            for (String target : historyList) {
+                bf.write(target);
+                bf.newLine();
+            }
+            bf.close();
+            fw.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println(new StringBuilder()
+                    .append("Error: Can't clear words from file ")
+                    .append(historyPath));
+        }
     }
 }

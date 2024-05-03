@@ -16,8 +16,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaView;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.web.WebView;
@@ -250,11 +248,16 @@ public class DictionaryController extends GeneralController{
             }
 
             String s = DisplayHistoryWord.getSelectionModel().getSelectedItem();
-            HisWord.remove(s);
+            //HisWord.remove(s);
 
             historySearch.deleteHistory(s);
 
-            displayHis(historySearch.getHistoryList(), DisplayHistoryWord);
+            if(historySearch.getHistoryList().isEmpty()) {
+                SayNothing.setVisible(true);
+                removeWordOnHisWord.setVisible(false);
+            } else {
+                displayHis(historySearch.getHistoryList(), DisplayHistoryWord);
+            }
         });
 
         RemoveWord.setOnMouseClicked(e -> {
@@ -262,7 +265,7 @@ public class DictionaryController extends GeneralController{
             if (!ListDic.getSelectionModel().isEmpty()) {
                 String s = ListDic.getSelectionModel().getSelectedItem();
 
-                bookMark.remove(s);
+                bookMark.removeBookmark(s);
 
                 ListLog.add("Đã gỡ: " + s + "    " + getTimeNow());
                 runNonAddOrRemoveWord();
@@ -354,7 +357,7 @@ public class DictionaryController extends GeneralController{
     @FXML
     void showHistoryWord(ActionEvent event) {
         PaneHistory.setVisible(true);
-        System.out.println(HisWord.isEmpty());
+        //System.out.println(historySearch.getHistoryList().isEmpty());
         if (historySearch.getHistoryList().isEmpty()) {
             SayNothing.setVisible(true);
             removeWordOnHisWord.setVisible(false);
@@ -379,11 +382,12 @@ public class DictionaryController extends GeneralController{
                     if (key.equals(newVal)) {
                         InfoOfWords.getEngine().loadContent(value);
                         wordToSpeed = key;
-                        HisWord.put(key, value);
+                        //HisWord.put(key, value);
                         historySearch.insertHistory(key);
                     }
                 });
             }
+
         });
         // thong tin cua tu duoc tra truoc do
         DisplayHistoryWord.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
