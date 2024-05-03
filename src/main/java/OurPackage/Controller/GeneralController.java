@@ -1,7 +1,9 @@
 package OurPackage.Controller;
 
+import OurPackage.Module.BookMark;
 import OurPackage.Module.DatabaseBookmark;
 import OurPackage.Module.DatabaseManager;
+import OurPackage.Module.HistorySearch;
 import com.jfoenix.controls.JFXButton;
 import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
@@ -117,8 +119,16 @@ public class GeneralController implements Initializable{
 
     public List<JFXButton> listbut = new ArrayList<>();
 
-    public DatabaseManager databaseManager = new DatabaseManager();
-    public DatabaseBookmark databaseBookmark ;
+
+    private final static String DATABASE_PATH = "./Data/";
+
+    private final static String DATABASE_NAME = "dict_hh.db";
+
+    public DatabaseManager databaseManager = new DatabaseManager(DATABASE_PATH, DATABASE_NAME);
+    public BookMark bookMark ;
+
+    protected HistorySearch historySearch = new HistorySearch(new StringBuilder().append(DATABASE_PATH)
+            .append("history.txt").toString());
 
     public void Load(String s, Pane container) throws IOException {
         Pane parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(s)));
@@ -225,7 +235,9 @@ public class GeneralController implements Initializable{
         ChangeButton_color(but_home);
 
         databaseManager.DictionaryWords();
-        databaseBookmark = new DatabaseBookmark("av");
+        bookMark = new DatabaseBookmark("av");
+        DictionaryController.List = DatabaseManager.list;
+        historySearch.loadHistory();
     }
     public void ChangeButton_color(JFXButton button) {
         button.setOnMouseClicked(event -> {

@@ -27,8 +27,6 @@ import java.net.URL;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
-
-import static OurPackage.Controller.SettingController.setupMedia;
 import static OurPackage.Module.Constructor.*;
 
 
@@ -245,7 +243,7 @@ public class DictionaryController extends GeneralController{
         });
 
         removeWordOnHisWord.setOnAction(e -> {
-            if (HisWord.isEmpty()) return;
+            if (historySearch.getHistoryList().isEmpty()) return;
 
             if(DisplayHistoryWord.getSelectionModel().isEmpty()) {
                 DisplayHistoryWord.getSelectionModel().select(0);
@@ -253,7 +251,10 @@ public class DictionaryController extends GeneralController{
 
             String s = DisplayHistoryWord.getSelectionModel().getSelectedItem();
             HisWord.remove(s);
-            displayDicWords(HisWord, DisplayHistoryWord);
+
+            historySearch.deleteHistory(s);
+
+            displayHis(historySearch.getHistoryList(), DisplayHistoryWord);
         });
 
         RemoveWord.setOnMouseClicked(e -> {
@@ -261,7 +262,7 @@ public class DictionaryController extends GeneralController{
             if (!ListDic.getSelectionModel().isEmpty()) {
                 String s = ListDic.getSelectionModel().getSelectedItem();
 
-                databaseBookmark.remove(s);
+                bookMark.remove(s);
 
                 ListLog.add("Đã gỡ: " + s + "    " + getTimeNow());
                 runNonAddOrRemoveWord();
@@ -318,7 +319,7 @@ public class DictionaryController extends GeneralController{
             RemoveWord.setVisible(true);
             String s = ListDic.getSelectionModel().getSelectedItem();
 
-            databaseBookmark.updateBookmark(s);
+            bookMark.updateBookmark(s);
 
             ListLog.add("Đã thêm: " + s + "    " + getTimeNow());
             runNonAddOrRemoveWord();
@@ -329,7 +330,7 @@ public class DictionaryController extends GeneralController{
             RemoveWord.setVisible(true);
             String s = DisplayHistoryWord.getSelectionModel().getSelectedItem();
 
-            databaseBookmark.updateBookmark(s);
+            bookMark.updateBookmark(s);
 
             ListLog.add("Đã thêm:" + s + "    " + getTimeNow());
             runNonAddOrRemoveWord();
@@ -354,12 +355,12 @@ public class DictionaryController extends GeneralController{
     void showHistoryWord(ActionEvent event) {
         PaneHistory.setVisible(true);
         System.out.println(HisWord.isEmpty());
-        if (HisWord.isEmpty()) {
+        if (historySearch.getHistoryList().isEmpty()) {
             SayNothing.setVisible(true);
             removeWordOnHisWord.setVisible(false);
         } else {
             SayNothing.setVisible(false);
-            displayDicWords(HisWord, DisplayHistoryWord);
+            displayHis(historySearch.getHistoryList(), DisplayHistoryWord);
             DisplayHistoryWord.setVisible(true);
             removeWordOnHisWord.setVisible(true);
         }
@@ -379,6 +380,7 @@ public class DictionaryController extends GeneralController{
                         InfoOfWords.getEngine().loadContent(value);
                         wordToSpeed = key;
                         HisWord.put(key, value);
+                        historySearch.insertHistory(key);
                     }
                 });
             }
@@ -397,6 +399,11 @@ public class DictionaryController extends GeneralController{
         });
     }
 
+    public static void displayHis(List<String> historyList, ListView<String> hisListView) {
+        ObservableList<String> items = FXCollections.observableArrayList();
+            items.addAll(historyList);
+        hisListView.setItems(items);
+    }
     public static void displayDicWords(Map<String, String> dictionary, ListView<String> listView) {
         ObservableList<String> items = FXCollections.observableArrayList();
         for (Map.Entry<String, String> entry : dictionary.entrySet()) {

@@ -4,16 +4,18 @@ import java.sql.*;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class DatabaseManager {
+
+public class DatabaseManager extends Dictionary{
     private static Connection connection;
 
     protected static Connection connect;
 
     public static Map<String, String> list = new LinkedHashMap<>();
 
-    private final static String DATABASE_PATH = "./Data/";
+    public DatabaseManager(String dbPath, String dbName) {
+        super(dbPath, dbName);
+    }
 
-    private final static String DATABASE_NAME = "dict_hh.db";
 
     public static void connectingToDatabase(String dbPath) {
         String url = new StringBuilder()
@@ -36,7 +38,7 @@ public class DatabaseManager {
         String sql = "SELECT word, html FROM av";
 
         try {
-            connect = getConnection(DATABASE_PATH + DATABASE_NAME);
+            connect = getConnection(getDbPath() + getDbName());
             Statement stmt = connect.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
