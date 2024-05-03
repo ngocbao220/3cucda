@@ -296,6 +296,7 @@ public class DictionaryController extends GeneralController{
         });
 
         but1.setOnAction(event -> {
+            count++;
             but1.setVisible(false);
             but2.setVisible(false);
             but3.setVisible(false);
@@ -303,6 +304,7 @@ public class DictionaryController extends GeneralController{
             listShowNons.setVisible(false);
         });
         but3.setOnAction(event -> {
+            count++;
             but1.setVisible(false);
             but2.setVisible(false);
             but3.setVisible(false);

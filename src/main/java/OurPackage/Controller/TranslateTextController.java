@@ -161,6 +161,7 @@ public class TranslateTextController extends GeneralController implements Initia
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         super.initialize(url, resourceBundle);
+        TextOut.setDisable(true);
 
         but_trans.setStyle("-fx-background-color: #333333;");
         changeButton_color(butSpeak1);
@@ -193,30 +194,34 @@ public class TranslateTextController extends GeneralController implements Initia
         }));
         timeline.setCycleCount(1);
         swapLang.setOnAction(e -> {
+            swapLang.setDisable(true);
             if (count %2 != 0 ) {
-                swapLang.setDisable(true);
                 swapStackPanes(Sr, Sl);
                 TextIn.setText(TextOut.getText());
                 Language = "vi";
-                timer.play();
-                count++;
-                timeline.play();
             } else {
-                swapLang.setDisable(true);
                 swapStackPanes(Sl, Sr);
                 TextIn.setText(TextOut.getText());
                 Language = "en";
-                timer.play();
-                count++;
-                timeline.play();
             }
+            timer.play();
+            count++;
+            timeline.play();
         });
 
         action(phihanhgia1, 1.5);
         action(phihanhgia2, 1.5);
 
-        butSpeak1.setOnAction(e -> TextToSpeech.speak(TextIn.getText(), butSpeak1, loading1, count % 2 == 0, stop, iSay));
-        butSpeak2.setOnAction(e -> TextToSpeech.speak(TextOut.getText(), butSpeak2, loading2, count % 2 != 0, stop1, iSay1));
+        butSpeak1.setOnAction(e -> {
+            if(!TextIn.getText().isEmpty()) {
+                TextToSpeech.speak(TextIn.getText(), butSpeak1, loading1, count % 2 == 0, stop, iSay);
+            } else return;
+        });
+        butSpeak2.setOnAction(e -> {
+            if (!TextOut.getText().isEmpty()) {
+                TextToSpeech.speak(TextOut.getText(), butSpeak2, loading2, count % 2 != 0, stop1, iSay1);
+            } else return;
+        });
 
     }
 
@@ -238,29 +243,6 @@ public class TranslateTextController extends GeneralController implements Initia
         transition.setByX(deltaX);
         transition.setByY(deltaY);
         return transition;
-    }
-    // Sự kiện ấn nút đổi
-    @FXML
-    void DoSwapLang(ActionEvent event) {
-        if (count %2 != 0 ) {
-            swapLang.setDisable(true);
-            swapStackPanes(Sr, Sl);
-            TextIn.setText(TextOut.getText());
-            Language = "vi";
-            timer.play();
-            count++;
-            timeline.play();
-            swapLang.setDisable(false);
-        } else {
-            swapLang.setDisable(true);
-            swapStackPanes(Sl, Sr);
-            TextIn.setText(TextOut.getText());
-            Language = "en";
-            timer.play();
-            count++;
-            timeline.play();
-            swapLang.setDisable(false);
-        }
     }
 
     public void action(ImageView imageView, double speech) {
