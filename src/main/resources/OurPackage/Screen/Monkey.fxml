@@ -274,6 +274,15 @@
                         </Pane>
                      </children>
                   </Pane>
+                  <Pane fx:id="paneShowBug" layoutX="324.0" layoutY="5.0" opacity="0.0" prefHeight="73.0" prefWidth="218.0" style="-fx-background-color: #FF0033;">
+                     <children>
+                        <Label layoutX="1.0" layoutY="18.0" prefHeight="42.0" prefWidth="218.0" text="Lỗi : Cần ít nhất 2 từ để chơi" textFill="WHITE">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
                </children>
             </Pane>
          </children>

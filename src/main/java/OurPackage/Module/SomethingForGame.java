@@ -183,9 +183,8 @@ public class SomethingForGame {
 
         // Đoc file va luu vao 1 stringbuilder
         while ((line = reader.readLine()) != null) {
-            if (line.contains(searchString.trim().toLowerCase())) {
-                continue;
-            } else {
+            if (line.contains(searchString.trim().toLowerCase())) continue;
+            else {
                 stringBuilder.append(line).append(System.lineSeparator());
             }
         }
@@ -219,5 +218,4 @@ public class SomethingForGame {
         writer.close();
 
     }
-
 }

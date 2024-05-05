@@ -2,6 +2,7 @@ package OurPackage.Controller;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
+import javafx.animation.FadeTransition;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -115,6 +116,9 @@ public class MonkeyGameController extends GeneralController {
 
     @FXML
     private Pane PaneWhenPauseGame;
+
+    @FXML
+    private Pane paneShowBug;
 
     @FXML
     private Pane PaneWhenPlayGame;
@@ -571,40 +575,45 @@ public class MonkeyGameController extends GeneralController {
 
     @FXML
     void PlayOtherTypeGame(ActionEvent event) {
-        PauseMusic();
+        if (Map2.size() < 2) {
+            FadeTransition fadeTransition = new FadeTransition(Duration.seconds(4), paneShowBug);
+            fadeTransition.setFromValue(0.67);
+            fadeTransition.setToValue(0.0);
+            fadeTransition.play();
+        } else {
+            PauseMusic();
 
-        PlayMusic("monkeyMusic.mp3", -1);
-        Play();
-        try {
-            ReadData(DATA2, Split, Map2);
-            if (Map2.size() < 2) {
-                return;
+            try {
+                ReadData(DATA2, Split, Map2);
+                if (Map2.size() < 2) {
+                    return;
+                }
+                //PauseMusic();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
-            //PauseMusic();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
 
-        MenuChosseTheWord.setVisible(false);
-        PaneChosseTypeGame.setVisible(false);
+            MenuChosseTheWord.setVisible(false);
+            PaneChosseTypeGame.setVisible(false);
 
-        MyMap = Map2;
+            MyMap = Map2;
 
-        mySet = Map2.keySet();
+            mySet = Map2.keySet();
 
-        myArray = mySet.toArray(new String[0]);
-        Replay.setOnAction(e -> {
-            PaneWhenPauseGame.setVisible(false);
-            PaneWhenLoss.setVisible(false);
-            reset();
+            myArray = mySet.toArray(new String[0]);
+            Replay.setOnAction(e -> {
+                PaneWhenPauseGame.setVisible(false);
+                PaneWhenLoss.setVisible(false);
+                reset();
+                ShowQuestion(Map2);
+                RunTime();
+            });
+
+            PaneWhenPlayGame.setVisible(true);
+            UpdatePointAndHeart();
             ShowQuestion(Map2);
             RunTime();
-        });
-
-        PaneWhenPlayGame.setVisible(true);
-        UpdatePointAndHeart();
-        ShowQuestion(Map2);
-        RunTime();
+        }
     }
 
     @FXML
