@@ -353,11 +353,13 @@ public class DictionaryController extends GeneralController{
 
     @FXML
     void CloseNonHis(ActionEvent event) {
+        DisplayHistoryWord.getSelectionModel().clearSelection();
         PaneHistory.setVisible(false);
     }
 
     @FXML
     void showHistoryWord(ActionEvent event) {
+        ListDic.getSelectionModel().clearSelection();
         PaneHistory.setVisible(true);
         if (historySearch.getHistoryList().isEmpty()) {
             SayNothing.setVisible(true);
