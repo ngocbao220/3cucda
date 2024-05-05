@@ -359,7 +359,6 @@ public class DictionaryController extends GeneralController{
     @FXML
     void showHistoryWord(ActionEvent event) {
         PaneHistory.setVisible(true);
-        //System.out.println(historySearch.getHistoryList().isEmpty());
         if (historySearch.getHistoryList().isEmpty()) {
             SayNothing.setVisible(true);
             removeWordOnHisWord.setVisible(false);

@@ -1,21 +1,54 @@
 package OurPackage.Controller;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXListView;
+import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.media.MediaView;
+import javafx.scene.layout.VBox;
+import javafx.util.Duration;
 
-import java.io.File;
+import java.awt.event.ActionEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import static OurPackage.Module.DatabaseManager.insertWordToDB;
+
 public class SettingController extends GeneralController {
+
+    @FXML
+    private Pane Back;
+
+    @FXML
+    private Pane DisplayContent;
+
+    @FXML
+    private Label non;
+
+    @FXML
+    private TextField IPAforWord;
+
+    @FXML
+    private TextField MeanOfWord;
+
+    @FXML
+    private Pane paneNon;
+
+    @FXML
+    private AnchorPane Menu;
+
+    @FXML
+    private VBox Menutab;
+
+    @FXML
+    private JFXButton but_add;
+
+    @FXML
+    private JFXButton but_delete;
 
     @FXML
     private JFXButton but_diction;
@@ -27,102 +60,115 @@ public class SettingController extends GeneralController {
     private JFXButton but_home;
 
     @FXML
-    private ImageView catcute;
-
-    @FXML
-    private AnchorPane diction_means;
-
-    @FXML
-    private AnchorPane dictionary;
-
-    @FXML
-    private AnchorPane home;
-
-    @FXML
-    private Pane inner_pane;
-
-    @FXML
-    private AnchorPane intro_diction;
-
-    @FXML
-    private Pane menu_inner_pane;
-
-    @FXML
-    private HBox root;
-
-    @FXML
     private JFXButton but_set;
-
-    @FXML
-    private AnchorPane side_anPane;
-
-    @FXML
-    private JFXButton but_move_game;
-
-    @FXML
-    private JFXButton but_move_diction;
-
-    @FXML
-    private AnchorPane move_diction;
-
-    @FXML
-    private AnchorPane move_game;
 
     @FXML
     private JFXButton but_trans;
 
     @FXML
-    private Pane game;
+    private ImageView catcute;
 
     @FXML
-    private Pane translate;
+    private JFXButton clearBookMark;
 
     @FXML
-    private JFXButton but_ENG_VIE;
+    private JFXButton resetActivitiesHistoryApp;
 
     @FXML
-    private Label lb_tran1;
+    private Pane inner_pane;
 
     @FXML
-    private Label lb_tran2;
+    private JFXListView<String> listWord;
 
     @FXML
-    private JFXButton bonus;
-
-    private static final String Media_Path = "src/main/resources/OurPackage/SupportScreen/media/";
+    private Pane menu_inner_pane;
 
     @FXML
-    private Media media;
+    private CheckBox musicApp;
 
     @FXML
-    private MediaView mediaView;
+    private TextField newWord;
 
     @FXML
-    private Pane pane;
+    private Pane paneAddNewWordToDictionary;
+
+    @FXML
+    private Pane paneDeleteWord;
+
+    @FXML
+    private HBox root;
+
+    @FXML
+    private TextField searchWordToDelete;
+
+    @FXML
+    private JFXButton sendFeedBack;
+
+    @FXML
+    private JFXButton doDelete;
+
+    @FXML
+    private JFXButton resetApp;
+
+    @FXML
+    private JFXButton addNewWordForDic;
+
+    @FXML
+    private Button closePaneAddNewWord;
+
+    @FXML
+    private TextArea textFeedBack;
+
+
+    @FXML
+    private TextField typeWord;
+
+    int countDelete = 0;
+
+    private void actionOfNon() {
+        FadeTransition fadeTransition = new FadeTransition(Duration.seconds(4), paneNon);
+        fadeTransition.setFromValue(1.0);
+        fadeTransition.setToValue(0.0);
+        fadeTransition.play();
+    }
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         super.initialize(url, resourceBundle);
+
         but_set.setStyle("-fx-background-color: #333333;");
-        setupMedia("introApp.mp4", pane, mediaView, media, true);
-    }
 
-    public static void setupMedia(String mediaName, Pane pane, MediaView mediaview, Media media, boolean status) {
-        media = new Media(new File(Media_Path + mediaName).toURI().toString());
+        but_add.setOnAction(e -> {
+            paneAddNewWordToDictionary.setVisible(true);
+        });
 
-        MediaPlayer mediaPlayer = new MediaPlayer(media);
+        closePaneAddNewWord.setOnAction(e -> {
+            paneAddNewWordToDictionary.setVisible(false);
+        });
 
-        mediaview.fitWidthProperty().bind(pane.widthProperty());
-        mediaview.fitHeightProperty().bind(pane.heightProperty());
-        mediaview.setLayoutX(pane.getLayoutX());
-        mediaview.setLayoutY(pane.getLayoutY());
+        but_delete.setOnAction(e -> {
+            paneDeleteWord.setVisible(countDelete % 2 == 0);
+            countDelete++;
+        });
 
-        mediaview.setMediaPlayer(mediaPlayer);
-        // cho mediaPlayer chạy vô hạn
-        mediaPlayer.setOnEndOfMedia(() -> mediaPlayer.seek(javafx.util.Duration.ZERO));
-        if (status) {
-            mediaview.getMediaPlayer().play();
-        } else mediaview.getMediaPlayer().stop();
+        resetActivitiesHistoryApp.setOnAction(e -> {
+
+        });
+
+        addNewWordForDic.setOnAction(e -> {
+            String word = newWord.getText();
+            String pronounce = IPAforWord.getText();
+            String type = typeWord.getText();
+            String mean = MeanOfWord.getText();
+            if (!word.isEmpty() && !pronounce.isEmpty() && !type.isEmpty() && !mean.isEmpty()) {
+                insertWordToDB(word, pronounce, type, mean);
+                non.setText("Thành công thêm từ: " + word + " !");
+                actionOfNon();
+            } else {
+                non.setText("Lỗi : Vui lòng nhập đủ thông tin từ!");
+                actionOfNon();
+            }
+        });
     }
 }

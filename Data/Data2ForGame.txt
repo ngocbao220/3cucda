@@ -2,6 +2,5 @@ formerly	trước đây, thuở xưa
 doctor	bác sĩ y khoa, tiến sĩ
 atom	nguyên tử
 about	khoảng, về
-evil	xấu xa; điều xấu
 melt	tan ra; làm tan chảy ra
 someone	người nào đó

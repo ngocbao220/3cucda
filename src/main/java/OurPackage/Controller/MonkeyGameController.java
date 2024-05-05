@@ -580,7 +580,7 @@ public class MonkeyGameController extends GeneralController {
             if (Map2.size() < 2) {
                 return;
             }
-            PauseMusic();
+            //PauseMusic();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -665,7 +665,7 @@ public class MonkeyGameController extends GeneralController {
     void DoAddWord(ActionEvent event) {
         //TO DO
         try {
-            AddData(newWord.getText(), MeanOfThisWord.getText());
+            AddData(newWord.getText(), MeanOfThisWord.getText(), Map2, DATA2);
             ForSearching(SearchOnRight, Map2, WordChoosing);
         } catch (IOException e) {
             throw new RuntimeException(e);

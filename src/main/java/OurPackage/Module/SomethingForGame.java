@@ -122,11 +122,11 @@ public class SomethingForGame {
 
 
     // Them tu moi
-    public static void AddData(String word, String Mean) throws IOException {
-        if (Map2.containsKey(Mean)) {
-            setWord(DATA2, word,word + "\t" + Mean);
+    public static void AddData(String word, String Mean,Map<String, String> map, String Path_Data) throws IOException {
+        if (map.containsKey(Mean)) {
+            setWord(Path_Data, word,word + "\t" + Mean);
         } else {
-            Map2.put(Mean, word);
+            map.put(Mean, word);
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(DATA2, true));
             bufferedWriter.write(word + "\t" + Mean + "\n");
             bufferedWriter.close();
@@ -140,7 +140,7 @@ public class SomethingForGame {
         if (selectedItem != null) {
             selectedItem = selectedItem.toLowerCase();
             try {
-                AddData(selectedItem, getDef(selectedItem, Map1));
+                AddData(selectedItem, getDef(selectedItem, Map1), Map2, DATA2);
                 Map2.put(getDef(selectedItem, Map1), selectedItem);
             } catch (IOException ex) {
                 throw new RuntimeException(ex);

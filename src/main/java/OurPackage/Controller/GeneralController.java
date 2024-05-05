@@ -5,7 +5,10 @@ import OurPackage.Module.DatabaseBookmark;
 import OurPackage.Module.DatabaseManager;
 import OurPackage.Module.HistorySearch;
 import com.jfoenix.controls.JFXButton;
+import javafx.animation.Animation;
 import javafx.animation.FadeTransition;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -20,10 +23,8 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.ResourceBundle;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 public class GeneralController implements Initializable{
 
@@ -119,10 +120,10 @@ public class GeneralController implements Initializable{
 
     public List<JFXButton> listbut = new ArrayList<>();
 
-
     private final static String DATABASE_PATH = "./Data/";
 
     private final static String DATABASE_NAME = "dict_hh.db";
+
 
     public DatabaseManager databaseManager = new DatabaseManager(DATABASE_PATH, DATABASE_NAME);
     public BookMark bookMark ;
@@ -158,6 +159,8 @@ public class GeneralController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+
         but_home.setOnAction(e -> {
             but_set.setDisable(true);
             but_diction.setDisable(true);

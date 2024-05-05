@@ -1,29 +1,29 @@
 package OurPackage.Module;
 
 public class Dictionary {
-    private String dbPath;
+    public static String dbPath;
 
-    private String dbName;
+    private static String dbName;
 
-    public String getDbPath() {
+    public static String getDbPath() {
         return dbPath;
     }
 
     public void setDbPath(String dbPath) {
-        this.dbPath = dbPath;
+        Dictionary.dbPath = dbPath;
     }
 
-    public String getDbName() {
+    public static String getDbName() {
         return dbName;
     }
 
     public void setDbName(String dbName) {
-        this.dbName = dbName;
+        Dictionary.dbName = dbName;
     }
 
     public Dictionary(String dbPath, String dbName) {
-        this.dbPath = dbPath;
-        this.dbName = dbName;
+        Dictionary.dbPath = dbPath;
+        Dictionary.dbName = dbName;
     }
 
 }

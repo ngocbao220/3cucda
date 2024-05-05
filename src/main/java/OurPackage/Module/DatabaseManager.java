@@ -12,7 +12,7 @@ public class DatabaseManager extends Dictionary{
 
     public static Map<String, String> list = new LinkedHashMap<>();
 
-    private String notication = new String();
+    public static String notication = new String();
 
     public DatabaseManager(String dbPath, String dbName) {
         super(dbPath, dbName);
@@ -53,9 +53,12 @@ public class DatabaseManager extends Dictionary{
         }
     }
 
+
+
+
     // Them tu vao database
     // can them tu, phat am, tu loai, nghia
-    public void insertWordToDB(String word, String pronounce, String partOfSpeech, String meaning) {
+    public static void insertWordToDB(String word, String pronounce, String partOfSpeech, String meaning) {
         String sql = "INSERT INTO av (word, html) VALUES (?, ?)";
         String html = new StringBuilder().append("<h1>")
                                          .append(word).append("</h1><h3><i>/")
