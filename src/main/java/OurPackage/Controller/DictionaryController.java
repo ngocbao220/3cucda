@@ -175,7 +175,8 @@ public class DictionaryController extends GeneralController{
     @FXML
     private WebView InfoOfWords;
 
-    private int currentIndex = 0;
+    public static int currentIndex = 0;
+
 
     public static ObservableList<String> ListLog = FXCollections.observableArrayList();
 
@@ -248,7 +249,6 @@ public class DictionaryController extends GeneralController{
             }
 
             String s = DisplayHistoryWord.getSelectionModel().getSelectedItem();
-            //HisWord.remove(s);
 
             historySearch.deleteHistory(s);
 
@@ -385,14 +385,13 @@ public class DictionaryController extends GeneralController{
                     if (key.equals(newVal)) {
                         InfoOfWords.getEngine().loadContent(value);
                         wordToSpeed = key;
-                        //HisWord.put(key, value);
                         historySearch.insertHistory(key);
                     }
                 });
             }
 
         });
-        // thong tin cua tu duoc tra truoc do
+        // thong tin cua tu co trong lich su
         DisplayHistoryWord.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
             if (newVal != null) {
                 RemoveWord.setVisible(MarkedWord.contains(newVal));
@@ -406,11 +405,14 @@ public class DictionaryController extends GeneralController{
         });
     }
 
+    // Hien thong tin
     public static void displayHis(List<String> historyList, ListView<String> hisListView) {
         ObservableList<String> items = FXCollections.observableArrayList();
             items.addAll(historyList);
         hisListView.setItems(items);
     }
+
+    //Hien thong tin
     public static void displayDicWords(Map<String, String> dictionary, ListView<String> listView) {
         ObservableList<String> items = FXCollections.observableArrayList();
         for (Map.Entry<String, String> entry : dictionary.entrySet()) {
@@ -419,6 +421,7 @@ public class DictionaryController extends GeneralController{
         listView.setItems(items);
     }
 
+    //Ham tim kiem
     public static void searchDicWord(TextField inputTextField, Map<String, String> dictionary, ListView<String> listView) {
         String input = inputTextField.getText().trim().toLowerCase();
         if (input.isEmpty()) {
@@ -434,6 +437,7 @@ public class DictionaryController extends GeneralController{
         listView.setItems(result);
     }
 
+    // Danh cho viec tim kiem va hien thong tin
     public static void ForSearchingDicWord(TextField inputTextField, Map<String, String> dictionary, ListView<String> listView) {
 
         displayDicWords(dictionary, listView);
@@ -449,6 +453,7 @@ public class DictionaryController extends GeneralController{
         });
     }
 
+    // Hieu ung chay thong bao
     private void runNonAddOrRemoveWord() {
         if (currentIndex < ListLog.size()) {
             Label label = new Label(ListLog.get(currentIndex).split("    ")[0]);
