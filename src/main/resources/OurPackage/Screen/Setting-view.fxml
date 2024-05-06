@@ -174,7 +174,7 @@
                         <JFXButton fx:id="doDelete" layoutX="173.0" layoutY="3.0" prefHeight="25.0" prefWidth="25.0" styleClass="buttonRemoveALl" stylesheets="@../SupportScreen/Css/Game1.css" />
                      </children>
                   </Pane>
-                  <Pane fx:id="paneAddNewWordToDictionary" layoutX="440.0" layoutY="75.0" prefHeight="412.0" prefWidth="389.0" style="-fx-background-color: yellow;" visible="false">
+                  <Pane fx:id="paneAddNewWordToDictionary" layoutX="440.0" layoutY="75.0" prefHeight="412.0" prefWidth="389.0" style="-fx-background-color: yellow;">
                      <children>
                         <Label layoutX="31.0" layoutY="90.0" prefHeight="21.0" prefWidth="28.0" text="Từ:">
                            <font>
@@ -196,22 +196,22 @@
                               <Font size="15.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="newWord" layoutX="126.0" layoutY="81.0" prefHeight="39.0" prefWidth="179.0" promptText="Nhập từ ...">
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                        </TextField>
-                        <TextField fx:id="IPAforWord" layoutX="126.0" layoutY="132.0" prefHeight="39.0" prefWidth="179.0" promptText="Nhập phiên âm IPA ...">
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                        </TextField>
-                        <TextField fx:id="typeWord" layoutX="126.0" layoutY="179.0" prefHeight="39.0" prefWidth="179.0" promptText="Nhập từ loại ...">
+                        <TextField fx:id="newWord" layoutX="126.0" layoutY="81.0" prefHeight="39.0" prefWidth="232.0" promptText="Nhập từ ...">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </TextField>
-                        <TextField fx:id="MeanOfWord" layoutX="126.0" layoutY="244.0" prefHeight="103.0" prefWidth="215.0" promptText="Nhập nghĩa ...">
+                        <TextField fx:id="IPAforWord" layoutX="126.0" layoutY="132.0" prefHeight="39.0" prefWidth="232.0" promptText="Nhập phiên âm IPA ...">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="typeWord" layoutX="126.0" layoutY="179.0" prefHeight="39.0" prefWidth="232.0" promptText="Nhập từ loại ...">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="MeanOfWord" layoutX="126.0" layoutY="244.0" prefHeight="103.0" prefWidth="232.0" promptText="Nhập nghĩa ...">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
