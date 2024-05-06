@@ -265,6 +265,8 @@ public class HomeController extends GeneralController {
             if (!listMarkedWord.getSelectionModel().isEmpty()) {
                 ListLog.add("Đã gỡ: " + listMarkedWord.getSelectionModel().getSelectedItem() + "    " + DictionaryController.getTimeNow());
                 historyActivites.insertHistory("Đã gỡ: " + listMarkedWord.getSelectionModel().getSelectedItem() + "    " + DictionaryController.getTimeNow());
+
+                displayHis(historyActivites.getHistoryList(), listNon);
                 currentIndex ++;
                 bookMark.removeBookmark(listMarkedWord.getSelectionModel().getSelectedItem());
                 items.remove(listMarkedWord.getSelectionModel().getSelectedItem());

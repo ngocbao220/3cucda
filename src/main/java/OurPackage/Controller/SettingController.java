@@ -1,5 +1,7 @@
 package OurPackage.Controller;
 
+import OurPackage.Module.DatabaseCopy;
+import OurPackage.Module.DatabaseManager;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import javafx.animation.FadeTransition;
@@ -14,8 +16,10 @@ import javafx.util.Duration;
 
 import java.io.*;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
+import static OurPackage.Controller.DictionaryController.ListLog;
 import static OurPackage.Module.DatabaseManager.list;
 
 public class SettingController extends GeneralController {
@@ -184,21 +188,28 @@ public class SettingController extends GeneralController {
         });
 
         resetActivitiesHistoryApp.setOnAction(e -> {
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Xác nhận");
-            alert.setHeaderText(null);
-            alert.initOwner(DisplayContent.getScene().getWindow());
-            alert.setContentText("Bạn có chắc chắn muốn đặt lại lịch sử hoạt động không?");
+            if(!ListLog.isEmpty()) {
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Xác nhận");
+                alert.setHeaderText(null);
+                alert.initOwner(DisplayContent.getScene().getWindow());
+                alert.setContentText("Bạn có chắc chắn muốn đặt lại lịch sử hoạt động không?");
 
-            alert.showAndWait().ifPresent(response -> {
-                if (response == ButtonType.OK) {
-                    historyActivites.clearHistory();
-                    non.setText("Thành công xóa lịch sử hoạt động !");
-                    actionOfNon();
-                } else if (response == ButtonType.CANCEL) {
-                    System.out.println("Người dùng đã chọn: Không");
-                }
-            });
+                alert.showAndWait().ifPresent(response -> {
+                    if (response == ButtonType.OK) {
+                        historyActivites.clearHistory();
+
+                        ListLog.clear();
+                        non.setText("Thành công xóa lịch sử hoạt động !");
+                        actionOfNon();
+                    } else if (response == ButtonType.CANCEL) {
+                        System.out.println("Người dùng đã chọn: Không");
+                    }
+                });
+            } else {
+                non.setText("Lịch sử hoạt động trống!");
+                actionOfNon();
+            }
         });
 
         addNewWordForDic.setOnAction(e -> {
@@ -257,13 +268,14 @@ public class SettingController extends GeneralController {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Xác nhận");
             alert.setHeaderText(null);
-            alert.setContentText("Bạn có chắc chắn muốn đặt lại ứng dụng không?/n mọi thứ đều trở về ban đầu");
+            alert.setContentText("Bạn có chắc chắn muốn đặt lại ứng dụng không?\nMọi thứ đều trở về ban đầu");
             alert.initOwner(DisplayContent.getScene().getWindow());
             alert.showAndWait().ifPresent(response -> {
                 if (response == ButtonType.OK) {
                     bookMark.clearBookmark();
                     historyActivites.clearHistory();
-                    resetDatabase(DATABASE_PATH + "tmpDict_hh.db", DATABASE_PATH + "dict_hh.db");
+                    historySearch.clearHistory();
+                    resetDatabase();
                     non.setText("Thành công đặt lại ứng dụng !");
                     actionOfNon();
                 } else if (response == ButtonType.CANCEL) {
@@ -273,20 +285,10 @@ public class SettingController extends GeneralController {
         });
     }
 
+    private void resetDatabase() {
+        String query = "SELECT id, word, html, description, pronounce, isBookmarked FROM av";
+        List<Object[]> data = databaseManagerCopy.fetchData(databaseCopy.getConnect(), query);
+        databaseManagerCopy.insertData(databaseManager.getConnect(), data);
 
-    private void resetDatabase(String sourceFilePath, String destinationFilePath) {
-        /*try (InputStream inputStream = new FileInputStream(sourceFilePath);
-             OutputStream outputStream = new FileOutputStream(destinationFilePath)) {
-            // Đọc nội dung của tệp nguồn
-            byte[] buffer = new byte[1024];
-            int length;
-            while ((length = inputStream.read(buffer)) > 0) {
-                // Ghi nội dung vào tệp đích
-                outputStream.write(buffer, 0, length);
-            }
-            System.out.println("File copied successfully.");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
     }
 }
