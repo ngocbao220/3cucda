@@ -11,6 +11,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
+
+import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -122,6 +124,8 @@ public class SettingController extends GeneralController {
 
     int countDelete = 0;
 
+    private final String DATABASE_PATH = "../3cucda/Data/";
+
     private void actionOfNon() {
         FadeTransition fadeTransition = new FadeTransition(Duration.seconds(4), paneNon);
         fadeTransition.setFromValue(1.0);
@@ -156,18 +160,24 @@ public class SettingController extends GeneralController {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Xác nhận");
             alert.setHeaderText(null);
+            alert.initOwner(DisplayContent.getScene().getWindow());
             alert.setContentText("Bạn có chắc chắn muốn xóa từ: " + wordDelete + " không?");
 
             alert.showAndWait().ifPresent(response -> {
-                if (response == ButtonType.OK) {
-                    System.out.println("Người dùng đã chọn: Đồng ý");
-                    databaseManager.deleteWordFromDB(wordDelete);
-                    listWord.getItems().remove(wordDelete);
+                if (!listWord.getSelectionModel().getSelectedItem().isEmpty()) {
+                    if (response == ButtonType.OK) {
+                        System.out.println("Người dùng đã chọn: Đồng ý");
+                        databaseManager.deleteWordFromDB(wordDelete);
+                        listWord.getItems().remove(wordDelete);
 
-                    non.setText("Thành công xóa từ: " + wordDelete + " !");
+                        non.setText("Thành công xóa từ: " + wordDelete + " !");
+                        actionOfNon();
+                    } else if (response == ButtonType.CANCEL) {
+                        System.out.println("Người dùng đã chọn: Không");
+                    }
+                } else {
+                    non.setText("Lỗi : Vui lòng chọn từ muốn xóa !");
                     actionOfNon();
-                } else if (response == ButtonType.CANCEL) {
-                    System.out.println("Người dùng đã chọn: Không");
                 }
             });
 
@@ -177,6 +187,7 @@ public class SettingController extends GeneralController {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Xác nhận");
             alert.setHeaderText(null);
+            alert.initOwner(DisplayContent.getScene().getWindow());
             alert.setContentText("Bạn có chắc chắn muốn đặt lại lịch sử hoạt động không?");
 
             alert.showAndWait().ifPresent(response -> {
@@ -202,7 +213,7 @@ public class SettingController extends GeneralController {
                 alert.setTitle("Xác nhận");
                 alert.setHeaderText(null);
                 alert.setContentText("Bạn có chắc chắn muốn thêm từ: " + word + " không?");
-
+                alert.initOwner(DisplayContent.getScene().getWindow());
                 alert.showAndWait().ifPresent(response -> {
                     if (response == ButtonType.OK) {
                         System.out.println("Người dùng đã chọn: Đồng ý");
@@ -221,12 +232,12 @@ public class SettingController extends GeneralController {
         });
 
         clearBookMark.setOnAction(e -> {
-            if(!MarkedWord.isEmpty()) {
+            if (!MarkedWord.isEmpty()) {
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Xác nhận");
                 alert.setHeaderText(null);
                 alert.setContentText("Bạn có chắc chắn muốn đặt lại danh sách từ yêu thích không?");
-
+                alert.initOwner(DisplayContent.getScene().getWindow());
                 alert.showAndWait().ifPresent(response -> {
                     if (response == ButtonType.OK) {
                         bookMark.clearBookmark();
@@ -242,8 +253,40 @@ public class SettingController extends GeneralController {
             }
         });
 
-
-
+        resetApp.setOnAction(e -> {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Xác nhận");
+            alert.setHeaderText(null);
+            alert.setContentText("Bạn có chắc chắn muốn đặt lại ứng dụng không?/n mọi thứ đều trở về ban đầu");
+            alert.initOwner(DisplayContent.getScene().getWindow());
+            alert.showAndWait().ifPresent(response -> {
+                if (response == ButtonType.OK) {
+                    bookMark.clearBookmark();
+                    historyActivites.clearHistory();
+                    resetDatabase(DATABASE_PATH + "tmpDict_hh.db", DATABASE_PATH + "dict_hh.db");
+                    non.setText("Thành công đặt lại ứng dụng !");
+                    actionOfNon();
+                } else if (response == ButtonType.CANCEL) {
+                    System.out.println("Người dùng đã chọn: Không");
+                }
+            });
+        });
     }
 
+
+    private void resetDatabase(String sourceFilePath, String destinationFilePath) {
+        /*try (InputStream inputStream = new FileInputStream(sourceFilePath);
+             OutputStream outputStream = new FileOutputStream(destinationFilePath)) {
+            // Đọc nội dung của tệp nguồn
+            byte[] buffer = new byte[1024];
+            int length;
+            while ((length = inputStream.read(buffer)) > 0) {
+                // Ghi nội dung vào tệp đích
+                outputStream.write(buffer, 0, length);
+            }
+            System.out.println("File copied successfully.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }*/
+    }
 }

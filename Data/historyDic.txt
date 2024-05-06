@@ -1,13 +1,13 @@
-a fortiori
-a posteriori
 a b c - book
+a fortiori
+﻿a
+a priori
+a posteriori
 a-bomb
 aba
 a.m.
-a priori
 a la carte
 a font
-﻿a
 a b c
 a-plenty
 a.d.
