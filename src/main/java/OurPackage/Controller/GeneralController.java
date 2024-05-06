@@ -1,9 +1,6 @@
 package OurPackage.Controller;
 
-import OurPackage.Module.BookMark;
-import OurPackage.Module.DatabaseBookmark;
-import OurPackage.Module.DatabaseManager;
-import OurPackage.Module.HistorySearch;
+import OurPackage.Module.*;
 import com.jfoenix.controls.JFXButton;
 import javafx.animation.Animation;
 import javafx.animation.FadeTransition;
@@ -124,10 +121,16 @@ public class GeneralController implements Initializable{
 
     private final static String DATABASE_NAME = "dict_hh.db";
 
+    private final static String DATABASE_NAME_COPY = "dict_hh_copy.db";
+
     public static Set<String> MarkedWord = new HashSet<>();
 
-
     public DatabaseManager databaseManager = new DatabaseManager(DATABASE_PATH, DATABASE_NAME);
+
+    public DatabaseManager databaseCopy = new DatabaseManager(DATABASE_PATH, DATABASE_NAME_COPY);
+
+    public DatabaseCopy databaseManagerCopy = new DatabaseCopy();
+
     public BookMark bookMark ;
 
     protected HistorySearch historySearch = new HistorySearch(new StringBuilder()

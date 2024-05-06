@@ -275,7 +275,7 @@ public class DictionaryController extends GeneralController{
                 ListLog.add("Đã gỡ: " + s + "    " + getTimeNow());
                 historyActivites.insertHistory("Đã gỡ: " + s + "    " + getTimeNow());
                 runNonAddOrRemoveWord();
-                displayHis(historySearch.getHistoryList(), listShowNons);
+                displayHis(historyActivites.getHistoryList(), listShowNons);
                 imageNewNon.setVisible(true);
             }
         });
@@ -337,7 +337,7 @@ public class DictionaryController extends GeneralController{
             historyActivites.insertHistory("Đã thêm: " + s + "    " + getTimeNow());
 
 
-            displayHis(historySearch.getHistoryList(), listShowNons);
+            displayHis(historyActivites.getHistoryList(), listShowNons);
 
             imageNewNon.setVisible(true);
         }
@@ -350,7 +350,7 @@ public class DictionaryController extends GeneralController{
             ListLog.add("Đã thêm:" + s + "    " + getTimeNow());
             runNonAddOrRemoveWord();
             historyActivites.insertHistory("Đã thêm: " + s + "    " + getTimeNow());
-            displayHis(historySearch.getHistoryList(), listShowNons);
+            displayHis(historyActivites.getHistoryList(), listShowNons);
 
             imageNewNon.setVisible(true);
         }

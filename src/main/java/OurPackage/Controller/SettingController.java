@@ -12,8 +12,10 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
+import static OurPackage.Controller.DictionaryController.ListLog;
 import static OurPackage.Module.DatabaseManager.list;
 
 public class SettingController extends GeneralController {
@@ -174,21 +176,28 @@ public class SettingController extends GeneralController {
         });
 
         resetActivitiesHistoryApp.setOnAction(e -> {
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Xác nhận");
-            alert.setHeaderText(null);
-            alert.setContentText("Bạn có chắc chắn muốn đặt lại lịch sử hoạt động không?");
+            if(!ListLog.isEmpty()) {
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Xác nhận");
+                alert.setHeaderText(null);
+                alert.setContentText("Bạn có chắc chắn muốn đặt lại lịch sử hoạt động không?");
 
-            alert.showAndWait().ifPresent(response -> {
-                if (response == ButtonType.OK) {
-                    historyActivites.clearHistory();
-                    non.setText("Thành công xóa lịch sử hoạt động !");
-                    actionOfNon();
-                } else if (response == ButtonType.CANCEL) {
-                    System.out.println("Người dùng đã chọn: Không");
-                }
-            });
+                alert.showAndWait().ifPresent(response -> {
+                    if (response == ButtonType.OK) {
+                        historyActivites.clearHistory();
+                        ListLog.clear();
+                        non.setText("Thành công xóa lịch sử hoạt động !");
+                        actionOfNon();
+                    } else if (response == ButtonType.CANCEL) {
+                        System.out.println("Người dùng đã chọn: Không");
+                    }
+                });
+            } else {
+                non.setText("Lịch sử hoạt động trống !");
+                actionOfNon();
+            }
         });
+
 
         addNewWordForDic.setOnAction(e -> {
             String word = newWord.getText();
@@ -242,7 +251,33 @@ public class SettingController extends GeneralController {
             }
         });
 
+        resetApp.setOnAction(e -> {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Xác nhận");
+            alert.setHeaderText(null);
+            alert.setContentText("Bạn có chắc chắn muốn đặt lại ứng dụng không?");
 
+            alert.showAndWait().ifPresent(response -> {
+                if (response == ButtonType.OK) {
+                    doCopyData();
+                    bookMark.clearBookmark();
+                    historyActivites.clearHistory();
+                    historySearch.clearHistory();
+                    non.setText("Thành công xóa đặt lại ứng dụng !");
+                    actionOfNon();
+                } else if (response == ButtonType.CANCEL) {
+                    System.out.println("Người dùng đã chọn: Không");
+                }
+            });
+        });
+
+    }
+
+
+    public void doCopyData() {
+        String query = "SELECT id, word, html, description, pronounce, isBookmarked FROM original_table";
+        List<Object[]> data = databaseManagerCopy.fetchData(databaseCopy.getConnect(), query);
+        databaseManagerCopy.insertData(databaseManager.getConnect(), data);
 
     }
 

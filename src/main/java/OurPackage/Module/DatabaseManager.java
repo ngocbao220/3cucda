@@ -10,6 +10,14 @@ public class DatabaseManager extends Dictionary{
 
     protected static Connection connect;
 
+    public Connection getConnect() {
+        return connect;
+    }
+
+    public static void setConnect(Connection connect) {
+        DatabaseManager.connect = connect;
+    }
+
     public static Map<String, String> list = new LinkedHashMap<>();
 
     public static String notication = new String();
@@ -51,8 +59,6 @@ public class DatabaseManager extends Dictionary{
             e.printStackTrace();
         }
     }
-
-
 
 
     // Them tu vao database
