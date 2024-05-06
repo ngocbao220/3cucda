@@ -465,25 +465,6 @@ public class MonkeyGameController extends GeneralController {
         ButtonContinue.setDisable(false);
     }
 
-    // Tiep tuc khi dung Game
-    @FXML
-    void Continue(ActionEvent event) {
-        PaneWhenPauseGame.setVisible(false);
-        PaneWhenWrongAnswer.setVisible(false);
-        timeline.play();
-    }
-
-
-    // Xu li khi chon che do choi khac
-    @FXML
-    void ChooseOtherType(ActionEvent event) throws IOException {
-        ChosseTypeForGame.setVisible(false);
-        ReadData(DATA1, Split, Map1);
-        ReadData(DATA2, Split, Map2);
-        ForSearching(SearchOnLeft, Map1, WordDefault);
-        ForSearching(SearchOnRight, Map2, WordChoosing);
-        MenuChosseTheWord.setVisible(true);
-    }
 
     void action() {
         ScaleTransition scaleIn = new ScaleTransition(Duration.millis(500), but_PlayNow);
@@ -506,6 +487,27 @@ public class MonkeyGameController extends GeneralController {
         actionbut.setCycleCount(Timeline.INDEFINITE);
         actionbut.play();
     }
+
+    // Tiep tuc khi dung Game
+    @FXML
+    void Continue(ActionEvent event) {
+        PaneWhenPauseGame.setVisible(false);
+        PaneWhenWrongAnswer.setVisible(false);
+        timeline.play();
+    }
+
+
+    // Xu li khi chon che do choi khac
+    @FXML
+    void ChooseOtherType(ActionEvent event) throws IOException {
+        ChosseTypeForGame.setVisible(false);
+        ReadData(DATA1, Split, Map1);
+        ReadData(DATA2, Split, Map2);
+        ForSearching(SearchOnLeft, Map1, WordDefault);
+        ForSearching(SearchOnRight, Map2, WordChoosing);
+        MenuChosseTheWord.setVisible(true);
+    }
+
 
     // Khi an Play o Menu
     @FXML

@@ -39,14 +39,21 @@
 }
 
 .buttonNon2 {
--fx-background-image: url('../img/chuongIng.png');
+    -fx-background-image: url('../img/chuongIng.png');
     -fx-background-size: cover;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center;
-    }
+}
 .labLe {
     -fx-front-size: 13px;
     -fx-font-weight: bold;
     -fx-font-family: Comic Sans MS;
     -fx-text-fill: white;
+}
+
+.paneNon {
+    -fx-background-image: url('../img/caNuong.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
 }

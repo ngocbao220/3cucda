@@ -9,6 +9,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -464,39 +465,59 @@ public class DictionaryController extends GeneralController{
         });
     }
 
-    // Hieu ung chay thong bao
+    // Hieu ung chay thong bao (hieu chinh vi tri thu cong :<< )
     private void runNonAddOrRemoveWord() {
         if (currentIndex < ListLog.size()) {
             Label label = new Label(ListLog.get(currentIndex).split("    ")[0]);
+
             label.setStyle("-fx-front-size: 20px;");
-            label.setStyle("-fx-font-weight: bold;");
+            label.setStyle("-fx-font-style: bold;");
             label.setStyle("-fx-font-family: Comic Sans MS;");
             label.setStyle("-fx-text-fill: white;");
+            label.setAlignment(Pos.CENTER);
+            label.setPrefHeight(40);
+            label.setPrefWidth(175);
+
             currentIndex++;
-            label.setLayoutX(55);
-            label.setLayoutY(label.getLayoutY() + 15);
+
+            label.setLayoutX(42);
+            label.setLayoutY(label.getLayoutY() + 7);
+
+            Pane bgr_label = new Pane();
+            bgr_label.setLayoutX(42);
+            bgr_label.setLayoutY(8);
+            bgr_label.setPrefWidth(175);
+            bgr_label.setPrefHeight(40);
+            SearchTab.getChildren().addAll(bgr_label, label);
+
+            bgr_label.setStyle("-fx-background-color: #F18757; -fx-background-radius: 20px; -fx-border-color:  #F18757; -fx-border-radius:  20px;");
             bgr_label.setVisible(true);
             label.setVisible(true);
+
             labelList.add(label);
-            SearchTab.getChildren().add(label);
+
             TranslateTransition transitionBGR = new TranslateTransition(Duration.seconds(3), bgr_label);
+
             TranslateTransition transition = new TranslateTransition(Duration.seconds(3), label);
+
             transitionBGR.setFromX(0);
             transitionBGR.setToX(670);
             transition.setFromX(0);
             transition.setToX(670);
+
             transition.setOnFinished(e -> {
                 label.setVisible(false);
                 bgr_label.setVisible(false);
             });
-
             transitionBGR.setOnFinished(e -> {
                 bgr_label.setVisible(false);
             });
+
             MeoMeo();
             transition.play();
             transitionBGR.play();
         }
+
     }
 
     public static String getTimeNow() {
@@ -507,8 +528,12 @@ public class DictionaryController extends GeneralController{
 
     private void MeoMeo() {
         meoHa.setVisible(true);
+        ButtonMark.setDisable(true);
+        RemoveWord.setDisable(true);
         Timeline timeMeo = new Timeline(new KeyFrame(Duration.millis(500), event -> {
             meoHa.setVisible(false);
+            RemoveWord.setDisable(false);
+            ButtonMark.setDisable(false);
         }));
         timeMeo.setCycleCount(1);
         timeMeo.play();
