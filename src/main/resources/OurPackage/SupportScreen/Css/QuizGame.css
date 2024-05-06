@@ -86,6 +86,6 @@
     -fx-fill: null;
     -fx-stroke: #2C5B36;
     -fx-stroke-width: 10px;
-    -fx-stroke-dash-array: 0 1000000;
+    -fx-stroke-dash-array: 0.4 1000000;
     -fx-rotate : -90;
 }

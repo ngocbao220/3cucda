@@ -22,7 +22,7 @@
         </Pane>
         <Pane layoutX="83.0" layoutY="63.0" prefHeight="511.0" prefWidth="876.0" style="-fx-background-color: white; -fx-background-radius: 10px;">
             <children>
-                <JFXButton layoutX="724.0" layoutY="37.0" prefHeight="33.0" prefWidth="114.0" style="-fx-background-color: #2C5B36; -fx-background-radius: 10px;" text="SUBMIT" textFill="WHITE" wrapText="true">
+                <JFXButton fx:id="submit" layoutX="724.0" layoutY="37.0" prefHeight="33.0" prefWidth="114.0" style="-fx-background-color: #2C5B36; -fx-background-radius: 10px;" text="SUBMIT" textFill="WHITE" wrapText="true">
                     <font>
                         <Font name="Arial Bold" size="15.0" />
                     </font>
@@ -150,6 +150,11 @@
                 </JFXButton>
                 <Circle fill="WHITE" layoutX="709.0" layoutY="256.0" radius="65.0" stroke="#b1afaf" strokeType="INSIDE" strokeWidth="10.0" styleClass="circle" />
                 <Circle fx:id="circle" fill="WHITE" layoutX="709.0" layoutY="256.0" radius="65.0" stroke="#363232" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="10.0" styleClass="progress" />
+            <Label fx:id="Point" alignment="CENTER" layoutX="670.0" layoutY="238.0" prefHeight="35.0" prefWidth="79.0" text="0/10">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="24.0" />
+               </font>
+            </Label>
             </children>
         </Pane>
     </children>

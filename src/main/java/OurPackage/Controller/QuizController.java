@@ -76,67 +76,7 @@ public class QuizController extends GeneralController implements Initializable {
     private JFXButton but_trans;
 
     @FXML
-    private ImageView i1;
-
-    @FXML
-    private ImageView i10;
-
-    @FXML
-    private ImageView i2;
-
-    @FXML
-    private ImageView i3;
-
-    @FXML
-    private ImageView i4;
-
-    @FXML
-    private ImageView i5;
-
-    @FXML
-    private ImageView i6;
-
-    @FXML
-    private ImageView i7;
-
-    @FXML
-    private ImageView i8;
-
-    @FXML
-    private ImageView i9;
-
-    @FXML
-    private Label l1;
-
-    @FXML
-    private Label l10;
-
-    @FXML
-    private Label l2;
-
-    @FXML
-    private Label l3;
-
-    @FXML
-    private Label l4;
-
-    @FXML
-    private Label l5;
-
-    @FXML
-    private Label l6;
-
-    @FXML
-    private Label l7;
-
-    @FXML
-    private Label l8;
-
-    @FXML
-    private Label l9;
-
-    @FXML
-    private Pane mulchoice;
+    private JFXButton submit;
 
     @FXML
     private Circle circle;
@@ -152,6 +92,9 @@ public class QuizController extends GeneralController implements Initializable {
 
     @FXML
     private Label opt3;
+
+    @FXML
+    private Label Point;
 
     @FXML
     private Label opt4;
@@ -245,6 +188,12 @@ public class QuizController extends GeneralController implements Initializable {
     boolean[] CorrectAns = new boolean[11];
     int k = 0;
 
+    private double an, pointAN;
+    private boolean isFunctionEnabled = false;
+
+    char[] AnsQuestion = new char[11];
+    char[] inAnsQuestion = new char[11];
+
     int index = 0;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -257,14 +206,14 @@ public class QuizController extends GeneralController implements Initializable {
             if (counter > 1){
                 counter--;
                 LoadQuestion();
-                getQuestion();
+                if (!isFunctionEnabled) getQuestion();
             }
         });
         next.setOnAction(event -> {
             if (counter < 10) {
                 counter++;
                 LoadQuestion();
-                getQuestion();
+                if (!isFunctionEnabled) getQuestion();
             }
         });
         changeButton_color(but_opt1);
@@ -275,6 +224,7 @@ public class QuizController extends GeneralController implements Initializable {
         time_run();
         getQuestion();
         LoadQuestion();
+        Submit();
     }
     public void LoadQuestion() {
         if (counter == 1) {
@@ -364,9 +314,11 @@ public class QuizController extends GeneralController implements Initializable {
         booleanQues[counter] = true;
         checkAns(opt1.getText().toString());
         if (checkAns(opt1.getText().toString())) {
+            inAnsQuestion[counter] = 'a';
             CorrectAns[counter] = true;
         } else {
             CorrectAns[counter] = false;
+            inAnsQuestion[counter] = 'a';
         }
         for (int i = 1; i < 11; i++) {
             if (booleanQues[i] && i == 10) {
@@ -390,8 +342,10 @@ public class QuizController extends GeneralController implements Initializable {
         checkAns(opt2.getText().toString());
         if (checkAns(opt2.getText().toString())) {
             CorrectAns[counter] = true;
+            inAnsQuestion[counter] = 'b';
         } else {
             CorrectAns[counter] = false;
+            inAnsQuestion[counter] = 'b';
         }
 
         for (int i = 1; i < 11; i++) {
@@ -417,8 +371,10 @@ public class QuizController extends GeneralController implements Initializable {
         checkAns(opt3.getText().toString());
         if (checkAns(opt3.getText().toString())) {
             CorrectAns[counter] = true;
+            inAnsQuestion[counter] = 'c';
         } else {
             CorrectAns[counter] = false;
+            inAnsQuestion[counter] = 'c';
         }
 
         for (int i = 1; i < 11; i++) {
@@ -443,8 +399,10 @@ public class QuizController extends GeneralController implements Initializable {
         checkAns(opt4.getText().toString());
         if (checkAns(opt4.getText().toString())) {
             CorrectAns[counter] = true;
+            inAnsQuestion[counter] = 'd';
         } else {
             CorrectAns[counter] = false;
+            inAnsQuestion[counter] = 'd';
         }
         for (int i = 1; i < 11; i++) {
             if (booleanQues[i] && i == 10) {
@@ -464,60 +422,69 @@ public class QuizController extends GeneralController implements Initializable {
     }
     boolean checkAns(String ans) {
         if (counter == 1) {
+            AnsQuestion[1] = 'a';
             if (ans.equals("a. to")) {
                 return true;
             }
             return false;
         }
         if (counter == 2) {
+            AnsQuestion[2] = 'c';
             if (ans.equals("c. Children")) {
                 return true;
             }
             return false;
         }
         if (counter == 3) {
+            AnsQuestion[3] = 'b';
             if (ans.equals("b. Joyful")) {
                 return true;
             }
             return false;
         }
         if (counter == 4) {
+            AnsQuestion[4] = 'b';
             if (ans.equals("b. Paris")) {
                 return true;
             }
             return false;
         }
         if (counter == 5) {
+            AnsQuestion[5] = 'a';
             if (ans.equals("a. William Shakespeare")) {
                 return true;
             }
             return false;
         }
         if (counter == 6) {
+            AnsQuestion[6] = 'b';
             if (ans.equals("b. Mars")) {
                 return true;
             }
             return false;
         }
         if (counter == 7) {
+            AnsQuestion[7] = 'd';
             if (ans.equals("d. H2O")) {
                 return true;
             }
             return false;
         }
         if (counter == 8) {
+            AnsQuestion[8] = 'b';
             if (ans.equals("b. Leonardo da Vinci")) {
                 return true;
             }
             return false;
         }
         if (counter == 9) {
+            AnsQuestion[9] = 'c';
             if (ans.equals("c. Whale")) {
                 return true;
             }
             return false;
         }
-        if (counter == 10) {
+        if (counter == 10) {AnsQuestion[10] = 'b';
             if (ans.equals("b. remove")) {
                 return true;
             }
@@ -623,6 +590,7 @@ public class QuizController extends GeneralController implements Initializable {
 
     public void click_opt() {
         but_opt1.setOnAction(event -> {
+            if(isFunctionEnabled) return;
             check2 = true; check3 = true; check4 = true;
             but_opt2.setStyle("-fx-background-color: transparent; -fx-border-color: #D9D9D9;");
             opt2.setStyle("-fx-text-fill: black;");
@@ -646,6 +614,7 @@ public class QuizController extends GeneralController implements Initializable {
         });
 
         but_opt2.setOnAction(event -> {
+            if(isFunctionEnabled) return;
             check1 = true; check3 = true; check4 = true;
             but_opt1.setStyle("-fx-background-color: transparent; -fx-border-color: #D9D9D9;");
             opt1.setStyle("-fx-text-fill: black;");
@@ -669,6 +638,7 @@ public class QuizController extends GeneralController implements Initializable {
         });
 
         but_opt3.setOnAction(event -> {
+            if(isFunctionEnabled) return;
             check2 = true; check1 = true; check4 = true;
             but_opt2.setStyle("-fx-background-color: transparent; -fx-border-color: #D9D9D9;");
             opt2.setStyle("-fx-text-fill: black;");
@@ -692,6 +662,7 @@ public class QuizController extends GeneralController implements Initializable {
         });
 
         but_opt4.setOnAction(event -> {
+            if (isFunctionEnabled) return;
             check2 = true; check3 = true; check1 = true;
             but_opt2.setStyle("-fx-background-color: transparent; -fx-border-color: #D9D9D9;");
             opt2.setStyle("-fx-text-fill: black;");
@@ -716,88 +687,342 @@ public class QuizController extends GeneralController implements Initializable {
     }
 
     public void chose_Ques() {
-        ques1.setOnAction(event -> {
-            counter = 1;
-            booleanQues[counter] = false;
-            CircleChang();
-            LoadQuestion();
-            getQuestion();
-        });
-        ques2.setOnAction(event -> {
-            counter = 2;
-            booleanQues[counter] = false;
-            CircleChang();
-            LoadQuestion();
-            getQuestion();
-        });
-        ques3.setOnAction(event -> {
-            counter = 3;
-            booleanQues[counter] = false;
-            CircleChang();
-            LoadQuestion();
-            getQuestion();
-        });
-        ques4.setOnAction(event -> {
-            counter = 4;
-            booleanQues[counter] = false;
-            CircleChang();
-            LoadQuestion();
-            getQuestion();
-        });
-        ques5.setOnAction(event -> {
-            counter = 5;
-            booleanQues[counter] = false;
-            CircleChang();
-            LoadQuestion();
-            getQuestion();
-        });
-        ques6.setOnAction(event -> {
-            counter = 6;
-            booleanQues[counter] = false;
-            CircleChang();
-            LoadQuestion();
-            getQuestion();
-        });
-        ques7.setOnAction(event -> {
-            counter = 7;
-            booleanQues[counter] = false;
-            CircleChang();
-            LoadQuestion();
-            getQuestion();
-        });
-        ques8.setOnAction(event -> {
-            counter = 8;
-            booleanQues[counter] = false;
-            CircleChang();
-            LoadQuestion();
-            getQuestion();
-        });
-        ques9.setOnAction(event -> {
-            counter = 9;
-            booleanQues[counter] = false;
-            CircleChang();
-            LoadQuestion();
-            getQuestion();
-        });
-        ques10.setOnAction(event -> {
-            counter = 10;
-            booleanQues[counter] = false;
-            CircleChang();
-            LoadQuestion();
-            getQuestion();
-        });
+
+            ques1.setOnAction(event -> {
+                if (isFunctionEnabled) return;
+                counter = 1;
+                k = 1;
+                booleanQues[counter] = false;
+                CircleChang();
+                LoadQuestion();
+                getQuestion();
+            });
+            ques2.setOnAction(event -> {
+                if (isFunctionEnabled) return;
+                counter = 2;
+                k = 1;
+                booleanQues[counter] = false;
+                CircleChang();
+                LoadQuestion();
+                getQuestion();
+            });
+            ques3.setOnAction(event -> {
+                if (isFunctionEnabled) return;
+                counter = 3;
+                k = 1;
+                booleanQues[counter] = false;
+                CircleChang();
+                LoadQuestion();
+                getQuestion();
+            });
+            ques4.setOnAction(event -> {
+                if (isFunctionEnabled) return;
+                counter = 4;
+                k = 1;
+                booleanQues[counter] = false;
+                CircleChang();
+                LoadQuestion();
+                getQuestion();
+            });
+            ques5.setOnAction(event -> {
+                if (isFunctionEnabled) return;
+                counter = 5;
+                k = 1;
+                booleanQues[counter] = false;
+                CircleChang();
+                LoadQuestion();
+                getQuestion();
+            });
+            ques6.setOnAction(event -> {
+                if (isFunctionEnabled) return;
+                counter = 6;
+                k = 1;
+                booleanQues[counter] = false;
+                CircleChang();
+                LoadQuestion();
+                getQuestion();
+            });
+            ques7.setOnAction(event -> {
+                if (isFunctionEnabled) return;
+                counter = 7;
+                k = 1;
+                booleanQues[counter] = false;
+                CircleChang();
+                LoadQuestion();
+                getQuestion();
+            });
+            ques8.setOnAction(event -> {
+                if (isFunctionEnabled) return;
+                counter = 8;
+                k = 1;
+                booleanQues[counter] = false;
+                CircleChang();
+                LoadQuestion();
+                getQuestion();
+            });
+            ques9.setOnAction(event -> {
+                if (isFunctionEnabled) return;
+                counter = 9;
+                booleanQues[counter] = false;
+                k = 1;
+                CircleChang();
+                LoadQuestion();
+                getQuestion();
+            });
+            ques10.setOnAction(event -> {
+                if (isFunctionEnabled) return;
+                counter = 10;
+                booleanQues[counter] = false;
+                k = 1;
+                CircleChang();
+                LoadQuestion();
+                getQuestion();
+            });
+
     }
 
     public void CircleChang() {
+        if (k == 1) {
+            double b = 0;
+            for (int i = 1; i < 11; i++) {
+                if (booleanQues[i]) b++;
+            }
+            an = (b+1) * 10 / 100 * 2 * Math.PI * 65;
+            double a = (b) * 10 / 100 * 2 * Math.PI * 65;
+            String d = (int)(b) + "/10";
+            Point.setText(d);
+            Timeline timeline = new Timeline();
+            timeline.getKeyFrames().add(new KeyFrame(Duration.seconds(0.004), e -> {
+                String s = (int)(an) + " 100000";
+                an--;
+                circle.setStyle("-fx-stroke-dash-array: " + s + ";");
+                if (an <= a) {
+                    timeline.stop();
+                }
+            }));
+            timeline.setCycleCount(Timeline.INDEFINITE);
+            timeline.play();
+            k = 0;
+        } else {
+            double b = 0;
+            for (int i = 1; i < 11; i++) {
+                if (booleanQues[i]) b++;
+            }
+            an = (b-1) * 10 / 100 * 2 * Math.PI * 65;
+            double a = (b) * 10 / 100 * 2 * Math.PI * 65;
+            String d = (int)(b) + "/10";
+            Point.setText(d);
+            Timeline timeline = new Timeline();
+            timeline.getKeyFrames().add(new KeyFrame(Duration.seconds(0.004), e -> {
+                String s = (int)(an) + " 100000";
+                an++;
+                circle.setStyle("-fx-stroke-dash-array: " + s + ";");
+                if (an >= a) {
+                    timeline.stop();
+                }
+            }));
+            timeline.setCycleCount(Timeline.INDEFINITE);
+            timeline.play();
+        }
+    }
+
+    public void CircleChangPoint() {
         double b = 0;
         for (int i = 1; i < 11; i++) {
-            if (booleanQues[i]) b++;
+            if (CorrectAns[i]) b++;
         }
-        double a = b * 10 / 100 * 2 * Math.PI * 65;
-        System.out.println(counter);
-        System.out.println(a);
-        String s = (int)a + " 100000";
-        circle.setStyle("-fx-stroke-dash-array: " + s + ";");
+        pointAN = 2 * Math.PI * 65;
+        double a = (b) * 10 / 100 * 2 * Math.PI * 65;
+        String d = (int)(b) + "/10";
+        Point.setText(d);
+        Timeline timeline = new Timeline();
+        timeline.getKeyFrames().add(new KeyFrame(Duration.seconds(0.002), e -> {
+            String s = (int)(pointAN) + " 100000";
+            pointAN--;
+            circle.setStyle("-fx-stroke-dash-array: " + s + ";");
+            if (pointAN <= a) {
+                timeline.stop();
+            }
+        }));
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
     }
+
+    public void Submit() {
+        submit.setOnAction(event -> {
+            Timeline timeline = new Timeline();
+            timeline.getKeyFrames().add(new KeyFrame(Duration.seconds(1.8), e -> {
+                submit.setText("Kết quả");
+                submit.setPrefWidth(114);
+                submit.setLayoutX(724);
+                timeline.stop();
+                CircleChangPoint();
+                Incorrect();
+                isFunctionEnabled = true;
+                Check_Correct();
+                chose_check();
+            }));
+            timeline.setCycleCount(Timeline.INDEFINITE);
+            timeline.play();
+            submit.setText("Đang nộp bài");
+            submit.setLayoutX(703);
+            submit.setPrefWidth(135);
+        });
+    }
+    public void Incorrect() {
+        if (!CorrectAns[1]) {
+            ques1.setStyle("-fx-background-color:  red; -fx-text-fill: white;");
+        }
+        if (!CorrectAns[2]) {
+            ques2.setStyle("-fx-background-color:  red; -fx-text-fill: white;");
+        }
+        if (!CorrectAns[3]) {
+            ques3.setStyle("-fx-background-color:  red; -fx-text-fill: white;");
+        }
+        if (!CorrectAns[4]) {
+            ques4.setStyle("-fx-background-color:  red; -fx-text-fill: white;");
+        }
+        if (!CorrectAns[5]) {
+            ques5.setStyle("-fx-background-color:  red; -fx-text-fill: white;");
+        }
+        if (!CorrectAns[6]) {
+            ques6.setStyle("-fx-background-color:  red; -fx-text-fill: white;");
+        }
+        if (!CorrectAns[7]) {
+            ques7.setStyle("-fx-background-color:  red; -fx-text-fill: white;");
+        }
+        if (!CorrectAns[8]) {
+            ques8.setStyle("-fx-background-color:  red; -fx-text-fill: white;");
+        }
+        if (!CorrectAns[9]) {
+            ques9.setStyle("-fx-background-color:  red; -fx-text-fill: white;");
+        }
+        if (!CorrectAns[10]) {
+            ques10.setStyle("-fx-background-color:  red; -fx-text-fill: white;");
+        }
+    }
+
+    public void Check_Correct() {
+        but_opt1.setStyle("-fx-background-color:  transparent;");
+        opt1.setStyle("-fx-text-fill: black;");
+        but_opt2.setStyle("-fx-background-color:  transparent;");
+        opt2.setStyle("-fx-text-fill: black;");
+        but_opt3.setStyle("-fx-background-color:  transparent; ");
+        opt3.setStyle("-fx-text-fill: black;");
+        but_opt4.setStyle("-fx-background-color:  transparent; ");
+        opt4.setStyle("-fx-text-fill: black;");
+        but_opt1.setOnMouseEntered(null);
+        but_opt1.setOnMouseExited(null);
+        but_opt2.setOnMouseEntered(null);
+        but_opt2.setOnMouseExited(null);
+        but_opt3.setOnMouseEntered(null);
+        but_opt3.setOnMouseExited(null);
+        but_opt4.setOnMouseEntered(null);
+        but_opt4.setOnMouseExited(null);
+        if (CorrectAns[counter]) {
+            if (AnsQuestion[counter] == 'a'){
+                but_opt1.setStyle("-fx-background-color:  #2C5B36; ");
+                opt1.setStyle("-fx-text-fill: white;");
+            }
+            if (AnsQuestion[counter] == 'b'){
+                but_opt2.setStyle("-fx-background-color:  #2C5B36; ");
+                opt2.setStyle("-fx-text-fill: white;");
+            }
+            if (AnsQuestion[counter] == 'c'){
+                but_opt3.setStyle("-fx-background-color:  #2C5B36; ");
+                opt3.setStyle("-fx-text-fill: white;");
+            }
+            if (AnsQuestion[counter] == 'd'){
+                but_opt4.setStyle("-fx-background-color:  #2C5B36; ");
+                opt4.setStyle("-fx-text-fill: white;");
+            }
+        } else {
+            if (inAnsQuestion[counter] == 'a') {
+                but_opt1.setStyle("-fx-background-color:  red; ");
+                opt1.setStyle("-fx-text-fill: white;");
+            }
+            if (inAnsQuestion[counter] == 'b'){
+                but_opt2.setStyle("-fx-background-color:  red; ");
+                opt2.setStyle("-fx-text-fill: white;");
+            }
+            if (inAnsQuestion[counter] == 'c'){
+                but_opt3.setStyle("-fx-background-color:  red;");
+                opt3.setStyle("-fx-text-fill: white;");
+            }
+            if (inAnsQuestion[counter] == 'd'){
+                but_opt4.setStyle("-fx-background-color:  red; ");
+                opt4.setStyle("-fx-text-fill: white;");
+            }
+            if (AnsQuestion[counter] == 'a'){
+                but_opt1.setStyle("-fx-background-color:  #2C5B36; ");
+                opt1.setStyle("-fx-text-fill: white;");
+            }
+            if (AnsQuestion[counter] == 'b'){
+                but_opt2.setStyle("-fx-background-color:  #2C5B36; ");
+                opt2.setStyle("-fx-text-fill: white;");
+            }
+            if (AnsQuestion[counter] == 'c'){
+                but_opt3.setStyle("-fx-background-color:  #2C5B36; ");
+                opt3.setStyle("-fx-text-fill: white;");
+            }
+            if (AnsQuestion[counter] == 'd'){
+                but_opt4.setStyle("-fx-background-color:  #2C5B36; ");
+                opt4.setStyle("-fx-text-fill: white;");
+            }
+        }
+    }
+    public void chose_check() {
+        ques1.setOnAction(event -> {
+            counter = 1;
+            Check_Correct();
+            LoadQuestion();
+        });
+        ques2.setOnAction(event -> {
+            counter = 2;
+            Check_Correct();
+            LoadQuestion();
+        });
+        ques3.setOnAction(event -> {
+            counter = 3;
+            Check_Correct();
+            LoadQuestion();
+        });
+        ques4.setOnAction(event -> {
+            counter = 4;
+            Check_Correct();
+            LoadQuestion();
+        });
+        ques5.setOnAction(event -> {
+            counter = 5;
+            Check_Correct();
+            LoadQuestion();
+        });
+        ques6.setOnAction(event -> {
+            counter = 6;
+            Check_Correct();
+            LoadQuestion();
+        });
+        ques7.setOnAction(event -> {
+            counter = 7;
+            Check_Correct();
+            LoadQuestion();
+        });
+        ques8.setOnAction(event -> {
+            counter = 8;
+            Check_Correct();
+            LoadQuestion();
+        });
+        ques9.setOnAction(event -> {
+            counter = 9;
+            Check_Correct();
+            LoadQuestion();
+        });
+        ques10.setOnAction(event -> {
+            counter = 10;
+            Check_Correct();
+            LoadQuestion();
+        });
+    }
+
 
 }
