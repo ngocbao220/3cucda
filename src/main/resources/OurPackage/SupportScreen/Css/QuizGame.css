@@ -89,3 +89,10 @@
     -fx-stroke-dash-array: 0.4 1000000;
     -fx-rotate : -90;
 }
+
+.load {
+   -fx-stroke-width: 10px;
+   -fx-fill: null;
+   -fx-stroke-dash-array: 0.4 1000000;
+   -fx-rotate : -90;
+}

@@ -79,6 +79,9 @@ public class QuizController extends GeneralController implements Initializable {
     private JFXButton submit;
 
     @FXML
+    private JFXButton but_play;
+
+    @FXML
     private Circle circle;
 
     @FXML
@@ -136,6 +139,9 @@ public class QuizController extends GeneralController implements Initializable {
     private Pane p9;
 
     @FXML
+    private ImageView iPlay;
+
+    @FXML
     private Pane pane_next;
 
     @FXML
@@ -174,6 +180,9 @@ public class QuizController extends GeneralController implements Initializable {
     @FXML
     private Pane start;
 
+    @FXML
+    private Circle loading, bgrcircle;
+
     boolean check = false;
     boolean firstClick = true;
     int counter = 1;
@@ -188,7 +197,7 @@ public class QuizController extends GeneralController implements Initializable {
     boolean[] CorrectAns = new boolean[11];
     int k = 0;
 
-    private double an, pointAN;
+    private double an, pointAN, loadAns;
     private boolean isFunctionEnabled = false;
 
     char[] AnsQuestion = new char[11];
@@ -198,6 +207,9 @@ public class QuizController extends GeneralController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         but_home.setOnAction(e -> LoadScene( "Game-view.fxml", PaneGame2));
+        but_play.setOnAction(event -> {
+            rule.setVisible(false);
+        });
         for (int i = 1; i < 11; i++) {
             booleanQues[i] = false;
         }
@@ -222,6 +234,7 @@ public class QuizController extends GeneralController implements Initializable {
         changeButton_color(but_opt2);
         changeButton_color(but_opt3);
         changeButton_color(but_opt4);
+        TimeLoad();
         click_opt();
         time_run();
         getQuestion();
@@ -1026,5 +1039,24 @@ public class QuizController extends GeneralController implements Initializable {
         });
     }
 
+    public void TimeLoad() {
+        double a = 2 * Math.PI * 39;
+        loadAns = 0;
+        Timeline timeline = new Timeline();
+        timeline.getKeyFrames().add(new KeyFrame(Duration.seconds(0.02), e -> {
+            String s = (int)(loadAns) + " 100000";
+            loadAns++;
+            loading.setStyle("-fx-stroke-dash-array: " + s + ";");
+            if (loadAns >= a) {
+                timeline.stop();
+                but_play.setVisible(true);
+                iPlay.setVisible(true);
+                bgrcircle.setVisible(false);
+                loading.setVisible(false);
+            }
+        }));
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
+    }
 
 }

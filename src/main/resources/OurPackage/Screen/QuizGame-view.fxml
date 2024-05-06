@@ -11,33 +11,33 @@
 
 <AnchorPane fx:id="PaneGame2" prefHeight="612.0" prefWidth="1041.0" styleClass="bgr_Quiz" stylesheets="@../SupportScreen/Css/QuizGame.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OurPackage.Controller.QuizController">
     <children>
-        <ImageView fitHeight="593.0" fitWidth="1042.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-                <Image url="@../SupportScreen/img/bgrQuiz.png" />
-            </image>
-        </ImageView>
-        <ImageView fitHeight="537.0" fitWidth="901.0" layoutX="75.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-                <Image url="@../SupportScreen/img/backgrquiz.png" />
-            </image>
-        </ImageView>
+      <ImageView fitHeight="593.0" fitWidth="1042.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../SupportScreen/img/bgrQuiz.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="537.0" fitWidth="901.0" layoutX="75.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../SupportScreen/img/backgrquiz.png" />
+         </image>
+      </ImageView>
         <Pane layoutX="83.0" layoutY="63.0" prefHeight="511.0" prefWidth="876.0" style="-fx-background-radius: 10px;">
             <children>
-                <ImageView fitHeight="196.0" fitWidth="286.0" layoutX="-9.0" layoutY="-23.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../SupportScreen/img/Caheo.png" />
-                    </image>
-                </ImageView>
-                <ImageView fitHeight="60.0" fitWidth="152.0" layoutX="691.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../SupportScreen/img/reu.png" />
-                    </image>
-                </ImageView>
-                <ImageView fitHeight="177.0" fitWidth="174.0" layoutX="622.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../SupportScreen/img/Remove-bg.ai_1714996658922.png" />
-                    </image>
-                </ImageView>
+            <ImageView fitHeight="196.0" fitWidth="286.0" layoutX="-9.0" layoutY="-23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../SupportScreen/img/Caheo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="60.0" fitWidth="152.0" layoutX="691.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../SupportScreen/img/reu.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="177.0" fitWidth="174.0" layoutX="622.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../SupportScreen/img/Remove-bg.ai_1714996658922.png" />
+               </image>
+            </ImageView>
                 <JFXButton fx:id="submit" layoutX="724.0" layoutY="37.0" prefHeight="33.0" prefWidth="114.0" style="-fx-background-color: #2C5B36; -fx-background-radius: 10px;" text="SUBMIT" textFill="WHITE" wrapText="true">
                     <font>
                         <Font name="Arial Bold" size="15.0" />
@@ -165,36 +165,103 @@
                     </font>
                 </JFXButton>
                 <Circle fx:id="circle" fill="WHITE" layoutX="709.0" layoutY="256.0" radius="65.0" stroke="#363232" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="10.0" styleClass="progress" />
-                <Label fx:id="Point" alignment="CENTER" layoutX="670.0" layoutY="238.0" prefHeight="35.0" prefWidth="79.0" text="0/10">
-                    <font>
-                        <Font name="Comic Sans MS Bold" size="24.0" />
-                    </font>
-                </Label>
-                <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="232.0" layoutY="420.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../SupportScreen/img/cavoi.png" />
-                    </image>
-                </ImageView>
-                <ImageView fitHeight="145.0" fitWidth="253.0" layoutX="350.0" layoutY="-19.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../SupportScreen/img/nameQuiz.png" />
-                    </image>
-                </ImageView>
+            <Label fx:id="Point" alignment="CENTER" layoutX="670.0" layoutY="238.0" prefHeight="35.0" prefWidth="79.0" text="0/10">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="24.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="232.0" layoutY="420.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../SupportScreen/img/cavoi.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="145.0" fitWidth="253.0" layoutX="350.0" layoutY="-19.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../SupportScreen/img/nameQuiz.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="67.0" fitWidth="42.0" layoutX="513.0" layoutY="178.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../SupportScreen/img/vayson.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="67.0" fitWidth="42.0" layoutX="251.0" layoutY="178.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../SupportScreen/img/vayson.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="67.0" fitWidth="42.0" layoutX="255.0" layoutY="259.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../SupportScreen/img/vayson.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="67.0" fitWidth="42.0" layoutX="513.0" layoutY="259.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../SupportScreen/img/vayson.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="75.0" fitWidth="79.0" layoutX="237.0" layoutY="-59.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../SupportScreen/img/trangtri2.png" />
+               </image>
+            </ImageView>
             </children>
         </Pane>
         <Pane layoutX="919.0" layoutY="-34.0" prefHeight="129.0" prefWidth="123.0">
             <children>
-                <JFXButton fx:id="but_set" layoutX="55.0" layoutY="52.0" text="Đóng" />
-                <JFXButton fx:id="but_trans" layoutX="55.0" layoutY="52.0" text="Đóng" />
-                <JFXButton fx:id="but_diction" layoutX="55.0" layoutY="52.0" text="Đóng" />
-                <JFXButton fx:id="but_game" layoutX="55.0" layoutY="52.0" text="Đóng" />
-                <JFXButton fx:id="but_home" layoutX="55.0" layoutY="52.0" text="Đóng" />
+            <ImageView fitHeight="89.0" fitWidth="123.0" layoutX="24.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../SupportScreen/img/exitt.png" />
+               </image>
+            </ImageView>
+                <JFXButton fx:id="but_set" layoutX="29.0" layoutY="40.0" opacity="0.0" prefHeight="50.0" prefWidth="90.0" />
+                <JFXButton fx:id="but_trans" layoutX="29.0" layoutY="40.0" opacity="0.0" prefHeight="50.0" prefWidth="90.0" />
+                <JFXButton fx:id="but_diction" layoutX="29.0" layoutY="40.0" opacity="0.0" prefHeight="50.0" prefWidth="90.0" />
+                <JFXButton fx:id="but_game" layoutX="29.0" layoutY="40.0" opacity="0.0" prefHeight="50.0" prefWidth="90.0" />
+                <JFXButton fx:id="but_home" layoutX="29.0" layoutY="40.0" opacity="0.0" prefHeight="50.0" prefWidth="90.0" />
             </children>
         </Pane>
-        <ImageView fitHeight="120.0" fitWidth="183.0" layoutY="491.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-                <Image url="@../SupportScreen/img/trangtri.png" />
-            </image>
-        </ImageView>
+      <ImageView fitHeight="120.0" fitWidth="183.0" layoutY="491.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../SupportScreen/img/trangtri.png" />
+         </image>
+      </ImageView>
+      <Pane fx:id="rule" prefHeight="612.0" prefWidth="1041.0" style="-fx-background-color: #80808080;">
+         <children>
+            <ImageView fitHeight="432.0" fitWidth="671.0" layoutX="185.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../SupportScreen/img/rulee.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="353.0" layoutY="171.0" prefHeight="130.0" prefWidth="350.0" text="+ Nhấp chuột 2 lần vào đáp án bạn muốn chọn&#10;+ Bạn có thể đổi lựa chọn nếu chưa chắc chắn&#10;+ Khi chắc chắn rồi mới ấn Submit&#10;+ Sau khi Submit sẽ không thể sửa&#10;" textFill="#158b9c" wrapText="true">
+               <font>
+                  <Font name="Constantia Bold" size="16.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="60.0" fitWidth="114.0" layoutX="597.0" layoutY="288.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../SupportScreen/img/exitt.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="353.0" layoutY="306.0" text="**Khi làm xong bạn có thể &#10;  Nhấn exit để thoát khỏi Game" textFill="#114e70">
+               <font>
+                  <Font name="Constantia Bold" size="16.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="iPlay" fitHeight="89.0" fitWidth="174.0" layoutX="443.0" layoutY="389.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../SupportScreen/img/Playyy.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="but_play" layoutX="453.0" layoutY="397.0" opacity="0.0" prefHeight="67.0" prefWidth="130.0" visible="false" />
+            <Circle fx:id="bgrcircle" fill="DODGERBLUE" layoutX="521.0" layoutY="431.0" radius="39.0" stroke="#c7c5c5" strokeType="INSIDE" strokeWidth="10.0" style="-fx-fill: null;" styleClass="circle" />
+            <Circle fx:id="loading" fill="DODGERBLUE" layoutX="521.0" layoutY="431.0" radius="39.0" stroke="#a761b1" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="10.0" style="-fx-fill: null;" styleClass="load" />
+         </children>
+      </Pane>
+      <ImageView fitHeight="80.0" fitWidth="123.0" layoutX="25.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../SupportScreen/img/trangtri1.png" />
+         </image>
+      </ImageView>
     </children>
 </AnchorPane>
