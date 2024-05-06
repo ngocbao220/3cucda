@@ -124,6 +124,8 @@ public class GeneralController implements Initializable{
 
     private final static String DATABASE_NAME = "dict_hh.db";
 
+    public static Set<String> MarkedWord = new HashSet<>();
+
 
     public DatabaseManager databaseManager = new DatabaseManager(DATABASE_PATH, DATABASE_NAME);
     public BookMark bookMark ;

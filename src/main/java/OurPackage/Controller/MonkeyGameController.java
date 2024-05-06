@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import javafx.animation.FadeTransition;
 import javafx.animation.KeyFrame;
+import javafx.animation.ScaleTransition;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -130,6 +131,12 @@ public class MonkeyGameController extends GeneralController {
     private Label Point;
 
     @FXML
+    private Label pointPause;
+
+    @FXML
+    private Label pointLoss;
+
+    @FXML
     private JFXButton Replay;
 
     @FXML
@@ -167,6 +174,9 @@ public class MonkeyGameController extends GeneralController {
 
     @FXML
     private JFXButton Play2;
+
+    @FXML
+    private JFXButton but_PlayNow;
 
     @FXML
     private JFXButton buttonOutToPaneGame;
@@ -222,11 +232,11 @@ public class MonkeyGameController extends GeneralController {
         PlayMusic("tiengHaiAu.mp3", -1);
         Play();
 
+        action();
         but_home.setOnAction(e -> {
             LoadScene( "Game-view.fxml", PaneGame1);
             StopMusic();
         });
-
 
 
         // Thiet lap Game
@@ -283,6 +293,7 @@ public class MonkeyGameController extends GeneralController {
                     Play();
                     timeline.stop();
                     PaneWhenLoss.setVisible(true);
+                    pointLoss.setText(String.valueOf(point));
                 } else {
                     comboTime(MyMap);
                 }
@@ -343,6 +354,8 @@ public class MonkeyGameController extends GeneralController {
                         Play();
                         Heart.setText("0");
                         PaneWhenLoss.setVisible(true);
+                        pointLoss.setText(String.valueOf(point));
+                        timeline.stop();
                     }
                     else {
                         //Hien dap an dung cho nguoi choi
@@ -393,6 +406,8 @@ public class MonkeyGameController extends GeneralController {
                         Play();
                         Heart.setText("0");
                         PaneWhenLoss.setVisible(true);
+                        pointLoss.setText(String.valueOf(point));
+                        timeline.stop();
                     }
                     //hien dap an dung cho nguoi choi
                     else {
@@ -470,6 +485,28 @@ public class MonkeyGameController extends GeneralController {
         MenuChosseTheWord.setVisible(true);
     }
 
+    void action() {
+        ScaleTransition scaleIn = new ScaleTransition(Duration.millis(500), but_PlayNow);
+        scaleIn.setFromX(1);
+        scaleIn.setFromY(1);
+        scaleIn.setToX(1.2);
+        scaleIn.setToY(1.2);
+
+        ScaleTransition scaleOut = new ScaleTransition(Duration.millis(500), but_PlayNow);
+        scaleOut.setFromX(1.2);
+        scaleOut.setFromY(1.2);
+        scaleOut.setToX(1);
+        scaleOut.setToY(1);
+
+        Timeline actionbut = new Timeline();
+        actionbut.getKeyFrames().addAll(
+                new KeyFrame(Duration.ZERO, event -> scaleIn.play()),
+                new KeyFrame(Duration.millis(500), event -> scaleOut.play())
+        );
+        actionbut.setCycleCount(Timeline.INDEFINITE);
+        actionbut.play();
+    }
+
     // Khi an Play o Menu
     @FXML
     void PlaytoGame(ActionEvent event) {
@@ -505,8 +542,6 @@ public class MonkeyGameController extends GeneralController {
         PaneWhenPlayGame.setVisible(false);
         PaneWhenLoss.setVisible(false);
         MenuChosseTheWord.setVisible(false);
-        PlayMusic("tiengHaiAu.mp3", -1);
-        Play();
         ForSearching(SearchOnRight, Map2, WordChoosing);
         timeline.stop();
         reset();
@@ -515,6 +550,7 @@ public class MonkeyGameController extends GeneralController {
     // Dung Game
     @FXML
     void PauseGame(ActionEvent event) {
+        pointPause.setText(String.valueOf(point));
         PaneWhenPlayGame.setVisible(true);
         PaneWhenPauseGame.setVisible(true);
         timeline.pause();

@@ -1,7 +1,3 @@
-a b c
-a b c - book
-﻿a
+a-bomb
 a fortiori
-a font
-a la mode
-a la carte
+﻿a

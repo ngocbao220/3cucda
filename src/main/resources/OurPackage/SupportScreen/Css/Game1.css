@@ -107,6 +107,7 @@
 .PaneMenu {
     -fx-background-image: url('../img/PaneMenu.png');
     -fx-background-size: cover;
+    -fx-background-radius: 20px;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center;
 }

@@ -23,7 +23,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import static OurPackage.Controller.DictionaryController.*;
-import static OurPackage.Module.Constructor.MarkedWord;
 
 
 public class HomeController extends GeneralController {

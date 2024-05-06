@@ -4,7 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import static OurPackage.Module.Constructor.MarkedWord;
+import static OurPackage.Controller.GeneralController.MarkedWord;
 import static OurPackage.Module.DatabaseManager.connect;
 
 public class DatabaseBookmark implements BookMark {
