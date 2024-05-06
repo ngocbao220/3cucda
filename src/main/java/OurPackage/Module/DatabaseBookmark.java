@@ -77,14 +77,11 @@ public class DatabaseBookmark implements BookMark {
 
         // Dat tat ca isBookmark trong database ve 0
 
-        String sql = "UPDATE " + tableName + " SET isBookmark = 0";
+        String sql = "UPDATE " + tableName + " SET isBookmarked = 0";
 
         try {
-             PreparedStatement pstmt = connect.prepareStatement(sql);
-
-            int affectedRows = pstmt.executeUpdate();
-            System.out.println("Updated " + affectedRows + " rows. All bookmarks are now reset to 0.");
-
+            PreparedStatement pstmt = connect.prepareStatement(sql);
+            pstmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("Error: Couldn't set bookmark = 0 !");

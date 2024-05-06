@@ -24,7 +24,6 @@ public class DatabaseManager extends Dictionary{
                 .append("jdbc:sqlite:")
                 .append(dbPath)
                 .toString();
-
         try {
             connection = DriverManager.getConnection(url);
         } catch (SQLException e) {
@@ -58,7 +57,7 @@ public class DatabaseManager extends Dictionary{
 
     // Them tu vao database
     // can them tu, phat am, tu loai, nghia
-    public static void insertWordToDB(String word, String pronounce, String partOfSpeech, String meaning) {
+    public void insertWordToDB(String word, String pronounce, String partOfSpeech, String meaning) {
         String sql = "INSERT INTO av (word, html) VALUES (?, ?)";
         String html = new StringBuilder().append("<h1>")
                                          .append(word).append("</h1><h3><i>/")
@@ -71,6 +70,8 @@ public class DatabaseManager extends Dictionary{
             pstmt.setString(1, word);
             pstmt.setString(2, html);
 
+            list.put(word, html);
+
             int affectedRows = pstmt.executeUpdate();
             if (affectedRows > 0) {
                 notication = "A record was inserted successfully!";
@@ -81,12 +82,14 @@ public class DatabaseManager extends Dictionary{
     }
 
     // Xoa tu khoi database
-    public void deleteWordFromDB(String word) {
+    public void deleteWordFromDB(String wordDelete) {
         String sql = "DELETE FROM av WHERE word = ?";
         try {
             connect = getConnection(getDbPath() + getDbName());
-             PreparedStatement pstmt = connect.prepareStatement(sql);
-            pstmt.setString(1, word);
+            PreparedStatement pstmt = connect.prepareStatement(sql);
+            pstmt.setString(1, wordDelete);
+
+            list.remove(wordDelete);
 
             int affectedRows = pstmt.executeUpdate();
             if (affectedRows > 0) {

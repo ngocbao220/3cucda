@@ -169,8 +169,8 @@ public class HomeController extends GeneralController {
         if (sizeOfTempList < ListLog.size()) {
             imageNewNon.setVisible(true);
         }
-
-        listNon.setItems(DictionaryController.ListLog);
+        historyActivites.loadHistory();
+        displayHis(historyActivites.getHistoryList(), listNon);
 
         changeButton_color(butSay);
         but_home.setStyle("-fx-background-color: #333333;");
@@ -264,6 +264,7 @@ public class HomeController extends GeneralController {
         removeFromMarkedWord.setOnAction(e -> {
             if (!listMarkedWord.getSelectionModel().isEmpty()) {
                 ListLog.add("Đã gỡ: " + listMarkedWord.getSelectionModel().getSelectedItem() + "    " + DictionaryController.getTimeNow());
+                historyActivites.insertHistory("Đã gỡ: " + listMarkedWord.getSelectionModel().getSelectedItem() + "    " + DictionaryController.getTimeNow());
                 currentIndex ++;
                 bookMark.removeBookmark(listMarkedWord.getSelectionModel().getSelectedItem());
                 items.remove(listMarkedWord.getSelectionModel().getSelectedItem());

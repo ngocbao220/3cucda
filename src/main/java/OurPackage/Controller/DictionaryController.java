@@ -103,7 +103,7 @@ public class DictionaryController extends GeneralController{
     private JFXButton RemoveWord;
 
     @FXML
-    private ListView<String> listShowNons;
+    private ListView<String> listShowNons = new ListView<>();
 
     @FXML
     private JFXButton but_game;
@@ -192,7 +192,8 @@ public class DictionaryController extends GeneralController{
 
         meoHa.setVisible(false);
         meoNgam.setVisible(true);
-        listShowNons.setItems(ListLog);
+        historyActivites.loadHistory();
+        displayHis(historyActivites.getHistoryList(), listShowNons);
 
         if (sizeOfTempList < ListLog.size()) {
             imageNewNon.setVisible(true);
@@ -271,8 +272,9 @@ public class DictionaryController extends GeneralController{
                 bookMark.removeBookmark(s);
 
                 ListLog.add("Đã gỡ: " + s + "    " + getTimeNow());
+                historyActivites.insertHistory("Đã gỡ: " + s + "    " + getTimeNow());
                 runNonAddOrRemoveWord();
-                listShowNons.setItems(ListLog);
+                displayHis(historySearch.getHistoryList(), listShowNons);
                 imageNewNon.setVisible(true);
             }
         });
@@ -284,6 +286,7 @@ public class DictionaryController extends GeneralController{
                 but3.setVisible(true);
                 bgr_Listshownon.setVisible(true);
                 listShowNons.setVisible(true);
+                displayHis(historyActivites.getHistoryList(), listShowNons);
                 imageNewNon.setVisible(false);
             } else {
                 but1.setVisible(false);
@@ -330,7 +333,11 @@ public class DictionaryController extends GeneralController{
 
             ListLog.add("Đã thêm: " + s + "    " + getTimeNow());
             runNonAddOrRemoveWord();
-            listShowNons.setItems(ListLog);
+            historyActivites.insertHistory("Đã thêm: " + s + "    " + getTimeNow());
+
+
+            displayHis(historySearch.getHistoryList(), listShowNons);
+
             imageNewNon.setVisible(true);
         }
         if (!DisplayHistoryWord.getSelectionModel().isEmpty()) {
@@ -341,7 +348,9 @@ public class DictionaryController extends GeneralController{
 
             ListLog.add("Đã thêm:" + s + "    " + getTimeNow());
             runNonAddOrRemoveWord();
-            listShowNons.setItems(ListLog);
+            historyActivites.insertHistory("Đã thêm: " + s + "    " + getTimeNow());
+            displayHis(historySearch.getHistoryList(), listShowNons);
+
             imageNewNon.setVisible(true);
         }
         else return;

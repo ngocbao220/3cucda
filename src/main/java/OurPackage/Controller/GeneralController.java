@@ -130,8 +130,13 @@ public class GeneralController implements Initializable{
     public DatabaseManager databaseManager = new DatabaseManager(DATABASE_PATH, DATABASE_NAME);
     public BookMark bookMark ;
 
-    protected HistorySearch historySearch = new HistorySearch(new StringBuilder().append(DATABASE_PATH)
-            .append("history.txt").toString());
+    protected HistorySearch historySearch = new HistorySearch(new StringBuilder()
+                                                                    .append(DATABASE_PATH)
+                                                                    .append("historyDic.txt").toString());
+
+    protected HistorySearch historyActivites = new HistorySearch(new StringBuilder()
+                                                                    .append(DATABASE_PATH)
+                                                                    .append("activitiesHistoryApp.txt").toString());
 
     public void Load(String s, Pane container) throws IOException {
         Pane parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(s)));

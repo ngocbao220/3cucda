@@ -21,7 +21,7 @@ public class HistorySearch {
         this.historyPath = historyPath;
     }
 
-    // Doc cac tu duoc luu trong file history.txt vao historyList
+    // Doc cac tu duoc luu trong file historyDic.txt vao historyList
     public void loadHistory() {
         String line;
 
@@ -44,6 +44,7 @@ public class HistorySearch {
             if (historyList.contains(word)) {
                 historyList.removeIf(e -> e.equals(word));
             }
+
             historyList.add(0, word);
             // Cap nhat file txt
             FileWriter fw = new FileWriter(historyPath);
