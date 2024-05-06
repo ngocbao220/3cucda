@@ -61,7 +61,7 @@
 }
 
 .bgr_Quiz {
-    -fx-background-image: url('../img/background_quiz.png');
+    -fx-background-image: url('../img/bgrQuizpane.png');
 }
 
 .numQues {
@@ -84,7 +84,7 @@
 
 .progress {
     -fx-fill: null;
-    -fx-stroke: #2C5B36;
+    -fx-stroke: #383C61;
     -fx-stroke-width: 10px;
     -fx-stroke-dash-array: 0.4 1000000;
     -fx-rotate : -90;

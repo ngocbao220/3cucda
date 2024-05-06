@@ -157,7 +157,7 @@ public class QuizController extends GeneralController implements Initializable {
     private Pane pane_yes;
 
     @FXML
-    private Label question;
+    private Label question, submittext;
 
     @FXML
     private JFXButton next, prev;
@@ -207,6 +207,7 @@ public class QuizController extends GeneralController implements Initializable {
                 counter--;
                 LoadQuestion();
                 if (!isFunctionEnabled) getQuestion();
+                else Check_Correct();
             }
         });
         next.setOnAction(event -> {
@@ -214,6 +215,7 @@ public class QuizController extends GeneralController implements Initializable {
                 counter++;
                 LoadQuestion();
                 if (!isFunctionEnabled) getQuestion();
+                else Check_Correct();
             }
         });
         changeButton_color(but_opt1);
@@ -517,34 +519,34 @@ public class QuizController extends GeneralController implements Initializable {
 
     public void getCompletedQuestions() {
         if (booleanQues[1]) {
-            ques1.setStyle("-fx-background-color:  #2C5B36; -fx-text-fill: white;");
+            ques1.setStyle("-fx-background-color:  #E24DE8; -fx-text-fill: white;");
         }
         if (booleanQues[2]) {
-            ques2.setStyle("-fx-background-color:  #2C5B36; -fx-text-fill: white;");
+            ques2.setStyle("-fx-background-color:  #E24DE8; -fx-text-fill: white;");
         }
         if (booleanQues[3]) {
-            ques3.setStyle("-fx-background-color:  #2C5B36; -fx-text-fill: white;");
+            ques3.setStyle("-fx-background-color:  #E24DE8; -fx-text-fill: white;");
         }
         if (booleanQues[4]) {
-            ques4.setStyle("-fx-background-color:  #2C5B36; -fx-text-fill: white;");
+            ques4.setStyle("-fx-background-color:  #E24DE8; -fx-text-fill: white;");
         }
         if (booleanQues[5]) {
-            ques5.setStyle("-fx-background-color:  #2C5B36; -fx-text-fill: white;");
+            ques5.setStyle("-fx-background-color:  #E24DE8; -fx-text-fill: white;");
         }
         if (booleanQues[6]) {
-            ques6.setStyle("-fx-background-color:  #2C5B36; -fx-text-fill: white;");
+            ques6.setStyle("-fx-background-color:  #E24DE8; -fx-text-fill: white;");
         }
         if (booleanQues[7]) {
-            ques7.setStyle("-fx-background-color:  #2C5B36; -fx-text-fill: white;");
+            ques7.setStyle("-fx-background-color:  #E24DE8; -fx-text-fill: white;");
         }
         if (booleanQues[8]) {
-            ques8.setStyle("-fx-background-color:  #2C5B36; -fx-text-fill: white;");
+            ques8.setStyle("-fx-background-color:  #E24DE8; -fx-text-fill: white;");
         }
         if (booleanQues[9]) {
-            ques9.setStyle("-fx-background-color:  #2C5B36; -fx-text-fill: white;");
+            ques9.setStyle("-fx-background-color:  #E24DE8; -fx-text-fill: white;");
         }
         if (booleanQues[10]) {
-            ques10.setStyle("-fx-background-color:  #2C5B36; -fx-text-fill: white;");
+            ques10.setStyle("-fx-background-color:  #E24DE8; -fx-text-fill: white;");
         }
     }
 
