@@ -44,3 +44,9 @@
     -fx-background-repeat: no-repeat;
     -fx-background-position: center;
     }
+.labLe {
+    -fx-front-size: 13px;
+    -fx-font-weight: bold;
+    -fx-font-family: Comic Sans MS;
+    -fx-text-fill: white;
+}

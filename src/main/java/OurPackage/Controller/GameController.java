@@ -90,7 +90,7 @@ public class GameController extends GeneralController {
         });
         but_to_game2.setOnAction(e -> {
             StopMusic();
-            LoadScene("Quiz-view.fxml", Back);
+            LoadScene("QuizGame-view.fxml", Back);
         });
 
         iconMonkey.setOnMouseClicked(e -> {

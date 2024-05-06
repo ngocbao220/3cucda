@@ -59,3 +59,33 @@
 .blurred_background {
     -fx-background-color: #80808080;
 }
+
+.bgr_Quiz {
+    -fx-background-image: url('../img/background_quiz.png');
+}
+
+.numQues {
+    -fx-border-color:  #D9D9D9;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
+
+.opt {
+    -fx-border-color:  #D9D9D9;
+    -fx-border-radius: 13px;
+    -fx-background-radius: 13px;
+}
+
+.circle {
+    -fx-fill: null;
+    -fx-stroke: #ddd;
+    -fx-stroke-width: 10px;
+}
+
+.progress {
+    -fx-fill: null;
+    -fx-stroke: #2C5B36;
+    -fx-stroke-width: 10px;
+    -fx-stroke-dash-array: 0 1000000;
+    -fx-rotate : -90;
+}

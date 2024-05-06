@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="PaneGame2" prefHeight="612.0" prefWidth="1041.0" styleClass="bgr_Quiz" stylesheets="@../SupportScreen/Css/QuizGame.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OurPackage.Controller.QuizController">
+    <children>
+        <Pane layoutX="919.0" layoutY="-34.0" prefHeight="129.0" prefWidth="123.0">
+            <children>
+                <JFXButton fx:id="but_set" layoutX="55.0" layoutY="52.0" text="Đóng" />
+                <JFXButton fx:id="but_trans" layoutX="55.0" layoutY="52.0" text="Đóng" />
+                <JFXButton fx:id="but_diction" layoutX="55.0" layoutY="52.0" text="Đóng" />
+                <JFXButton fx:id="but_game" layoutX="55.0" layoutY="52.0" text="Đóng" />
+                <JFXButton fx:id="but_home" layoutX="55.0" layoutY="52.0" text="Đóng" />
+            </children>
+        </Pane>
+        <Pane layoutX="83.0" layoutY="63.0" prefHeight="511.0" prefWidth="876.0" style="-fx-background-color: white; -fx-background-radius: 10px;">
+            <children>
+                <JFXButton layoutX="724.0" layoutY="37.0" prefHeight="33.0" prefWidth="114.0" style="-fx-background-color: #2C5B36; -fx-background-radius: 10px;" text="SUBMIT" textFill="WHITE" wrapText="true">
+                    <font>
+                        <Font name="Arial Bold" size="15.0" />
+                    </font>
+                </JFXButton>
+                <ImageView fitHeight="55.0" fitWidth="55.0" layoutX="48.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../SupportScreen/img/Remove-bg.ai_1714742972686.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="114.0" layoutY="37.0" prefHeight="13.0" prefWidth="103.0" text="Time remaining">
+                    <font>
+                        <Font name="Arial" size="12.0" />
+                    </font>
+                </Label>
+                <Label fx:id="countdownLabel" layoutX="116.0" layoutY="56.0" text="15 : 00">
+                    <font>
+                        <Font name="Arial Bold" size="23.0" />
+                    </font>
+                </Label>
+                <Label fx:id="num_ques" layoutX="48.0" layoutY="119.0" text="Questione 1 of 10">
+                    <font>
+                        <Font name="Comic Sans MS Bold Italic" size="15.0" />
+                    </font>
+                </Label>
+                <Label fx:id="question" layoutX="48.0" layoutY="155.0" text="Every morning, I get up early to go _ _ _ _ _ _ the gym before work.">
+                    <font>
+                        <Font name="Comic Sans MS Bold Italic" size="15.0" />
+                    </font>
+                </Label>
+                <JFXButton fx:id="but_opt1" contentDisplay="CENTER" layoutX="49.0" layoutY="208.0" prefHeight="51.0" prefWidth="228.0" style="-fx-border-radius: 13px; -fx-border-color: #D9D9D9; -fx-background-radius: 13px;" styleClass="opt" stylesheets="@../SupportScreen/Css/QuizGame.css">
+                    <graphic>
+                        <Label fx:id="opt1" alignment="CENTER" text="a. to" textAlignment="CENTER" wrapText="true">
+                            <font>
+                                <Font name="Comic Sans MS" size="18.0" />
+                            </font>
+                        </Label>
+                    </graphic>
+                </JFXButton>
+                <JFXButton fx:id="but_opt2" contentDisplay="CENTER" layoutX="310.0" layoutY="208.0" prefHeight="51.0" prefWidth="228.0" style="-fx-border-radius: 13px; -fx-border-color: #D9D9D9; -fx-background-radius: 13px;" styleClass="opt" stylesheets="@../SupportScreen/Css/QuizGame.css">
+                    <graphic>
+                        <Label fx:id="opt2" alignment="CENTER" text="b. at" textAlignment="CENTER" wrapText="true">
+                            <font>
+                                <Font name="Comic Sans MS" size="18.0" />
+                            </font>
+                        </Label>
+                    </graphic>
+                </JFXButton>
+                <JFXButton fx:id="but_opt3" contentDisplay="CENTER" layoutX="52.0" layoutY="289.0" prefHeight="51.0" prefWidth="228.0" style="-fx-border-radius: 13px; -fx-border-color: #D9D9D9; -fx-background-radius: 13px;" styleClass="opt" stylesheets="@../SupportScreen/Css/QuizGame.css">
+                    <graphic>
+                        <Label fx:id="opt3" alignment="CENTER" text="c. in" textAlignment="CENTER" wrapText="true">
+                            <font>
+                                <Font name="Comic Sans MS" size="18.0" />
+                            </font>
+                        </Label>
+                    </graphic>
+                </JFXButton>
+                <JFXButton fx:id="but_opt4" contentDisplay="CENTER" layoutX="310.0" layoutY="289.0" prefHeight="51.0" prefWidth="228.0" style="-fx-border-radius: 13px; -fx-border-color: #D9D9D9; -fx-background-radius: 13px;" styleClass="opt" stylesheets="@../SupportScreen/Css/QuizGame.css">
+                    <graphic>
+                        <Label fx:id="opt4" alignment="CENTER" text="d.on" textAlignment="CENTER" wrapText="true">
+                            <font>
+                                <Font name="Comic Sans MS" size="18.0" />
+                            </font>
+                        </Label>
+                    </graphic>
+                </JFXButton>
+                <JFXButton fx:id="prev" layoutX="52.0" layoutY="378.0" prefHeight="42.0" prefWidth="79.0" style="-fx-border-color: #545454; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="Prev">
+                    <font>
+                        <Font name="Arial Bold" size="15.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton fx:id="ques1" layoutX="150.0" layoutY="378.0" prefHeight="42.0" prefWidth="42.0" style="-fx-border-color: #D9D9D9; -fx-border-radius: 10px; -fx-background-radius: 10px;" styleClass="numQues" stylesheets="@../SupportScreen/Css/QuizGame.css" text="1">
+                    <font>
+                        <Font name="Arial Bold" size="14.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton fx:id="ques2" layoutX="211.0" layoutY="378.0" prefHeight="42.0" prefWidth="42.0" style="-fx-border-color: #D9D9D9; -fx-border-radius: 10px; -fx-background-radius: 10px;" styleClass="numQues" stylesheets="@../SupportScreen/Css/QuizGame.css" text="2">
+                    <font>
+                        <Font name="Arial Bold" size="14.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton fx:id="ques3" layoutX="272.0" layoutY="378.0" prefHeight="42.0" prefWidth="42.0" style="-fx-border-color: #D9D9D9; -fx-border-radius: 10px; -fx-background-radius: 10px;" styleClass="numQues" stylesheets="@../SupportScreen/Css/QuizGame.css" text="3">
+                    <font>
+                        <Font name="Arial Bold" size="14.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton fx:id="ques4" layoutX="332.0" layoutY="378.0" prefHeight="42.0" prefWidth="42.0" style="-fx-border-color: #D9D9D9; -fx-border-radius: 10px; -fx-background-radius: 10px;" styleClass="numQues" stylesheets="@../SupportScreen/Css/QuizGame.css" text="4">
+                    <font>
+                        <Font name="Arial Bold" size="14.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton fx:id="ques5" layoutX="392.0" layoutY="378.0" prefHeight="42.0" prefWidth="42.0" style="-fx-border-color: #D9D9D9; -fx-border-radius: 10px; -fx-background-radius: 10px;" styleClass="numQues" stylesheets="@../SupportScreen/Css/QuizGame.css" text="5">
+                    <font>
+                        <Font name="Arial Bold" size="14.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton fx:id="ques6" layoutX="452.0" layoutY="378.0" prefHeight="42.0" prefWidth="42.0" style="-fx-border-color: #D9D9D9; -fx-border-radius: 10px; -fx-background-radius: 10px;" styleClass="numQues" stylesheets="@../SupportScreen/Css/QuizGame.css" text="6">
+                    <font>
+                        <Font name="Arial Bold" size="14.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton fx:id="ques7" layoutX="514.0" layoutY="378.0" prefHeight="42.0" prefWidth="42.0" style="-fx-border-color: #D9D9D9; -fx-border-radius: 10px; -fx-background-radius: 10px;" styleClass="numQues" stylesheets="@../SupportScreen/Css/QuizGame.css" text="7">
+                    <font>
+                        <Font name="Arial Bold" size="14.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton fx:id="ques8" layoutX="576.0" layoutY="378.0" prefHeight="42.0" prefWidth="42.0" style="-fx-border-color: #D9D9D9; -fx-border-radius: 10px; -fx-background-radius: 10px;" styleClass="numQues" stylesheets="@../SupportScreen/Css/QuizGame.css" text="8">
+                    <font>
+                        <Font name="Arial Bold" size="14.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton fx:id="ques9" layoutX="637.0" layoutY="378.0" prefHeight="42.0" prefWidth="42.0" style="-fx-border-color: #D9D9D9; -fx-border-radius: 10px; -fx-background-radius: 10px;" styleClass="numQues" stylesheets="@../SupportScreen/Css/QuizGame.css" text="9">
+                    <font>
+                        <Font name="Arial Bold" size="14.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton fx:id="ques10" layoutX="700.0" layoutY="378.0" prefHeight="42.0" prefWidth="42.0" style="-fx-border-color: #D9D9D9; -fx-border-radius: 10px; -fx-background-radius: 10px;" styleClass="numQues" stylesheets="@../SupportScreen/Css/QuizGame.css" text="10">
+                    <font>
+                        <Font name="Arial Bold" size="14.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton fx:id="next" layoutX="759.0" layoutY="378.0" prefHeight="42.0" prefWidth="79.0" style="-fx-border-color: #545454; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="Next">
+                    <font>
+                        <Font name="Arial Bold" size="15.0" />
+                    </font>
+                </JFXButton>
+                <Circle fill="WHITE" layoutX="709.0" layoutY="256.0" radius="65.0" stroke="#b1afaf" strokeType="INSIDE" strokeWidth="10.0" styleClass="circle" />
+                <Circle fx:id="circle" fill="WHITE" layoutX="709.0" layoutY="256.0" radius="65.0" stroke="#363232" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="10.0" styleClass="progress" />
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

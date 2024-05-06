@@ -151,6 +151,9 @@ public class DictionaryController extends GeneralController{
     private ImageView meoNgam;
 
     @FXML
+    private Pane bgr_label;
+
+    @FXML
     private Pane inner_pane;
 
     @FXML
@@ -292,7 +295,6 @@ public class DictionaryController extends GeneralController{
             }
             sizeOfTempList = ListLog.size();
             count++;
-
         });
 
         but1.setOnAction(event -> {
@@ -457,22 +459,34 @@ public class DictionaryController extends GeneralController{
     private void runNonAddOrRemoveWord() {
         if (currentIndex < ListLog.size()) {
             Label label = new Label(ListLog.get(currentIndex).split("    ")[0]);
-            label.setStyle("-fx-front-size: 15px");
+            label.setStyle("-fx-front-size: 20px;");
+            label.setStyle("-fx-font-weight: bold;");
+            label.setStyle("-fx-font-family: Comic Sans MS;");
+            label.setStyle("-fx-text-fill: white;");
             currentIndex++;
-            label.setLayoutX(50);
+            label.setLayoutX(55);
             label.setLayoutY(label.getLayoutY() + 15);
-
+            bgr_label.setVisible(true);
             label.setVisible(true);
-
             labelList.add(label);
             SearchTab.getChildren().add(label);
+            TranslateTransition transitionBGR = new TranslateTransition(Duration.seconds(3), bgr_label);
             TranslateTransition transition = new TranslateTransition(Duration.seconds(3), label);
+            transitionBGR.setFromX(0);
+            transitionBGR.setToX(670);
+            transition.setFromX(0);
             transition.setToX(670);
             transition.setOnFinished(e -> {
                 label.setVisible(false);
+                bgr_label.setVisible(false);
+            });
+
+            transitionBGR.setOnFinished(e -> {
+                bgr_label.setVisible(false);
             });
             MeoMeo();
             transition.play();
+            transitionBGR.play();
         }
     }
 

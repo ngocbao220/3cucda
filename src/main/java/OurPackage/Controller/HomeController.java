@@ -313,7 +313,7 @@ public class HomeController extends GeneralController {
             but_set.fire();
         });
         opengame2.setOnAction(e -> {
-            LoadScene("Quiz-view.fxml", Back);
+            LoadScene("QuizGame-view.fxml", Back);
         });
     }
     // ham tao hieu ung chuyen dong
