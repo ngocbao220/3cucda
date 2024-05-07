@@ -342,23 +342,30 @@ public class SettingController extends GeneralController {
 
         sendFeedBack.setOnAction(e -> {
             String feedBack = DictionaryController.getTimeNow() + "-   " + textFeedBack.getText();
-            try {
-                FileWriter fw = new FileWriter("./Data/feedback.txt", true);
-                BufferedWriter bw = new BufferedWriter(fw);
-                bw.write(feedBack);
-                bw.newLine();
-                bw.close();
-                fw.close();
+            if(!textFeedBack.getText().isEmpty()) {
+                try {
+                    FileWriter fw = new FileWriter("./Data/feedback.txt", true);
+                    BufferedWriter bw = new BufferedWriter(fw);
+                    bw.write(feedBack);
+                    bw.newLine();
+                    bw.close();
+                    fw.close();
 
-                non.setText("Cảm ơn những đóng góp của bạn !");
-                imgSuccess.setVisible(true);
-                imgBug.setVisible(false);
-                textFeedBack.setText("");
+                    non.setText("Cảm ơn những đóng góp của bạn !");
+                    imgSuccess.setVisible(true);
+                    imgBug.setVisible(false);
+                    textFeedBack.setText("");
+                    actionOfNon();
+                } catch (IOException k) {
+                    k.printStackTrace();
+                }
+            } else {
+                non.setText("Góp ý trống !");
                 actionOfNon();
-            } catch (IOException k) {
-                k.printStackTrace();
             }
         });
+
+
 
     }
 
