@@ -76,6 +76,12 @@ public class SettingController extends GeneralController {
     private ImageView catcute;
 
     @FXML
+    private ImageView imgBug;
+
+    @FXML
+    private ImageView imgSuccess;
+
+    @FXML
     private JFXButton clearBookMark;
 
     @FXML
@@ -121,7 +127,7 @@ public class SettingController extends GeneralController {
     private JFXButton addNewWordForDic;
 
     @FXML
-    private Button closePaneAddNewWord;
+    private JFXButton closePaneAddNewWord;
 
     @FXML
     private TextArea textFeedBack;
@@ -187,13 +193,18 @@ public class SettingController extends GeneralController {
                         databaseManager.deleteWordFromDB(wordDelete);
                         listWord.getItems().remove(wordDelete);
 
+                        imgBug.setVisible(false);
+                        imgSuccess.setVisible(true);
                         non.setText("Thành công xóa từ: " + wordDelete + " !");
+
                         actionOfNon();
                     } else if (response == ButtonType.CANCEL) {
                         System.out.println("Người dùng đã chọn: Không");
                     }
                 });
             } else {
+                imgBug.setVisible(true);
+                imgSuccess.setVisible(false);
                 non.setText("Lỗi : Vui lòng chọn từ muốn xóa !");
                 actionOfNon();
             }
@@ -213,6 +224,8 @@ public class SettingController extends GeneralController {
                         historyActivites.clearHistory();
 
                         ListLog.clear();
+                        imgBug.setVisible(false);
+                        imgSuccess.setVisible(true);
                         non.setText("Thành công xóa lịch sử hoạt động !");
                         actionOfNon();
                     } else if (response == ButtonType.CANCEL) {
@@ -220,6 +233,8 @@ public class SettingController extends GeneralController {
                     }
                 });
             } else {
+                imgBug.setVisible(true);
+                imgSuccess.setVisible(false);
                 non.setText("Lịch sử hoạt động trống!");
                 actionOfNon();
             }
@@ -243,6 +258,8 @@ public class SettingController extends GeneralController {
                         System.out.println("Người dùng đã chọn: Đồng ý");
                         databaseManager.insertWordToDB(word, pronounce, type, mean);
                         paneAddNewWordToDictionary.setVisible(false);
+                        imgBug.setVisible(false);
+                        imgSuccess.setVisible(true);
                         non.setText("Thành công thêm từ: " + word + " !");
                         actionOfNon();
                     } else if (response == ButtonType.CANCEL) {
@@ -250,6 +267,8 @@ public class SettingController extends GeneralController {
                     }
                 });
             } else {
+                imgBug.setVisible(true);
+                imgSuccess.setVisible(false);
                 non.setText("Lỗi : Vui lòng nhập đủ thông tin từ!");
                 actionOfNon();
             }
@@ -265,6 +284,8 @@ public class SettingController extends GeneralController {
                 alert.showAndWait().ifPresent(response -> {
                     if (response == ButtonType.OK) {
                         bookMark.clearBookmark();
+                        imgBug.setVisible(false);
+                        imgSuccess.setVisible(true);
                         non.setText("Thành công xóa danh sách từ yêu thích !");
                         actionOfNon();
                     } else if (response == ButtonType.CANCEL) {
@@ -272,6 +293,8 @@ public class SettingController extends GeneralController {
                     }
                 });
             } else {
+                imgBug.setVisible(true);
+                imgSuccess.setVisible(false);
                 non.setText("Danh sách từ yêu thích trống !");
                 actionOfNon();
             }
@@ -289,6 +312,8 @@ public class SettingController extends GeneralController {
                     historyActivites.clearHistory();
                     historySearch.clearHistory();
                     databaseManager.resetData();
+                    imgBug.setVisible(false);
+                    imgSuccess.setVisible(true);
                     non.setText("Thành công đặt lại ứng dụng !\n(Khởi động lại sẽ có hiệu lực)");
                     actionOfNon();
                 } else if (response == ButtonType.CANCEL) {

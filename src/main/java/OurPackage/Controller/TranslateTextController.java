@@ -254,6 +254,7 @@ public class TranslateTextController extends GeneralController implements Initia
 
         transition.play();
     }
+
     // tu dong dich khi nhap van ban
     @FXML
     void translate(KeyEvent event) {
