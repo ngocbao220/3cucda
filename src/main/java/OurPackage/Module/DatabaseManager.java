@@ -72,7 +72,7 @@ public class DatabaseManager extends Dictionary{
                                          .append(meaning).append("</li></ul>").toString();
         try {
             connect = getConnection(getDbPath() + getDbName());
-             PreparedStatement pstmt = connect.prepareStatement(sql);
+            PreparedStatement pstmt = connect.prepareStatement(sql);
             pstmt.setString(1, word);
             pstmt.setString(2, html);
 
@@ -107,6 +107,32 @@ public class DatabaseManager extends Dictionary{
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public void copyDataFromDefaultTable() {
+        String sql = new StringBuilder().append("INSERT or IGNORE INTO av SELECT * FROM defaultAV;").toString();
+        try {
+            Statement stmt = connect.createStatement();
+            stmt.executeUpdate(sql);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        DictionaryWords();
+    }
+
+    public void deleteAllDatabase() {
+        String sql = "DELETE FROM av;";
+        try {
+            Statement stmt = connect.createStatement();
+            stmt.executeUpdate(sql);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void resetData() {
+        deleteAllDatabase();
+        copyDataFromDefaultTable();
     }
 
     /*public static void main(String[] args) {

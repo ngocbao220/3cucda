@@ -127,10 +127,6 @@ public class GeneralController implements Initializable{
 
     public DatabaseManager databaseManager = new DatabaseManager(DATABASE_PATH, DATABASE_NAME);
 
-    public DatabaseManager databaseCopy = new DatabaseManager(DATABASE_PATH, DATABASE_NAME_COPY);
-
-    public DatabaseCopy databaseManagerCopy = new DatabaseCopy();
-
     public BookMark bookMark ;
 
     protected HistorySearch historySearch = new HistorySearch(new StringBuilder()

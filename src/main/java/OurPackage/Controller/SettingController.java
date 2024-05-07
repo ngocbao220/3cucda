@@ -1,7 +1,5 @@
 package OurPackage.Controller;
 
-import OurPackage.Module.DatabaseCopy;
-import OurPackage.Module.DatabaseManager;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import javafx.animation.Animation;
@@ -17,9 +15,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 
-import java.io.*;
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 
 import static OurPackage.Controller.DictionaryController.ListLog;
@@ -153,6 +149,7 @@ public class SettingController extends GeneralController {
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), e -> {
             updateTimer();
         }));
+
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
 
@@ -162,6 +159,7 @@ public class SettingController extends GeneralController {
 
         but_add.setOnAction(e -> {
             paneAddNewWordToDictionary.setVisible(true);
+            paneDeleteWord.setVisible(false);
         });
 
         closePaneAddNewWord.setOnAction(e -> {
@@ -171,18 +169,19 @@ public class SettingController extends GeneralController {
         but_delete.setOnAction(e -> {
             paneDeleteWord.setVisible(countDelete % 2 == 0);
             countDelete++;
+            paneAddNewWordToDictionary.setVisible(false);
         });
 
         doDelete.setOnAction(e -> {
             String wordDelete = listWord.getSelectionModel().getSelectedItem();
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Xác nhận");
-            alert.setHeaderText(null);
-            alert.initOwner(DisplayContent.getScene().getWindow());
-            alert.setContentText("Bạn có chắc chắn muốn xóa từ: " + wordDelete + " không?");
+            if(wordDelete != null) {
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Xác nhận");
+                alert.setHeaderText(null);
+                alert.initOwner(DisplayContent.getScene().getWindow());
+                alert.setContentText("Bạn có chắc chắn muốn xóa từ: " + wordDelete + " không?");
 
-            alert.showAndWait().ifPresent(response -> {
-                if (!listWord.getSelectionModel().getSelectedItem().isEmpty()) {
+                alert.showAndWait().ifPresent(response -> {
                     if (response == ButtonType.OK) {
                         System.out.println("Người dùng đã chọn: Đồng ý");
                         databaseManager.deleteWordFromDB(wordDelete);
@@ -193,11 +192,11 @@ public class SettingController extends GeneralController {
                     } else if (response == ButtonType.CANCEL) {
                         System.out.println("Người dùng đã chọn: Không");
                     }
-                } else {
-                    non.setText("Lỗi : Vui lòng chọn từ muốn xóa !");
-                    actionOfNon();
-                }
-            });
+                });
+            } else {
+                non.setText("Lỗi : Vui lòng chọn từ muốn xóa !");
+                actionOfNon();
+            }
 
         });
 
@@ -282,15 +281,15 @@ public class SettingController extends GeneralController {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Xác nhận");
             alert.setHeaderText(null);
-            alert.setContentText("Bạn có chắc chắn muốn đặt lại ứng dụng không?\nMọi thứ đều trở về ban đầu");
+            alert.setContentText("Bạn có chắc chắn muốn đặt lại ứng dụng không?\n  (Mọi thứ đều trở về ban đầu)");
             alert.initOwner(DisplayContent.getScene().getWindow());
             alert.showAndWait().ifPresent(response -> {
                 if (response == ButtonType.OK) {
                     bookMark.clearBookmark();
                     historyActivites.clearHistory();
                     historySearch.clearHistory();
-                    resetDatabase();
-                    non.setText("Thành công đặt lại ứng dụng !");
+                    databaseManager.resetData();
+                    non.setText("Thành công đặt lại ứng dụng !\n(Khởi động lại sẽ có hiệu lực)");
                     actionOfNon();
                 } else if (response == ButtonType.CANCEL) {
                     System.out.println("Người dùng đã chọn: Không");
@@ -305,10 +304,4 @@ public class SettingController extends GeneralController {
         timeUsingApp.setText(timeString);
     }
 
-    private void resetDatabase() {
-        String query = "SELECT id, word, html, description, pronounce, isBookmarked FROM av";
-        List<Object[]> data = databaseManagerCopy.fetchData(databaseCopy.getConnect(), query);
-        databaseManagerCopy.insertData(databaseManager.getConnect(), data);
-
-    }
 }
