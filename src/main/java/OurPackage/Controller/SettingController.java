@@ -137,7 +137,6 @@ public class SettingController extends GeneralController {
 
     int countDelete = 0;
 
-    private final String DATABASE_PATH = "../3cucda/Data/";
 
     private void actionOfNon() {
         FadeTransition fadeTransition = new FadeTransition(Duration.seconds(4), paneNon);
@@ -169,11 +168,19 @@ public class SettingController extends GeneralController {
         });
 
         closePaneAddNewWord.setOnAction(e -> {
+            newWord.setText("");
+            IPAforWord.setText("");
+            typeWord.setText("");
+            MeanOfWord.setText("");
             paneAddNewWordToDictionary.setVisible(false);
         });
 
         but_delete.setOnAction(e -> {
             paneDeleteWord.setVisible(countDelete % 2 == 0);
+            if(countDelete % 2 != 0) {
+                searchWordToDelete.setText("");
+                DictionaryController.ForSearchingDicWord(searchWordToDelete, list, listWord);
+            }
             countDelete++;
             paneAddNewWordToDictionary.setVisible(false);
         });
@@ -192,11 +199,9 @@ public class SettingController extends GeneralController {
                         System.out.println("Người dùng đã chọn: Đồng ý");
                         databaseManager.deleteWordFromDB(wordDelete);
                         listWord.getItems().remove(wordDelete);
-
                         imgBug.setVisible(false);
                         imgSuccess.setVisible(true);
                         non.setText("Thành công xóa từ: " + wordDelete + " !");
-
                         actionOfNon();
                     } else if (response == ButtonType.CANCEL) {
                         System.out.println("Người dùng đã chọn: Không");
@@ -222,7 +227,6 @@ public class SettingController extends GeneralController {
                 alert.showAndWait().ifPresent(response -> {
                     if (response == ButtonType.OK) {
                         historyActivites.clearHistory();
-
                         ListLog.clear();
                         imgBug.setVisible(false);
                         imgSuccess.setVisible(true);
@@ -256,12 +260,23 @@ public class SettingController extends GeneralController {
                 alert.showAndWait().ifPresent(response -> {
                     if (response == ButtonType.OK) {
                         System.out.println("Người dùng đã chọn: Đồng ý");
-                        databaseManager.insertWordToDB(word, pronounce, type, mean);
+                        if(databaseManager.list.containsKey(word)) {
+                            non.setText("Từ: " + word + " đã tồn tại !");
+                            actionOfNon();
+                            imgBug.setVisible(true);
+                            imgSuccess.setVisible(false);
+                        } else {
+                            databaseManager.insertWordToDB(word, pronounce, type, mean);
+                            non.setText("Thành công thêm từ: " + word + " !");
+                            actionOfNon();
+                            imgBug.setVisible(false);
+                            imgSuccess.setVisible(true);
+                        }
+                        newWord.setText("");
+                        IPAforWord.setText("");
+                        typeWord.setText("");
+                        MeanOfWord.setText("");
                         paneAddNewWordToDictionary.setVisible(false);
-                        imgBug.setVisible(false);
-                        imgSuccess.setVisible(true);
-                        non.setText("Thành công thêm từ: " + word + " !");
-                        actionOfNon();
                     } else if (response == ButtonType.CANCEL) {
                         System.out.println("Người dùng đã chọn: Không");
                     }

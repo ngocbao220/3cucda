@@ -1,10 +1,1 @@
-a-power
-a priori
-a la mode
-a font
-a posteriori
-a la carte
-a fortiori
-a b c - book
-a b c
-﻿a
+hello
