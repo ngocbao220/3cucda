@@ -10,14 +10,6 @@ public class DatabaseManager extends Dictionary{
 
     protected static Connection connect;
 
-    public Connection getConnect() {
-        return connect;
-    }
-
-    public static void setConnect(Connection connect) {
-        DatabaseManager.connect = connect;
-    }
-
     public static Map<String, String> list = new LinkedHashMap<>();
 
     public static String notication = new String();
@@ -46,14 +38,27 @@ public class DatabaseManager extends Dictionary{
 
     // Lay cac tu trong database vao Map
     public void DictionaryWords() {
-        String sql = "SELECT word, html FROM av";
+        list.clear();
+        String sql = "SELECT word, html, description FROM av";
 
         try {
             connect = getConnection(getDbPath() + getDbName());
             Statement stmt = connect.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
-                list.put(rs.getString("word"), rs.getString("html"));
+                if(list.containsKey(rs.getString("word"))) {
+                    list.put(rs.getString("word"), new StringBuilder()
+                            .append(list.get(rs.getString("word")))
+                            .append("</i><h2>")
+                            .append("Nghĩa khác:")
+                            .append("</h2><br/><ul><li>")
+                            .append(rs.getString("description"))
+                            .append("</li></ul>").toString());
+
+                } else {
+                    list.put(rs.getString("word"), rs.getString("html"));
+                }
+
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -67,8 +72,8 @@ public class DatabaseManager extends Dictionary{
         String sql = "INSERT INTO av (word, html) VALUES (?, ?)";
         String html = new StringBuilder().append("<h1>")
                                          .append(word).append("</h1><h3><i>/")
-                                         .append(pronounce).append("/</i></h3>")
-                                         .append(partOfSpeech).append("<br/><ul><li>")
+                                         .append(pronounce).append("/</i></h3><h2>")
+                                         .append(partOfSpeech).append("</h2><ul><li>")
                                          .append(meaning).append("</li></ul>").toString();
         try {
             connect = getConnection(getDbPath() + getDbName());
@@ -109,6 +114,7 @@ public class DatabaseManager extends Dictionary{
         }
     }
 
+    // Sao chep bang mac dinh av qua bang av dang dung
     public void copyDataFromDefaultTable() {
         String sql = new StringBuilder().append("INSERT or IGNORE INTO av SELECT * FROM defaultAV;").toString();
         try {
@@ -117,10 +123,11 @@ public class DatabaseManager extends Dictionary{
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-        DictionaryWords();
     }
 
+    // Xoa tat ca bang av
     public void deleteAllDatabase() {
+        list.clear();
         String sql = "DELETE FROM av;";
         try {
             Statement stmt = connect.createStatement();
@@ -133,6 +140,7 @@ public class DatabaseManager extends Dictionary{
     public void resetData() {
         deleteAllDatabase();
         copyDataFromDefaultTable();
+        DictionaryWords();
     }
 
     /*public static void main(String[] args) {

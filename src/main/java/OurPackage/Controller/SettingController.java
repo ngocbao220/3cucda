@@ -205,7 +205,6 @@ public class SettingController extends GeneralController {
                 alert.setHeaderText(null);
                 alert.initOwner(DisplayContent.getScene().getWindow());
                 alert.setContentText("Bạn có chắc chắn muốn xóa từ: " + wordDelete + " không?");
-
                 alert.showAndWait().ifPresent(response -> {
                     if (response == ButtonType.OK) {
                         System.out.println("Người dùng đã chọn: Đồng ý");
@@ -235,7 +234,6 @@ public class SettingController extends GeneralController {
                 alert.setHeaderText(null);
                 alert.initOwner(DisplayContent.getScene().getWindow());
                 alert.setContentText("Bạn có chắc chắn muốn đặt lại lịch sử hoạt động không?");
-
                 alert.showAndWait().ifPresent(response -> {
                     if (response == ButtonType.OK) {
                         historyActivites.clearHistory();
@@ -263,7 +261,6 @@ public class SettingController extends GeneralController {
             String mean = MeanOfWord.getText();
 
             if (!word.isEmpty() && !pronounce.isEmpty() && !type.isEmpty() && !mean.isEmpty()) {
-
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Xác nhận");
                 alert.setHeaderText(null);
@@ -331,7 +328,7 @@ public class SettingController extends GeneralController {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Xác nhận");
             alert.setHeaderText(null);
-            alert.setContentText("Bạn có chắc chắn muốn đặt lại ứng dụng không?\n            (mọi thứ đều trở về ban đầu)");
+            alert.setContentText("Bạn có chắc chắn muốn đặt lại ứng dụng không?\n\t\t(Mọi thứ đều trở về ban đầu)");
             alert.initOwner(DisplayContent.getScene().getWindow());
             alert.showAndWait().ifPresent(response -> {
                 if (response == ButtonType.OK) {
@@ -377,7 +374,6 @@ public class SettingController extends GeneralController {
         });
 
     }
-
 
     private void updateTimer() {
         timeString = String.format("%02d:%02d:%02d", hours, minutes, seconds);

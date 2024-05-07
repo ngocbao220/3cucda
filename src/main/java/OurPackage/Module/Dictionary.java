@@ -9,21 +9,13 @@ public class Dictionary {
         return dbPath;
     }
 
-    public void setDbPath(String dbPath) {
-        Dictionary.dbPath = dbPath;
-    }
-
     public static String getDbName() {
         return dbName;
     }
 
-    public void setDbName(String dbName) {
-        Dictionary.dbName = dbName;
-    }
-
     public Dictionary(String dbPath, String dbName) {
-        Dictionary.dbPath = dbPath;
-        Dictionary.dbName = dbName;
+        this.dbPath = dbPath;
+        this.dbName = dbName;
     }
 
 }

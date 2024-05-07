@@ -2,10 +2,7 @@ package OurPackage.Controller;
 
 import OurPackage.Module.*;
 import com.jfoenix.controls.JFXButton;
-import javafx.animation.Animation;
 import javafx.animation.FadeTransition;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -20,7 +17,6 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class GeneralController implements Initializable{
@@ -120,8 +116,6 @@ public class GeneralController implements Initializable{
     private final static String DATABASE_PATH = "./Data/";
 
     private final static String DATABASE_NAME = "dict_hh.db";
-
-    private final static String DATABASE_NAME_COPY = "dict_hh_copy.db";
 
     public static Set<String> MarkedWord = new HashSet<>();
 
@@ -245,7 +239,7 @@ public class GeneralController implements Initializable{
 
         databaseManager.DictionaryWords();
         bookMark = new DatabaseBookmark("av");
-        DictionaryController.List = DatabaseManager.list;
+        DictionaryController.List = databaseManager.list;
         historySearch.loadHistory();
     }
     public void ChangeButton_color(JFXButton button) {
