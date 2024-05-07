@@ -293,7 +293,6 @@ public class MonkeyGameController extends GeneralController {
                     Play();
                     timeline.stop();
                     PaneWhenLoss.setVisible(true);
-                    pointLoss.setText(String.valueOf(point));
                 } else {
                     comboTime(MyMap);
                 }
@@ -354,7 +353,6 @@ public class MonkeyGameController extends GeneralController {
                         Play();
                         Heart.setText("0");
                         PaneWhenLoss.setVisible(true);
-                        pointLoss.setText(String.valueOf(point));
                         timeline.stop();
                     }
                     else {
@@ -406,7 +404,6 @@ public class MonkeyGameController extends GeneralController {
                         Play();
                         Heart.setText("0");
                         PaneWhenLoss.setVisible(true);
-                        pointLoss.setText(String.valueOf(point));
                         timeline.stop();
                     }
                     //hien dap an dung cho nguoi choi
