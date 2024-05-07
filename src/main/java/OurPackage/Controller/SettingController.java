@@ -4,7 +4,10 @@ import OurPackage.Module.DatabaseCopy;
 import OurPackage.Module.DatabaseManager;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
+import javafx.animation.Animation;
 import javafx.animation.FadeTransition;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
@@ -21,6 +24,7 @@ import java.util.ResourceBundle;
 
 import static OurPackage.Controller.DictionaryController.ListLog;
 import static OurPackage.Module.DatabaseManager.list;
+import static OurPackage.Start.*;
 
 public class SettingController extends GeneralController {
 
@@ -32,6 +36,9 @@ public class SettingController extends GeneralController {
 
     @FXML
     private Label non;
+
+    @FXML
+    private Label timeUsingApp;
 
     @FXML
     private TextField IPAforWord;
@@ -141,6 +148,13 @@ public class SettingController extends GeneralController {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         super.initialize(url, resourceBundle);
+        timeUsingApp.setText(timeString);
+
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), e -> {
+            updateTimer();
+        }));
+        timeline.setCycleCount(Animation.INDEFINITE);
+        timeline.play();
 
         DictionaryController.ForSearchingDicWord(searchWordToDelete, list, listWord);
 
@@ -283,6 +297,12 @@ public class SettingController extends GeneralController {
                 }
             });
         });
+    }
+
+
+    private void updateTimer() {
+        timeString = String.format("%02d:%02d:%02d", hours, minutes, seconds);
+        timeUsingApp.setText(timeString);
     }
 
     private void resetDatabase() {
