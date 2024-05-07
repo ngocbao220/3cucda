@@ -319,7 +319,7 @@ public class SettingController extends GeneralController {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Xác nhận");
             alert.setHeaderText(null);
-            alert.setContentText("Bạn có chắc chắn muốn đặt lại ứng dụng không?\n  (Mọi thứ đều trở về ban đầu)");
+            alert.setContentText("Bạn có chắc chắn muốn đặt lại ứng dụng không?\n            (mọi thứ đều trở về ban đầu)");
             alert.initOwner(DisplayContent.getScene().getWindow());
             alert.showAndWait().ifPresent(response -> {
                 if (response == ButtonType.OK) {

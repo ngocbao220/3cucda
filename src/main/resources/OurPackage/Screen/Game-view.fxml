@@ -2,7 +2,6 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -90,37 +89,6 @@
 
                 <Pane fx:id="DisplayContent" prefHeight="594.0" prefWidth="863.0">
                     <children>
-
-                        <Pane fx:id="SearchTab" layoutX="8.0" layoutY="14.0" prefHeight="53.0" prefWidth="813.0" styleClass="search" stylesheets="@../SupportScreen/Css/Style.css">
-                            <children>
-                                <ImageView fitHeight="42.0" fitWidth="53.0" layoutX="662.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../SupportScreen/img/Pasted-20240326-001344_preview_rev_1.png" />
-                                    </image>
-                                </ImageView>
-                                <ImageView fitHeight="39.0" fitWidth="42.0" layoutX="718.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../SupportScreen/img/Pasted-20240320-002513_preview_rev_1.png" />
-                                    </image>
-                                </ImageView>
-                                <ImageView fitHeight="62.0" fitWidth="62.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../SupportScreen/img/Pasted-20240328-165855_preview_rev_1.png" />
-                                    </image>
-                                </ImageView>
-                                <Label layoutX="62.0" layoutY="15.0" prefHeight="24.0" prefWidth="90.0" text="EngliNova">
-                                    <font>
-                                        <Font name="Century Gothic Bold Italic" size="14.0" />
-                                    </font>
-                                </Label>
-                                <TextField layoutX="269.0" layoutY="13.0" prefHeight="25.0" prefWidth="332.0" styleClass="search" stylesheets="@../SupportScreen/Css/Style.css" />
-                                <ImageView fitHeight="28.0" fitWidth="33.0" layoutX="241.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../SupportScreen/img/Pngtreemagnifying glass icon_5464846.png" />
-                                    </image>
-                                </ImageView>
-                            </children>
-                        </Pane>
                   <AnchorPane fx:id="PaneTabGame" layoutX="-208.0" layoutY="-4.0" prefHeight="620.0" prefWidth="1050.0" styleClass="PaneTabGame" stylesheets="@../SupportScreen/Css/Game.css">
                      <children>
                         <ImageView fx:id="threeMonkey" fitHeight="141.0" fitWidth="186.0" layoutX="631.0" layoutY="286.0" pickOnBounds="true" preserveRatio="true">
@@ -150,6 +118,31 @@
                               <Image url="@../SupportScreen/img/khi.png" />
                            </image>
                         </ImageView>
+                        <Pane layoutX="252.0" layoutY="94.0" prefHeight="480.0" prefWidth="635.0" style="-fx-background-color: #CAF4FF; -fx-background-radius: 20;" visible="false">
+                           <children>
+                              <Pane layoutX="35.0" layoutY="5.0" prefHeight="76.0" prefWidth="556.0" style="-fx-background-color: #F3CA52; -fx-background-radius: 15;">
+                                 <children>
+                                    <Label alignment="CENTER" layoutX="162.0" layoutY="17.0" prefHeight="42.0" prefWidth="232.0" text="User Guide">
+                                       <font>
+                                          <Font size="27.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="477.0" layoutY="330.0" opacity="0.87" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../SupportScreen/img/Remove-bg.ai_1713608539499.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutY="324.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../SupportScreen/img/Remove-bg.ai_1713607763260.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="113.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </Pane>
+                        <JFXButton layoutX="1060.0" layoutY="60.0" prefHeight="53.0" prefWidth="52.0" styleClass="user-guide" stylesheets="@../SupportScreen/Css/Game.css" />
                      </children>
                   </AnchorPane>
                     </children>
