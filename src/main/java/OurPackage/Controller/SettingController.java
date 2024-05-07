@@ -6,6 +6,8 @@ import javafx.animation.Animation;
 import javafx.animation.FadeTransition;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.KeyCode;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
@@ -188,6 +190,13 @@ public class SettingController extends GeneralController {
             paneAddNewWordToDictionary.setVisible(false);
         });
 
+        textFeedBack.addEventHandler(KeyEvent.KEY_PRESSED, event -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                event.consume();
+                sendFeedBack.fire();
+            }
+        });
+
         doDelete.setOnAction(e -> {
             String wordDelete = listWord.getSelectionModel().getSelectedItem();
             if(wordDelete != null) {
@@ -341,8 +350,8 @@ public class SettingController extends GeneralController {
         });
 
         sendFeedBack.setOnAction(e -> {
-            String feedBack = DictionaryController.getTimeNow() + "-   " + textFeedBack.getText();
-            if(!textFeedBack.getText().isEmpty()) {
+            if (!textFeedBack.getText().isEmpty()) {
+                String feedBack = DictionaryController.getTimeNow() + "   -   " + textFeedBack.getText();
                 try {
                     FileWriter fw = new FileWriter("./Data/feedback.txt", true);
                     BufferedWriter bw = new BufferedWriter(fw);
@@ -360,12 +369,12 @@ public class SettingController extends GeneralController {
                     k.printStackTrace();
                 }
             } else {
-                non.setText("Góp ý trống !");
+                non.setText("Lỗi : Nội dung đóng góp trống !");
+                imgBug.setVisible(true);
+                imgSuccess.setVisible(false);
                 actionOfNon();
             }
         });
-
-
 
     }
 
