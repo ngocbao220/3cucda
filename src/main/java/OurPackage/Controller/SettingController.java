@@ -342,15 +342,26 @@ public class SettingController extends GeneralController {
 
         sendFeedBack.setOnAction(e -> {
             String feedBack = textFeedBack.getText();
-            try {
-                FileWriter fw = new FileWriter("./Data/feedback.txt");
-                BufferedWriter bw = new BufferedWriter(fw);
-                bw.write(feedBack);
-                bw.newLine();
-                bw.close();
-                fw.close();
-            } catch (IOException k) {
-                k.printStackTrace();
+            if (!feedBack.isEmpty()) {
+                try {
+                    FileWriter fw = new FileWriter("./Data/feedback.txt");
+                    BufferedWriter bw = new BufferedWriter(fw);
+                    bw.write(feedBack);
+                    bw.newLine();
+                    non.setText("Gửi góp ý thành công !");
+                    actionOfNon();
+                    imgBug.setVisible(false);
+                    imgSuccess.setVisible(true);
+                    bw.close();
+                    fw.close();
+                } catch (IOException k) {
+                    k.printStackTrace();
+                }
+            } else {
+                non.setText("Góp ý trống !");
+                actionOfNon();
+                imgBug.setVisible(true);
+                imgSuccess.setVisible(false);
             }
         });
 
