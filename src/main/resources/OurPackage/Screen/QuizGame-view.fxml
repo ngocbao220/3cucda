@@ -205,6 +205,26 @@
                   <Image url="@../SupportScreen/img/trangtri2.png" />
                </image>
             </ImageView>
+            <ImageView fx:id="surprise" fitHeight="150.0" fitWidth="141.0" layoutX="738.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../SupportScreen/img/iconbatngo.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="iconsad" fitHeight="150.0" fitWidth="200.0" layoutX="740.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../SupportScreen/img/iconmatbuon.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="iconLove" fitHeight="124.0" fitWidth="135.0" layoutX="741.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../SupportScreen/img/iconmatcute.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="iconHamHuc" fitHeight="124.0" fitWidth="141.0" layoutX="738.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../SupportScreen/img/iconlumnung.png" />
+               </image>
+            </ImageView>
             </children>
         </Pane>
         <Pane layoutX="919.0" layoutY="-34.0" prefHeight="129.0" prefWidth="123.0">
@@ -256,6 +276,11 @@
             <JFXButton fx:id="but_play" layoutX="453.0" layoutY="397.0" opacity="0.0" prefHeight="67.0" prefWidth="130.0" visible="false" />
             <Circle fx:id="bgrcircle" fill="DODGERBLUE" layoutX="521.0" layoutY="431.0" radius="39.0" stroke="#c7c5c5" strokeType="INSIDE" strokeWidth="10.0" style="-fx-fill: null;" styleClass="circle" />
             <Circle fx:id="loading" fill="DODGERBLUE" layoutX="521.0" layoutY="431.0" radius="39.0" stroke="#a761b1" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="10.0" style="-fx-fill: null;" styleClass="load" />
+            <ImageView fitHeight="100.0" fitWidth="103.0" layoutX="611.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../SupportScreen/img/iconmat.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
       <ImageView fitHeight="80.0" fitWidth="123.0" layoutX="25.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">

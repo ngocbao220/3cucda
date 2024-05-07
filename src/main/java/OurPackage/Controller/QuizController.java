@@ -139,7 +139,7 @@ public class QuizController extends GeneralController implements Initializable {
     private Pane p9;
 
     @FXML
-    private ImageView iPlay;
+    private ImageView iPlay, surprise, iconsad, iconLove, iconHamHuc;
 
     @FXML
     private Pane pane_next;
@@ -845,6 +845,18 @@ public class QuizController extends GeneralController implements Initializable {
         double b = 0;
         for (int i = 1; i < 11; i++) {
             if (CorrectAns[i]) b++;
+        }
+        if (b < 4){
+            iconsad.setVisible(true);
+        }
+        if (b >= 4 && b < 8) {
+            iconHamHuc.setVisible(true);
+        }
+        if (b >= 8 && b < 10) {
+            surprise.setVisible(true);
+        }
+        if (b == 10) {
+            iconLove.setVisible(true);
         }
         pointAN = 2 * Math.PI * 65;
         double a = (b) * 10 / 100 * 2 * Math.PI * 65;
