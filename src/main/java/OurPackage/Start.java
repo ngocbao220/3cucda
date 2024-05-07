@@ -11,7 +11,7 @@ public class Start extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader1 = new FXMLLoader(Start.class.getResource("Screen/QuizGame-view.fxml"));
+        FXMLLoader fxmlLoader1 = new FXMLLoader(Start.class.getResource("Screen/Home-view.fxml"));
 
         Scene scene = new Scene(fxmlLoader1.load());
         stage.setResizable(false);

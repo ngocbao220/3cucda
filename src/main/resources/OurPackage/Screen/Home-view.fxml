@@ -150,12 +150,12 @@
                                 </ImageView>
                         <Pane fx:id="move_game_2" layoutX="492.0" layoutY="3.0" prefHeight="201.0" prefWidth="321.0">
                            <children>
-                                      <ImageView fitHeight="211.0" fitWidth="317.0" layoutX="8.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                                      <ImageView fitHeight="174.0" fitWidth="292.0" layoutX="24.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
                                           <image>
-                                              <Image url="@../SupportScreen/img/gameeeeeeee.png" />
+                                              <Image url="@../SupportScreen/img/myquizgame.png" />
                                           </image>
                                       </ImageView>
-                                      <JFXButton fx:id="opengame2" layoutX="8.0" layoutY="13.0" prefHeight="175.0" prefWidth="317.0" styleClass="but_move_game" stylesheets="@../SupportScreen/Css/Style.css" />
+                                      <JFXButton fx:id="opengame2" layoutX="24.0" layoutY="13.0" prefHeight="174.0" prefWidth="286.0" style="-fx-background-radius: 28;" styleClass="but_move_game" stylesheets="@../SupportScreen/Css/Style.css" />
                            </children></Pane>
                         <ImageView fitHeight="351.0" fitWidth="339.0" layoutX="482.0" layoutY="198.0" pickOnBounds="true" preserveRatio="true">
                            <image>
