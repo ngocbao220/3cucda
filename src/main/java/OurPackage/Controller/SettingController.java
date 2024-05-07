@@ -15,6 +15,9 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -336,6 +339,20 @@ public class SettingController extends GeneralController {
                 }
             });
         });
+
+        sendFeedBack.setOnAction(e -> {
+            String feedBack = textFeedBack.getText();
+            try {
+                FileWriter fw = new FileWriter("./Data/feedback.txt");
+                BufferedWriter bw = new BufferedWriter(fw);
+                bw.write(feedBack);
+                bw.newLine();
+                bw.close();
+                fw.close();
+            } catch (IOException k) {
+                k.printStackTrace();
+            }
+        });
     }
 
 
@@ -343,5 +360,6 @@ public class SettingController extends GeneralController {
         timeString = String.format("%02d:%02d:%02d", hours, minutes, seconds);
         timeUsingApp.setText(timeString);
     }
+
 
 }
