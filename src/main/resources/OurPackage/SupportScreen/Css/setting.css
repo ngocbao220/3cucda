@@ -4,7 +4,7 @@
 }
 
 .slider .track {
-    -fx-background-color: lightgray; /* Màu của phần đậm */
+    -fx-background-color: lightgray;
 }
 
 .slider .thumb {
