@@ -4,15 +4,14 @@
 1. [Tác giả](#author)
 2. [Giới thiệu](#introduction)
 3. [Tính năng nổi bật](#features)
-4. [UML Diagram](#uml)
-5. [Phát triển tương lai](#future)
+4. [Phát triển tương lai](#future)
 
 
 # Tác giả <a name="author"></a>
 
 Group BACUCDA
-- Lê Hoàng Vũ 22021176
-- Vi Văn Quân 22021149
+- Phan Trần Mạnh Cường 23020339
+- Trịnh Tuấn Ngọc Bảo 23020333
 - Nguyễn Thế Khôi 23020388
 
 # Giới thiệu <a name="introduction"></a>
@@ -35,10 +34,6 @@ Group BACUCDA
 * Trong quá trình sử dụng, những thay đổi của người dùng liên quan tới phần cài đặt sẽ được lưu lại cho lần sử dụng sau.
 * Người sử dụng có thể tra cứu từ vựng trực tiếp từ dữ liệu của ứng dụng hoặc có thể sử dụng Google API để dịch từ hoặc câu như ứng dụng Google Translate.
 * LearnLingo còn sử dụng API của Voicerss để phát âm 1 từ tiếng anh: https://www.voicerss.org/
-
-# UML Diagram <a name="uml"></a>
-
-
 
 # Phát triển tương lai <a name="future"></a>
 
