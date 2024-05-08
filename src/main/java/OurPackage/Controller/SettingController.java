@@ -396,8 +396,7 @@ public class SettingController extends GeneralController {
 
     }
 
-
-
+    // Luu nut keo của am luong game va volume cua no
     public void volumeValue(Slider slider, String Type) {
         prefs = Preferences.userNodeForPackage(SettingController.class);
         double savedValue = prefs.getDouble(Type, 5);
