@@ -168,8 +168,11 @@ public class SettingController extends GeneralController {
         but_set.setStyle("-fx-background-color: #333333;");
 
         but_add.setOnAction(e -> {
+            if(paneDeleteWord.isVisible() == true) {
+                paneDeleteWord.setVisible(false);
+                countDelete++;
+            }
             paneAddNewWordToDictionary.setVisible(true);
-            paneDeleteWord.setVisible(false);
         });
 
         closePaneAddNewWord.setOnAction(e -> {
@@ -181,13 +184,13 @@ public class SettingController extends GeneralController {
         });
 
         but_delete.setOnAction(e -> {
+            paneAddNewWordToDictionary.setVisible(false);
             paneDeleteWord.setVisible(countDelete % 2 == 0);
             if(countDelete % 2 != 0) {
                 searchWordToDelete.setText("");
                 DictionaryController.ForSearchingDicWord(searchWordToDelete, list, listWord);
             }
             countDelete++;
-            paneAddNewWordToDictionary.setVisible(false);
         });
 
         textFeedBack.addEventHandler(KeyEvent.KEY_PRESSED, event -> {

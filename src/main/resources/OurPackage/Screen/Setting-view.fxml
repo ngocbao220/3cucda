@@ -99,30 +99,30 @@
                 </VBox>
 
 
-                <Pane fx:id="DisplayContent" prefHeight="594.0" prefWidth="863.0" style="-fx-background-color: #FFDD78;">
+                <Pane fx:id="DisplayContent" prefHeight="594.0" prefWidth="863.0" style="-fx-background-color: #E8DFCA;">
                     <children>
                   <Slider layoutX="599.0" layoutY="223.0" stylesheets="@../SupportScreen/Css/setting.css" />
-                  <Label alignment="CENTER" layoutX="473.0" layoutY="203.0" prefHeight="53.0" prefWidth="108.0" styleClass="background" stylesheets="@../SupportScreen/Css/setting.css" text="Âm thanh nền">
+                  <Label alignment="CENTER" layoutX="473.0" layoutY="203.0" prefHeight="53.0" prefWidth="108.0" style="-fx-background-color: #CCD3CA;" styleClass="background" stylesheets="@../SupportScreen/Css/setting.css" text="Âm thanh nền">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Label>
-                        <Label alignment="CENTER" layoutX="545.0" layoutY="80.0" prefHeight="63.0" prefWidth="197.0" style="-fx-background-color: #94FFD8; -fx-background-radius: 25; -fx-border-color: black; -fx-border-radius: 25;" text="Cài đặt khác">
+                        <Label alignment="CENTER" layoutX="545.0" layoutY="80.0" prefHeight="63.0" prefWidth="197.0" style="-fx-background-color: #F7DCB9; -fx-background-radius: 25; -fx-border-color: black; -fx-border-radius: 25;" text="Cài đặt khác">
                             <font>
                                 <Font size="21.0" />
                             </font>
                         </Label>
-                        <JFXButton fx:id="resetApp" layoutX="191.0" layoutY="538.0" prefHeight="53.0" prefWidth="216.0" style="-fx-background-color: #65B741;" styleClass="background" stylesheets="@../SupportScreen/Css/setting.css" text="Đặt lại ứng dụng">
+                        <JFXButton fx:id="resetApp" layoutX="195.0" layoutY="538.0" prefHeight="53.0" prefWidth="216.0" style="-fx-background-color: #D8AE7E;" styleClass="background" stylesheets="@../SupportScreen/Css/setting.css" text="Đặt lại ứng dụng">
                             <font>
                                 <Font size="21.0" />
                             </font>
                         </JFXButton>
-                        <JFXButton fx:id="clearBookMark" layoutX="192.0" layoutY="444.0" prefHeight="50.0" prefWidth="216.0" style="-fx-background-color: #65B741;" styleClass="background" stylesheets="@../SupportScreen/Css/setting.css" text="Đặt lại danh sách từ yêu thích">
+                        <JFXButton fx:id="clearBookMark" layoutX="194.0" layoutY="444.0" prefHeight="50.0" prefWidth="216.0" style="-fx-background-color: #D8AE7E;" styleClass="background" stylesheets="@../SupportScreen/Css/setting.css" text="Đặt lại danh sách từ yêu thích">
                             <font>
                                 <Font size="15.0" />
                             </font>
                         </JFXButton>
-                        <JFXButton fx:id="resetActivitiesHistoryApp" layoutX="193.0" layoutY="360.0" prefHeight="50.0" prefWidth="216.0" style="-fx-background-color: #65B741;" styleClass="background" stylesheets="@../SupportScreen/Css/setting.css" text="Đặt lại lịch sử hoạt động">
+                        <JFXButton fx:id="resetActivitiesHistoryApp" layoutX="193.0" layoutY="360.0" prefHeight="50.0" prefWidth="216.0" style="-fx-background-color: #D8AE7E;" styleClass="background" stylesheets="@../SupportScreen/Css/setting.css" text="Đặt lại lịch sử hoạt động">
                             <font>
                                 <Font size="15.0" />
                             </font>
@@ -143,23 +143,23 @@
                                 <Font size="17.0" />
                             </font>
                         </Label>
-                        <Label alignment="CENTER" layoutX="94.0" layoutY="77.0" prefHeight="63.0" prefWidth="278.0" style="-fx-background-color: #94FFD8; -fx-background-radius: 25; -fx-border-color: black; -fx-border-radius: 25;" text="Quản lí dữ liệu ">
+                        <Label alignment="CENTER" layoutX="94.0" layoutY="77.0" prefHeight="63.0" prefWidth="278.0" style="-fx-background-color: #F7DCB9; -fx-background-radius: 25; -fx-border-color: black; -fx-border-radius: 25;" text="Quản lí dữ liệu ">
                             <font>
                                 <Font size="21.0" />
                             </font>
                         </Label>
                         <Separator layoutX="423.0" layoutY="88.0" orientation="VERTICAL" prefHeight="503.0" prefWidth="17.0" />
-                        <Label alignment="CENTER" layoutX="12.0" layoutY="188.0" prefHeight="53.0" prefWidth="138.0" styleClass="background" stylesheets="@../SupportScreen/Css/setting.css" text="Thay đổi dữ liệu" textAlignment="CENTER">
+                        <Label alignment="CENTER" layoutX="12.0" layoutY="188.0" prefHeight="53.0" prefWidth="138.0" style="-fx-background-color: #E8DFCA;" styleClass="background" stylesheets="@../SupportScreen/Css/setting.css" text="Thay đổi dữ liệu" textAlignment="CENTER" textFill="#020100">
                             <font>
                                 <Font name="Arial" size="18.0" />
                             </font>
                         </Label>
-                        <JFXButton fx:id="but_add" layoutX="193.0" layoutY="158.0" prefHeight="42.0" prefWidth="197.0" style="-fx-background-color: #65B741;" styleClass="background" stylesheets="@../SupportScreen/Css/setting.css" text="Thêm từ mới vào Từ Điển">
+                        <JFXButton fx:id="but_add" layoutX="193.0" layoutY="158.0" prefHeight="42.0" prefWidth="197.0" style="-fx-background-color: #D8AE7E;" styleClass="background" stylesheets="@../SupportScreen/Css/setting.css" text="Thêm từ mới vào Từ Điển">
                             <font>
                                 <Font size="15.0" />
                             </font>
                         </JFXButton>
-                        <JFXButton fx:id="but_delete" layoutX="192.0" layoutY="241.0" prefHeight="42.0" prefWidth="197.0" style="-fx-background-color: #65B741;" styleClass="background" stylesheets="@../SupportScreen/Css/setting.css" text="Xóa từ khỏi Từ Điển">
+                        <JFXButton fx:id="but_delete" layoutX="194.0" layoutY="241.0" prefHeight="42.0" prefWidth="197.0" style="-fx-background-color: #D8AE7E;" styleClass="background" stylesheets="@../SupportScreen/Css/setting.css" text="Xóa từ khỏi Từ Điển">
                             <font>
                                 <Font size="15.0" />
                             </font>
@@ -230,7 +230,7 @@
                         <JFXButton fx:id="closePaneAddNewWord" layoutX="365.0" layoutY="1.0" style="-fx-background-color: #D2D180;" text="X" />
                             </children>
                         </Pane>
-                        <Label alignment="CENTER" layoutX="12.0" layoutY="434.0" prefHeight="71.0" prefWidth="153.0" styleClass="background" stylesheets="@../SupportScreen/Css/setting.css" text="Dữ liệu mặc định" textAlignment="CENTER" wrapText="true">
+                        <Label alignment="CENTER" layoutX="12.0" layoutY="434.0" prefHeight="71.0" prefWidth="153.0" style="-fx-background-color: #E8DFCA;" styleClass="background" stylesheets="@../SupportScreen/Css/setting.css" text="Dữ liệu mặc định" textAlignment="CENTER" wrapText="true">
                             <font>
                                 <Font size="18.0" />
                             </font>
