@@ -50,13 +50,16 @@ public class GameController extends GeneralController {
     private JFXButton but_set;
 
     @FXML
-    private JFXButton but_to_game1;
+    private JFXButton but_to_game1, but_ok;
 
     @FXML
     private JFXButton but_to_game2;
 
     @FXML
     private JFXButton but_trans;
+
+    @FXML
+    private JFXButton but_how;
 
     @FXML
     private ImageView catcute;
@@ -66,6 +69,9 @@ public class GameController extends GeneralController {
 
     @FXML
     private Pane menu_inner_pane;
+
+    @FXML
+    private Pane howtoplay;
 
     @FXML
     private HBox root;
@@ -79,7 +85,7 @@ public class GameController extends GeneralController {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         but_game.setStyle("-fx-background-color: #333333;");
-
+        HowtoPlay();
         PlayMusic("tiecbaibien.mp4", -1);
         Play();
 
@@ -100,9 +106,6 @@ public class GameController extends GeneralController {
             but_to_game1.fire();
         });
 
-        threeMonkey.setOnMouseClicked(e -> {
-            but_to_game1.fire();
-        });
         Exit.setOnAction(e -> {
             StopMusic();
             but_home.fire();
@@ -128,5 +131,14 @@ public class GameController extends GeneralController {
         transition.setAutoReverse(true);
 
         transition.play();
+    }
+
+    public void HowtoPlay () {
+        but_how.setOnAction(event -> {
+            howtoplay.setVisible(true);
+        });
+        but_ok.setOnAction(event -> {
+            howtoplay.setVisible(false);
+        });
     }
 }
