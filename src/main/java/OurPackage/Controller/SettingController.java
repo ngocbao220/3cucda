@@ -227,7 +227,6 @@ public class SettingController extends GeneralController {
                 non.setText("Lỗi : Vui lòng chọn từ muốn xóa !");
                 actionOfNon();
             }
-
         });
 
         resetActivitiesHistoryApp.setOnAction(e -> {
