@@ -2,23 +2,19 @@ package OurPackage.Controller;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.animation.*;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ProgressIndicator;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
-import javafx.scene.paint.LinearGradient;
 import javafx.scene.shape.Circle;
 import javafx.util.Duration;
 
-import java.awt.event.MouseEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import static OurPackage.Module.SomethingForGame.*;
 
 public class QuizController extends GeneralController implements Initializable {
     @FXML
@@ -206,7 +202,10 @@ public class QuizController extends GeneralController implements Initializable {
     int index = 0;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        but_home.setOnAction(e -> LoadScene( "Game-view.fxml", PaneGame2));
+        but_home.setOnAction(e -> {
+            LoadScene( "Game-view.fxml", PaneGame2);
+            StopMusic();
+        });
         but_play.setOnAction(event -> {
             rule.setVisible(false);
         });
@@ -241,6 +240,7 @@ public class QuizController extends GeneralController implements Initializable {
         LoadQuestion();
         Submit();
     }
+
     public void LoadQuestion() {
         if (counter == 1) {
             num_ques.setText("Questione 1 of 10");
@@ -435,6 +435,7 @@ public class QuizController extends GeneralController implements Initializable {
         }
 
     }
+
     boolean checkAns(String ans) {
         if (counter == 1) {
             AnsQuestion[1] = 'a';

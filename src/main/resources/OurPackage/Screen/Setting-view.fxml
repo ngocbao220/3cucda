@@ -14,6 +14,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <Pane fx:id="Back" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OurPackage.Controller.SettingController">
     <children>
@@ -101,10 +102,10 @@
 
                 <Pane fx:id="DisplayContent" prefHeight="594.0" prefWidth="863.0" style="-fx-background-color: #E8DFCA;">
                     <children>
-                  <Slider layoutX="599.0" layoutY="223.0" stylesheets="@../SupportScreen/Css/setting.css" />
-                  <Label alignment="CENTER" layoutX="473.0" layoutY="203.0" prefHeight="53.0" prefWidth="108.0" style="-fx-background-color: #CCD3CA;" styleClass="background" stylesheets="@../SupportScreen/Css/setting.css" text="Âm thanh nền">
+                  <Slider fx:id="slider_nen" layoutX="602.0" layoutY="196.0" stylesheets="@../SupportScreen/Css/setting.css" />
+                  <Label alignment="CENTER" layoutX="473.0" layoutY="203.0" prefHeight="53.0" prefWidth="108.0" style="-fx-background-color: #E8DFCA;" styleClass="background" stylesheets="@../SupportScreen/Css/setting.css" text="Âm thanh" textFill="#020100">
                      <font>
-                        <Font size="15.0" />
+                        <Font name="Arial" size="18.0" />
                      </font>
                   </Label>
                         <Label alignment="CENTER" layoutX="545.0" layoutY="80.0" prefHeight="63.0" prefWidth="197.0" style="-fx-background-color: #F7DCB9; -fx-background-radius: 25; -fx-border-color: black; -fx-border-radius: 25;" text="Cài đặt khác">
@@ -230,9 +231,9 @@
                         <JFXButton fx:id="closePaneAddNewWord" layoutX="365.0" layoutY="1.0" style="-fx-background-color: #D2D180;" text="X" />
                             </children>
                         </Pane>
-                        <Label alignment="CENTER" layoutX="12.0" layoutY="434.0" prefHeight="71.0" prefWidth="153.0" style="-fx-background-color: #E8DFCA;" styleClass="background" stylesheets="@../SupportScreen/Css/setting.css" text="Dữ liệu mặc định" textAlignment="CENTER" wrapText="true">
+                        <Label alignment="CENTER" layoutX="12.0" layoutY="434.0" prefHeight="71.0" prefWidth="153.0" style="-fx-background-color: #E8DFCA;" styleClass="background" stylesheets="@../SupportScreen/Css/setting.css" text="Dữ liệu mặc định" textAlignment="CENTER" textFill="#020100" wrapText="true">
                             <font>
-                                <Font size="18.0" />
+                                <Font name="Arial" size="18.0" />
                             </font>
                         </Label>
                         <Pane fx:id="paneNon" layoutX="2.0" opacity="0.0" prefHeight="71.0" prefWidth="799.0">
@@ -254,6 +255,9 @@
                         </ImageView>
                             </children>
                         </Pane>
+                  <Slider fx:id="slider_game" layoutX="604.0" layoutY="255.0" stylesheets="@../SupportScreen/Css/setting.css" />
+                  <Text fill="#020100" layoutX="636.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Âm thanh nền" />
+                  <Text fill="#020100" fontSmoothingType="LCD" layoutX="632.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Âm thanh game" />
                     </children>
                 </Pane>
             </children>

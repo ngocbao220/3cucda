@@ -92,6 +92,8 @@ public class GameController extends GeneralController {
         but_to_game2.setOnAction(e -> {
             StopMusic();
             LoadScene("QuizGame-view.fxml", Back);
+            PlayMusic("QizzGame - Senbon Zakura Piano.mp3", -1);
+            Play();
         });
 
         iconMonkey.setOnMouseClicked(e -> {

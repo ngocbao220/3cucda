@@ -15,6 +15,7 @@ module project_app {
     requires javafx.media;
     requires java.sql;
     requires java.desktop;
+    requires java.prefs;
 
     exports OurPackage;
     exports OurPackage.Controller;

@@ -23,6 +23,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import static OurPackage.Controller.DictionaryController.*;
+import static OurPackage.Module.SomethingForGame.Play;
+import static OurPackage.Module.SomethingForGame.PlayMusic;
 
 
 public class HomeController extends GeneralController {
@@ -332,6 +334,8 @@ public class HomeController extends GeneralController {
             but_set.fire();
         });
         opengame2.setOnAction(e -> {
+            PlayMusic("QizzGame - Senbon Zakura Piano.mp3", 1);
+            Play();
             LoadScene("QuizGame-view.fxml", Back);
         });
     }

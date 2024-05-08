@@ -6,6 +6,8 @@ import javafx.animation.Animation;
 import javafx.animation.FadeTransition;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.geometry.Insets;
+import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.KeyCode;
 import javafx.fxml.FXML;
@@ -22,6 +24,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.prefs.Preferences;
 
 import static OurPackage.Controller.DictionaryController.ListLog;
 import static OurPackage.Module.DatabaseManager.list;
@@ -139,6 +142,14 @@ public class SettingController extends GeneralController {
 
     @FXML
     private TextField typeWord;
+
+    @FXML
+    private Slider slider_nen = new Slider(0, 100, 1);
+
+    @FXML
+    private Slider slider_game = new Slider(0, 100, 1);
+
+    public static double volumeGame;
 
     int countDelete = 0;
 
@@ -375,6 +386,25 @@ public class SettingController extends GeneralController {
             }
         });
 
+        volumeValue(slider_game, "game");
+
+        volumeValue(slider_nen, "nen");
+
+    }
+
+    private Preferences prefs;
+
+    public void volumeValue(Slider slider, String Type) {
+        prefs = Preferences.userNodeForPackage(SettingController.class);
+        double savedValue = prefs.getDouble(Type, 50);
+        slider.setValue(savedValue);
+        // Cập nhật Preferences mỗi khi giá trị Slider thay đổi
+        slider.valueProperty().addListener((observable, oldValue, newValue) -> {
+            prefs.putDouble(Type, newValue.doubleValue());
+            slider.setValue(newValue.doubleValue());
+            volumeGame = slider_game.getValue();
+        });
+        volumeGame = slider_game.getValue();
     }
 
     private void updateTimer() {

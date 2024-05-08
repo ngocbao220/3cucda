@@ -326,7 +326,6 @@ public class MonkeyGameController extends GeneralController {
             // Chon Dap an dung
             ButtonLeft.setOnAction(e -> {
                 point++;
-
                 PlayMusic("tiengDapandung.mp3",1);
                 Play();
 
