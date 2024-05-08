@@ -19,6 +19,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 
+import javax.sound.sampled.FloatControl;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -144,12 +145,12 @@ public class SettingController extends GeneralController {
     private TextField typeWord;
 
     @FXML
-    private Slider slider_nen = new Slider(0, 100, 1);
+    private Slider slider_nen;
 
     @FXML
-    private Slider slider_game = new Slider(0, 100, 1);
+    private Slider slider_game;
 
-    public static double volumeGame;
+
 
     int countDelete = 0;
 
@@ -392,11 +393,12 @@ public class SettingController extends GeneralController {
 
     }
 
+
     private Preferences prefs;
 
     public void volumeValue(Slider slider, String Type) {
         prefs = Preferences.userNodeForPackage(SettingController.class);
-        double savedValue = prefs.getDouble(Type, 50);
+        double savedValue = prefs.getDouble(Type, 5);
         slider.setValue(savedValue);
         // Cập nhật Preferences mỗi khi giá trị Slider thay đổi
         slider.valueProperty().addListener((observable, oldValue, newValue) -> {

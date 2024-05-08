@@ -131,6 +131,8 @@ public class GeneralController implements Initializable{
                                                                     .append(DATABASE_PATH)
                                                                     .append("activitiesHistoryApp.txt").toString());
 
+    public static double volumeGame = 50;
+
     public void Load(String s, Pane container) throws IOException {
         Pane parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(s)));
         stage = (Stage) container.getScene().getWindow();

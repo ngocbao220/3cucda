@@ -44,8 +44,8 @@ public class SomethingForGame {
             Media media = new Media(soundPath);
             mediaPlayer = new MediaPlayer(media);
             mediaPlayer.setCycleCount(NumofReplay);
-            mediaPlayer.setVolume(SettingController.volumeGame);
-            System.out.println(SettingController.volumeGame);
+            mediaPlayer.setVolume((int) SettingController.volumeGame / 1000.0);
+            System.out.println((int) SettingController.volumeGame / 1000.0);
         } else {
             System.out.println("Không thể tìm thấy file âm thanh.");
         }
