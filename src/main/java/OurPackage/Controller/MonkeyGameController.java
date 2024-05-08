@@ -311,10 +311,11 @@ public class MonkeyGameController extends GeneralController {
                 }
                 PlayMusic("tiengDapansai.mp3",1);
                 Play();
-                System.out.println("13");
+
                 if (heart == 0) {
                     PlayMusic("tiengThuaGame.mp3",1);
                     Play();
+                    UpdatePointAndHeart();
                     timeline.stop();
                     PaneWhenLoss.setVisible(true);
                 }
@@ -369,20 +370,19 @@ public class MonkeyGameController extends GeneralController {
                     PlayMusic("tiengDapansai.mp3",1);
                     Play();
 
+                    //Hien dap an dung cho nguoi choi
+                    timeline.pause();
+                    LableShowCorrectAnswer.setText(map.get(CorrectAnswer));
+                    PaneWhenWrongAnswer.setVisible(true);
+                    comboTime(map);
+                    timeline.pause();
+
                     if (heart == 0) {
                         PlayMusic("tiengThuaGame.mp3",1);
                         Play();
                         Heart.setText("0");
                         PaneWhenLoss.setVisible(true);
                         timeline.stop();
-                    }
-                    else {
-                        //Hien dap an dung cho nguoi choi
-                        timeline.pause();
-                        LableShowCorrectAnswer.setText(map.get(CorrectAnswer));
-                        PaneWhenWrongAnswer.setVisible(true);
-                        comboTime(map);
-                        timeline.pause();
                     }
                 }
                 if(k <= 8) {
@@ -417,25 +417,25 @@ public class MonkeyGameController extends GeneralController {
                 if(heart > 0) {
                     heart--;
 
-                    PlayMusic("tiengDapansai.mp3",1);
+                    PlayMusic("tiengDapansai.mp3", 1);
                     Play();
 
+                    //hien dap an dung cho nguoi choi
+                    timeline.pause();
+                    LableShowCorrectAnswer.setText(map.get(CorrectAnswer));
+                    PaneWhenWrongAnswer.setVisible(true);
+                    comboTime(map);
+                    timeline.pause();
+
                     if (heart == 0) {
-                        PlayMusic("tiengThuaGame.mp3",1);
+                        PlayMusic("tiengThuaGame.mp3", 1);
                         Play();
                         Heart.setText("0");
                         PaneWhenLoss.setVisible(true);
                         timeline.stop();
                     }
-                    //hien dap an dung cho nguoi choi
-                    else {
-                        timeline.pause();
-                        LableShowCorrectAnswer.setText(map.get(CorrectAnswer));
-                        PaneWhenWrongAnswer.setVisible(true);
-                        comboTime(map);
-                        timeline.pause();
-                    }
                 }
+
                 if(k <= 8) {
                     k += 2;
                     K = k;
@@ -511,7 +511,9 @@ public class MonkeyGameController extends GeneralController {
     void Continue(ActionEvent event) {
         PaneWhenPauseGame.setVisible(false);
         PaneWhenWrongAnswer.setVisible(false);
-        timeline.play();
+        if (heart > 0) {
+            timeline.play();
+        }
     }
 
 
