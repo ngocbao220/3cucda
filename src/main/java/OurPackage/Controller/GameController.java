@@ -18,6 +18,7 @@ public class GameController extends GeneralController {
     @FXML
     private Pane Back;
 
+
     @FXML
     private Pane DisplayContent;
 

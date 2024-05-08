@@ -264,7 +264,13 @@
                               <Font name="Segoe UI Italic" size="20.0" />
                            </font>
                         </Label>
-                        <ListView fx:id="listNon" layoutX="408.0" prefHeight="223.0" prefWidth="286.0" visible="false" />
+                        <ImageView fx:id="bgr_Listshownon" fitHeight="274.0" fitWidth="321.0" layoutX="412.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@../SupportScreen/img/thongbaooo.png" />
+                           </image>
+                        </ImageView>
+                        <ListView fx:id="listNon" layoutX="433.0" layoutY="32.0" prefHeight="201.0" prefWidth="292.0" style="-fx-background-color: #FFF8F3;" visible="false" />
+                        <JFXButton fx:id="but1" layoutX="657.0" opacity="0.0" prefHeight="22.0" prefWidth="59.0" visible="false" />
                             </children>
 
                         </AnchorPane>

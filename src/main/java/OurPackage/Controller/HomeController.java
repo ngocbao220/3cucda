@@ -31,6 +31,9 @@ public class HomeController extends GeneralController {
     private Pane Back;
 
     @FXML
+    private ImageView bgr_Listshownon;
+
+    @FXML
     private Pane DisplayContent;
 
     @FXML
@@ -50,6 +53,9 @@ public class HomeController extends GeneralController {
 
     @FXML
     private JFXButton but_diction;
+
+    @FXML
+    private JFXButton but1;
 
     @FXML
     private JFXButton but_game;
@@ -286,6 +292,16 @@ public class HomeController extends GeneralController {
             listNon.setVisible(count % 2 == 0);
             count++;
             imageNewNon.setVisible(false);
+            bgr_Listshownon.setVisible(count % 2 == 1);
+            but1.setVisible(count % 2 == 1);
+        });
+
+        but1.setOnAction(e -> {
+            listNon.setVisible(false);
+            count++;
+            imageNewNon.setVisible(false);
+            bgr_Listshownon.setVisible(false);
+            but1.setVisible(false);
         });
 
         listMarkedWord.setCellFactory(param -> new ListCell<String>() {
