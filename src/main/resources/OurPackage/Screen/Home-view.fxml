@@ -87,12 +87,20 @@
                           <children>
                               <Pane fx:id="inner_pane" layoutX="14.0" layoutY="24.0" prefHeight="53.0" prefWidth="186.0" styleClass="inner_pane" stylesheets="@../SupportScreen/Css/Style.css">
                                   <children>
-                                      <Pane fx:id="menu_inner_pane" layoutX="145.0" prefHeight="53.0" prefWidth="27.0" styleClass="menu_inner_pane" stylesheets="@../SupportScreen/Css/Style.css" />
-                                      <ImageView fx:id="catcute" fitHeight="42.0" fitWidth="42.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                      <ImageView fx:id="catcute" fitHeight="70.0" fitWidth="77.0" layoutX="-3.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true">
                                           <image>
-                                              <Image url="@../SupportScreen/img/Pasted-20240325-234901_preview_rev_1.png" />
+                                              <Image url="@../SupportScreen/img/iconmat.png" />
                                           </image>
                                       </ImageView>
+                              <Pane fx:id="menu_inner_pane" layoutX="129.0" prefHeight="53.0" prefWidth="43.0" style="-fx-background-radius: 10px;" stylesheets="@../SupportScreen/Css/Style.css">
+                                 <children>
+                                    <ImageView fitHeight="28.0" fitWidth="32.0" layoutX="8.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../SupportScreen/img/iconMenu.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </Pane>
                                   </children>
                               </Pane>
                               <JFXButton fx:id="but_home" alignment="CENTER" layoutX="12.0" layoutY="98.0" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@../SupportScreen/Css/Style.css" text="Home" textFill="WHITE">
@@ -169,7 +177,7 @@
               <Pane fx:id="DisplayContent" prefHeight="594.0" prefWidth="863.0">
                   <children>
       
-                      <Pane fx:id="SearchTab" layoutX="8.0" layoutY="14.0" prefHeight="53.0" prefWidth="813.0" styleClass="search" stylesheets="@../SupportScreen/Css/Style.css">
+                      <Pane fx:id="SearchTab" layoutX="14.0" layoutY="14.0" prefHeight="53.0" prefWidth="813.0" styleClass="search" stylesheets="@../SupportScreen/Css/Style.css">
                           <children>
                               <ImageView fitHeight="33.0" fitWidth="39.0" layoutX="686.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
                                   <image>
@@ -206,7 +214,7 @@
                           </children>
                       </Pane>
 
-                        <AnchorPane fx:id="Home" layoutX="4.0" layoutY="67.0" prefHeight="539.0" prefWidth="820.0">
+                        <AnchorPane fx:id="Home" layoutX="7.0" layoutY="67.0" prefHeight="539.0" prefWidth="820.0">
                             <children>
                                 <ImageView fitHeight="252.0" fitWidth="452.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
