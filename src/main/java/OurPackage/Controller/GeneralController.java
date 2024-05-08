@@ -18,6 +18,7 @@ import javafx.util.Duration;
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
+import java.util.prefs.Preferences;
 
 public class GeneralController implements Initializable{
 
@@ -131,7 +132,8 @@ public class GeneralController implements Initializable{
                                                                     .append(DATABASE_PATH)
                                                                     .append("activitiesHistoryApp.txt").toString());
 
-    public static double volumeGame = 50;
+    protected static Preferences prefs = Preferences.userNodeForPackage(SettingController.class);
+    public static double volumeGame = prefs.getDouble("game", 5);
 
     public void Load(String s, Pane container) throws IOException {
         Pane parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(s)));

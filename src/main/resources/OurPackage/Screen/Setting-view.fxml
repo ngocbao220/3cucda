@@ -102,7 +102,7 @@
 
                 <Pane fx:id="DisplayContent" prefHeight="594.0" prefWidth="863.0" style="-fx-background-color: #E8DFCA;">
                     <children>
-                  <Slider fx:id="slider_nen" layoutX="604.0" layoutY="223.0" stylesheets="@../SupportScreen/Css/setting.css" />
+                  <Slider fx:id="slider_game" layoutX="604.0" layoutY="223.0" stylesheets="@../SupportScreen/Css/setting.css" />
                   <Label alignment="CENTER" layoutX="473.0" layoutY="203.0" prefHeight="53.0" prefWidth="108.0" style="-fx-background-color: #E8DFCA;" styleClass="background" stylesheets="@../SupportScreen/Css/setting.css" text="Âm thanh" textFill="#020100">
                      <font>
                         <Font name="Arial" size="18.0" />
@@ -176,6 +176,36 @@
                                 <JFXButton fx:id="doDelete" layoutX="253.0" layoutY="8.0" prefHeight="25.0" prefWidth="25.0" styleClass="buttonRemoveALl" stylesheets="@../SupportScreen/Css/Game1.css" />
                             </children>
                         </Pane>
+                        <Label alignment="CENTER" layoutX="12.0" layoutY="434.0" prefHeight="71.0" prefWidth="153.0" style="-fx-background-color: #E8DFCA;" styleClass="background" stylesheets="@../SupportScreen/Css/setting.css" text="Dữ liệu mặc định" textAlignment="CENTER" textFill="#020100" wrapText="true">
+                            <font>
+                                <Font name="Arial" size="18.0" />
+                            </font>
+                        </Label>
+                        <Pane fx:id="paneNon" layoutX="2.0" opacity="0.0" prefHeight="71.0" prefWidth="799.0">
+                            <children>
+                                <Label fx:id="non" alignment="CENTER" layoutX="185.0" prefHeight="71.0" prefWidth="468.0" text="Label">
+                                    <font>
+                                        <Font size="21.0" />
+                                    </font>
+                                </Label>
+                        <ImageView fx:id="imgBug" fitHeight="111.0" fitWidth="91.0" layoutX="39.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../SupportScreen/img/imgBug.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="imgSuccess" fitHeight="111.0" fitWidth="91.0" layoutX="702.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../SupportScreen/img/imgSuccess.png" />
+                           </image>
+                        </ImageView>
+                            </children>
+                        </Pane>
+                  <Text fill="#020100" layoutX="636.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Âm thanh game" />
+                  <ImageView fitHeight="85.0" fitWidth="58.0" layoutX="97.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../SupportScreen/img/imgChangeData.png" />
+                     </image>
+                  </ImageView>
                         <Pane fx:id="paneAddNewWordToDictionary" layoutX="440.0" layoutY="75.0" prefHeight="412.0" prefWidth="389.0" style="-fx-background-color: #EBC49F; -fx-background-radius: 10;" visible="false">
                             <children>
                                 <Label layoutX="23.0" layoutY="82.0" prefHeight="38.0" prefWidth="30.0" text="Từ:">
@@ -231,36 +261,6 @@
                         <JFXButton fx:id="closePaneAddNewWord" layoutX="365.0" layoutY="1.0" style="-fx-background-color: #D2D180;" text="X" />
                             </children>
                         </Pane>
-                        <Label alignment="CENTER" layoutX="12.0" layoutY="434.0" prefHeight="71.0" prefWidth="153.0" style="-fx-background-color: #E8DFCA;" styleClass="background" stylesheets="@../SupportScreen/Css/setting.css" text="Dữ liệu mặc định" textAlignment="CENTER" textFill="#020100" wrapText="true">
-                            <font>
-                                <Font name="Arial" size="18.0" />
-                            </font>
-                        </Label>
-                        <Pane fx:id="paneNon" layoutX="2.0" opacity="0.0" prefHeight="71.0" prefWidth="799.0">
-                            <children>
-                                <Label fx:id="non" alignment="CENTER" layoutX="185.0" prefHeight="71.0" prefWidth="468.0" text="Label">
-                                    <font>
-                                        <Font size="21.0" />
-                                    </font>
-                                </Label>
-                        <ImageView fx:id="imgBug" fitHeight="111.0" fitWidth="91.0" layoutX="39.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../SupportScreen/img/imgBug.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="imgSuccess" fitHeight="111.0" fitWidth="91.0" layoutX="702.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../SupportScreen/img/imgSuccess.png" />
-                           </image>
-                        </ImageView>
-                            </children>
-                        </Pane>
-                  <Text fill="#020100" layoutX="636.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Âm thanh nền" />
-                  <ImageView fitHeight="85.0" fitWidth="58.0" layoutX="97.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../SupportScreen/img/imgChangeData.png" />
-                     </image>
-                  </ImageView>
                     </children>
                 </Pane>
             </children>

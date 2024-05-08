@@ -334,7 +334,7 @@ public class HomeController extends GeneralController {
             but_set.fire();
         });
         opengame2.setOnAction(e -> {
-            PlayMusic("QizzGame - Senbon Zakura Piano.mp3", 1);
+            PlayMusic("QizzGame - Senbon Zakura Piano.mp3", -1);
             Play();
             LoadScene("QuizGame-view.fxml", Back);
         });

@@ -1,5 +1,6 @@
 package OurPackage.Module;
 
+import OurPackage.Controller.GeneralController;
 import OurPackage.Controller.SettingController;
 import com.jfoenix.controls.JFXListView;
 import javafx.collections.FXCollections;
@@ -44,10 +45,10 @@ public class SomethingForGame {
             Media media = new Media(soundPath);
             mediaPlayer = new MediaPlayer(media);
             mediaPlayer.setCycleCount(NumofReplay);
-            //mediaPlayer.setVolume((int) SettingController.volumeGame / 1000.0);
+            mediaPlayer.setVolume(GeneralController.volumeGame / 700.0);
             //System.out.println((int) SettingController.volumeGame / 1000.0);
         } else {
-           // System.out.println("Không thể tìm thấy file âm thanh.");
+            System.out.println("Không thể tìm thấy file âm thanh.");
         }
     }
 

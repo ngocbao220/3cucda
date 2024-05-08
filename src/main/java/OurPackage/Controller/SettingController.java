@@ -147,9 +147,6 @@ public class SettingController extends GeneralController {
     private TextField typeWord;
 
     @FXML
-    private Slider slider_nen;
-
-    @FXML
     private Slider slider_game;
 
 
@@ -169,6 +166,7 @@ public class SettingController extends GeneralController {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         super.initialize(url, resourceBundle);
         timeUsingApp.setText(timeString);
+
 
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), e -> {
             updateTimer();
@@ -394,14 +392,13 @@ public class SettingController extends GeneralController {
             }
         });
 
-        /*volumeValue(slider_game, "game");
-
-        volumeValue(slider_nen, "nen");*/
+        volumeValue(slider_game, "game");
 
     }
-    private Preferences prefs;
 
-    /*public void volumeValue(Slider slider, String Type) {
+
+
+    public void volumeValue(Slider slider, String Type) {
         prefs = Preferences.userNodeForPackage(SettingController.class);
         double savedValue = prefs.getDouble(Type, 5);
         slider.setValue(savedValue);
@@ -412,7 +409,7 @@ public class SettingController extends GeneralController {
             volumeGame = slider_game.getValue();
         });
         volumeGame = slider_game.getValue();
-    }*/
+    }
 
     private void updateTimer() {
         timeString = String.format("%02d:%02d:%02d", hours, minutes, seconds);
