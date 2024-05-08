@@ -209,3 +209,21 @@
     -fx-background-position: center;
 }
 
+.but_guide {
+-fx-background-image: url('../img/user-guide.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+.likeAsButton {
+    -fx-border-radius: 45px;
+    -fx-background-radius: 45px;
+    -fx-border-color: yellow;
+    -fx-border-width: 3px;
+}
+
+textarea.readonly {
+    pointer-events: none;
+}
+

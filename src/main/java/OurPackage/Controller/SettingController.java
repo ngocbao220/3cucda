@@ -28,7 +28,9 @@ import java.util.ResourceBundle;
 import java.util.prefs.Preferences;
 
 import static OurPackage.Controller.DictionaryController.ListLog;
+import static OurPackage.Controller.MonkeyGameController.DATA2;
 import static OurPackage.Module.DatabaseManager.list;
+import static OurPackage.Module.SomethingForGame.EmptyFile;
 import static OurPackage.Start.*;
 
 public class SettingController extends GeneralController {
@@ -350,6 +352,11 @@ public class SettingController extends GeneralController {
                     historyActivites.clearHistory();
                     historySearch.clearHistory();
                     databaseManager.resetData();
+                    try {
+                        EmptyFile(DATA2);
+                    } catch (IOException ex) {
+                        throw new RuntimeException(ex);
+                    }
                     imgBug.setVisible(false);
                     imgSuccess.setVisible(true);
                     non.setText("Thành công đặt lại ứng dụng !\n(Khởi động lại sẽ có hiệu lực)");
@@ -387,16 +394,14 @@ public class SettingController extends GeneralController {
             }
         });
 
-        volumeValue(slider_game, "game");
+        /*volumeValue(slider_game, "game");
 
-        volumeValue(slider_nen, "nen");
+        volumeValue(slider_nen, "nen");*/
 
     }
-
-
     private Preferences prefs;
 
-    public void volumeValue(Slider slider, String Type) {
+    /*public void volumeValue(Slider slider, String Type) {
         prefs = Preferences.userNodeForPackage(SettingController.class);
         double savedValue = prefs.getDouble(Type, 5);
         slider.setValue(savedValue);
@@ -407,12 +412,11 @@ public class SettingController extends GeneralController {
             volumeGame = slider_game.getValue();
         });
         volumeGame = slider_game.getValue();
-    }
+    }*/
 
     private void updateTimer() {
         timeString = String.format("%02d:%02d:%02d", hours, minutes, seconds);
         timeUsingApp.setText(timeString);
     }
-
 
 }

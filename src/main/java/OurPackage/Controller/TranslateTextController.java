@@ -244,7 +244,7 @@ public class TranslateTextController extends GeneralController implements Initia
         transition.setByY(deltaY);
         return transition;
     }
-
+    // Hieu ung cho phi hanh gia
     public void action(ImageView imageView, double speech) {
         RotateTransition transition = new RotateTransition(Duration.seconds(speech), imageView);
         transition.setFromAngle(-20);

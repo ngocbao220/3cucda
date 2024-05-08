@@ -339,13 +339,13 @@ public class HomeController extends GeneralController {
             LoadScene("QuizGame-view.fxml", Back);
         });
     }
+
     // ham tao hieu ung chuyen dong
     private TranslateTransition createTransition(Pane stackPane, double deltaX, double speed) {
         TranslateTransition transition = new TranslateTransition(Duration.seconds(speed), stackPane);
         transition.setByX(deltaX);
         return transition;
     }
-
 
     @FXML
     public void onMouseEntered(Pane pane) {
@@ -378,6 +378,7 @@ public class HomeController extends GeneralController {
         pane.setOnMouseExited(event -> onMouseExt(pane));
     }
 
+    // Thong bao goi y chuyen tab khi an thanh search o home
     private void Non() {
         String[] countWords = searchTab.getText().split(" ");
         int numberOfWords = countWords.length;

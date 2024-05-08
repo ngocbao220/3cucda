@@ -68,6 +68,9 @@ public class MonkeyGameController extends GeneralController {
     private Pane ChosseTypeForGame;
 
     @FXML
+    private Pane paneGuide;
+
+    @FXML
     private Label Heart;
 
     @FXML
@@ -182,6 +185,9 @@ public class MonkeyGameController extends GeneralController {
     private JFXButton buttonOutToPaneGame;
 
     @FXML
+    private JFXButton game_guide;
+
+    @FXML
     private ProgressBar myProgressBar;
 
     @FXML
@@ -193,6 +199,7 @@ public class MonkeyGameController extends GeneralController {
     @FXML
     private ImageView sadMonkey;
 
+    private int count_guide = 0;
     private Timeline timeline;
     private Timeline timer;
 
@@ -203,6 +210,8 @@ public class MonkeyGameController extends GeneralController {
     private int point = 0;
 
     private int heart = 3;
+
+    private boolean isPlaying = true;
 
     private static final String DATA1 = "../3cucda/Data/Data1ForGame.txt";
     public static final String DATA2 = "../3cucda/Data/Data2ForGame.txt";
@@ -222,13 +231,17 @@ public class MonkeyGameController extends GeneralController {
 
     String[] myArray;
 
+    String CorrectAnswer;
+
+    Map<String, String> selected_map = new HashMap<>();
+
     Random random = new Random();
 
     // Chuan bi cho 1 luot choi
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        paneGuide.setVisible(true);
         PlayMusic("tiengHaiAu.mp3", -1);
         Play();
 
@@ -265,10 +278,16 @@ public class MonkeyGameController extends GeneralController {
             Replay.fire();
         });
 
+        game_guide.setOnAction(e -> {
+            paneGuide.setVisible(count_guide % 2 != 0);
+            count_guide++;
+        });
 
+        // thoi gian khi buon xuat hien
         timer = new Timeline(new KeyFrame(Duration.millis(500), event -> {
             sadMonkey.setVisible(false);
         }));
+
 
         eventHandler = event -> {
             double progress = myProgressBar.getProgress();
@@ -276,8 +295,12 @@ public class MonkeyGameController extends GeneralController {
                 myProgressBar.setProgress(progress - time);
             } else if(progress <=0) {
                 sadMonkey.setVisible(true);
-                timer.play();
-                timeline.stop();
+                timeline.pause();
+                LableShowCorrectAnswer.setText(selected_map.get(CorrectAnswer));
+                PaneWhenWrongAnswer.setVisible(true);
+                comboTime(selected_map);
+                timeline.pause();
+
                 if (heart >= 1) {
                     heart--;
                     if (k <= 8) {
@@ -288,13 +311,12 @@ public class MonkeyGameController extends GeneralController {
                 }
                 PlayMusic("tiengDapansai.mp3",1);
                 Play();
+                System.out.println("13");
                 if (heart == 0) {
                     PlayMusic("tiengThuaGame.mp3",1);
                     Play();
                     timeline.stop();
                     PaneWhenLoss.setVisible(true);
-                } else {
-                    comboTime(MyMap);
                 }
             }
         };
@@ -303,10 +325,10 @@ public class MonkeyGameController extends GeneralController {
         timeline.setCycleCount(9999);
     }
 
-
     // Hiện câu hỏi và nhận diện đáp án
     void ShowQuestion(Map<String, String> map) {
-        String CorrectAnswer = myArray[random.nextInt(myArray.length)];
+        selected_map = map;
+        CorrectAnswer = myArray[random.nextInt(myArray.length)];
 
         String WrongAns;
         // Tim ra phuong an sai
@@ -323,7 +345,7 @@ public class MonkeyGameController extends GeneralController {
         if (numberOfCorrectAnswer == 1) {
             AnsLeft.setText(map.get(CorrectAnswer));
             AnsRight.setText(map.get(WrongAns));
-            // Chon Dap an dung
+            // Dat su kien khi nguoi dung Chon Dap an dung
             ButtonLeft.setOnAction(e -> {
                 point++;
                 PlayMusic("tiengDapandung.mp3",1);
@@ -339,7 +361,7 @@ public class MonkeyGameController extends GeneralController {
                 }
                 comboTime(map);
             });
-            // Chon Dap an sai
+            // Dat su kien khi nguoi dung Chon Dap an sai
             ButtonRight.setOnAction(e -> {
                 if(heart > 0) {
                     heart--;
@@ -373,7 +395,7 @@ public class MonkeyGameController extends GeneralController {
         else {
             AnsLeft.setText(map.get(WrongAns));
             AnsRight.setText(map.get(CorrectAnswer));
-            //Chon dap an dung
+            // Dat su kien khi nguoi dung Chon dap an dung
             ButtonRight.setOnAction(e -> {
                 point++;
 
@@ -390,7 +412,7 @@ public class MonkeyGameController extends GeneralController {
                 }
                 comboTime(map);
             });
-            //Chon dap an sai
+            //Dat su kien khi nguoi dung Chon dap an sai
             ButtonLeft.setOnAction(e -> {
                 if(heart > 0) {
                     heart--;
@@ -461,7 +483,7 @@ public class MonkeyGameController extends GeneralController {
         ButtonContinue.setDisable(false);
     }
 
-
+    // Hieu ung to nho cho nut Play
     void action() {
         ScaleTransition scaleIn = new ScaleTransition(Duration.millis(500), but_PlayNow);
         scaleIn.setFromX(1);
@@ -505,7 +527,7 @@ public class MonkeyGameController extends GeneralController {
     }
 
 
-    // Khi an Play o Menu
+    // Khi an Play
     @FXML
     void PlaytoGame(ActionEvent event) {
         PaneChosseTypeGame.setVisible(true);
@@ -522,12 +544,14 @@ public class MonkeyGameController extends GeneralController {
     @FXML
     void TurnOffMusic(ActionEvent event) throws URISyntaxException {
         Play();
+        isPlaying = true;
         ButtonOnMusic.setVisible(true);
         ButtonOffMusic.setVisible(false);
     }
     @FXML
     void TurnOnMusic(ActionEvent event) throws URISyntaxException {
         PauseMusic();
+        isPlaying = false;
         ButtonOffMusic.setVisible(true);
         ButtonOnMusic.setVisible(false);
     }
@@ -543,6 +567,8 @@ public class MonkeyGameController extends GeneralController {
         ForSearching(SearchOnRight, Map2, WordChoosing);
         timeline.stop();
         reset();
+
+        checkBackgroundMusic(isPlaying);
     }
 
     // Dung Game
@@ -622,7 +648,6 @@ public class MonkeyGameController extends GeneralController {
                 if (Map2.size() < 2) {
                     return;
                 }
-                //PauseMusic();
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -677,7 +702,6 @@ public class MonkeyGameController extends GeneralController {
     // Thuc hien viec sua tu
     @FXML
     void DoSetWord(ActionEvent event) {
-        //TO DO
         try {
             setWord(DATA2, WordNeedSet.getText(), WordNeedSet.getText() + "\t" + MeanThisWord.getText());
             ReadData(DATA2, Split, Map2);
@@ -706,7 +730,6 @@ public class MonkeyGameController extends GeneralController {
     // Hanh dong them tu moi
     @FXML
     void DoAddWord(ActionEvent event) {
-        //TO DO
         try {
             AddData(newWord.getText(), MeanOfThisWord.getText(), Map2, DATA2);
             ForSearching(SearchOnRight, Map2, WordChoosing);
@@ -753,5 +776,14 @@ public class MonkeyGameController extends GeneralController {
         Map2.clear();
         ReadData(DATA2, Split, Map2);
         ForSearching(SearchOnRight, Map2, WordChoosing);
+    }
+
+    void checkBackgroundMusic(boolean isPlaying) {
+        if(isPlaying) {
+            PlayMusic("tienghaiau.mp3", -1);
+            Play();
+        } else {
+            PauseMusic();
+        }
     }
 }

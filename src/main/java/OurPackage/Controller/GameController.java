@@ -118,18 +118,15 @@ public class GameController extends GeneralController {
         PauseMusic();
     }
 
-    /*public final String IMAGE_PATH = "../SupportScreen/img/";*/
 
     public void action(ImageView imageView, double speech) {
 
-        // Create RotateTransition
         RotateTransition transition = new RotateTransition(Duration.seconds(speech), imageView);
         transition.setFromAngle(-15);
         transition.setToAngle(15);
         transition.setCycleCount(-1);
         transition.setAutoReverse(true);
 
-        // Start the animation
         transition.play();
     }
 }
