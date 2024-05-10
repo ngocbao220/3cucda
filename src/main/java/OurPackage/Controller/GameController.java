@@ -1,7 +1,9 @@
 package OurPackage.Controller;
 
 import com.jfoenix.controls.JFXButton;
+import javafx.animation.KeyFrame;
 import javafx.animation.RotateTransition;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -82,6 +84,23 @@ public class GameController extends GeneralController {
     @FXML
     private ImageView threeMonkey;
 
+    Timeline time_load;
+
+    @Override
+    void disable() {
+        but_to_game1.setDisable(true);
+        but_to_game2.setDisable(true);
+    }
+
+    @Override
+    void unDisable() {
+        time_load = new Timeline(new KeyFrame(Duration.seconds(super.time + 0.5), event -> {
+            but_to_game1.setDisable(false);
+            but_to_game2.setDisable(false);
+        }));
+        time_load.play();
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         but_game.setStyle("-fx-background-color: #333333;");
@@ -92,14 +111,18 @@ public class GameController extends GeneralController {
         action(iconMonkey, 1.5);
         super.initialize(url, resourceBundle);
         but_to_game1.setOnAction(e -> {
+            disable();
             StopMusic();
             LoadScene("Monkey.fxml", Back);
+            unDisable();
         });
         but_to_game2.setOnAction(e -> {
+            disable();
             StopMusic();
             LoadScene("QuizGame-view.fxml", Back);
             PlayMusic("QizzGame - Senbon Zakura Piano.mp3", -1);
             Play();
+            unDisable();
         });
 
         iconMonkey.setOnMouseClicked(e -> {

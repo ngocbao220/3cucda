@@ -237,6 +237,7 @@ public class MonkeyGameController extends GeneralController {
 
     Random random = new Random();
 
+
     // Chuan bi cho 1 luot choi
 
     @Override
@@ -371,7 +372,8 @@ public class MonkeyGameController extends GeneralController {
 
                     PlayMusic("tiengDapansai.mp3",1);
                     Play();
-
+                    sadMonkey.setVisible(true);
+                    timer.play();
                     //Hien dap an dung cho nguoi choi
                     timeline.pause();
                     LableShowCorrectAnswer.setText(map.get(CorrectAnswer));
@@ -421,7 +423,8 @@ public class MonkeyGameController extends GeneralController {
 
                     PlayMusic("tiengDapansai.mp3", 1);
                     Play();
-
+                    sadMonkey.setVisible(true);
+                    timer.play();
                     //hien dap an dung cho nguoi choi
                     timeline.pause();
                     LableShowCorrectAnswer.setText(map.get(CorrectAnswer));

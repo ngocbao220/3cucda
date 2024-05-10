@@ -3,6 +3,8 @@ package OurPackage.Controller;
 import OurPackage.Module.*;
 import com.jfoenix.controls.JFXButton;
 import javafx.animation.FadeTransition;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -20,7 +22,7 @@ import java.net.URL;
 import java.util.*;
 import java.util.prefs.Preferences;
 
-public class GeneralController implements Initializable {
+public abstract class GeneralController implements Initializable {
 
     private final String Screen_Path = "/OurPackage/Screen/";
 
@@ -111,6 +113,9 @@ public class GeneralController implements Initializable {
 
     private Stage stage;
     private Scene scene;
+    int time = 1;
+
+    private Timeline time_load;
 
     public List<JFXButton> listbut = new ArrayList<>();
 
@@ -146,7 +151,7 @@ public class GeneralController implements Initializable {
 
     public void LoadScene(String s, Pane container) {
         FadeTransition fadeTransition = new FadeTransition();
-        fadeTransition.setDuration(Duration.seconds(1));
+        fadeTransition.setDuration(Duration.seconds(time));
         fadeTransition.setNode(container);
         fadeTransition.setFromValue(1.0);
         fadeTransition.setToValue(0.0);
@@ -159,76 +164,53 @@ public class GeneralController implements Initializable {
         });
         fadeTransition.play();
     }
+    void disable() {
+        but_set.setDisable(true);
+        but_diction.setDisable(true);
+        but_trans.setDisable(true);
+        but_game.setDisable(true);
+        but_home.setDisable(true);
+    }
+
+    void unDisable() {
+        time_load = new Timeline(new KeyFrame(Duration.seconds(time + 0.5), event -> {
+            but_set.setDisable(false);
+            but_diction.setDisable(false);
+            but_trans.setDisable(false);
+            but_game.setDisable(false);
+            but_home.setDisable(false);
+        }));
+        time_load.play();
+    }
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-
         but_home.setOnAction(e -> {
-            but_set.setDisable(true);
-            but_diction.setDisable(true);
-            but_trans.setDisable(true);
-            but_game.setDisable(true);
-            but_home.setDisable(true);
+            disable();
             LoadScene("Home-view.fxml", DisplayContent);
-            but_set.setDisable(false);
-            but_diction.setDisable(false);
-            but_trans.setDisable(false);
-            but_game.setDisable(false);
-            but_home.setDisable(false);
+            unDisable();
         });
         but_trans.setOnAction(e -> {
-            but_trans.setDisable(true);
-            but_set.setDisable(true);
-            but_diction.setDisable(true);
-            but_home.setDisable(true);
-            but_game.setDisable(true);
+            disable();
             LoadScene("Translate-view.fxml", DisplayContent);
-            but_set.setDisable(false);
-            but_diction.setDisable(false);
-            but_home.setDisable(false);
-            but_game.setDisable(false);
-            but_trans.setDisable(false);
+            unDisable();
         });
         but_game.setOnAction(e -> {
-            but_game.setDisable(true);
-            but_set.setDisable(true);
-            but_diction.setDisable(true);
-            but_home.setDisable(true);
-            but_trans.setDisable(true);
+            disable();
             LoadScene("Game-view.fxml", DisplayContent);
-            but_game.setDisable(false);
-            but_set.setDisable(false);
-            but_diction.setDisable(false);
-            but_home.setDisable(false);
-            but_trans.setDisable(false);
+            unDisable();
         });
         but_diction.setOnAction(e -> {
-            but_diction.setDisable(true);
-            but_set.setDisable(true);
-            but_game.setDisable(true);
-            but_home.setDisable(true);
-            but_trans.setDisable(true);
+            disable();
             LoadScene("Dictionary-view.fxml", DisplayContent);
-            but_set.setDisable(false);
-            but_game.setDisable(false);
-            but_home.setDisable(false);
-            but_trans.setDisable(false);
-            but_diction.setDisable(false);
+            unDisable();
         });
         but_set.setOnAction(e -> {
-            but_diction.setDisable(true);
-            but_set.setDisable(true);
-            but_game.setDisable(true);
-            but_home.setDisable(true);
-            but_trans.setDisable(true);
+            disable();
             LoadScene("Setting-view.fxml", DisplayContent);
-            but_game.setDisable(false);
-            but_diction.setDisable(false);
-            but_home.setDisable(false);
-            but_trans.setDisable(false);
-            but_set.setDisable(false);
+            unDisable();
         });
         listbut.add(but_game);
         listbut.add(but_diction);
