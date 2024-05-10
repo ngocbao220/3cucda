@@ -28,6 +28,7 @@ import java.util.ResourceBundle;
 import java.util.prefs.Preferences;
 
 import static OurPackage.Controller.DictionaryController.ListLog;
+import static OurPackage.Controller.DictionaryController.currentIndex;
 import static OurPackage.Controller.MonkeyGameController.DATA2;
 import static OurPackage.Module.DatabaseManager.list;
 import static OurPackage.Module.SomethingForGame.EmptyFile;
@@ -253,6 +254,7 @@ public class SettingController extends GeneralController {
                         historyActivites.clearHistory();
                         ListLog.clear();
                         imgBug.setVisible(false);
+                        currentIndex = 0;
                         imgSuccess.setVisible(true);
                         non.setText("Thành công xóa lịch sử hoạt động !");
                         actionOfNon();
@@ -350,6 +352,7 @@ public class SettingController extends GeneralController {
                     historyActivites.clearHistory();
                     historySearch.clearHistory();
                     databaseManager.resetData();
+                    currentIndex = 0;
                     try {
                         EmptyFile(DATA2);
                     } catch (IOException ex) {

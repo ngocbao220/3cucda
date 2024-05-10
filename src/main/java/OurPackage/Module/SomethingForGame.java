@@ -34,11 +34,10 @@ public class SomethingForGame {
         }
     }
 
-
     public static MediaPlayer mediaPlayer;
     static String basePath = "src/main/resources/OurPackage/SupportScreen/sound/";
 
-    // Hàm cho phát âm thanh
+
     public static void PlayMusic(String NameFileMusic, int NumofReplay) {
         String soundPath = getRelativePath(basePath + NameFileMusic);
         if (soundPath != null) {

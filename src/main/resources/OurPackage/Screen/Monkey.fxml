@@ -26,7 +26,7 @@
       <JFXButton fx:id="but_PlayNow" layoutX="471.0" layoutY="423.0" onAction="#PlaytoGame" prefHeight="59.0" prefWidth="147.0" styleClass="buttonPlay" stylesheets="@../SupportScreen/Css/Game1.css" text="." />
       <JFXButton fx:id="ButtonOnMusic" layoutX="9.0" layoutY="-2.0" onAction="#TurnOnMusic" prefHeight="64.0" prefWidth="64.0" styleClass="buttonOnVolume" stylesheets="@../SupportScreen/Css/Game1.css" text="." />
       <JFXButton fx:id="ButtonOffMusic" layoutX="6.0" layoutY="1.0" onAction="#TurnOffMusic" prefHeight="64.0" prefWidth="64.0" styleClass="buttonOffVolume" stylesheets="@../SupportScreen/Css/Game1.css" text="." visible="false" />
-      <Pane fx:id="PaneChosseTypeGame" layoutY="1.0" prefHeight="728.0" prefWidth="1045.0" styleClass="parent-pane" stylesheets="@../SupportScreen/Css/Game1.css">
+      <Pane fx:id="PaneChosseTypeGame" layoutY="1.0" prefHeight="728.0" prefWidth="1045.0" styleClass="parent-pane" stylesheets="@../SupportScreen/Css/Game1.css" visible="false">
          <children>
             <Pane fx:id="ChosseTypeForGame" layoutX="268.0" layoutY="115.0" prefHeight="498.0" prefWidth="513.0" styleClass="PaneChooseType" stylesheets="@../SupportScreen/Css/Game1.css">
                <children>
@@ -175,7 +175,7 @@
          </children>
       </Pane>
       <JFXButton fx:id="game_guide" layoutX="978.0" layoutY="181.0" opacity="0.9" prefHeight="73.0" prefWidth="73.0" styleClass="but_guide" stylesheets="@../SupportScreen/Css/Game1.css" text="." />
-      <Pane fx:id="PaneWhenPlayGame" layoutX="-3.0" prefHeight="728.0" prefWidth="1048.0" styleClass="BackGroundOnGame" stylesheets="@../SupportScreen/Css/Game1.css" visible="false">
+      <Pane fx:id="PaneWhenPlayGame" layoutX="-3.0" prefHeight="728.0" prefWidth="1048.0" styleClass="BackGroundOnGame" stylesheets="@../SupportScreen/Css/Game1.css">
          <children>
             <Label fx:id="LabelDisplayWord" alignment="CENTER" layoutX="228.0" layoutY="245.0" prefHeight="79.0" prefWidth="579.0" text="Xin chào">
                <font>
@@ -290,9 +290,9 @@
                   </Pane>
                </children>
             </Pane>
-            <Pane fx:id="PaneWhenWrongAnswer" layoutX="3.0" prefHeight="728.0" prefWidth="1056.0" styleClass="parent-pane" stylesheets="@../SupportScreen/Css/Game1.css" visible="false">
+            <Pane fx:id="PaneWhenWrongAnswer" layoutX="3.0" prefHeight="728.0" prefWidth="1056.0" visible="false">
                <children>
-                  <Pane fx:id="NonWrongAns" layoutX="276.0" layoutY="84.0" prefHeight="468.0" prefWidth="468.0" styleClass="PaneWhenWrongAns" stylesheets="@../SupportScreen/Css/Game1.css">
+                  <Pane fx:id="NonWrongAns" layoutX="276.0" layoutY="155.0" prefHeight="468.0" prefWidth="468.0" style="-fx-border-radius: 130; -fx-border-color: #DD761C; -fx-border-width: 5;" styleClass="PaneWhenWrongAns" stylesheets="@../SupportScreen/Css/Game1.css">
                      <children>
                         <Label fx:id="LableShowCorrectAnswer" alignment="CENTER" layoutX="81.0" layoutY="197.0" prefHeight="86.0" prefWidth="314.0" text="Hello">
                            <font>
@@ -314,7 +314,7 @@
                               <Image url="@../SupportScreen/img/iconContinue.png" />
                            </image>
                         </ImageView>
-                        <JFXButton layoutX="149.0" layoutY="370.0" onAction="#Continue" opacity="0.0" prefHeight="50.0" prefWidth="170.0" />
+                        <JFXButton layoutX="149.0" layoutY="370.0" onAction="#Continue" prefHeight="50.0" prefWidth="170.0" style="-fx-border-color: white; -fx-border-radius: 15; -fx-border-width: 6;" />
                      </children>
                   </Pane>
                </children>

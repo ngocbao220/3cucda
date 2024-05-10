@@ -295,6 +295,7 @@ public class MonkeyGameController extends GeneralController {
                 myProgressBar.setProgress(progress - time);
             } else if(progress <=0) {
                 sadMonkey.setVisible(true);
+                timer.play();
                 timeline.pause();
                 LableShowCorrectAnswer.setText(selected_map.get(CorrectAnswer));
                 PaneWhenWrongAnswer.setVisible(true);
@@ -303,6 +304,7 @@ public class MonkeyGameController extends GeneralController {
 
                 if (heart >= 1) {
                     heart--;
+                    UpdatePointAndHeart();
                     if (k <= 8) {
                         k += 2;
                         K = k;

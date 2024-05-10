@@ -20,7 +20,7 @@ import java.net.URL;
 import java.util.*;
 import java.util.prefs.Preferences;
 
-public class GeneralController implements Initializable{
+public class GeneralController implements Initializable {
 
     private final String Screen_Path = "/OurPackage/Screen/";
 
