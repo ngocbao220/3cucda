@@ -161,8 +161,8 @@ public class TranslateTextController extends GeneralController implements Initia
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         super.initialize(url, resourceBundle);
-        TextOut.setDisable(true);
-
+        TextIn.setEditable(true);
+        TextOut.setEditable(false);
         but_trans.setStyle("-fx-background-color: #333333;");
         changeButton_color(butSpeak1);
         changeButton_color(butSpeak2);
