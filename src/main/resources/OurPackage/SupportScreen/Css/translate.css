@@ -1,0 +1,38 @@
+.myStackPane {
+  -fx-background-color: #495324; /* Màu nền xanh lá cây */
+  -fx-background-radius: 20px; /* Bo tròn các góc 10px */
+}
+
+.myPane {
+    -fx-background-image: url('../img/background_nui1.jpg'); /* Thay thế bằng đường dẫn đến file hình ảnh của bạn */
+    -fx-background-size: cover; /* Tùy chỉnh kích thước background */
+    -fx-background-repeat: no-repeat; /* Tùy chỉnh cách lặp lại background */
+    -fx-background-position: center; /* Tùy chỉnh vị trí background */
+}
+
+.buttonn {
+    -fx-background-image: url('../img/Remove-bg.ai_1713971077003.png'); /* Thay thế bằng đường dẫn đến file hình ảnh của bạn */
+     -fx-background-size: cover; /* Tùy chỉnh kích thước background */
+     -fx-background-repeat: no-repeat; /* Tùy chỉnh cách lặp lại background */
+     -fx-background-position: center;
+      -fx-background-radius: 30px;/* Tùy chỉnh vị trí background */
+}
+.backgroundTrans {
+        -fx-background-image: url('../img/space.png'); /* Thay thế bằng đường dẫn đến file hình ảnh của bạn */
+        -fx-background-size: cover; /* Tùy chỉnh kích thước background */
+        -fx-background-repeat: no-repeat; /* Tùy chỉnh cách lặp lại background */
+        -fx-background-position: center;
+        -fx-background-radius: 30px;
+}
+.backgroundText {
+        -fx-background-color: #72476B;
+        -fx-border-width: 2px 2px 2px 2px;
+        -fx-border-radius: 30px;
+        -fx-background-radius: 30px;
+        -fx-border-style: solid;
+        -fx-border-color: #72476B;
+        -fx-opacity: 0.13;
+}
+.textfiel {
+    -fx-text-fill: black;
+}

@@ -1,0 +1,21 @@
+.infoList {
+    -fx-background-image: url('../img/note.png'); /* Thay thế bằng đường dẫn đến file hình ảnh của bạn */
+        -fx-background-size: cover; /* Tùy chỉnh kích thước background */
+        -fx-background-repeat: no-repeat; /* Tùy chỉnh cách lặp lại background */
+        -fx-background-position: center;
+        -fx-background-radius: 30px;
+}
+.dauLon {
+    -fx-background-image: url('../img/muiten2.png'); /* Thay thế bằng đường dẫn đến file hình ảnh của bạn */
+            -fx-background-size: cover; /* Tùy chỉnh kích thước background */
+            -fx-background-repeat: no-repeat; /* Tùy chỉnh cách lặp lại background */
+            -fx-background-position: center;
+            -fx-background-radius: 5px;
+}
+.dauCong {
+    -fx-background-image: url('../img/muiten1.png'); /* Thay thế bằng đường dẫn đến file hình ảnh của bạn */
+                -fx-background-size: cover; /* Tùy chỉnh kích thước background */
+                -fx-background-repeat: no-repeat; /* Tùy chỉnh cách lặp lại background */
+                -fx-background-position: center;
+                -fx-background-radius: 5px;
+}

@@ -1,0 +1,162 @@
+.root {
+    -fx-background-color: #EAEEF4;
+
+}
+
+.styleLableLang {
+    -fx-background-color: #00AFB9;
+    -fx-border-color: #353A46;
+    -fx-border-style: solid;
+}
+
+.styleLableTran {
+    -fx-background-color: #E1B79F;
+    -fx-border-color: #353A46;
+    -fx-border-style: solid;
+}
+
+.stylePaneTran {
+    -fx-background-color: #A0736E;
+}
+.side_anPane {
+    -fx-background-color: #353A56;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-border-style: solid;
+    -fx-background-radius: 20px;
+}
+.inner_pane {
+    -fx-background-color: #748CF1;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #748CF1;
+}
+.menu_inner_pane {
+    -fx-background-color: #6780E2;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #748CF1;
+}
+.but_home1 {
+    -fx-text-fill : white;
+    -fx-background-color: #353A56;
+    -fx-border-width: 1px 1px 1px 1px;
+    -fx-border-radius: 20px;
+    -fx-border-style: solid;
+    -fx-background-radius: 40px;
+    -fx-border-color: #353A46;
+}
+.intro_diction {
+    -fx-background-color: #DCD0FF;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #DCD0FF;
+}
+.diction_means {
+
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #FFDAB9;
+}
+.diction_means2 {
+    -fx-background-color: #FFDAB9;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #FFDAB9;
+}
+.Welcome_board {
+    -fx-background-color: #FF8C00;
+
+}
+.move_game {
+    -fx-background-color: #667788;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #667788;
+}
+.but_move_game {
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+}
+.move_diction {
+    -fx-background-color: #FFC0CB;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #FFC0CB;
+}
+.but_move_dic {
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #FFC0CB;
+}
+.search {
+    -fx-border-width: 1px 1px 1px 1px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #667788;
+}
+.but_ENG_VIE {
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #FF8C00;
+}
+.trans {
+    -fx-background-color: #804000;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+    -fx-border-style: solid;
+    -fx-border-color: #804000;
+}
+.lb_EV {
+    -fx-text-align: center;
+}
+.but_bonus {
+    -fx-background-color: #D3D3D3;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px 20px 20px 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #D3D3D3;
+}
+.bonus {
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px 20px 20px 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #D3D3D3;
+}
+.my-background {
+    -fx-background-image: url("https://th.bing.com/th/id/OIG3.i.LV.mPdyJ8GrARXt0DR?pid=ImgGn");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+}
+.fvrtWord {
+
+}
+.buttonTruDau {
+    -fx-background-image: url('../img/trudau.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}

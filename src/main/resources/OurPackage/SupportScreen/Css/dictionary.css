@@ -1,0 +1,59 @@
+.styleLabel {
+    -fx-background-color : white ;
+}
+
+.buttonSay {
+    -fx-background-radius : 40px;
+}
+
+.buttonMark {
+    -fx-background-image: url('../img/saoksang.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-radius : 7px;
+    -fx-border-radius: 5px;
+}
+.buttonMark_2 {
+    -fx-background-image: url('../img/saosang.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-radius : 7px;
+    -fx-border-radius: 5px;
+}
+
+.buttonHis {
+    -fx-background-image: url('../img/historryy.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-radius : 20px;
+}
+
+.buttonNon1 {
+-fx-background-image: url('../img/chuong.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+.buttonNon2 {
+    -fx-background-image: url('../img/chuongIng.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+.labLe {
+    -fx-front-size: 13px;
+    -fx-font-weight: bold;
+    -fx-font-family: Comic Sans MS;
+    -fx-text-fill: white;
+}
+
+.paneNon {
+    -fx-background-image: url('../img/caNuong.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}

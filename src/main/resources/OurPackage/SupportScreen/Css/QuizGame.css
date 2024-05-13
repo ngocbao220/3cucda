@@ -1,0 +1,98 @@
+.but_start {
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 30px;
+}
+.but_next {
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 15px;
+}
+.but_ans {
+    -fx-border-width: 1px 1px 1px 1px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-color: #E38453;
+}
+.ques {
+    -fx-background-color: #FFEBB5;
+    -fx-border-width: 1px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 30px;
+    -fx-border-style: solid;
+    -fx-border-color: #E38453;
+}
+.menu {
+    -fx-border-width: 1px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 30px;
+    -fx-border-style: solid;
+    -fx-border-color: #e38453;
+    -fx-background-image: url('../img/Songbien.jpg');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+.start {
+    -fx-background-image: url('../img/stat.jpg');
+        -fx-background-size: cover;
+        -fx-background-repeat: no-repeat;
+        -fx-background-position: center;
+}
+.but_start {
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 32px;
+}
+.ready {
+    -fx-background-image: url('../img/854b9614681ec6409f0f.jpg');
+            -fx-background-size: cover;
+            -fx-background-repeat: no-repeat;
+            -fx-background-position: center;
+}
+.rule {
+    -fx-background-image: url('../img/rule.jpg');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+.blurred_background {
+    -fx-background-color: #80808080;
+}
+
+.bgr_Quiz {
+    -fx-background-image: url('../img/bgrQuizpane.png');
+}
+
+.numQues {
+    -fx-border-color:  #D9D9D9;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
+
+.opt {
+    -fx-border-color:  #D9D9D9;
+    -fx-border-radius: 13px;
+    -fx-background-radius: 13px;
+}
+
+.circle {
+    -fx-fill: null;
+    -fx-stroke: #ddd;
+    -fx-stroke-width: 10px;
+}
+
+.progress {
+    -fx-fill: null;
+    -fx-stroke: #383C61;
+    -fx-stroke-width: 10px;
+    -fx-stroke-dash-array: 0.4 1000000;
+    -fx-rotate : -90;
+}
+
+.load {
+   -fx-stroke-width: 10px;
+   -fx-fill: null;
+   -fx-stroke-dash-array: 0.4 1000000;
+   -fx-rotate : -90;
+}

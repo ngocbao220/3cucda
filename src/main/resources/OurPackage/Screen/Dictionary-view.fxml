@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
+
+<Pane fx:id="Back" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OurPackage.Controller.DictionaryController">
+    <children>
+        <HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="612.0" prefWidth="1041.0" styleClass="root" stylesheets="@../SupportScreen/Css/Style.css">
+            <children>
+                <VBox fx:id="Menutab" prefHeight="594.0" prefWidth="213.0">
+                    <children>
+                        <AnchorPane fx:id="Menu" prefHeight="617.0" prefWidth="204.0" styleClass="side_anPane" stylesheets="@../SupportScreen/Css/Style.css">
+                            <children>
+                                <Pane fx:id="inner_pane" layoutX="14.0" layoutY="24.0" prefHeight="53.0" prefWidth="186.0" styleClass="inner_pane" stylesheets="@../SupportScreen/Css/Style.css">
+                                    <children>
+                              <Pane fx:id="menu_inner_pane" layoutX="129.0" prefHeight="53.0" prefWidth="43.0" style="-fx-background-radius: 10px;" stylesheets="@../SupportScreen/Css/Style.css">
+                                 <children>
+                                    <ImageView fitHeight="28.0" fitWidth="32.0" layoutX="8.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../SupportScreen/img/iconMenu.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </Pane>
+                              <ImageView fx:id="catcute1" fitHeight="70.0" fitWidth="77.0" layoutX="-3.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../SupportScreen/img/iconmat.png" />
+                                 </image>
+                              </ImageView>
+                                    </children>
+                                </Pane>
+                                <JFXButton fx:id="but_home" alignment="CENTER" layoutX="12.0" layoutY="98.0" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@../SupportScreen/Css/Style.css" text="Home" textFill="#fbfbfb">
+                                    <font>
+                                        <Font name="Century Gothic Bold" size="13.0" />
+                                    </font>
+                                </JFXButton>
+                                <ImageView fitHeight="28.0" fitWidth="27.0" layoutX="35.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../SupportScreen/img/Pasted-20240330-221821_preview_rev_1.png" />
+                                    </image>
+                                </ImageView>
+                                <JFXButton fx:id="but_game" alignment="CENTER" layoutX="12.0" layoutY="170.0" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@../SupportScreen/Css/Style.css" text="Game" textFill="#b5a6a6">
+                                    <font>
+                                        <Font name="Century Gothic Bold" size="13.0" />
+                                    </font>
+                                </JFXButton>
+                                <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="33.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../SupportScreen/img/console-controller-icon-2048x2048-pmmusn7m_preview_rev_2.png" />
+                                    </image>
+                                </ImageView>
+                                <JFXButton fx:id="but_diction" alignment="CENTER" layoutX="12.0" layoutY="244.0" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@../SupportScreen/Css/Style.css" text="Dictionary" textFill="#b5a6a6">
+                                    <font>
+                                        <Font name="Century Gothic Bold" size="13.0" />
+                                    </font>
+                                </JFXButton>
+
+                                <ImageView fitHeight="33.0" fitWidth="42.0" layoutX="36.0" layoutY="249.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../SupportScreen/img/Pasted-20240320-004826_preview_rev_1.png" />
+                                    </image>
+                                </ImageView>
+
+                                <JFXButton fx:id="but_trans" alignment="CENTER" layoutX="12.0" layoutY="321.0" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@../SupportScreen/Css/Style.css" text="Translate" textFill="#b5a6a6">
+                                    <font>
+                                        <Font name="Century Gothic Bold" size="13.0" />
+                                    </font>
+                                </JFXButton>
+
+                                <ImageView fitHeight="39.0" fitWidth="42.0" layoutX="29.0" layoutY="323.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../SupportScreen/img/Pasted-20240330-202411_preview_rev_1.png" />
+                                    </image>
+                                </ImageView>
+                                <JFXButton fx:id="but_set" alignment="CENTER" layoutX="12.0" layoutY="393.0" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@../SupportScreen/Css/Style.css" text="Settings" textFill="#b5a6a6">
+                                    <font>
+                                        <Font name="Century Gothic Bold" size="13.0" />
+                                    </font>
+                                </JFXButton>
+                                <ImageView fitHeight="62.0" fitWidth="42.0" layoutX="28.0" layoutY="393.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../SupportScreen/img/settings.png" />
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </AnchorPane>
+                    </children>
+                </VBox>
+
+
+                <Pane fx:id="DisplayContent" prefHeight="594.0" prefWidth="863.0">
+                    <children>
+
+                              <Pane fx:id="SearchTab" layoutX="8.0" layoutY="12.0" prefHeight="53.0" prefWidth="813.0" style="-fx-background-color: #FFEBB5;" styleClass="search" stylesheets="@../SupportScreen/Css/Style.css">
+                            <children>
+                        <JFXButton fx:id="butShowNon" layoutX="746.0" layoutY="10.0" prefHeight="33.0" prefWidth="33.0" styleClass="buttonNon1" stylesheets="@../SupportScreen/Css/dictionary.css" />
+                        <ImageView fx:id="imageNewNon" fitHeight="21.0" fitWidth="24.0" layoutX="779.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@../SupportScreen/img/Remove-bg.ai_1713608539499.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="meoNgam" fitHeight="53.0" fitWidth="61.0" layoutX="12.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../SupportScreen/img/meoNgammom.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="meoHa" fitHeight="74.0" fitWidth="84.0" layoutX="1.0" layoutY="-20.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@../SupportScreen/img/meoHamom.png" />
+                           </image>
+                        </ImageView>
+                            </children>
+                        </Pane>
+                  <ImageView fitHeight="529.0" fitWidth="837.0" layoutX="19.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../SupportScreen/img/Dictionaryyyy.png" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="Search" layoutX="118.0" layoutY="222.0" prefHeight="25.0" prefWidth="263.0" promptText="Nhập từ ...." styleClass="search" stylesheets="@../SupportScreen/Css/Style.css">
+                     <font>
+                        <Font name="Segoe UI Bold" size="13.0" />
+                     </font></TextField>
+                  <ImageView fitHeight="150.0" fitWidth="39.0" layoutX="75.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../SupportScreen/img/Pasted-20240320-222118_preview_rev_1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="106.0" fitWidth="100.0" layoutX="367.0" layoutY="514.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../SupportScreen/img/Pasted-20240414-232925_preview_rev_1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="112.0" fitWidth="107.0" layoutX="22.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../SupportScreen/img/Pasted-20240414-233914_preview_rev_1.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="Example" alignment="TOP_LEFT" layoutX="457.0" layoutY="383.0" prefHeight="195.0" prefWidth="304.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="HistoryWord" layoutX="21.0" layoutY="214.0" onAction="#showHistoryWord" opacity="0.51" prefHeight="39.0" prefWidth="39.0" styleClass="buttonHis" stylesheets="@../SupportScreen/Css/dictionary.css" />
+                  <JFXListView fx:id="ListDic" layoutX="80.0" layoutY="298.0" prefHeight="275.0" prefWidth="298.0" style="-fx-background-color: #ffff;" />
+                  <WebView fx:id="InfoOfWords" layoutX="459.0" layoutY="116.0" prefHeight="466.0" prefWidth="315.0" />
+                  <ImageView fx:id="stop" fitHeight="28.0" fitWidth="27.0" layoutX="708.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../SupportScreen/img/tamdung.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="iSay" fitHeight="25.0" fitWidth="25.0" layoutX="711.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../SupportScreen/img/cailoaa.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton fx:id="SayWord" layoutX="701.0" layoutY="112.0" onAction="#Say" prefHeight="40.0" prefWidth="40.0" styleClass="buttonSay" stylesheets="@../SupportScreen/Css/dictionary.css" />
+                  <Pane fx:id="PaneHistory" layoutX="61.0" layoutY="143.0" prefHeight="298.0" prefWidth="332.0" visible="false">
+                     <children>
+                        <ListView fx:id="DisplayHistoryWord" layoutX="3.0" layoutY="88.0" prefHeight="211.0" prefWidth="325.0" visible="false" />
+                        <Pane fx:id="SayNothing" layoutY="88.0" prefHeight="211.0" prefWidth="332.0" style="-fx-background-color: white;">
+                           <children>
+                              <Label alignment="CENTER" layoutX="28.0" layoutY="64.0" prefHeight="42.0" prefWidth="276.0" text="Không có lịch sử tìm kiếm !">
+                                 <font>
+                                    <Font name="System Italic" size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="CloseHistoryWord" alignment="CENTER" layoutX="52.0" layoutY="106.0" prefHeight="21.0" prefWidth="228.0" text="Hãy tra cứu thêm nhé!">
+                                 <font>
+                                    <Font name="System Italic" size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Button fx:id="CloseNonHis" layoutX="281.0" layoutY="63.0" mnemonicParsing="false" onAction="#CloseNonHis" text="Đóng" />
+                        <Button fx:id="removeWordOnHisWord" layoutX="249.0" layoutY="63.0" mnemonicParsing="false" text="Gỡ" />
+                     </children>
+                  </Pane>
+                  <Label fx:id="LoveWord" layoutX="669.0" layoutY="105.0" prefHeight="53.0" prefWidth="113.0" styleClass="styleLabel" stylesheets="@../SupportScreen/Css/dictionary.css" text="Thêm từ vào danh sách yêu thích ! " textFill="#1d1d1e" visible="false" wrapText="true">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="loading" fitHeight="21.0" fitWidth="15.0" layoutX="746.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../SupportScreen/img/loadding.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton fx:id="ButtonMark" layoutX="780.0" layoutY="84.0" onAction="#Mark" prefHeight="28.0" prefWidth="29.0" styleClass="buttonMark" stylesheets="@../SupportScreen/Css/dictionary.css" />
+                  <JFXButton fx:id="RemoveWord" layoutX="780.0" layoutY="84.0" prefHeight="28.0" prefWidth="29.0" styleClass="buttonMark_2" stylesheets="@../SupportScreen/Css/dictionary.css" visible="false" />
+                  <ImageView fx:id="bgr_Listshownon" fitHeight="230.0" fitWidth="286.0" layoutX="493.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../SupportScreen/img/thongbaooo.png" />
+                     </image>
+                  </ImageView>
+                  <ListView fx:id="listShowNons" layoutX="513.0" layoutY="85.0" prefHeight="170.0" prefWidth="242.0" style="-fx-background-color: #FFF8F3;" visible="false" />
+                  <JFXButton fx:id="but3" layoutX="733.0" layoutY="61.0" minHeight="2.0" minWidth="2.0" opacity="0.48" prefHeight="15.0" prefWidth="15.0" visible="false" />
+                  <JFXButton fx:id="but2" layoutX="716.0" layoutY="61.0" minHeight="2.0" minWidth="2.0" opacity="0.48" prefHeight="15.0" prefWidth="15.0" visible="false" />
+                  <JFXButton fx:id="but1" layoutX="700.0" layoutY="61.0" minHeight="2.0" minWidth="2.0" opacity="0.48" prefHeight="15.0" prefWidth="15.0" visible="false" />
+                    </children>
+                </Pane>
+            </children>
+        </HBox>
+    </children>
+</Pane>

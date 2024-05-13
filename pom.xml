@@ -11,24 +11,53 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-<junit.version>5.10.0</junit.version>  </properties>
+     <junit.version>5.10.0</junit.version>
+  </properties>
 
   <dependencies>
+
     <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-controls</artifactId>
       <version>21</version>
     </dependency>
+
+    <dependency>
+      <groupId>javazoom</groupId>
+      <artifactId>jlayer</artifactId>
+      <version>1.0.1</version>
+    </dependency>
+
+
+    <!-- https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc -->
+    <dependency>
+      <groupId>org.xerial</groupId>
+      <artifactId>sqlite-jdbc</artifactId>
+      <version>3.43.0.0</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>8.0.33</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.jfoenix</groupId>
+      <artifactId>jfoenix</artifactId>
+      <version>9.0.10</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.9.0</version>
+    </dependency>
     <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-fxml</artifactId>
       <version>21</version>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/com.github.ferstl/depgraph-maven-plugin -->
-    <dependency>
-      <groupId>com.github.ferstl</groupId>
-      <artifactId>depgraph-maven-plugin</artifactId>
-      <version>4.0.3</version>
     </dependency>
 
     <dependency>
@@ -36,20 +65,27 @@
       <artifactId>javafx-web</artifactId>
       <version>21</version>
     </dependency>
-      <dependency>
+
+
+    <dependency>
         <groupId>org.openjfx</groupId>
         <artifactId>javafx-swing</artifactId>
         <version>21</version>
-      </dependency>
-<dependency>
+    </dependency>
+
+    <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-media</artifactId>
       <version>21</version>
-    </dependency><dependency>
+    </dependency>
+
+    <dependency>
       <groupId>org.controlsfx</groupId>
       <artifactId>controlsfx</artifactId>
       <version>11.1.2</version>
-    </dependency><dependency>
+    </dependency>
+
+    <dependency>
       <groupId>com.dlsc.formsfx</groupId>
       <artifactId>formsfx-core</artifactId>
       <version>11.6.0</version>
@@ -59,7 +95,9 @@
           <artifactId>*</artifactId>
         </exclusion>
       </exclusions>
-    </dependency><dependency>
+    </dependency>
+
+    <dependency>
       <groupId>net.synedra</groupId>
       <artifactId>validatorfx</artifactId>
       <version>0.4.0</version>
@@ -69,15 +107,21 @@
           <artifactId>*</artifactId>
         </exclusion>
       </exclusions>
-    </dependency><dependency>
+    </dependency>
+
+    <dependency>
       <groupId>org.kordamp.ikonli</groupId>
       <artifactId>ikonli-javafx</artifactId>
       <version>12.3.1</version>
-    </dependency><dependency>
+    </dependency>
+
+    <dependency>
       <groupId>org.kordamp.bootstrapfx</groupId>
       <artifactId>bootstrapfx-core</artifactId>
       <version>0.4.0</version>
-    </dependency><dependency>
+    </dependency>
+
+    <dependency>
       <groupId>eu.hansolo</groupId>
       <artifactId>tilesfx</artifactId>
       <version>11.48</version>
@@ -87,7 +131,9 @@
           <artifactId>*</artifactId>
         </exclusion>
       </exclusions>
-    </dependency><dependency>
+    </dependency>
+
+    <dependency>
       <groupId>com.github.almasb</groupId>
       <artifactId>fxgl</artifactId>
       <version>17.3</version>
@@ -98,19 +144,20 @@
         </exclusion>
       </exclusions>
     </dependency>
-<dependency>
+
+    <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
       <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
+
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-engine</artifactId>
       <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>  </dependencies>
-
 
   <build>
     <plugins>
@@ -123,6 +170,7 @@
           <target>21</target>
         </configuration>
       </plugin>
+
       <plugin>
         <groupId>org.openjfx</groupId>
         <artifactId>javafx-maven-plugin</artifactId>
@@ -143,6 +191,7 @@
           </execution>
         </executions>
       </plugin>
+
     </plugins>
   </build>
 </project>

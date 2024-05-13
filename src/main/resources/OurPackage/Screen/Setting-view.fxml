@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane fx:id="Back" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OurPackage.Controller.SettingController">
+    <children>
+        <HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="612.0" prefWidth="1041.0" styleClass="root" stylesheets="@../SupportScreen/Css/Style.css">
+            <children>
+                <VBox fx:id="Menutab" prefHeight="594.0" prefWidth="213.0">
+                    <children>
+                        <AnchorPane fx:id="Menu" prefHeight="617.0" prefWidth="204.0" styleClass="side_anPane" stylesheets="@../SupportScreen/Css/Style.css">
+                            <children>
+                                <Pane fx:id="inner_pane" layoutX="14.0" layoutY="24.0" prefHeight="53.0" prefWidth="186.0" styleClass="inner_pane" stylesheets="@../SupportScreen/Css/Style.css">
+                                    <children>
+                                        <Pane fx:id="menu_inner_pane" layoutX="129.0" prefHeight="53.0" prefWidth="43.0" style="-fx-background-radius: 10px;" stylesheets="@../SupportScreen/Css/Style.css">
+                                 <children>
+                                    <ImageView fitHeight="28.0" fitWidth="32.0" layoutX="8.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../SupportScreen/img/iconMenu.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children></Pane>
+                              <ImageView fx:id="catcute1" fitHeight="70.0" fitWidth="77.0" layoutX="-3.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../SupportScreen/img/iconmat.png" />
+                                 </image>
+                              </ImageView>
+                                    </children>
+                                </Pane>
+                                <JFXButton fx:id="but_home" alignment="CENTER" layoutX="12.0" layoutY="98.0" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@../SupportScreen/Css/Style.css" text="Home" textFill="#fbfbfb">
+                                    <font>
+                                        <Font name="Century Gothic Bold" size="13.0" />
+                                    </font>
+                                </JFXButton>
+                                <ImageView fitHeight="28.0" fitWidth="27.0" layoutX="35.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../SupportScreen/img/Pasted-20240330-221821_preview_rev_1.png" />
+                                    </image>
+                                </ImageView>
+                                <JFXButton fx:id="but_game" alignment="CENTER" layoutX="12.0" layoutY="170.0" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@../SupportScreen/Css/Style.css" text="Game" textFill="#b5a6a6">
+                                    <font>
+                                        <Font name="Century Gothic Bold" size="13.0" />
+                                    </font>
+                                </JFXButton>
+                                <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="33.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../SupportScreen/img/console-controller-icon-2048x2048-pmmusn7m_preview_rev_2.png" />
+                                    </image>
+                                </ImageView>
+                                <JFXButton fx:id="but_diction" alignment="CENTER" layoutX="12.0" layoutY="244.0" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@../SupportScreen/Css/Style.css" text="Dictionary" textFill="#b5a6a6">
+                                    <font>
+                                        <Font name="Century Gothic Bold" size="13.0" />
+                                    </font>
+                                </JFXButton>
+
+                                <ImageView fitHeight="33.0" fitWidth="42.0" layoutX="36.0" layoutY="249.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../SupportScreen/img/Pasted-20240320-004826_preview_rev_1.png" />
+                                    </image>
+                                </ImageView>
+
+                                <JFXButton fx:id="but_trans" alignment="CENTER" layoutX="12.0" layoutY="321.0" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@../SupportScreen/Css/Style.css" text="Translate" textFill="#b5a6a6">
+                                    <font>
+                                        <Font name="Century Gothic Bold" size="13.0" />
+                                    </font>
+                                </JFXButton>
+
+                                <ImageView fitHeight="39.0" fitWidth="42.0" layoutX="29.0" layoutY="323.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../SupportScreen/img/Pasted-20240330-202411_preview_rev_1.png" />
+                                    </image>
+                                </ImageView>
+                                <JFXButton fx:id="but_set" alignment="CENTER" layoutX="12.0" layoutY="393.0" prefHeight="42.0" prefWidth="179.0" styleClass="but_home1" stylesheets="@../SupportScreen/Css/Style.css" text="Settings" textFill="#b5a6a6">
+                                    <font>
+                                        <Font name="Century Gothic Bold" size="13.0" />
+                                    </font>
+                                </JFXButton>
+                                <ImageView fitHeight="62.0" fitWidth="42.0" layoutX="28.0" layoutY="393.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../SupportScreen/img/settings.png" />
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </AnchorPane>
+                    </children>
+                </VBox>
+
+
+                <Pane fx:id="DisplayContent" prefHeight="594.0" prefWidth="863.0" style="-fx-background-color: #E8DFCA;">
+                    <children>
+                  <Slider fx:id="slider_game" layoutX="604.0" layoutY="223.0" stylesheets="@../SupportScreen/Css/setting.css" />
+                  <Label alignment="CENTER" layoutX="473.0" layoutY="203.0" prefHeight="53.0" prefWidth="108.0" style="-fx-background-color: #E8DFCA;" styleClass="background" stylesheets="@../SupportScreen/Css/setting.css" text="Âm thanh" textFill="#020100">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </Label>
+                        <Label alignment="CENTER" layoutX="545.0" layoutY="80.0" prefHeight="63.0" prefWidth="197.0" style="-fx-background-color: #F7DCB9; -fx-background-radius: 25; -fx-border-color: black; -fx-border-radius: 25;" text="Cài đặt khác">
+                            <font>
+                                <Font size="21.0" />
+                            </font>
+                        </Label>
+                        <JFXButton fx:id="resetApp" layoutX="195.0" layoutY="538.0" prefHeight="53.0" prefWidth="216.0" style="-fx-background-color: #D8AE7E;" styleClass="background" stylesheets="@../SupportScreen/Css/setting.css" text="Đặt lại ứng dụng">
+                            <font>
+                                <Font size="21.0" />
+                            </font>
+                        </JFXButton>
+                        <JFXButton fx:id="clearBookMark" layoutX="194.0" layoutY="444.0" prefHeight="50.0" prefWidth="216.0" style="-fx-background-color: #D8AE7E;" styleClass="background" stylesheets="@../SupportScreen/Css/setting.css" text="Đặt lại danh sách từ yêu thích">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </JFXButton>
+                        <JFXButton fx:id="resetActivitiesHistoryApp" layoutX="193.0" layoutY="360.0" prefHeight="50.0" prefWidth="216.0" style="-fx-background-color: #D8AE7E;" styleClass="background" stylesheets="@../SupportScreen/Css/setting.css" text="Đặt lại lịch sử hoạt động">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </JFXButton>
+                        <JFXButton fx:id="sendFeedBack" layoutX="742.0" layoutY="469.0" prefHeight="50.0" prefWidth="50.0" styleClass="send" stylesheets="@../SupportScreen/Css/setting.css" />
+                        <TextArea fx:id="textFeedBack" layoutX="439.0" layoutY="458.0" prefHeight="145.0" prefWidth="302.0" />
+                        <Label layoutX="440.0" layoutY="416.0" prefHeight="41.0" prefWidth="149.0" text="Góp ý cho chúng tôi:">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="timeUsingApp" alignment="CENTER" layoutX="592.0" layoutY="345.0" prefHeight="31.0" prefWidth="91.0" text="00:00:00">
+                     <font>
+                        <Font size="15.0" />
+                     </font></Label>
+                        <Label layoutX="473.0" layoutY="298.0" prefHeight="53.0" prefWidth="335.0" text="Thời gian hoạt động của phiên sử dụng này:">
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="94.0" layoutY="77.0" prefHeight="63.0" prefWidth="278.0" style="-fx-background-color: #F7DCB9; -fx-background-radius: 25; -fx-border-color: black; -fx-border-radius: 25;" text="Quản lí dữ liệu ">
+                            <font>
+                                <Font size="21.0" />
+                            </font>
+                        </Label>
+                        <Separator layoutX="423.0" layoutY="88.0" orientation="VERTICAL" prefHeight="503.0" prefWidth="17.0" />
+                        <Label alignment="CENTER" layoutX="12.0" layoutY="188.0" prefHeight="53.0" prefWidth="138.0" style="-fx-background-color: #E8DFCA;" styleClass="background" stylesheets="@../SupportScreen/Css/setting.css" text="Thay đổi dữ liệu" textAlignment="CENTER" textFill="#020100">
+                            <font>
+                                <Font name="Arial" size="18.0" />
+                            </font>
+                        </Label>
+                        <JFXButton fx:id="but_add" layoutX="193.0" layoutY="158.0" prefHeight="42.0" prefWidth="197.0" style="-fx-background-color: #D8AE7E;" styleClass="background" stylesheets="@../SupportScreen/Css/setting.css" text="Thêm từ mới vào Từ Điển">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </JFXButton>
+                        <JFXButton fx:id="but_delete" layoutX="194.0" layoutY="241.0" prefHeight="42.0" prefWidth="197.0" style="-fx-background-color: #D8AE7E;" styleClass="background" stylesheets="@../SupportScreen/Css/setting.css" text="Xóa từ khỏi Từ Điển">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </JFXButton>
+                        <Pane fx:id="paneDeleteWord" layoutX="399.0" layoutY="241.0" prefHeight="294.0" prefWidth="292.0" style="-fx-background-color: #FFBB70; -fx-background-radius: 10;" visible="false">
+                            <children>
+                                <TextField fx:id="searchWordToDelete" layoutX="36.0" layoutY="5.0" opacity="0.84" prefHeight="31.0" prefWidth="216.0" promptText="Tìm từ ...">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </TextField>
+                                <JFXListView fx:id="listWord" layoutX="7.0" layoutY="41.0" opacity="0.71" prefHeight="244.0" prefWidth="278.0" />
+                                <JFXButton fx:id="doDelete" layoutX="253.0" layoutY="8.0" prefHeight="25.0" prefWidth="25.0" styleClass="buttonRemoveALl" stylesheets="@../SupportScreen/Css/Game1.css" />
+                            </children>
+                        </Pane>
+                        <Label alignment="CENTER" layoutX="12.0" layoutY="434.0" prefHeight="71.0" prefWidth="153.0" style="-fx-background-color: #E8DFCA;" styleClass="background" stylesheets="@../SupportScreen/Css/setting.css" text="Dữ liệu mặc định" textAlignment="CENTER" textFill="#020100" wrapText="true">
+                            <font>
+                                <Font name="Arial" size="18.0" />
+                            </font>
+                        </Label>
+                        <Pane fx:id="paneNon" layoutX="2.0" opacity="0.0" prefHeight="71.0" prefWidth="799.0">
+                            <children>
+                                <Label fx:id="non" alignment="CENTER" layoutX="185.0" prefHeight="71.0" prefWidth="468.0" text="Label">
+                                    <font>
+                                        <Font size="21.0" />
+                                    </font>
+                                </Label>
+                        <ImageView fx:id="imgBug" fitHeight="111.0" fitWidth="91.0" layoutX="39.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../SupportScreen/img/imgBug.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="imgSuccess" fitHeight="111.0" fitWidth="91.0" layoutX="702.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../SupportScreen/img/imgSuccess.png" />
+                           </image>
+                        </ImageView>
+                            </children>
+                        </Pane>
+                  <Text fill="#020100" layoutX="636.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Âm thanh game" />
+                  <ImageView fitHeight="85.0" fitWidth="58.0" layoutX="97.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../SupportScreen/img/imgChangeData.png" />
+                     </image>
+                  </ImageView>
+                        <Pane fx:id="paneAddNewWordToDictionary" layoutX="440.0" layoutY="75.0" prefHeight="412.0" prefWidth="389.0" style="-fx-background-color: #EBC49F; -fx-background-radius: 10;" visible="false">
+                            <children>
+                                <Label layoutX="23.0" layoutY="82.0" prefHeight="38.0" prefWidth="30.0" text="Từ:">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="23.0" layoutY="253.0" text="Nghĩa:">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="22.0" layoutY="141.0" text="Phiên âm IPA:">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="22.0" layoutY="188.0" prefHeight="21.0" prefWidth="58.0" text="Từ loại:">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="newWord" layoutX="126.0" layoutY="81.0" opacity="0.88" prefHeight="39.0" prefWidth="232.0" promptText="Nhập từ ...">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="IPAforWord" layoutX="126.0" layoutY="132.0" opacity="0.88" prefHeight="39.0" prefWidth="232.0" promptText="Nhập phiên âm IPA ...">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="typeWord" layoutX="126.0" layoutY="179.0" opacity="0.88" prefHeight="39.0" prefWidth="232.0" promptText="Nhập từ loại ...">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                </TextField>
+                                <TextField fx:id="MeanOfWord" layoutX="126.0" layoutY="244.0" opacity="0.88" prefHeight="85.0" prefWidth="232.0" promptText="Nhập nghĩa ...">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                </TextField>
+                                <Label alignment="CENTER" layoutX="135.0" layoutY="14.0" prefHeight="38.0" prefWidth="156.0" style="-fx-background-color: #FFBB70; -fx-background-radius: 10; -fx-border-color: gray; -fx-border-radius: 10;" text="Thêm từ mới">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                                <JFXButton fx:id="addNewWordForDic" layoutX="292.0" layoutY="345.0" prefHeight="53.0" prefWidth="79.0" style="-fx-background-color: F5DAD2; -fx-background-radius: 15;" text="Thêm">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </JFXButton>
+                        <JFXButton fx:id="closePaneAddNewWord" layoutX="365.0" layoutY="1.0" style="-fx-background-color: #D2D180;" text="X" />
+                            </children>
+                        </Pane>
+                    </children>
+                </Pane>
+            </children>
+        </HBox>
+    </children>
+</Pane>

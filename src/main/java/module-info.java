@@ -1,4 +1,4 @@
-module org.example.project_app {
+module project_app {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.web;
@@ -10,8 +10,15 @@ module org.example.project_app {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires com.jfoenix;
     requires com.google.gson;
+    requires javafx.media;
+    requires java.sql;
+    requires java.desktop;
+    requires java.prefs;
 
-    opens org.example.project_app to javafx.fxml;
-    exports org.example.project_app;
+    exports OurPackage;
+    exports OurPackage.Controller;
+    opens OurPackage to javafx.fxml;
+    opens OurPackage.Controller to javafx.fxml;
 }
